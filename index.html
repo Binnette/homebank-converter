@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>HomebankConverter</title>
+  <link href="images/favicon.png" type="image/png" rel="icon" />
+  <link href="css/sunny/jquery-ui.min.css" rel="stylesheet">
+  <link href="css/converter.css" type="text/css" rel="stylesheet" />
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="js/FileSaver.min.js" type="text/javascript"></script>
+  <script src="js/converter.js" type="text/javascript"></script>
+  <script src="js/converter-ui.js" type="text/javascript"></script>
+</head>
+<body>
+  <!--manifest="hbc.appcache"-->
+  <div class="global">
+    <div id="entete">
+      <h1>Homebank Converter</h1>
+      <p class="no-margin-top">2014-07-06 : v0.4 - Binnette</p>
+    </div>
+
+    <!--[if lt IE 9]>
+      Your browser is not supported. Choose one of following option :
+      <ul>
+        <li><a href="http://www.mozilla.org/en-US/firefox/new/">Use Mozilla Firefox</a></li>
+        <li><a href="https://www.google.com/intl/en_us/chrome/browser/">Use Google Chrome</a></li>
+        <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Upgrade to Microsoft Internet Explorer 9 or newer</a></li>
+      </ul>
+    <![endif]-->
+
+    <div id="navigation">
+      <ul id="menu" class="ui-widget-content ui-corner-all menu">
+      </ul>
+    </div>
+    <div>
+
+      <table class="content">
+        <tr>
+          <td>
+            <div id="criterias" style="display: none;" class="ui-widget-content ui-corner-all hbc-panel">
+              <ul class="hbc-criterias">
+                <li class="hbc-criteria">
+                  <label for="btnBrowse">1. Select a file</label>
+                  <button id="btnBrowse" onclick="$('#inputFile').click();">Browse</button>
+                  <input id="inputFile" type="file" name="File to convert"  style="display:none">
+                </li>
+                <li class="hbc-criteria">
+                  <label for="fileEncoding">2. Select an encoding</label> 
+                  <select id="fileEncoding">
+                  </select>
+                </li>
+                <li class="hbc-criteria">
+                  <label for="fileEncoding">3. Press Convert</label>
+                  <button id="btnConvert" onclick="convertClick()">Convert</button>
+                </li>
+              </ul>
+            </div>
+            <div id="notsupported" style="display: none;" class="ui-widget-content ui-corner-all hbc-panel">
+              <h2>File not supported?</h2>
+              <p>Please contact <a href="mailto:binnette@gmail.com">Binnette</a> and send following:</p>
+                <ol>
+                  <li>your file</li>
+                  <li>your bank name</li>
+                  <li>that's all!</li>
+                </ol>
+            </div>
+            <div id="about" style="display: none;" class="ui-widget-content ui-corner-all hbc-panel">
+              <h2>Homebank Converter v0.4</h2>
+              <p>Convert banks file export to compatible Homebank CSV.</p>
+              <p>Author: <a href="mailto:binnette@gmail.com">Binnette</a></p>
+              <p>Licence: <a href="http://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v3</a></p>
+              <h3>Successfully tested on</h3>
+              <ul>
+                <li><a href="http://www.mozilla.org/en-US/firefox/new/">Firefox 30</a></li>
+                <li><a href="https://www.google.com/intl/en_us/chrome/browser/">Chrome 35</a></li>
+                <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer 11</a></li>
+              </ul>
+              <h3>Changelog</h3>
+              <ul id="changelog"></ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="dialog" title="Dialog Title"><p></p></div>
+</body>
+</html>

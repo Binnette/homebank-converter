@@ -1,0 +1,4 @@
+2014-06-29 v0.1: support BanquePostale CSV only.
+2014-07-02 v0.2: support BanquePostale TSV.
+2014-07-04 v0.3: try to determine paymode giving memo.
+2014-07-06 v0.4: remove multiples lines in memo, trim memo.
