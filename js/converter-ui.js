@@ -14,7 +14,11 @@ function getInputFile() {
 }
 
 function isFileValid(file) {
-  return file.type.length > 0 && file.size > 0;
+  try {
+    return  file.size !== undefined && file.size > 0;
+  } catch(ex) {
+    return false;
+  }
 }
 
 function onInputFileChange() {
@@ -26,10 +30,10 @@ function onInputFileChange() {
   }
 }
 
-function convertClick() {
+function convertClick(idBank) {
   var file = getInputFile();
   if (isFileValid(file)) {
-    convertFile(curBank, file);
+    convertFile(idBank, file);
   } else {
     $("#dialog > p").html("No file selected.");
     $("#dialog").dialog("option", "title", "Error").dialog("open");
@@ -49,19 +53,17 @@ function menuItemClick(item) {
   $("#notsupported").hide();
   $("#criterias").hide();
   $("#about").hide();
-  switch(item){
-    case 0:
-      $("#criterias").show();
-      setSelectedEncoding(BANKS[0].encoding);
-      break;
-    case 99:
-      $("#about").show();
-      break;
-    default:
-      $("#notsupported").show();
-      break;
+  if(item >= 0 && item <= banks.length) {
+    setSelectedEncoding(banks[item].encoding);
+    $("#btnConvert").attr("onclick", "convertClick("+item+")");
+    $("#bankName").html(banks[item].name);
+    $("#supportedFiles").html(banks[item].getSupportedFiles());
+    $("#criterias").show();
+  } else if (item === 99) {
+    $("#about").show();
+  } else {
+    $("#notsupported").show();
   }
-  setCurrentBank(item);
 }
 
 function menuItemSelect(i) {
@@ -81,9 +83,10 @@ function initItemMenu(val, label) {
 }
 
 function initMenu() {
-  for (var b = 0; b < BANKS.length; b++) {
-    initItemMenu(b, BANKS[b].name);
+  for (var idBank = 0; idBank < banks.length; idBank++) {
+    initItemMenu(idBank, banks[idBank].name);
   }
+  initItemMenu("98", "Other bank");
   initItemMenu("99", "About");
 }
 
