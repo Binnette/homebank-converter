@@ -1,14 +1,9 @@
-/*
- * converter.css 0.1
- * Author: Binnette
- */
 body{
   font-size: 85%;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   margin: 0.5em;
   min-width: 20em;
 }
-/* Computer */
 @media (min-width:58em) {
   .menu {
     width: 12em;
@@ -19,17 +14,20 @@ body{
     width: 15em;
   }
 }
-/* Mobile */
 @media (max-width:57.99em) {
   .content {
     width: 100%;
   }
 }
-/* Common */
 .content {
   margin: 0;
   padding: 0;
   border-spacing: 0;
+}
+.hbc-criteria {
+  padding: 1em 0;
+  vertical-align: top;
+  text-align: center;
 }
 td {
   padding: 0;
@@ -47,12 +45,17 @@ h3 {
 ul {
   list-style: none;
 }
+label:before{
+  counter-increment: labelCounter;
+  content: counter(labelCounter) ". ";
+}
 .no-margin-top {
   margin-top: 0;
 }
 .hbc-panel {
   padding: 1em;
   margin-bottom: 0.2em;
+  counter-reset: labelCounter;
 }
 .hbc-panel ol{
   margin:0;
@@ -63,11 +66,6 @@ ul {
   margin: 0;
   padding: 0;
   margin-left: 1em;
-}
-.hbc-criteria {
-  padding: 1em 0;
-  vertical-align: top;
-  text-align: center;
 }
 .hbc-criteria label {
   margin: 0 0 0.25em 0;

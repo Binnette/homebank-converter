@@ -1,10 +1,3 @@
-
-
-// http://encoding.spec.whatwg.org/#names-and-labels
-var ENCODINGS = [
-"ascii" , "utf-8"
-];
-
 var PayMemo = [];
 
 function convertFile(idBank, file) {
@@ -16,25 +9,40 @@ function convertFile(idBank, file) {
     var outData = convertData(idBank, inData, file.name);
     if (outData) {
       var blob = new Blob([outData], {type: "text/plain;charset=utf-8"});
-      filename = getConvertedFileName(file.name);
+      filename = getNewFileName(file.name, "converted", ".csv");
       saveAs(blob, filename);
     } else {
       $("#dialog > p").html("File not supported.");
-      $("#dialog").dialog("option", "title", "Error").dialog("open");
+      $("#dialog").dialog("open");
     }
   };
 }
 
-function getConvertedFileName(filename) {
-  var conv = "converted";
+function optimizeFile(file) {
+  var reader = new FileReader();
+  reader.readAsText(file, ENCODINGS[1]);
+  reader.onload = function(e) {
+    // browser completed reading file - display it
+    var inData = e.target.result;
+    var outData = optimizeData(inData);
+    if (outData) {
+      var blob = new Blob([outData], {type: "text/plain;charset=utf-8"});
+      filename = getNewFileName(file.name, "optimized", ".xhb");
+      saveAs(blob, filename);
+    } else {
+      $("#dialog > p").html("File not supported.");
+      $("#dialog").dialog("open");
+    }
+  };
+}
+
+function getNewFileName(filename, suffix, extension) {
   var index = filename.lastIndexOf(".");
-  if(index === 0) {
-    filename = conv + filename;
-  } else if (index > 0) {
+  if (index > 0) {
     var name = filename.substring(0, index);
-    filename = name + "_" + conv + ".csv";
+    filename = name + "_" + suffix + extension;
   } else {
-    filename += "_" + conv;
+    filename = suffix + extension;
   }
   return filename;
 }
@@ -46,6 +54,23 @@ function convertData(idBank, data, filename) {
   } else {
     return null;
   }
+}
+
+function optimizeData(data) {
+var output = [];
+  var lines = data.split("\n");
+  for(var i = 0; i < lines.length; i++ ) {
+    // remove duplicate spaces
+    var line = lines[i].replace(/ +(?= )/g, '');
+    // remove spaces after wording="
+    line = line.replace(/wording=\"\s/g, 'wording=\"');
+    if(line.match(/wording=\"[^\"]*\s\"/g)) {
+      // remove spaces before "
+      line = line.replace(/\s\"/g, '\"');
+    }
+    output.push(line);
+  }
+  return output.join('\n');
 }
 
 function getPayModeFromMemo(memo) {

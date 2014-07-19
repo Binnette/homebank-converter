@@ -1,3 +1,6 @@
+// http://encoding.spec.whatwg.org/#names-and-labels
+var ENCODINGS = ["ascii", "utf-8"];
+
 function Bank(name, encoding, firstField, minFieldCount, separators, convertLine){
   this.name = name;
   this.encoding = encoding;
@@ -75,7 +78,7 @@ function convert(data, filename) {
   }
   var first = getLineNumOfFirstDataRow(lines, this.firstField + separator);
   // Loop through data rows
-  for(var i = first ; i < lines.length ; i++ ) {
+  for(var i = first; i < lines.length; i++ ) {
     var fields = lines[i].split(separator);
     if(fields.length >= this.minFieldCount) {
       output.push(this.convertLine(fields));
@@ -94,17 +97,17 @@ function convertBanquePostale(fields) {
   return (date + ";" + paymode + ";;;" + memo + ";" + amount + ";;");
 }
 
-function addSymbol(str, symbol){
+function addSymbol(str, symbol) {
   return (str.length > 0 ? str + symbol : "");
 }
 
 function convertPaypal(fields) {
   var date = formatDate(fields[0]);
   var memo = "";
-  memo += addSymbol(fields[15]);
-  memo += addSymbol(fields[4]);
-  memo += addSymbol(fields[3]);
-  memo += addSymbol(fields[12]);
+  memo += addSymbol(fields[15], ", ");
+  memo += addSymbol(fields[4], ", ");
+  memo += addSymbol(fields[3], ", ");
+  memo += addSymbol(fields[12], ", ");
   memo += fields[6];
   memo = memo.replace(/ +(?= )/g,'');
   memo = $.trim(memo);

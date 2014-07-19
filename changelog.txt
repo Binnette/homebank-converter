@@ -1,6 +1,7 @@
 2014-06-29 v0.1: support BanquePostale CSV only.
 2014-07-02 v0.2: support BanquePostale TSV.
 2014-07-04 v0.3: try to determine paymode giving memo.
-2014-07-06 v0.4: remove multiples lines in memo, trim memo.
+2014-07-06 v0.4: remove multiples spaces in memo, trim memo.
 2014-07-10 v0.5: enable convert btn only if a file is selected.
-2014-07-13 v0.6: support PayPal CSV and TSV.
+2014-07-13 v0.6: support PayPal CSV and TSV(.txt).
+2014-07-19 v0.7: optimize .xhb files by removing useless spaces.
