@@ -13,9 +13,22 @@ function getInputFile() {
   return $("#inputFile")[0].files[0];
 }
 
+function isFileValid(file) {
+  return file.type.length > 0 && file.size > 0;
+}
+
+function onInputFileChange() {
+  var file = getInputFile();
+  if (isFileValid(file)) {
+    $("#btnConvert").button("enable");
+  } else {
+    $("#btnConvert").button("disable");
+  }
+}
+
 function convertClick() {
   var file = getInputFile();
-  if (file) {
+  if (isFileValid(file)) {
     convertFile(curBank, file);
   } else {
     $("#dialog > p").html("No file selected.");
@@ -89,7 +102,8 @@ function initUi() {
   initMenu();
   $("#menu").menu();
   $("#btnBrowse").button({ icons: { primary: "ui-icon-folder-open" } });
-  $("#btnConvert").button({ icons: { primary: "ui-icon-gear" } });
+  $("#inputFile").change(onInputFileChange);
+  $("#btnConvert").button({ disabled: true, icons: { primary: "ui-icon-gear" } });
   initSelectEncoding();
   initChangelog();
   $("#dialog").dialog({
