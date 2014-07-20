@@ -1,13 +1,16 @@
 # HomebankConverter#
-To use the application, click on this link : [HomebankConverter online](https://rawgit.com/Binnette/HomebankConverter/master/index.html)
+Use the application:
+
+* [HomebankConverter (rawgit.com)](https://rawgit.com/Binnette/HomebankConverter/master/index.html)
+* [HomebankConverter (barmic.eu)](https://hbc.barmic.eu/)
 
 ## What ? ##
 HomebankConverter is a web app that aims to convert export bank file to compatible Homebank csv.
 
-Homebank : http://homebank.free.fr/
+Homebank: http://homebank.free.fr/
 
 ### Convert export bank file ###
-Supported files :
+Supported files:
 
 | Bank name         | File formats |
 | ----------------- | ------------ |

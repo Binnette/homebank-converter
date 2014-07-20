@@ -129,12 +129,12 @@ function initMenu() {
 }
 
 function initChangelog() {
-  var file = "changelog.txt";
-  $.get(file, function( data ) {
-    var lines = data.split("\r");
+  var file = "./res/changelog.json";
+  $.getJSON(file, function(logs) {
     var changelog = $("#changelog");
-    for(var i=0; i < lines.length; i++){
-      changelog.append($("<li>").append(lines[i]));
+    for(var i=0; i < logs.length; i++){
+      var log = logs[i];
+      changelog.append($("<li>").append(log.date + " " + log.version + ": " + log.comment));
     }
   });
 }

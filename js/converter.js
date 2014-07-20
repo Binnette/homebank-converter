@@ -4,17 +4,8 @@ function convertFile(idBank, file) {
   var reader = new FileReader();
   reader.readAsText(file, banks[idBank].encoding);
   reader.onload = function(e) {
-    // browser completed reading file - display it
-    var inData = e.target.result;
-    var outData = convertData(idBank, inData, file.name);
-    if (outData) {
-      var blob = new Blob([outData], {type: "text/plain;charset=utf-8"});
-      filename = getNewFileName(file.name, "converted", ".csv");
-      saveAs(blob, filename);
-    } else {
-      $("#dialog > p").html("File not supported.");
-      $("#dialog").dialog("open");
-    }
+    var outData = convertData(idBank, e.target.result, file.name);
+    saveFile(outData, file.name, "converted", ".csv");
   };
 }
 
@@ -22,18 +13,20 @@ function optimizeFile(file) {
   var reader = new FileReader();
   reader.readAsText(file, ENCODINGS[1]);
   reader.onload = function(e) {
-    // browser completed reading file - display it
-    var inData = e.target.result;
-    var outData = optimizeData(inData);
+    var outData = optimizeData(e.target.result);
+    saveFile(outData, file.name, "optimized", ".xhb");
+  };
+}
+
+function saveFile(outData, curfilename, suffix, extension) {
     if (outData) {
       var blob = new Blob([outData], {type: "text/plain;charset=utf-8"});
-      filename = getNewFileName(file.name, "optimized", ".xhb");
+      var filename = getNewFileName(curfilename, suffix, extension);
       saveAs(blob, filename);
     } else {
       $("#dialog > p").html("File not supported.");
       $("#dialog").dialog("open");
     }
-  };
 }
 
 function getNewFileName(filename, suffix, extension) {
@@ -86,7 +79,7 @@ function getPayModeFromMemo(memo) {
 }
 
 function loadPaymodeJson(){
-  var file = "res/labelAndPaymode.json";
+  var file = "./res/labelAndPaymode.json";
   $.getJSON(file, function(data) {
     PayMemo = data.PayMemo;
   });
