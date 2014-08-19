@@ -1,7 +1,7 @@
 // http://encoding.spec.whatwg.org/#names-and-labels
 var ENCODINGS = ["ascii", "utf-8"];
 
-function Bank(name, encoding, firstField, minFieldCount, separators, convertLine){
+function Bank(name, encoding, firstField, minFieldCount, separators, convertLine) {
   this.name = name;
   this.encoding = encoding;
   this.firstField = firstField;
@@ -28,9 +28,9 @@ function getSupportedFiles() {
 
 function formatDate(d) {
   d = trimSymbol(d, '"');
-  var date = d.substring(0, 2);
-  date += "-" + d.substring(3, 5);
-  date += "-" + d.substring(8, 10);
+  var date = d.substring(3, 5); // mm
+  date += "-" + d.substring(0, 2); // dd
+  date += "-" + d.substring(8, 10); // yy
   return date;
 }
 
