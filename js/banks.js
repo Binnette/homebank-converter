@@ -1,11 +1,12 @@
 // http://encoding.spec.whatwg.org/#names-and-labels
 var ENCODINGS = ["ascii", "utf-8"];
 
-function Bank(name, encoding, firstField, minFieldCount, separators, convertLine) {
+function Bank(name, encoding, firstField, minFieldCount, lineBreak, separators, convertLine) {
   this.name = name;
   this.encoding = encoding;
   this.firstField = firstField;
   this.minFieldCount = minFieldCount;
+  this.lineBreak = lineBreak;
   this.separators = separators;
   this.convert = convert;
   this.convertLine = convertLine;
@@ -13,8 +14,9 @@ function Bank(name, encoding, firstField, minFieldCount, separators, convertLine
 }
 
 var banks = [];
-banks.push(new Bank("Banque Postale", "ascii", "Date", 3, { "csv": ";", "tsv": "\t"}, convertBanquePostale));
-banks.push(new Bank("PayPal", "ascii", "Date", 16, { "csv": '","', "txt": '"\t"'}, convertPaypal));
+banks.push(new Bank("Banque Postale", "ascii", "Date", 3, "\r\n", { "csv": ";", "tsv": "\t"}, convertBanquePostale));
+banks.push(new Bank("PayPal", "ascii", "Date", 16, "\r\n", { "csv": '","', "txt": '"\t"'}, convertPaypal));
+banks.push(new Bank("Boobank", "utf-8", "id", 9, "\n", { "csv": ";" }, convertBoobank));
 
 function getSupportedFiles() {
   var supp = "";
@@ -44,6 +46,10 @@ function getLineNumOfFirstDataRow(lines, header) {
   return 0;
 }
 
+function addSymbol(str, symbol) {
+  return (str.length > 0 ? str + symbol : "");
+}
+
 function trimSymbol(str, symbol) {
   var sl = symbol.length;
   if(str.indexOf(symbol) === 0) {
@@ -53,6 +59,11 @@ function trimSymbol(str, symbol) {
     str = str.substring(0, str.length - sl);
   }
   return str;
+}
+
+function trimMemo(memo) {
+  memo = memo.replace(/ +(?= )/g,'');
+  return $.trim(memo); 
 }
 
 function getSeparator(filename, separators) {
@@ -71,7 +82,7 @@ function getSeparator(filename, separators) {
 function convert(data, filename) {
   var output = [];
   output.push("date;paymode;info;payee;memo;amount;category;tags");
-  var lines = data.split("\r\n");
+  var lines = data.split(this.lineBreak);
   var separator = getSeparator(filename, this.separators);
   if (separator === undefined || separator.length <= 0) {
     return;
@@ -91,14 +102,8 @@ function convertBanquePostale(fields) {
   var date = formatDate(fields[0]);
   var memo = trimSymbol(fields[1], '"');
   var paymode = getPayModeFromMemo(memo.toUpperCase());
-  memo = memo.replace(/ +(?= )/g,'');
-  memo = $.trim(memo);
   var amount = fields[2];
-  return (date + ";" + paymode + ";;;" + memo + ";" + amount + ";;");
-}
-
-function addSymbol(str, symbol) {
-  return (str.length > 0 ? str + symbol : "");
+  return (date + ";" + paymode + ";;;" + trimMemo(memo) + ";" + amount + ";;");
 }
 
 function convertPaypal(fields) {
@@ -109,8 +114,17 @@ function convertPaypal(fields) {
   memo += addSymbol(fields[3], ", ");
   memo += addSymbol(fields[12], ", ");
   memo += fields[6];
-  memo = memo.replace(/ +(?= )/g,'');
-  memo = $.trim(memo);
   var amount = fields[9];
-  return (date + ";;;;" + memo + ";" + amount + ";;");
+  return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
+}
+
+function convertBoobank(fields) {
+  var date = $.datepicker.parseDate('yy-mm-dd', fields[1]);
+  date = $.datepicker.formatDate('mm-dd-yy', date);
+  var memo = "";
+  memo += addSymbol(fields[7], ", ");
+  memo += addSymbol(fields[4], ", ");
+  memo = trimMemo(memo);
+  var amount = fields[8];
+  return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
 }
