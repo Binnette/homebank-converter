@@ -1,12 +1,12 @@
-# HomebankConverter#
+# homebank-converter #
 Use the application:
 
-* [HomebankConverter (github.io)](http://binnette.github.io/HomebankConverter/)
-* [HomebankConverter (rawgit.com)](https://rawgit.com/Binnette/HomebankConverter/master/index.html)
-* [HomebankConverter (barmic.eu)](https://hbc.barmic.eu/)
+* [homebank-converter (github.io)](http://binnette.github.io/homebank-converter/)
+* [homebank-converter (rawgit.com)](https://rawgit.com/Binnette/homebank-converter/master/index.html)
+* [homebank-converter (barmic.eu)](https://hbc.barmic.eu/)
 
 ## What ? ##
-HomebankConverter is a web app that aims to convert export bank file to compatible Homebank csv.
+homebank-converter is a web app that aims to convert export bank file to compatible Homebank csv.
 
 Homebank: http://homebank.free.fr/
 
@@ -17,12 +17,13 @@ Supported files:
 | ----------------- | ------------ |
 | La Banque Postale | csv, tsv     |
 | PayPal            | csv, txt     |
+| Boobank           | csv          |
 
 #### Example ####
 1. Go on PayPal web site
 2. Go to your PayPal history
 3. Download your payment history (csv or txt file)
-4. Go on HomebankConverter application
+4. Go on homebank-converter application
 5. Choose PayPal
 6. Then select your PayPal file
 7. Click on Convert
