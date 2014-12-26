@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "jquery-ui": "~1.11.2",
-    "file-saver": "*"
+    "file-saver": "*",
+    "bootstrap": "~3.3.1"
   }
 }
