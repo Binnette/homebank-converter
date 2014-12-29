@@ -1,6 +1,35 @@
+/* Common functions */
+function resetInputFiles() {
+  $("#inputOptimize")[0].value = "";
+  onInputOptimizeChange();
+  $("#inputConvert")[0].value = "";
+  onInputConvertChange();
+}
+
+function getInputFile(inputId) {
+  return $(inputId)[0].files[0];
+}
+
+function isFileValid(file) {
+  try {
+    return file.size !== undefined && file.size > 0;
+  } catch (ex) {
+    return false;
+  }
+}
+
+function getSelectedEncoding() {
+  var index = $("#fileEncoding")[0].value;
+  return ENCODINGS[index];
+}
+
+function setSelectedEncoding(e) {
+  var index = ENCODINGS.indexOf(e);
+  $("#fileEncoding")[0].value = index;
+}
 /* Menu event functions */
 function hideAll() {
-  if ($(".navbar-toggle").css("display") != "none") {
+  if ($(".navbar-toggle").css("display") !== "none") {
     $('.navbar-collapse').collapse('hide');
   }
   $("#home").hide();
@@ -49,25 +78,6 @@ function onAboutClick() {
   $("#menuAbout").addClass("active");
   loadChangelog();
 }
-/* Common functions */
-function resetInputFiles() {
-  $("#inputOptimize")[0].value = "";
-  onInputOptimizeChange();
-  $("#inputConvert")[0].value = "";
-  onInputConvertChange();
-}
-
-function getInputFile(inputId) {
-  return $(inputId)[0].files[0];
-}
-
-function isFileValid(file) {
-  try {
-    return file.size !== undefined && file.size > 0;
-  } catch (ex) {
-    return false;
-  }
-}
 /* Optimizer functions */
 function onInputOptimizeChange() {
   var file = getInputFile("#inputOptimize");
@@ -98,21 +108,11 @@ function onInputConvertChange() {
   }
 }
 
-function getSelectedEncoding() {
-  var index = $("#fileEncoding")[0].value;
-  return ENCODINGS[index];
-}
-
-function setSelectedEncoding(e) {
-  var index = ENCODINGS.indexOf(e);
-  $("#fileEncoding")[0].value = index;
-}
-
 function convertClick(idBank) {
   var file = getInputFile("#inputConvert");
   if (isFileValid(file)) {
     convertFile(idBank, file);
-    resetInputFiles()
+    resetInputFiles();
   } else {
     $("#modalContent p").html("No file selected or selected file is empty.");
     $('#modal').modal();

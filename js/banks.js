@@ -1,31 +1,6 @@
 // http://encoding.spec.whatwg.org/#names-and-labels
 var ENCODINGS = ["ascii", "utf-8"];
 
-function Bank(name, encoding, firstField, minFieldCount, lineBreak, separators, convertLine) {
-  this.name = name;
-  this.encoding = encoding;
-  this.firstField = firstField;
-  this.minFieldCount = minFieldCount;
-  this.lineBreak = lineBreak;
-  this.separators = separators;
-  this.convert = convert;
-  this.convertLine = convertLine;
-  this.getSupportedFiles = getSupportedFiles;
-}
-
-var banks = [];
-banks.push(new Bank("Banque Postale", "ascii", "Date", 3, "\r\n", {
-  "csv": ";",
-  "tsv": "\t"
-}, convertBanquePostale));
-banks.push(new Bank("Boobank", "utf-8", "id", 9, "\n", {
-  "csv": ";"
-}, convertBoobank));
-banks.push(new Bank("PayPal", "ascii", "Date", 16, "\r\n", {
-  "csv": '","',
-  "txt": '"\t"'
-}, convertPaypal));
-
 function getSupportedFiles() {
   var supp = "";
   for (var id in this.separators) {
@@ -139,3 +114,28 @@ function convertBoobank(fields) {
   var amount = fields[8];
   return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
 }
+
+function bank(name, encoding, firstField, minFieldCount, lineBreak, separators, convertLine) {
+  this.name = name;
+  this.encoding = encoding;
+  this.firstField = firstField;
+  this.minFieldCount = minFieldCount;
+  this.lineBreak = lineBreak;
+  this.separators = separators;
+  this.convert = convert;
+  this.convertLine = convertLine;
+  this.getSupportedFiles = getSupportedFiles;
+}
+
+var banks = [];
+banks.push(new bank("Banque Postale", "ascii", "Date", 3, "\r\n", {
+  "csv": ";",
+  "tsv": "\t"
+}, convertBanquePostale));
+banks.push(new bank("Boobank", "utf-8", "id", 9, "\n", {
+  "csv": ";"
+}, convertBoobank));
+banks.push(new bank("PayPal", "ascii", "Date", 16, "\r\n", {
+  "csv": '","',
+  "txt": '"\t"'
+}, convertPaypal));

@@ -1,40 +1,47 @@
-{"PayMemo":[
-	{"Index": "0", "Name":"Nothing", "memos":[
-	]},
-
-	{"Index": "1", "Name":"Credit card", "memos":[
-	]},
-
-	{"Index": "2", "Name":"Cheque", "memos":[
-	"CHEQUE N"
-	]},
-
-	{"Index": "3", "Name":"Cash", "memos":[
-	]},
-
-	{"Index": "4", "Name":"Transfer", "memos":[
-		"VIREMENT DE ", "VIREMENT EMIS ", "VIREMENT POUR "
-	]},
-
-	{"Index": "5", "Name":"Internal transfer", "memos":[
-	]},
-
-	{"Index": "6", "Name":"Debit card", "memos":[
-		"ACHAT CB ", "COMMISSION PAIEMENT PAR CARTE", "COMMISSION RETRAIT PAR CARTE",
-		" RETRAIT DAB ", "TELEREGLEMENT DE REGLEMENT IMPOT ", "CREDIT CARTE BANCAIRE "
-	]},
-
-	{"Index": "7", "Name":"Standing order", "memos":[
-		"PRELEVEMENT "
-	]},
-
-	{"Index": "8", "Name":"Electronic payment", "memos":[
-	]},
-	{"Index": "9", "Name":"Deposit", "memos":[
-		"REMISE DE CHEQUE N", "REMISE DE CHEQUES ", "VERSEMENT EFFECTUE"
-	]},
-
-	{"Index":"10", "Name":"FI fee", "memos":[
-		"COTISATION TRIMESTRIELLE DE VOTRE FORMULE DE COMPTE"
-	]}
-]}
+{
+  "PayMemo": [{
+    "Index": "0",
+    "Name": "Nothing",
+    "memos": []
+  }, {
+    "Index": "1",
+    "Name": "Credit card",
+    "memos": []
+  }, {
+    "Index": "2",
+    "Name": "Cheque",
+    "memos": ["CHEQUE N"]
+  }, {
+    "Index": "3",
+    "Name": "Cash",
+    "memos": []
+  }, {
+    "Index": "4",
+    "Name": "Transfer",
+    "memos": ["VIREMENT DE ", "VIREMENT EMIS ", "VIREMENT POUR "]
+  }, {
+    "Index": "5",
+    "Name": "Internal transfer",
+    "memos": []
+  }, {
+    "Index": "6",
+    "Name": "Debit card",
+    "memos": ["ACHAT CB ", "COMMISSION PAIEMENT PAR CARTE", "COMMISSION RETRAIT PAR CARTE", " RETRAIT DAB ", "TELEREGLEMENT DE REGLEMENT IMPOT ", "CREDIT CARTE BANCAIRE "]
+  }, {
+    "Index": "7",
+    "Name": "Standing order",
+    "memos": ["PRELEVEMENT "]
+  }, {
+    "Index": "8",
+    "Name": "Electronic payment",
+    "memos": []
+  }, {
+    "Index": "9",
+    "Name": "Deposit",
+    "memos": ["REMISE DE CHEQUE N", "REMISE DE CHEQUES ", "VERSEMENT EFFECTUE"]
+  }, {
+    "Index": "10",
+    "Name": "FI fee",
+    "memos": ["COTISATION TRIMESTRIELLE DE VOTRE FORMULE DE COMPTE"]
+  }]
+}

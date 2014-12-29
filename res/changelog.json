@@ -1,43 +1,8 @@
 [
   {
-    "date": "2014-06-29",
-    "version": "v0.1.0",
-    "comment": "support BanquePostale CSV only."
-  },
-  {
-    "date": "2014-07-02",
-    "version": "v0.2.0",
-    "comment": "support BanquePostale TSV."
-  },
-  {
-    "date": "2014-07-04",
-    "version": "v0.3.0",
-    "comment": "try to determine paymode giving memo."
-  },
-  {
-    "date": "2014-07-06",
-    "version": "v0.4.0",
-    "comment": "remove multiples spaces in memo, trim memo."
-  },
-  {
-    "date": "2014-07-10",
-    "version": "v0.5.0",
-    "comment": "enable convert btn only if a file is selected."
-  },
-  {
-    "date": "2014-07-13",
-    "version": "v0.6.0",
-    "comment": "support PayPal CSV and TSV (.txt)."
-  },
-  {
-    "date": "2014-07-19",
-    "version": "v0.7.0",
-    "comment": "optimize .xhb files by removing useless spaces."
-  },
-  {
-    "date": "2014-07-20",
-    "version": "v0.8.0",
-    "comment": "fix changelog not displaying bug."
+    "date": "2014-12-29",
+    "version": "v0.10.0",
+    "comment": "Using bootstrap. Adding Boobank support."
   },
   {
     "date": "2014-08-19",
@@ -45,8 +10,43 @@
     "comment": "change date format to mm-dd-yy."
   },
   {
-    "date": "2014-12-29",
-    "version": "v0.10.0",
-    "comment": "Using bootstrap. Adding Boobank support."
+    "date": "2014-07-20",
+    "version": "v0.8.0",
+    "comment": "fix changelog not displaying bug."
+  },
+  {
+    "date": "2014-07-19",
+    "version": "v0.7.0",
+    "comment": "optimize .xhb files by removing useless spaces."
+  },
+  {
+    "date": "2014-07-13",
+    "version": "v0.6.0",
+    "comment": "support PayPal CSV and TSV (.txt)."
+  },
+  {
+    "date": "2014-07-10",
+    "version": "v0.5.0",
+    "comment": "enable convert btn only if a file is selected."
+  },
+  {
+    "date": "2014-07-06",
+    "version": "v0.4.0",
+    "comment": "remove multiples spaces in memo, trim memo."
+  },
+  {
+    "date": "2014-07-04",
+    "version": "v0.3.0",
+    "comment": "try to determine paymode giving memo."
+  },
+  {
+    "date": "2014-07-02",
+    "version": "v0.2.0",
+    "comment": "support BanquePostale TSV."
+  },
+  {
+    "date": "2014-06-29",
+    "version": "v0.1.0",
+    "comment": "support BanquePostale CSV only."
   }
 ]
