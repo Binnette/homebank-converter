@@ -1,8 +1,8 @@
 # homebank-converter #
 Use the application:
 
-* [homebank-converter (github.io)](http://binnette.github.io/homebank-converter/)
 * [homebank-converter (rawgit.com)](https://rawgit.com/Binnette/homebank-converter/master/index.html)
+* [homebank-converter (github.io)](http://binnette.github.io/homebank-converter/)
 * [homebank-converter (barmic.eu)](https://hbc.barmic.eu/)
 
 ## What ? ##
@@ -15,9 +15,9 @@ Supported files:
 
 | Bank name         | File formats |
 | ----------------- | ------------ |
-| La Banque Postale | csv, tsv     |
-| PayPal            | csv, txt     |
+| Banque Postale    | csv, tsv     |
 | Boobank           | csv          |
+| PayPal            | csv, txt     |
 
 #### Example ####
 1. Go on PayPal web site
@@ -40,9 +40,10 @@ This application use Html/Javascript/Css and is under the terms of the licence G
 
 Javascript libraries:
 
-* jQuery v2.1.1 https://jquery.com/
-* jQuery UI v1.11.0 http://jqueryui.com/
-* FileSaver.js https://github.com/eligrey/FileSaver.js/
+* jQuery 2.1.3 https://jquery.com/
+* Bootstrap 3.3.1 http://getbootstrap.com/
+* FileSaver.js 2014-12-28 https://github.com/eligrey/FileSaver.js/
+* Moment.js 2.8.4 http://momentjs.com/
 
 ## Who ? ##
 Developper(s):

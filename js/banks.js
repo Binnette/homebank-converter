@@ -14,9 +14,17 @@ function Bank(name, encoding, firstField, minFieldCount, lineBreak, separators, 
 }
 
 var banks = [];
-banks.push(new Bank("Banque Postale", "ascii", "Date", 3, "\r\n", { "csv": ";", "tsv": "\t"}, convertBanquePostale));
-banks.push(new Bank("PayPal", "ascii", "Date", 16, "\r\n", { "csv": '","', "txt": '"\t"'}, convertPaypal));
-banks.push(new Bank("Boobank", "utf-8", "id", 9, "\n", { "csv": ";" }, convertBoobank));
+banks.push(new Bank("Banque Postale", "ascii", "Date", 3, "\r\n", {
+  "csv": ";",
+  "tsv": "\t"
+}, convertBanquePostale));
+banks.push(new Bank("Boobank", "utf-8", "id", 9, "\n", {
+  "csv": ";"
+}, convertBoobank));
+banks.push(new Bank("PayPal", "ascii", "Date", 16, "\r\n", {
+  "csv": '","',
+  "txt": '"\t"'
+}, convertPaypal));
 
 function getSupportedFiles() {
   var supp = "";
@@ -28,19 +36,11 @@ function getSupportedFiles() {
   return trimSymbol(supp, ", ");
 }
 
-function formatDate(d) {
-  d = trimSymbol(d, '"');
-  var date = d.substring(3, 5); // mm
-  date += "-" + d.substring(0, 2); // dd
-  date += "-" + d.substring(8, 10); // yy
-  return date;
-}
-
 function getLineNumOfFirstDataRow(lines, header) {
-  for(var i = 0 ; i < lines.length ; i++ ) {
+  for (var i = 0; i < lines.length; i++) {
     var line = lines[i];
-    if (line.indexOf(header) === 0){
-      return i+1;
+    if (line.indexOf(header) === 0) {
+      return i + 1;
     }
   }
   return 0;
@@ -52,31 +52,31 @@ function addSymbol(str, symbol) {
 
 function trimSymbol(str, symbol) {
   var sl = symbol.length;
-  if(str.indexOf(symbol) === 0) {
+  if (str.indexOf(symbol) === 0) {
     str = str.substring(sl, str.length);
   }
-  if(str.lastIndexOf(symbol) === str.length - sl) {
+  if (str.lastIndexOf(symbol) === str.length - sl) {
     str = str.substring(0, str.length - sl);
   }
   return str;
 }
 
 function trimMemo(memo) {
-  memo = memo.replace(/ +(?= )/g,'');
-  return $.trim(memo); 
+  memo = memo.replace(/ +(?= )/g, '');
+  return $.trim(memo);
 }
 
 function getSeparator(filename, separators) {
   var index = filename.lastIndexOf(".");
-  if(index >=0) {
-    var extension = filename.substring(index+1, filename.length);
+  if (index >= 0) {
+    var extension = filename.substring(index + 1, filename.length);
     extension = extension.toLowerCase();
     var separator = separators[extension];
-    if(separator) {
+    if (separator) {
       return separator;
     }
   }
-  return "";
+  return;
 }
 
 function convert(data, filename) {
@@ -89,9 +89,9 @@ function convert(data, filename) {
   }
   var first = getLineNumOfFirstDataRow(lines, this.firstField + separator);
   // Loop through data rows
-  for(var i = first; i < lines.length; i++ ) {
+  for (var i = first; i < lines.length; i++) {
     var fields = lines[i].split(separator);
-    if(fields.length >= this.minFieldCount) {
+    if (fields.length >= this.minFieldCount) {
       output.push(this.convertLine(fields));
     }
   }
@@ -99,7 +99,11 @@ function convert(data, filename) {
 }
 
 function convertBanquePostale(fields) {
-  var date = formatDate(fields[0]);
+  var date = moment(fields[0], 'DD/MM/YYYY');
+  if (!date.isValid()) {
+    return;
+  }
+  date = date.format('MM-DD-YY');
   var memo = trimSymbol(fields[1], '"');
   var paymode = getPayModeFromMemo(memo.toUpperCase());
   var amount = fields[2];
@@ -107,7 +111,11 @@ function convertBanquePostale(fields) {
 }
 
 function convertPaypal(fields) {
-  var date = formatDate(fields[0]);
+  var date = moment(fields[0], 'DD/MM/YYYY');
+  if (!date.isValid()) {
+    return;
+  }
+  date = date.format('MM-DD-YY');
   var memo = "";
   memo += addSymbol(fields[15], ", ");
   memo += addSymbol(fields[4], ", ");
@@ -119,8 +127,11 @@ function convertPaypal(fields) {
 }
 
 function convertBoobank(fields) {
-  var date = $.datepicker.parseDate('yy-mm-dd', fields[1]);
-  date = $.datepicker.formatDate('mm-dd-yy', date);
+  var date = moment(fields[1], 'YYYY-MM-DD');
+  if (!date.isValid()) {
+    return;
+  }
+  date = date.format('MM-DD-YY');
   var memo = "";
   memo += addSymbol(fields[7], ", ");
   memo += addSymbol(fields[4], ", ");

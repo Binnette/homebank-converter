@@ -1,38 +1,15 @@
 CACHE MANIFEST
-# Version 0.2
+# Version 0.10.0
 
 CACHE: 
-css\sunny\jquery-ui.min.css
-css\sunny\jquery-ui.structure.min.css
-css\sunny\jquery-ui.theme.min.css
-css\sunny\images\animated-overlay.gif
-css\sunny\images\ui-bg_diagonals-medium_20_d34d17_40x40.png
-css\sunny\images\ui-bg_flat_30_cccccc_40x100.png
-css\sunny\images\ui-bg_flat_50_5c5c5c_40x100.png
-css\sunny\images\ui-bg_gloss-wave_45_817865_500x100.png
-css\sunny\images\ui-bg_gloss-wave_60_fece2f_500x100.png
-css\sunny\images\ui-bg_gloss-wave_70_ffdd57_500x100.png
-css\sunny\images\ui-bg_gloss-wave_90_fff9e5_500x100.png
-css\sunny\images\ui-bg_highlight-soft_100_feeebd_1x100.png
-css\sunny\images\ui-bg_inset-soft_30_ffffff_1x100.png
-css\sunny\images\ui-icons_3d3d3d_256x240.png
-css\sunny\images\ui-icons_bd7b00_256x240.png
-css\sunny\images\ui-icons_d19405_256x240.png
-css\sunny\images\ui-icons_eb990f_256x240.png
-css\sunny\images\ui-icons_ed9f26_256x240.png
-css\sunny\images\ui-icons_fadc7a_256x240.png
-css\sunny\images\ui-icons_ffe180_256x240.png
-images\favicon.png
-js\FileSaver.min.js
-js\jquery-ui.min.js
-js\jquery.min.js
 
 
 NETWORK:
 changelog.txt
 roadmap.html
 index.html
-css\converter.css
+css\lavish-bootstrap.css
+js\banks.js
 js\converter-ui.js
 js\converter.js
 res\labelAndPaymode.json
