@@ -57,7 +57,8 @@ function getSeparator(filename, separators) {
 function convert(data, filename) {
   var output = [];
   output.push("date;paymode;info;payee;memo;amount;category;tags");
-  var lines = data.split(this.lineBreak);
+  data = data.replace(/\r\n/g, "\n");
+  var lines = data.split("\n");
   var separator = getSeparator(filename, this.separators);
   if (separator === undefined || separator.length <= 0) {
     return;
@@ -70,7 +71,7 @@ function convert(data, filename) {
       output.push(this.convertLine(fields));
     }
   }
-  return output.join('\r\n');
+  return output.join('\n');
 }
 
 function convertBanquePostale(fields) {
@@ -114,12 +115,11 @@ function convertBoobank(fields) {
   return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
 }
 
-function bank(name, encoding, firstField, minFieldCount, lineBreak, separators, convertLine) {
+function bank(name, encoding, firstField, minFieldCount, separators, convertLine) {
   this.name = name;
   this.encoding = encoding;
   this.firstField = firstField;
   this.minFieldCount = minFieldCount;
-  this.lineBreak = lineBreak;
   this.separators = separators;
   this.convert = convert;
   this.convertLine = convertLine;
@@ -127,14 +127,14 @@ function bank(name, encoding, firstField, minFieldCount, lineBreak, separators, 
 }
 
 var banks = [];
-banks.push(new bank("Banque Postale", "ascii", "Date", 3, "\r\n", {
+banks.push(new bank("Banque Postale", "ascii", "Date", 3, {
   "csv": ";",
   "tsv": "\t"
 }, convertBanquePostale));
-banks.push(new bank("Boobank", "utf-8", "id", 9, "\n", {
+banks.push(new bank("Boobank", "utf-8", "id", 9, {
   "csv": ";"
 }, convertBoobank));
-banks.push(new bank("PayPal", "ascii", "Date", 16, "\r\n", {
+banks.push(new bank("PayPal", "ascii", "Date", 16, {
   "csv": '","',
   "txt": '"\t"'
 }, convertPaypal));
