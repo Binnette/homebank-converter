@@ -101,14 +101,14 @@ function tests() {
   QUnit.test("convertBoobank", function (assert) {
     var line;
     line = convertBoobank([
-      "", "2014-08-29", "", "", "memo2", "", "", "memo1", "-11,20"
+      "", "2014-08-29", "", "", "", "", "", "memo1", "-11,20"
     ]);
-    assert.deepEqual(line, "08-29-14;;;;memo1, memo2;-11,20;;", "Amount with a comma.");
+    assert.deepEqual(line, "08-29-14;;;;memo1;-11,20;;", "Amount with a comma.");
 
     line = convertBoobank([
-      "", "2014-08-29", "", "", "memo2", "", "", "memo1", "12.20"
+      "", "2014-08-29", "", "", "", "", "", "memo1", "12.20"
     ]);
-    assert.deepEqual(line, "08-29-14;;;;memo1, memo2;12.20;;", "Amount with a dot.");
+    assert.deepEqual(line, "08-29-14;;;;memo1;12.20;;", "Amount with a dot.");
 
     line = convertBoobank([
       "", "2015-13-25", "", "", "memo2", "", "", "memo1", "-10,20"
@@ -176,6 +176,25 @@ function tests() {
       })
     ).then(function () {
       assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
+      done();
+    });
+  });
+  
+    QUnit.test("Boobank - csv file", function (assert) {
+    var done = assert.async();
+    var inputFilename = "boobank.csv";
+    var expectedFilename = "boobank_converted.csv";
+    var converted, expected;
+
+    $.when(
+      $.get("res/tests/" + inputFilename, function (data) {
+        converted = convertData(1, data, inputFilename);
+      }),
+      $.get("res/tests/" + expectedFilename, function (data) {
+        expected = data;
+      })
+    ).then(function () {
+      assert.deepEqual(converted, expected, "Convert a file of 50 lines.");
       done();
     });
   });

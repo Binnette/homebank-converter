@@ -108,8 +108,7 @@ function convertBoobank(fields) {
   }
   date = date.format('MM-DD-YY');
   var memo = "";
-  memo += addSymbol(fields[7], ", ");
-  memo += fields[4];
+  memo += fields[7];
   memo = trimMemo(memo);
   var amount = fields[8];
   return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
