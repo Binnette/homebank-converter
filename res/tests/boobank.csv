@@ -48,4 +48,3 @@ id;date;rdate;vdate;type;raw;category;label;amount
 @carteticketrestaurant;2014-11-26;None;None;1;;;SANDWICH;-9.95
 @carteticketrestaurant;2014-11-25;None;None;3;;;CHARGEMENT CARTE;120.00
 @carteticketrestaurant;2014-11-24;None;None;3;;;CHARGEMENT CARTE;130.00
-@carteticketrestaurant;2014-11-23;None;None;3;;;CHARGEMENT CARTE;140.00

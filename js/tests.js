@@ -156,6 +156,7 @@ function tests() {
         expected = data;
       })
     ).then(function () {
+      assert.deepEqual(converted.split("\n").length, 100, "converted.length = 100");
       assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
       done();
     });
@@ -175,6 +176,7 @@ function tests() {
         expected = data;
       })
     ).then(function () {
+      assert.deepEqual(converted.split("\n").length, 100, "converted.length = 100");
       assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
       done();
     });
@@ -194,6 +196,7 @@ function tests() {
         expected = data;
       })
     ).then(function () {
+      assert.deepEqual(converted.split("\n").length, 50, "converted.length = 50");
       assert.deepEqual(converted, expected, "Convert a file of 50 lines.");
       done();
     });

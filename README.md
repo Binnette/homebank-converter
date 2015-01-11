@@ -2,7 +2,6 @@
 Use the application:
 
 * [homebank-converter (github.io)](http://binnette.github.io/homebank-converter/)
-* [homebank-converter (rawgit.com)](https://rawgit.com/Binnette/homebank-converter/master/index.html)
 * [homebank-converter (barmic.eu)](https://hbc.barmic.eu/)
 
 Run unit tests:
