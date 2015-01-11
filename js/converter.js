@@ -73,20 +73,29 @@ function getPayModeFromMemo(memo) {
     var memos = PayMemo[i].memos;
     for (var j = 0; j < memos.length; j++) {
       if (memo.indexOf(memos[j]) > -1) {
-        return PayMemo[i].Index;
+        if (memos[j].charAt(0) != " ") {
+          if (memo.indexOf(memos[j]) == 0) {
+            return PayMemo[i].Index;
+          }
+        } else {
+          return PayMemo[i].Index;
+        }
       }
     }
   }
   return "";
 }
 
-function loadPaymodeJson() {
+function loadPaymodeJson(callback) {
   var file = "./res/labelAndPaymode.json";
   $.getJSON(file, function (data) {
     PayMemo = data.PayMemo;
+    if (callback && typeof(callback) === "function") {
+      callback();
+    }
   });
 }
 
-function initConverter() {
-  loadPaymodeJson();
+function initConverter(callback) {
+  loadPaymodeJson(callback);
 }

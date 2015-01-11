@@ -1,5 +1,10 @@
 [
   {
+    "date": "2015-01-11",
+    "version": "v0.11.0",
+    "comment": "Using QUnit for unit testing."
+  },
+  {
     "date": "2014-12-29",
     "version": "v0.10.0",
     "comment": "Using bootstrap. Adding Boobank support."
@@ -22,7 +27,7 @@
   {
     "date": "2014-07-13",
     "version": "v0.6.0",
-    "comment": "support PayPal CSV and TSV (.txt)."
+    "comment": "support PayPal csv and tsv (.txt)."
   },
   {
     "date": "2014-07-10",
@@ -42,11 +47,11 @@
   {
     "date": "2014-07-02",
     "version": "v0.2.0",
-    "comment": "support BanquePostale TSV."
+    "comment": "support BanquePostale tsv."
   },
   {
     "date": "2014-06-29",
     "version": "v0.1.0",
-    "comment": "support BanquePostale CSV only."
+    "comment": "support BanquePostale csv only."
   }
 ]

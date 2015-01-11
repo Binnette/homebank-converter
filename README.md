@@ -5,6 +5,12 @@ Use the application:
 * [homebank-converter (rawgit.com)](https://rawgit.com/Binnette/homebank-converter/master/index.html)
 * [homebank-converter (barmic.eu)](https://hbc.barmic.eu/)
 
+Run unit tests:
+
+1. Open the application
+2. Go on about tab
+3. Click on button run tests
+
 ## What ? ##
 homebank-converter is a web app that aims to convert export bank file to compatible Homebank csv.
 
@@ -40,10 +46,13 @@ This application use Html/Javascript/Css and is under the terms of the licence G
 
 Javascript libraries:
 
-* jQuery 2.1.3 https://jquery.com/
-* Bootstrap 3.3.1 http://getbootstrap.com/
-* FileSaver.js 2014-12-28 https://github.com/eligrey/FileSaver.js/
-* Moment.js 2.8.4 http://momentjs.com/
+| Library                                                  | version    |
+| -------------------------------------------------------- | ---------- |
+| [jQuery](https://jquery.com/)                            | 2.1.3      |
+| [Bootstrap](http://getbootstrap.com/)                    | 3.3.1      |
+| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2015-01-04 |
+| [Moment.js](http://momentjs.com/)                        | 2.9.0      |
+| [QUnit](http://qunitjs.com/)                             | 1.16.0     |
 
 ## Who ? ##
 Developper(s):
