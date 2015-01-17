@@ -69,17 +69,12 @@ function optimizeData(data) {
 }
 
 function getPayModeFromMemo(memo) {
-  for (var i = 0; i < PayMemo.length; i++) {
+  var i, j;
+  for (i = 0; i < PayMemo.length; i++) {
     var memos = PayMemo[i].memos;
-    for (var j = 0; j < memos.length; j++) {
-      if (memo.indexOf(memos[j]) > -1) {
-        if (memos[j].charAt(0) !== " ") {
-          if (memo.indexOf(memos[j]) === 0) {
-            return PayMemo[i].Index;
-          }
-        } else {
-          return PayMemo[i].Index;
-        }
+    for (j = 0; j < memos.length; j++) {
+      if (new RegExp(memos[j]).exec(memo)) {
+        return PayMemo[i].Index;
       }
     }
   }
@@ -90,7 +85,7 @@ function loadPaymodeJson(callback) {
   var file = "./res/labelAndPaymode.json";
   $.getJSON(file, function (data) {
     PayMemo = data.PayMemo;
-    if (callback && typeof(callback) === "function") {
+    if (callback && typeof (callback) === "function") {
       callback();
     }
   });

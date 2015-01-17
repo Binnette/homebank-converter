@@ -7,7 +7,6 @@ initConverter(function () {
 QUnit.module("Convert singles lines");
 
 QUnit.test("convertBanquePostale", function (assert) {
-  console.log("tests")
   var line;
   line = convertBanquePostale([
       "25/01/2015", "TRANSACTION", "-500,00", ""
