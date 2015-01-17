@@ -161,8 +161,8 @@ function tests() {
       done();
     });
   });
-  
-    QUnit.test("Banque Postale - tsv file", function (assert) {
+
+  QUnit.test("Banque Postale - tsv file", function (assert) {
     var done = assert.async();
     var inputFilename = "banquePostale.tsv";
     var expectedFilename = "banquePostale_converted.csv";
@@ -181,8 +181,8 @@ function tests() {
       done();
     });
   });
-  
-    QUnit.test("Boobank - csv file", function (assert) {
+
+  QUnit.test("Boobank - csv file", function (assert) {
     var done = assert.async();
     var inputFilename = "boobank.csv";
     var expectedFilename = "boobank_converted.csv";
@@ -202,6 +202,45 @@ function tests() {
     });
   });
 
+  QUnit.test("Paypal - csv file", function (assert) {
+    var done = assert.async();
+    var inputFilename = "paypal.csv";
+    var expectedFilename = "paypal_converted.csv";
+    var converted, expected;
+
+    $.when(
+      $.get("res/tests/" + inputFilename, function (data) {
+        converted = convertData(2, data, inputFilename);
+      }),
+      $.get("res/tests/" + expectedFilename, function (data) {
+        expected = data;
+      })
+    ).then(function () {
+      assert.deepEqual(converted.split("\n").length, 30, "converted.length = 30");
+      assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
+      done();
+    });
+  });
+
+  QUnit.test("Paypal - txt file", function (assert) {
+    var done = assert.async();
+    var inputFilename = "paypal.txt";
+    var expectedFilename = "paypal_converted.csv";
+    var converted, expected;
+
+    $.when(
+      $.get("res/tests/" + inputFilename, function (data) {
+        converted = convertData(2, data, inputFilename);
+      }),
+      $.get("res/tests/" + expectedFilename, function (data) {
+        expected = data;
+      })
+    ).then(function () {
+      assert.deepEqual(converted.split("\n").length, 30, "converted.length = 30");
+      assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
+      done();
+    });
+  });
 }
 
 $(function () {
