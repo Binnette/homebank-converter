@@ -73,8 +73,8 @@ function getPayModeFromMemo(memo) {
     var memos = PayMemo[i].memos;
     for (var j = 0; j < memos.length; j++) {
       if (memo.indexOf(memos[j]) > -1) {
-        if (memos[j].charAt(0) != " ") {
-          if (memo.indexOf(memos[j]) == 0) {
+        if (memos[j].charAt(0) !== " ") {
+          if (memo.indexOf(memos[j]) === 0) {
             return PayMemo[i].Index;
           }
         } else {
