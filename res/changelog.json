@@ -1,13 +1,18 @@
 [
   {
+    "date": "2015-05-01",
+    "version": "v0.12.0",
+    "comment": "update libs, fix icons not working."
+  },
+  {
     "date": "2015-01-11",
     "version": "v0.11.0",
-    "comment": "Using QUnit for unit testing."
+    "comment": "using QUnit for unit testing."
   },
   {
     "date": "2014-12-29",
     "version": "v0.10.0",
-    "comment": "Using bootstrap. Adding Boobank support."
+    "comment": "using bootstrap, adding Boobank support."
   },
   {
     "date": "2014-08-19",
