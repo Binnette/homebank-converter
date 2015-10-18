@@ -7,8 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>homebank-converter</title>
   <link href="res/favicon.ico" type="image/x-icon" rel="icon" />
+  <link href="res/hc128px.png" rel="apple-touch-icon">
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/lavish-bootstrap.css" rel="stylesheet" />
+  <link href="css/hc.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -45,18 +47,63 @@
       </div>
     </nav>
 
-    <div id="home" class="jumbotron">
-      <h2>homebank-converter</h2>
-      <p>A web app to convert an export bank file to compatible <a href="http://homebank.free.fr/">Homebank</a> csv.</p>
-      <p>Use the menu to select a bank, then upload the file to convert.</p>
-      <!--[if lt IE 9]>
-        <p>Your browser is not supported. Choose one of following option :</p>
-        <ul>
-          <li><a href="http://www.mozilla.org/en-US/firefox/new/">Use Mozilla Firefox</a></li>
-          <li><a href="https://www.google.com/intl/en_us/chrome/browser/">Use Google Chrome</a></li>
-          <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Upgrade to Microsoft Internet Explorer 9 or newer</a></li>
-        </ul>
-      <![endif]-->
+    <div id="home">
+      <div class="jumbotron">
+        <div class="pull-left">
+          <h2>homebank-converter</h2>
+          <p>A web app to convert an export bank file to compatible <a href="http://homebank.free.fr/">Homebank</a> csv.</p>
+          <p>Use the menu to select a bank, then upload the file to convert.</p>
+          <!--[if lt IE 9]>
+            <p>Your browser is not supported. Choose one of following option :</p>
+            <ul>
+              <li><a href="http://www.mozilla.org/en-US/firefox/new/">Use Mozilla Firefox</a></li>
+              <li><a href="https://www.google.com/intl/en_us/chrome/browser/">Use Google Chrome</a></li>
+              <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Upgrade to Microsoft Internet Explorer 9 or newer</a></li>
+            </ul>
+          <![endif]-->
+        </div>
+        <div class="pull-left visible-xs visible-sm">
+          <p></p>
+          <img class="img-rounded" src="res/hc128px.png" alt="hc logo" />
+        </div>
+        <div class="pull-right hidden-xs hidden-sm">
+          <p></p>
+          <img class="img-rounded" src="res/hc128px.png" alt="hc logo" />
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left media-middle">
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><!--glyphicon-eye-open-->
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">hc respects your privacy</h4>
+                  It does <u>not</u> record any data, track events or whatever.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left media-middle">
+                  <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">hc is free and open source</h4>
+                  Download the app or read the source on <a href="https://github.com/Binnette/homebank-converter">GitHub</a>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="converter" class="row" style="display: none;">
