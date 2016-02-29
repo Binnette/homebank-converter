@@ -17,11 +17,6 @@ QUnit.test("convertBanquePostale", function (assert) {
       "25/01/2015", "TRANSACTION", "1000.59", ""
     ]);
   assert.deepEqual(line, "01-25-15;;;;TRANSACTION;1000.59;;", "Amount with a dot.");
-
-  line = convertBanquePostale([
-      "25/13/2015", "TRANSACTION", "-500,00", ""
-    ]);
-  assert.deepEqual(line, undefined, "Wrong date 25/13/2015.");
 });
 
 QUnit.test("convertBanquePostale - pay modes", function (assert) {
@@ -113,11 +108,6 @@ QUnit.test("convertBoobank", function (assert) {
       "", "2014-08-29", "", "", "", "", "", "memo1", "12.20"
     ]);
   assert.deepEqual(line, "08-29-14;;;;memo1;12.20;;", "Amount with a dot.");
-
-  line = convertBoobank([
-      "", "2015-13-25", "", "", "memo2", "", "", "memo1", "-10,20"
-    ]);
-  assert.deepEqual(line, undefined, "Wrong date 25/13/2015.");
 });
 
 QUnit.test("convertPaypal", function (assert) {
@@ -135,13 +125,34 @@ QUnit.test("convertPaypal", function (assert) {
       "", "", "", "", "", "", "", "", "", "", "", "", ""
     ]);
   assert.deepEqual(line, "01-25-15;;;;memo1, memo2, memo3, memo4, memo5;1099.99;;", "Amount with a dot.");
+});
 
-  line = convertPaypal([
-      "25/13/2015", "", "", "memo3", "memo2", "", "memo5", "", "", "-200,39", "", "",
+QUnit.module("Convert single lines with errors");
+
+QUnit.test("convertBanquePostale", function (assert) {
+  assert.throws(function(){
+    convertBanquePostale([
+      "25/13/2015", "TRANSACTION", "-500,00", ""
+    ]);
+  }, "Invalid date: 25/13/2015", "Wrong date 25/13/2015.");
+});
+
+QUnit.test("convertBoobank", function (assert) {
+  assert.throws(function(){
+    convertBoobank([
+      "", "2015-13-20", "", "", "memo2", "", "", "memo1", "-10,20"
+    ]);
+  }, "Invalid date: 2015-13-20", "Wrong date 2015-13-20.");
+});
+
+QUnit.test("convertPaypal", function (assert) {
+  assert.throws(function(){
+    convertPaypal([
+      "30/13/2015", "", "", "memo3", "memo2", "", "memo5", "", "", "-200,39", "", "",
       "memo4", "", "", "memo1", "", "", "", "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "", "", "", ""
     ]);
-  assert.deepEqual(line, undefined, "Wrong date 25/13/2015.");
+  }, "Invalid date: 30/13/2015", "Wrong date 30/13/2015.");
 });
 
 QUnit.module("Convert whole files");
@@ -157,10 +168,15 @@ QUnit.test("Banque Postale - csv file", function (assert) {
       converted = convertData(0, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
-      expected = data;
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
     })
   ).then(function () {
-    assert.deepEqual(converted.split("\n").length, 100, "converted.length = 100");
+    assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
     assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
     done();
   });
@@ -177,10 +193,15 @@ QUnit.test("Banque Postale - tsv file", function (assert) {
       converted = convertData(0, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
-      expected = data;
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
     })
   ).then(function () {
-    assert.deepEqual(converted.split("\n").length, 100, "converted.length = 100");
+    assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
     assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
     done();
   });
@@ -197,10 +218,15 @@ QUnit.test("Boobank - csv file", function (assert) {
       converted = convertData(1, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
-      expected = data;
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
     })
   ).then(function () {
-    assert.deepEqual(converted.split("\n").length, 50, "converted.length = 50");
+    assert.deepEqual(converted.data.split("\n").length, 50, "converted.length = 50");
     assert.deepEqual(converted, expected, "Convert a file of 50 lines.");
     done();
   });
@@ -217,10 +243,15 @@ QUnit.test("Paypal - csv file", function (assert) {
       converted = convertData(2, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
-      expected = data;
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
     })
   ).then(function () {
-    assert.deepEqual(converted.split("\n").length, 30, "converted.length = 30");
+    assert.deepEqual(converted.data.split("\n").length, 30, "converted.length = 30");
     assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
     done();
   });
@@ -237,11 +268,49 @@ QUnit.test("Paypal - txt file", function (assert) {
       converted = convertData(2, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
-      expected = data;
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
     })
   ).then(function () {
-    assert.deepEqual(converted.split("\n").length, 30, "converted.length = 30");
+    assert.deepEqual(converted.data.split("\n").length, 30, "converted.length = 30");
     assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
+    done();
+  });
+});
+
+QUnit.module("Convert whole files with errors");
+
+QUnit.test("Banque Postale - csv file", function (assert) {
+  var done = assert.async();
+  var inputFilename = "banquePostaleWithErrors.csv";
+  var expectedFilename = "banquePostaleWithErrors_converted.csv";
+  var converted, expected;
+
+  $.when(
+    $.get("res/tests/" + inputFilename, function (data) {
+      converted = convertData(0, data, inputFilename);
+    }),
+    $.get("res/tests/" + expectedFilename, function (data) {
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: [
+          'Error on line: 38. Invalid date:            "SANS DATE NI COMA    "',
+          'Error on line: 58. Line does not have enough fields. Found: 2. Minimum: 3.',
+          'Error on line: 65. Line does not have enough fields. Found: 1. Minimum: 3.',
+          'Error on line: 80. Invalid date:           ',
+          'Error on line: 98. Invalid date: 29/02/2003'
+        ]
+      };
+    })
+  ).then(function () {
+    assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
+    assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
     done();
   });
 });

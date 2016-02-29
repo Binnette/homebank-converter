@@ -2,7 +2,7 @@
 // http://flesler.blogspot.com/2008/05/jsdump-pretty-dump-of-any-javascript.html
 QUnit.dump = (function() {
 	function quote( str ) {
-		return "\"" + str.toString().replace( /"/g, "\\\"" ) + "\"";
+		return "\"" + str.toString().replace( /\\/g, "\\\\" ).replace( /"/g, "\\\"" ) + "\"";
 	}
 	function literal( o ) {
 		return o + "";
@@ -240,7 +240,7 @@ QUnit.dump = (function() {
 				key: quote,
 				// function calls it internally, it's the content of the function
 				functionCode: "[code]",
-				// node calls it internally, it's an html attribute value
+				// node calls it internally, it's a html attribute value
 				attribute: quote,
 				string: quote,
 				date: quote,

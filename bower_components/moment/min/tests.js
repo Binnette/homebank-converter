@@ -1,6 +1,7 @@
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -9,12 +10,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32,8 +35,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -355,8 +358,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -365,12 +369,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -388,8 +394,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -709,8 +715,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -719,12 +726,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -742,8 +751,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1068,8 +1077,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -1078,12 +1088,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1101,8 +1113,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1510,8 +1522,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -1520,12 +1533,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1543,8 +1558,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1611,11 +1626,11 @@
                 ['[the] DDDo [day of the year]',       'the ٤٥ day of the year'],
                 ['LT',                                 '١٥:٢٥'],
                 ['LTS',                                '١٥:٢٥:٥٠'],
-                ['L',                                  '١٤/٠٢/٢٠١٠'],
+                ['L',                                  '١٤/\u200f٢/\u200f٢٠١٠'],
                 ['LL',                                 '١٤ شباط فبراير ٢٠١٠'],
                 ['LLL',                                '١٤ شباط فبراير ٢٠١٠ ١٥:٢٥'],
                 ['LLLL',                               'الأحد ١٤ شباط فبراير ٢٠١٠ ١٥:٢٥'],
-                ['l',                                  '١٤/٢/٢٠١٠'],
+                ['l',                                  '١٤/\u200f٢/\u200f٢٠١٠'],
                 ['ll',                                 '١٤ شباط فبراير ٢٠١٠'],
                 ['lll',                                '١٤ شباط فبراير ٢٠١٠ ١٥:٢٥'],
                 ['llll',                               'أحد ١٤ شباط فبراير ٢٠١٠ ١٥:٢٥']
@@ -1882,10 +1897,22 @@
         }
     });
 
+    test('no leading zeros in long date formats', function (assert) {
+        var i, j, longDateStr, shortDateStr;
+        for (i = 1; i <= 9; ++i) {
+            for (j = 1; j <= 9; ++j) {
+                longDateStr = moment([2014, i, j]).format('L');
+                shortDateStr = moment([2014, i, j]).format('l');
+                assert.equal(longDateStr, shortDateStr, 'should not have leading zeros in month or day');
+            }
+        }
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -1894,12 +1921,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -1917,8 +1946,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -2250,8 +2279,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -2260,12 +2290,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -2283,8 +2315,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -2661,8 +2693,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -2671,12 +2704,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -2694,8 +2729,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3032,8 +3067,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -3042,12 +3078,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3065,8 +3103,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3179,7 +3217,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'রবিবার রবি রব_সোমবার সোম সম_মঙ্গলবার মঙ্গল মঙ্গ_বুধবার বুধ বু_বৃহস্পত্তিবার বৃহস্পত্তি ব্রিহ_শুক্রুবার শুক্রু শু_শনিবার শনি শনি'.split('_'), i;
+        var expected = 'রবিবার রবি রব_সোমবার সোম সম_মঙ্গলবার মঙ্গল মঙ্গ_বুধবার বুধ বু_বৃহস্পত্তিবার বৃহস্পত্তি ব্রিহ_শুক্রবার শুক্র শু_শনিবার শনি শনি'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -3187,7 +3225,7 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'কএক সেকেন্ড', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'কয়েক সেকেন্ড', '44 seconds = a few seconds');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'এক মিনিট',      '45 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'এক মিনিট',      '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '২ মিনিট',     '90 seconds = 2 minutes');
@@ -3217,16 +3255,16 @@
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'কএক সেকেন্ড পরে',  'prefix');
-        assert.equal(moment(0).from(30000), 'কএক সেকেন্ড আগে', 'suffix');
+        assert.equal(moment(30000).from(0), 'কয়েক সেকেন্ড পরে',  'prefix');
+        assert.equal(moment(0).from(30000), 'কয়েক সেকেন্ড আগে', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'কএক সেকেন্ড আগে',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'কয়েক সেকেন্ড আগে',  'now from now should display as in the past');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'কএক সেকেন্ড পরে', 'কএক সেকেন্ড পরে');
+        assert.equal(moment().add({s: 30}).fromNow(), 'কয়েক সেকেন্ড পরে', 'কয়েক সেকেন্ড পরে');
         assert.equal(moment().add({d: 5}).fromNow(), '৫ দিন পরে', '৫ দিন পরে');
     });
 
@@ -3235,7 +3273,7 @@
 
         assert.equal(moment(a).calendar(),                     'আজ রাত ২:০০ সময়',     'today at the same time');
         assert.equal(moment(a).add({m: 25}).calendar(),      'আজ রাত ২:২৫ সময়',     'Now plus 25 min');
-        assert.equal(moment(a).add({h: 3}).calendar(),       'আজ শকাল ৫:০০ সময়',     'Now plus 3 hour');
+        assert.equal(moment(a).add({h: 3}).calendar(),       'আজ সকাল ৫:০০ সময়',     'Now plus 3 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),       'আগামীকাল রাত ২:০০ সময়',  'tomorrow at the same time');
         assert.equal(moment(a).subtract({h: 1}).calendar(),  'আজ রাত ১:০০ সময়',     'Now minus 1 hour');
         assert.equal(moment(a).subtract({d: 1}).calendar(),  'গতকাল রাত ২:০০ সময়', 'yesterday at the same time');
@@ -3282,17 +3320,17 @@
 
     test('meridiem', function (assert) {
         assert.equal(moment([2011, 2, 23,  2, 30]).format('a'), 'রাত', 'before dawn');
-        assert.equal(moment([2011, 2, 23,  9, 30]).format('a'), 'শকাল', 'morning');
+        assert.equal(moment([2011, 2, 23,  9, 30]).format('a'), 'সকাল', 'morning');
         assert.equal(moment([2011, 2, 23, 14, 30]).format('a'), 'দুপুর', 'during day');
-        assert.equal(moment([2011, 2, 23, 17, 30]).format('a'), 'বিকেল', 'evening');
-        assert.equal(moment([2011, 2, 23, 19, 30]).format('a'), 'বিকেল', 'late evening');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('a'), 'বিকাল', 'evening');
+        assert.equal(moment([2011, 2, 23, 19, 30]).format('a'), 'বিকাল', 'late evening');
         assert.equal(moment([2011, 2, 23, 21, 20]).format('a'), 'রাত', 'night');
 
         assert.equal(moment([2011, 2, 23,  2, 30]).format('A'), 'রাত', 'before dawn');
-        assert.equal(moment([2011, 2, 23,  9, 30]).format('A'), 'শকাল', 'morning');
+        assert.equal(moment([2011, 2, 23,  9, 30]).format('A'), 'সকাল', 'morning');
         assert.equal(moment([2011, 2, 23, 14, 30]).format('A'), 'দুপুর', ' during day');
-        assert.equal(moment([2011, 2, 23, 17, 30]).format('A'), 'বিকেল', 'evening');
-        assert.equal(moment([2011, 2, 23, 19, 30]).format('A'), 'বিকেল', 'late evening');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('A'), 'বিকাল', 'evening');
+        assert.equal(moment([2011, 2, 23, 19, 30]).format('A'), 'বিকাল', 'late evening');
         assert.equal(moment([2011, 2, 23, 21, 20]).format('A'), 'রাত', 'night');
     });
 
@@ -3403,8 +3441,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -3413,12 +3452,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3436,8 +3477,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3775,8 +3816,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -3785,12 +3827,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -3808,8 +3852,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4087,8 +4131,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -4097,12 +4142,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4120,8 +4167,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4475,8 +4522,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -4485,12 +4533,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4508,8 +4558,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4831,8 +4881,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -4841,12 +4892,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4864,8 +4917,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -4885,7 +4938,10 @@
     test('parse', function (assert) {
         var tests = 'leden led_únor úno_březen bře_duben dub_květen kvě_červen čvn_červenec čvc_srpen srp_září zář_říjen říj_listopad lis_prosinec pro'.split('_'), i;
         function equalTest(input, mmm, monthIndex) {
-            assert.equal(moment(input, mmm).month(), monthIndex, input + ' should be month ' + (monthIndex + 1));
+            assert.equal(moment(input, mmm).month(), monthIndex, input + ' ' + mmm + ' should be month ' + (monthIndex + 1));
+        }
+        function equalTestStrict(input, mmm, monthIndex) {
+            assert.equal(moment(input, mmm, true).month(), monthIndex, input + ' ' + mmm + ' should be strict month ' + (monthIndex + 1));
         }
         for (i = 0; i < 12; i++) {
             tests[i] = tests[i].split(' ');
@@ -4897,6 +4953,13 @@
             equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
             equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
             equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+
+            equalTestStrict(tests[i][1], 'MMM', i);
+            equalTestStrict(tests[i][0], 'MMMM', i);
+            equalTestStrict(tests[i][1].toLocaleLowerCase(), 'MMM', i);
+            equalTestStrict(tests[i][1].toLocaleUpperCase(), 'MMM', i);
+            equalTestStrict(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTestStrict(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
         }
     });
 
@@ -5274,8 +5337,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -5284,12 +5348,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -5307,8 +5373,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -5326,7 +5392,7 @@
     localeModule('cv');
 
     test('parse', function (assert) {
-        var tests = 'кăрлач кăр_нарăс нар_пуш пуш_ака ака_май май_çĕртме çĕр_утă утă_çурла çур_авăн ав_юпа юпа_чӳк чӳк_раштав раш'.split('_'), i;
+        var tests = 'кӑрлач кӑр_нарӑс нар_пуш пуш_ака ака_май май_ҫӗртме ҫӗр_утӑ утӑ_ҫурла ҫур_авӑн авн_юпа юпа_чӳк чӳк_раштав раш'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -5345,29 +5411,29 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'вырсарникун, нарăс 14-мĕш 2010, 3:25:50 pm'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'вырсарникун, нарӑс 14-мӗш 2010, 3:25:50 pm'],
                 ['ddd, hA',                            'выр, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2-мĕш 02 нарăс нар'],
+                ['M Mo MM MMMM MMM',                   '2 2-мӗш 02 нарӑс нар'],
                 ['YYYY YY',                            '2010 10'],
-                ['D Do DD',                            '14 14-мĕш 14'],
-                ['d do dddd ddd dd',                   '0 0-мĕш вырсарникун выр вр'],
-                ['DDD DDDo DDDD',                      '45 45-мĕш 045'],
-                ['w wo ww',                            '7 7-мĕш 07'],
+                ['D Do DD',                            '14 14-мӗш 14'],
+                ['d do dddd ddd dd',                   '0 0-мӗш вырсарникун выр вр'],
+                ['DDD DDDo DDDD',                      '45 45-мӗш 045'],
+                ['w wo ww',                            '7 7-мӗш 07'],
                 ['h hh',                               '3 03'],
                 ['H HH',                               '15 15'],
                 ['m mm',                               '25 25'],
                 ['s ss',                               '50 50'],
                 ['a A',                                'pm PM'],
-                ['Çулăн DDDo кунĕ',                    'Çулăн 45-мĕш кунĕ'],
+                ['Ҫулӑн DDDo кунӗ',                    'Ҫулӑн 45-мӗш кунӗ'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14-02-2010'],
-                ['LL',                                 '2010 çулхи нарăс уйăхĕн 14-мĕшĕ'],
-                ['LLL',                                '2010 çулхи нарăс уйăхĕн 14-мĕшĕ, 15:25'],
-                ['LLLL',                               'вырсарникун, 2010 çулхи нарăс уйăхĕн 14-мĕшĕ, 15:25'],
+                ['LL',                                 '2010 ҫулхи нарӑс уйӑхӗн 14-мӗшӗ'],
+                ['LLL',                                '2010 ҫулхи нарӑс уйӑхӗн 14-мӗшӗ, 15:25'],
+                ['LLLL',                               'вырсарникун, 2010 ҫулхи нарӑс уйӑхӗн 14-мӗшӗ, 15:25'],
                 ['l',                                  '14-2-2010'],
-                ['ll',                                 '2010 çулхи нар уйăхĕн 14-мĕшĕ'],
-                ['lll',                                '2010 çулхи нар уйăхĕн 14-мĕшĕ, 15:25'],
-                ['llll',                               'выр, 2010 çулхи нар уйăхĕн 14-мĕшĕ, 15:25']
+                ['ll',                                 '2010 ҫулхи нар уйӑхӗн 14-мӗшӗ'],
+                ['lll',                                '2010 ҫулхи нар уйӑхӗн 14-мӗшӗ, 15:25'],
+                ['llll',                               'выр, 2010 ҫулхи нар уйӑхӗн 14-мӗшӗ, 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -5377,51 +5443,51 @@
     });
 
     test('format ordinal', function (assert) {
-        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1-мĕш', '1-мĕш');
-        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2-мĕш', '2-мĕш');
-        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3-мĕш', '3-мĕш');
-        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4-мĕш', '4-мĕш');
-        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5-мĕш', '5-мĕш');
-        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6-мĕш', '6-мĕш');
-        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7-мĕш', '7-мĕш');
-        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8-мĕш', '8-мĕш');
-        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9-мĕш', '9-мĕш');
-        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10-мĕш', '10-мĕш');
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1-мӗш', '1-мӗш');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2-мӗш', '2-мӗш');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3-мӗш', '3-мӗш');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4-мӗш', '4-мӗш');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5-мӗш', '5-мӗш');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6-мӗш', '6-мӗш');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7-мӗш', '7-мӗш');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8-мӗш', '8-мӗш');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9-мӗш', '9-мӗш');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10-мӗш', '10-мӗш');
 
-        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11-мĕш', '11-мĕш');
-        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12-мĕш', '12-мĕш');
-        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13-мĕш', '13-мĕш');
-        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14-мĕш', '14-мĕш');
-        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15-мĕш', '15-мĕш');
-        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16-мĕш', '16-мĕш');
-        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17-мĕш', '17-мĕш');
-        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18-мĕш', '18-мĕш');
-        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19-мĕш', '19-мĕш');
-        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20-мĕш', '20-мĕш');
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11-мӗш', '11-мӗш');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12-мӗш', '12-мӗш');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13-мӗш', '13-мӗш');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14-мӗш', '14-мӗш');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15-мӗш', '15-мӗш');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16-мӗш', '16-мӗш');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17-мӗш', '17-мӗш');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18-мӗш', '18-мӗш');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19-мӗш', '19-мӗш');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20-мӗш', '20-мӗш');
 
-        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21-мĕш', '21-мĕш');
-        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22-мĕш', '22-мĕш');
-        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23-мĕш', '23-мĕш');
-        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24-мĕш', '24-мĕш');
-        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25-мĕш', '25-мĕш');
-        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26-мĕш', '26-мĕш');
-        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27-мĕш', '27-мĕш');
-        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28-мĕш', '28-мĕш');
-        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29-мĕш', '29-мĕш');
-        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30-мĕш', '30-мĕш');
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21-мӗш', '21-мӗш');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22-мӗш', '22-мӗш');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23-мӗш', '23-мӗш');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24-мӗш', '24-мӗш');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25-мӗш', '25-мӗш');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26-мӗш', '26-мӗш');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27-мӗш', '27-мӗш');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28-мӗш', '28-мӗш');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29-мӗш', '29-мӗш');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30-мӗш', '30-мӗш');
 
-        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31-мĕш', '31-мĕш');
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31-мӗш', '31-мӗш');
     });
 
     test('format month', function (assert) {
-        var expected = 'кăрлач кăр_нарăс нар_пуш пуш_ака ака_май май_çĕртме çĕр_утă утă_çурла çур_авăн ав_юпа юпа_чӳк чӳк_раштав раш'.split('_'), i;
+        var expected = 'кӑрлач кӑр_нарӑс нар_пуш пуш_ака ака_май май_ҫӗртме ҫӗр_утӑ утӑ_ҫурла ҫур_авӑн авн_юпа юпа_чӳк чӳк_раштав раш'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
     });
 
     test('format week', function (assert) {
-        var expected = 'вырсарникун выр вр_тунтикун тун тн_ытларикун ытл ыт_юнкун юн юн_кĕçнерникун кĕç кç_эрнекун эрн эр_шăматкун шăм шм'.split('_'), i;
+        var expected = 'вырсарникун выр вр_тунтикун тун тн_ытларикун ытл ыт_юнкун юн юн_кӗҫнерникун кӗҫ кҫ_эрнекун эрн эр_шӑматкун шӑм шм'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -5429,60 +5495,60 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'пĕр-ик çеккунт', '44 sekunder = a few seconds');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'пĕр минут',      '45 seconds = a minute');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'пĕр минут',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'пӗр-ик ҫеккунт', '44 sekunder = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'пӗр минут',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'пӗр минут',      '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 минут',     '90 seconds = 2 minutes');
         assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 минут',    '44 minutes = 44 minutes');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'пĕр сехет',       '45 minutes = an hour');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'пĕр сехет',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'пӗр сехет',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'пӗр сехет',       '89 minutes = an hour');
         assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 сехет',       '90 minutes = 2 hours');
         assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 сехет',       '5 hours = 5 hours');
         assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 сехет',      '21 hours = 21 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'пĕр кун',         '22 hours = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'пĕр кун',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'пӗр кун',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'пӗр кун',         '35 hours = a day');
         assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 кун',        '36 hours = 2 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'пĕр кун',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'пӗр кун',         '1 day = a day');
         assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 кун',        '5 days = 5 days');
         assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 кун',       '25 days = 25 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'пĕр уйăх',       '26 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'пĕр уйăх',       '30 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'пĕр уйăх',       '43 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 уйăх',      '46 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 уйăх',      '75 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 уйăх',      '76 days = 3 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'пĕр уйăх',       '1 month = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 уйăх',      '5 months = 5 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'пĕр çул',        '345 days = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 çул',       '548 days = 2 years');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'пĕр çул',        '1 year = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 çул',       '5 years = 5 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'пӗр уйӑх',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'пӗр уйӑх',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'пӗр уйӑх',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 уйӑх',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 уйӑх',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 уйӑх',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'пӗр уйӑх',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 уйӑх',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'пӗр ҫул',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 ҫул',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'пӗр ҫул',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 ҫул',       '5 years = 5 years');
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'пĕр-ик çеккунтран',  'prefix');
-        assert.equal(moment(0).from(30000), 'пĕр-ик çеккунт каялла', 'suffix');
+        assert.equal(moment(30000).from(0), 'пӗр-ик ҫеккунтран',  'prefix');
+        assert.equal(moment(0).from(30000), 'пӗр-ик ҫеккунт каялла', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'пĕр-ик çеккунт каялла',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'пӗр-ик ҫеккунт каялла',  'now from now should display as in the past');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'пĕр-ик çеккунтран', 'in a few seconds');
+        assert.equal(moment().add({s: 30}).fromNow(), 'пӗр-ик ҫеккунтран', 'in a few seconds');
         assert.equal(moment().add({d: 5}).fromNow(), '5 кунран', 'in 5 days');
         assert.equal(moment().add({h: 2}).fromNow(), '2 сехетрен', 'in 2 hours, the right suffix!');
-        assert.equal(moment().add({y: 3}).fromNow(), '3 çултан', 'in 3 years, the right suffix!');
+        assert.equal(moment().add({y: 3}).fromNow(), '3 ҫултан', 'in 3 years, the right suffix!');
     });
 
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
-        assert.equal(moment(a).calendar(),                     'Паян 02:00 сехетре',     'today at the same time');
+        assert.equal(moment(a).calendar(),                   'Паян 02:00 сехетре',     'today at the same time');
         assert.equal(moment(a).add({m: 25}).calendar(),      'Паян 02:25 сехетре',     'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),       'Паян 03:00 сехетре',     'Now plus 1 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),       'Ыран 02:00 сехетре',     'tomorrow at the same time');
         assert.equal(moment(a).subtract({h: 1}).calendar(),  'Паян 01:00 сехетре',     'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Ĕнер 02:00 сехетре',     'yesterday at the same time');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Ӗнер 02:00 сехетре',     'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -5490,11 +5556,11 @@
 
         for (i = 2; i < 7; i++) {
             m = moment().add({d: i});
-            assert.equal(m.calendar(),       m.format('[Çитес] dddd LT [сехетре]'),  'Today + ' + i + ' days current time');
+            assert.equal(m.calendar(),       m.format('[Ҫитес] dddd LT [сехетре]'),  'Today + ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format('[Çитес] dddd LT [сехетре]'),  'Today + ' + i + ' days beginning of day');
+            assert.equal(m.calendar(),       m.format('[Ҫитес] dddd LT [сехетре]'),  'Today + ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format('[Çитес] dddd LT [сехетре]'),  'Today + ' + i + ' days end of day');
+            assert.equal(m.calendar(),       m.format('[Ҫитес] dddd LT [сехетре]'),  'Today + ' + i + ' days end of day');
         }
     });
 
@@ -5503,11 +5569,11 @@
 
         for (i = 2; i < 7; i++) {
             m = moment().subtract({d: i});
-            assert.equal(m.calendar(),       m.format('[Иртнĕ] dddd LT [сехетре]'),  'Today - ' + i + ' days current time');
+            assert.equal(m.calendar(),       m.format('[Иртнӗ] dddd LT [сехетре]'),  'Today - ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format('[Иртнĕ] dddd LT [сехетре]'),  'Today - ' + i + ' days beginning of day');
+            assert.equal(m.calendar(),       m.format('[Иртнӗ] dddd LT [сехетре]'),  'Today - ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format('[Иртнĕ] dddd LT [сехетре]'),  'Today - ' + i + ' days end of day');
+            assert.equal(m.calendar(),       m.format('[Иртнӗ] dddd LT [сехетре]'),  'Today - ' + i + ' days end of day');
         }
     });
 
@@ -5524,6 +5590,9 @@
         assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
         assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
     });
+
+    // Monday is the first day of the week.
+    // The week that contains Jan 1st is the first week of the year.
 
     test('weeks year starting sunday', function (assert) {
         assert.equal(moment([2011, 11, 26]).week(), 1, 'Dec 26 2011 should be week 1');
@@ -5587,11 +5656,11 @@
     });
 
     test('weeks year starting sunday formatted', function (assert) {
-        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '1 01 1-мĕш', 'Dec 26 2011 should be week 1');
-        assert.equal(moment([2012,  0,  1]).format('w ww wo'), '1 01 1-мĕш', 'Jan  1 2012 should be week 1');
-        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '2 02 2-мĕш', 'Jan  2 2012 should be week 2');
-        assert.equal(moment([2012,  0,  8]).format('w ww wo'), '2 02 2-мĕш', 'Jan  8 2012 should be week 2');
-        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '3 03 3-мĕш', 'Jan  9 2012 should be week 3');
+        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '1 01 1-мӗш', 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).format('w ww wo'), '1 01 1-мӗш', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '2 02 2-мӗш', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).format('w ww wo'), '2 02 2-мӗш', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '3 03 3-мӗш', 'Jan  9 2012 should be week 3');
     });
 
     test('lenient ordinal parsing', function (assert) {
@@ -5632,8 +5701,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -5642,12 +5712,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -5665,8 +5737,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -5986,8 +6058,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -5996,12 +6069,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6019,8 +6094,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6292,8 +6367,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -6302,12 +6378,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6325,8 +6403,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6491,12 +6569,12 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(), 'Heute um 02:00 Uhr', 'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(), 'Heute um 02:25 Uhr', 'Now plus 25 min');
-        assert.equal(moment(a).add({h: 1}).calendar(), 'Heute um 03:00 Uhr', 'Now plus 1 hour');
-        assert.equal(moment(a).add({d: 1}).calendar(), 'Morgen um 02:00 Uhr', 'tomorrow at the same time');
-        assert.equal(moment(a).subtract({h: 1}).calendar(), 'Heute um 01:00 Uhr', 'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(), 'Gestern um 02:00 Uhr', 'yesterday at the same time');
+        assert.equal(moment(a).calendar(), 'heute um 02:00 Uhr', 'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(), 'heute um 02:25 Uhr', 'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(), 'heute um 03:00 Uhr', 'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(), 'morgen um 02:00 Uhr', 'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(), 'heute um 01:00 Uhr', 'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(), 'gestern um 02:00 Uhr', 'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -6644,8 +6722,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -6654,12 +6733,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6677,8 +6758,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -6842,12 +6923,12 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     'Heute um 02:00 Uhr',   'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(),      'Heute um 02:25 Uhr',   'Now plus 25 min');
-        assert.equal(moment(a).add({h: 1}).calendar(),       'Heute um 03:00 Uhr',   'Now plus 1 hour');
-        assert.equal(moment(a).add({d: 1}).calendar(),       'Morgen um 02:00 Uhr',  'tomorrow at the same time');
-        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Heute um 01:00 Uhr',   'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Gestern um 02:00 Uhr', 'yesterday at the same time');
+        assert.equal(moment(a).calendar(),                     'heute um 02:00 Uhr',   'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'heute um 02:25 Uhr',   'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'heute um 03:00 Uhr',   'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'morgen um 02:00 Uhr',  'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'heute um 01:00 Uhr',   'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'gestern um 02:00 Uhr', 'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -6995,8 +7076,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -7005,12 +7087,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -7028,8 +7112,165 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('dv');
+
+    test('parse', function (assert) {
+        var i,
+            tests = [
+                'ޖެނުއަރީ',
+                'ފެބްރުއަރީ',
+                'މާރިޗު',
+                'އޭޕްރީލު',
+                'މޭ',
+                'ޖޫން',
+                'ޖުލައި',
+                'އޯގަސްޓު',
+                'ސެޕްޓެމްބަރު',
+                'އޮކްޓޯބަރު',
+                'ނޮވެމްބަރު',
+                'ޑިސެމްބަރު'
+            ];
+
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+
+        for (i = 0; i < 12; i++) {
+            equalTest(tests[i], 'MMM', i);
+            equalTest(tests[i], 'MMMM', i);
+            equalTest(tests[i].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'އާދިއްތަ، ފެބްރުއަރީ 14 2010، 3:25:50 މފ'],
+                ['ddd, hA',                            'އާދިއްތަ، 3މފ'],
+                ['M Mo MM MMMM MMM',                   '2 2 02 ފެބްރުއަރީ ފެބްރުއަރީ'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14 14'],
+                ['d do dddd ddd dd',                   '0 0 އާދިއްތަ އާދިއްތަ އާދި'],
+                ['DDD DDDo DDDD',                      '45 45 045'],
+                ['w wo ww',                            '8 8 08'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'މފ މފ'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14/2/2010'],
+                ['LL',                                 '14 ފެބްރުއަރީ 2010'],
+                ['LLL',                                '14 ފެބްރުއަރީ 2010 15:25'],
+                ['LLLL',                               'އާދިއްތަ 14 ފެބްރުއަރީ 2010 15:25'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 ފެބްރުއަރީ 2010'],
+                ['lll',                                '14 ފެބްރުއަރީ 2010 15:25'],
+                ['llll',                               'އާދިއްތަ 14 ފެބްރުއަރީ 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format month', function (assert) {
+        var i,
+            expected = [
+                'ޖެނުއަރީ',
+                'ފެބްރުއަރީ',
+                'މާރިޗު',
+                'އޭޕްރީލު',
+                'މޭ',
+                'ޖޫން',
+                'ޖުލައި',
+                'އޯގަސްޓު',
+                'ސެޕްޓެމްބަރު',
+                'އޮކްޓޯބަރު',
+                'ނޮވެމްބަރު',
+                'ޑިސެމްބަރު'
+            ];
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM'), expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var i,
+            expected = [
+                'އާދިއްތަ',
+                'ހޯމަ',
+                'އަންގާރަ',
+                'ބުދަ',
+                'ބުރާސްފަތި',
+                'ހުކުރު',
+                'ހޮނިހިރު'
+            ];
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd'), expected[i]);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -7086,7 +7327,8 @@
                 ['10 Μ',    22, true],
                 ['10 am',   10, false],
                 ['10 pm',   10, false]
-            ];
+            ],
+            parsed;
 
         // test that a formatted moment including meridiem string can be parsed back to the same moment
         assert.ok(b.isSame(moment(b.format('h:mm:ss a'), 'h:mm:ss a', 'el', true), 'seconds'), b.format('h:mm:ss a') + ' should be equal to ' + moment(b.format('h:mm:ss a'), 'h:mm:ss a', 'el', true).format('h:mm:ss a'));
@@ -7095,8 +7337,11 @@
         assert.ok(moment(b.format('h:mm:ss a'), 'h:mm:ss a', 'el', true).isValid(), b.format('h:mm:ss a') + ' should be parsed as valid');
 
         for (i = 0; i < meridiemTests.length; i++) {
-            assert.equal(moment(meridiemTests[i][0], 'h a', 'el', true).hours(), meridiemTests[i][1], moment(meridiemTests[i][0], 'h a', 'el', true).hours() + ' should be ' + meridiemTests[i][1]);
-            assert.ok(moment(meridiemTests[i][0], 'h a', 'el', true).isValid() === meridiemTests[i][2], meridiemTests[i][0] + ' ----> ' + meridiemTests[i][2]);
+            parsed = moment(meridiemTests[i][0], 'h a', 'el', true);
+            assert.equal(parsed.isValid(), meridiemTests[i][2], 'validity for ' + meridiemTests[i][0]);
+            if (parsed.isValid()) {
+                assert.equal(parsed.hours(), meridiemTests[i][1], 'hours for ' + meridiemTests[i][0]);
+            }
         }
     });
 
@@ -7399,8 +7644,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -7409,12 +7655,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -7432,8 +7680,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -7746,8 +7994,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -7756,12 +8005,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -7779,8 +8030,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8111,8 +8362,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -8121,12 +8373,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8144,8 +8398,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8467,8 +8721,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -8477,12 +8732,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8500,8 +8757,717 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('en-ie');
+
+    test('parse', function (assert) {
+        var tests = 'January Jan_February Feb_March Mar_April Apr_May May_June Jun_July Jul_August Aug_September Sep_October Oct_November Nov_December Dec'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Sunday, February 14th 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'Sun, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2nd 02 February Feb'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14th 14'],
+                ['d do dddd ddd dd',                   '0 0th Sunday Sun Su'],
+                ['DDD DDDo DDDD',                      '45 45th 045'],
+                ['w wo ww',                            '6 6th 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[the] DDDo [day of the year]',       'the 45th day of the year'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14-02-2010'],
+                ['LL',                                 '14 February 2010'],
+                ['LLL',                                '14 February 2010 15:25'],
+                ['LLLL',                               'Sunday 14 February 2010 15:25'],
+                ['l',                                  '14-2-2010'],
+                ['ll',                                 '14 Feb 2010'],
+                ['lll',                                '14 Feb 2010 15:25'],
+                ['llll',                               'Sun 14 Feb 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1st', '1st');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2nd', '2nd');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3rd', '3rd');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4th', '4th');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5th', '5th');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6th', '6th');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7th', '7th');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8th', '8th');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9th', '9th');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10th', '10th');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11th', '11th');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12th', '12th');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13th', '13th');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14th', '14th');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15th', '15th');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16th', '16th');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17th', '17th');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18th', '18th');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19th', '19th');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20th', '20th');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21st', '21st');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22nd', '22nd');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23rd', '23rd');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24th', '24th');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25th', '25th');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26th', '26th');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27th', '27th');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28th', '28th');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29th', '29th');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30th', '30th');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31st', '31st');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'January Jan_February Feb_March Mar_April Apr_May May_June Jun_July Jul_August Aug_September Sep_October Oct_November Nov_December Dec'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Sunday Sun Su_Monday Mon Mo_Tuesday Tue Tu_Wednesday Wed We_Thursday Thu Th_Friday Fri Fr_Saturday Sat Sa'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'a few seconds', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'a minute',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'a minute',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minutes',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minutes',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'an hour',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'an hour',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 hours',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 hours',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 hours',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'a day',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'a day',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 days',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'a day',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 days',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 days',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'a month',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'a month',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'a month',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 months',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 months',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 months',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'a month',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 months',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'a year',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 years',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'a year',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 years',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'in a few seconds',  'prefix');
+        assert.equal(moment(0).from(30000), 'a few seconds ago', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'a few seconds ago',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'in a few seconds', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'in 5 days', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Today at 02:00',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Today at 02:25',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Today at 03:00',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Tomorrow at 02:00',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Today at 01:00',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Yesterday at 02:00',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52nd', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),   '1 01 1st', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),   '1 01 1st', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '2 02 2nd', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '2 02 2nd', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('en-nz');
+
+    test('parse', function (assert) {
+        var tests = 'January Jan_February Feb_March Mar_April Apr_May May_June Jun_July Jul_August Aug_September Sep_October Oct_November Nov_December Dec'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Sunday, February 14th 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'Sun, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2nd 02 February Feb'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14th 14'],
+                ['d do dddd ddd dd',                   '0 0th Sunday Sun Su'],
+                ['DDD DDDo DDDD',                      '45 45th 045'],
+                ['w wo ww',                            '6 6th 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[the] DDDo [day of the year]',       'the 45th day of the year'],
+                ['LTS',                                '3:25:50 PM'],
+                ['L',                                  '14/02/2010'],
+                ['LL',                                 '14 February 2010'],
+                ['LLL',                                '14 February 2010 3:25 PM'],
+                ['LLLL',                               'Sunday, 14 February 2010 3:25 PM'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 Feb 2010'],
+                ['lll',                                '14 Feb 2010 3:25 PM'],
+                ['llll',                               'Sun, 14 Feb 2010 3:25 PM']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1st', '1st');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2nd', '2nd');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3rd', '3rd');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4th', '4th');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5th', '5th');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6th', '6th');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7th', '7th');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8th', '8th');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9th', '9th');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10th', '10th');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11th', '11th');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12th', '12th');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13th', '13th');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14th', '14th');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15th', '15th');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16th', '16th');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17th', '17th');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18th', '18th');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19th', '19th');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20th', '20th');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21st', '21st');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22nd', '22nd');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23rd', '23rd');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24th', '24th');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25th', '25th');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26th', '26th');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27th', '27th');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28th', '28th');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29th', '29th');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30th', '30th');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31st', '31st');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'January Jan_February Feb_March Mar_April Apr_May May_June Jun_July Jul_August Aug_September Sep_October Oct_November Nov_December Dec'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Sunday Sun Su_Monday Mon Mo_Tuesday Tue Tu_Wednesday Wed We_Thursday Thu Th_Friday Fri Fr_Saturday Sat Sa'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'a few seconds', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'a minute',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'a minute',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minutes',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minutes',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'an hour',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'an hour',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 hours',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 hours',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 hours',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'a day',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'a day',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 days',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'a day',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 days',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 days',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'a month',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'a month',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'a month',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 months',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 months',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 months',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'a month',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 months',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'a year',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 years',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'a year',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 years',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'in a few seconds',  'prefix');
+        assert.equal(moment(0).from(30000), 'a few seconds ago', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'a few seconds ago',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'in a few seconds', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'in 5 days', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Today at 2:00 AM',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Today at 2:25 AM',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Today at 3:00 AM',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Tomorrow at 2:00 AM',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Today at 1:00 AM',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Yesterday at 2:00 AM',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [at] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[Last] dddd [at] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52nd', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),   '1 01 1st', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),   '1 01 1st', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '2 02 2nd', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '2 02 2nd', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testStr;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testStr = moment(ordinalStr, 'YYYY MM Do').format('YYYY MM D');
+            assert.equal(testStr, '2014 01 ' + i, 'lenient ordinal parsing ' + i);
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testStr;
+        for (i = 1; i <= 31; ++i) {
+            testStr = moment('2014 01 ' + i, 'YYYY MM Do').format('YYYY MM D');
+            assert.equal(testStr, '2014 01 ' + i,
+                    'lenient ordinal parsing of number ' + i);
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MMM Do');
+            testMoment = moment(ordinalStr, 'YYYY MMM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8809,6 +9775,21 @@
         }
     });
 
+    test('weekdays strict parsing', function (assert) {
+        var m = moment('2015-01-01T12', moment.ISO_8601, true),
+            enLocale = moment.localeData('en');
+
+        for (var i = 0; i < 7; ++i) {
+            assert.equal(moment(enLocale.weekdays(m.day(i), ''), 'dddd', true).isValid(), true, 'parse weekday ' + i);
+            assert.equal(moment(enLocale.weekdaysShort(m.day(i), ''), 'ddd', true).isValid(), true, 'parse short weekday ' + i);
+            assert.equal(moment(enLocale.weekdaysMin(m.day(i), ''), 'dd', true).isValid(), true, 'parse min weekday ' + i);
+
+            // negative tests
+            assert.equal(moment(enLocale.weekdaysMin(m.day(i), ''), 'ddd', true).isValid(), false, 'parse short weekday ' + i);
+            assert.equal(moment(enLocale.weekdaysShort(m.day(i), ''), 'dd', true).isValid(), false, 'parse min weekday ' + i);
+        }
+    });
+
     test('lenient ordinal parsing of number', function (assert) {
         var i, testMoment;
         for (i = 1; i <= 31; ++i) {
@@ -8833,8 +9814,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -8843,12 +9825,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -8866,8 +9850,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9190,8 +10174,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -9200,12 +10185,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9223,8 +10210,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9266,7 +10253,7 @@
                 ['M Mo MM MMMM MMM',                   '2 2º 02 febrero feb.'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14º 14'],
-                ['d do dddd ddd dd',                   '0 0º domingo dom. Do'],
+                ['d do dddd ddd dd',                   '0 0º domingo dom. do'],
                 ['DDD DDDo DDDD',                      '45 45º 045'],
                 ['w wo ww',                            '6 6º 06'],
                 ['YYYY-MMM-DD',                        '2010-feb-14'],
@@ -9338,7 +10325,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'domingo dom. Do_lunes lun. Lu_martes mar. Ma_miércoles mié. Mi_jueves jue. Ju_viernes vie. Vi_sábado sáb. Sá'.split('_'), i;
+        var expected = 'domingo dom. do_lunes lun. lu_martes mar. ma_miércoles mié. mi_jueves jue. ju_viernes vie. vi_sábado sáb. sá'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -9393,7 +10380,7 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                         'hoy a las 2:00',     'today at the same time');
+        assert.equal(moment(a).calendar(),                       'hoy a las 2:00',     'today at the same time');
         assert.equal(moment(a).add({m: 25}).calendar(),          'hoy a las 2:25',     'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),           'hoy a las 3:00',     'Now plus 1 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),           'mañana a las 2:00',  'tomorrow at the same time');
@@ -9549,8 +10536,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -9559,12 +10547,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9582,8 +10572,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9928,8 +10918,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -9938,12 +10929,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -9961,8 +10954,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -10283,8 +11276,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -10293,12 +11287,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -10316,8 +11312,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -10629,8 +11625,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -10639,12 +11636,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -10662,8 +11661,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -10985,8 +11984,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -10995,12 +11995,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -11018,8 +12020,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -11291,8 +12293,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -11301,12 +12304,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -11324,8 +12329,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -11365,20 +12370,20 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'dimanche, février 14 2010, 3:25:50 pm'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'dimanche, février 14e 2010, 3:25:50 pm'],
                 ['ddd, hA',                            'dim., 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2 02 février févr.'],
+                ['M Mo MM MMMM MMM',                   '2 2e 02 février févr.'],
                 ['YYYY YY',                            '2010 10'],
-                ['D Do DD',                            '14 14 14'],
-                ['d do dddd ddd dd',                   '0 0 dimanche dim. Di'],
-                ['DDD DDDo DDDD',                      '45 45 045'],
-                ['w wo ww',                            '8 8 08'],
+                ['D Do DD',                            '14 14e 14'],
+                ['d do dddd ddd dd',                   '0 0e dimanche dim. Di'],
+                ['DDD DDDo DDDD',                      '45 45e 045'],
+                ['w wo ww',                            '8 8e 08'],
                 ['h hh',                               '3 03'],
                 ['H HH',                               '15 15'],
                 ['m mm',                               '25 25'],
                 ['s ss',                               '50 50'],
                 ['a A',                                'pm PM'],
-                ['[the] DDDo [day of the year]',       'the 45 day of the year'],
+                ['[the] DDDo [day of the year]',       'the 45e day of the year'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '2010-02-14'],
                 ['LL',                                 '14 février 2010'],
@@ -11399,39 +12404,39 @@
 
     test('format ordinal', function (assert) {
         assert.equal(moment([2011, 0, 1]).format('DDDo'), '1er', '1er');
-        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2', '2');
-        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3', '3');
-        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4', '4');
-        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5', '5');
-        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6', '6');
-        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7', '7');
-        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8', '8');
-        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9', '9');
-        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10', '10');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2e', '2e');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3e', '3e');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4e', '4e');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5e', '5e');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6e', '6e');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7e', '7e');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8e', '8e');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9e', '9e');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10e', '10e');
 
-        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11', '11');
-        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12', '12');
-        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13', '13');
-        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14', '14');
-        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15', '15');
-        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16', '16');
-        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17', '17');
-        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18', '18');
-        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19', '19');
-        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20', '20');
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11e', '11e');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12e', '12e');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13e', '13e');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14e', '14e');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15e', '15e');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16e', '16e');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17e', '17e');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18e', '18e');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19e', '19e');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20e', '20e');
 
-        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21', '21');
-        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22', '22');
-        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23', '23');
-        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24', '24');
-        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25', '25');
-        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26', '26');
-        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27', '27');
-        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28', '28');
-        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29', '29');
-        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30', '30');
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21e', '21e');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22e', '22e');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23e', '23e');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24e', '24e');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25e', '25e');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26e', '26e');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27e', '27e');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28e', '28e');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29e', '29e');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30e', '30e');
 
-        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31', '31');
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31e', '31e');
     });
 
     test('format month', function (assert) {
@@ -11610,9 +12615,9 @@
     test('weeks year starting sunday format', function (assert) {
         assert.equal(moment([2012, 0,  1]).format('w ww wo'), '1 01 1er', 'Jan  1 2012 should be week 1');
         assert.equal(moment([2012, 0,  7]).format('w ww wo'), '1 01 1er', 'Jan  7 2012 should be week 1');
-        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '2 02 2', 'Jan  8 2012 should be week 2');
-        assert.equal(moment([2012, 0, 14]).format('w ww wo'), '2 02 2', 'Jan 14 2012 should be week 2');
-        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '3 03 3', 'Jan 15 2012 should be week 3');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '2 02 2e', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).format('w ww wo'), '2 02 2e', 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '3 03 3e', 'Jan 15 2012 should be week 3');
     });
 
     test('lenient ordinal parsing', function (assert) {
@@ -11653,8 +12658,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -11663,12 +12669,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -11686,8 +12694,373 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('fr-ch');
+
+    test('parse', function (assert) {
+        var i,
+            tests = 'janvier janv._février févr._mars mars_avril avr._mai mai_juin juin_juillet juil._août août_septembre sept._octobre oct._novembre nov._décembre déc.'.split('_');
+
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'dimanche, février 14e 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'dim., 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2e 02 février févr.'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14e 14'],
+                ['d do dddd ddd dd',                   '0 0e dimanche dim. Di'],
+                ['DDD DDDo DDDD',                      '45 45e 045'],
+                ['w wo ww',                            '6 6e 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[the] DDDo [day of the year]',       'the 45e day of the year'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 '14 février 2010'],
+                ['LLL',                                '14 février 2010 15:25'],
+                ['LLLL',                               'dimanche 14 février 2010 15:25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 '14 févr. 2010'],
+                ['lll',                                '14 févr. 2010 15:25'],
+                ['llll',                               'dim. 14 févr. 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1er', '1er');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2e', '2e');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3e', '3e');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4e', '4e');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5e', '5e');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6e', '6e');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7e', '7e');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8e', '8e');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9e', '9e');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10e', '10e');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11e', '11e');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12e', '12e');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13e', '13e');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14e', '14e');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15e', '15e');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16e', '16e');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17e', '17e');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18e', '18e');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19e', '19e');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20e', '20e');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21e', '21e');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22e', '22e');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23e', '23e');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24e', '24e');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25e', '25e');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26e', '26e');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27e', '27e');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28e', '28e');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29e', '29e');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30e', '30e');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31e', '31e');
+    });
+
+    test('format month', function (assert) {
+        var i,
+            expected = 'janvier janv._février févr._mars mars_avril avr._mai mai_juin juin_juillet juil._août août_septembre sept._octobre oct._novembre nov._décembre déc.'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var i,
+            expected = 'dimanche dim. Di_lundi lun. Lu_mardi mar. Ma_mercredi mer. Me_jeudi jeu. Je_vendredi ven. Ve_samedi sam. Sa'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'quelques secondes', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'une minute',   '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'une minute',   '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minutes',  '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minutes', '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'une heure',    '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'une heure',    '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 heures',    '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 heures',    '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 heures',   '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'un jour',      '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'un jour',      '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 jours',     '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'un jour',      '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 jours',     '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 jours',    '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'un mois',    '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'un mois',    '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'un mois',    '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 mois',   '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 mois',   '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 mois',   '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'un mois',    '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 mois',   '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'un an',     '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 ans',    '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'un an',     '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 ans',    '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'dans quelques secondes', 'prefix');
+        assert.equal(moment(0).from(30000), 'il y a quelques secondes', 'suffix');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'dans quelques secondes', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'dans 5 jours', 'in 5 days');
+    });
+
+    test('same day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Aujourd\'hui à 02:00',    'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Aujourd\'hui à 02:25',    'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Aujourd\'hui à 03:00',    'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Demain à 02:00',         'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Aujourd\'hui à 01:00',    'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Hier à 02:00',           'yesterday at the same time');
+    });
+
+    test('same next week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('same last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [dernier à] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [dernier à] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [dernier à] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('same all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52e', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'), '1 01 1er', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '1 01 1er', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '2 02 2e', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '2 02 2e', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12007,8 +13380,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -12017,12 +13391,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12040,8 +13416,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12367,8 +13743,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -12377,12 +13754,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12400,8 +13779,379 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('gd');
+
+    var months = [
+        'Am Faoilleach,Faoi',
+        'An Gearran,Gear',
+        'Am Màrt,Màrt',
+        'An Giblean,Gibl',
+        'An Cèitean,Cèit',
+        'An t-Ògmhios,Ògmh',
+        'An t-Iuchar,Iuch',
+        'An Lùnastal,Lùn',
+        'An t-Sultain,Sult',
+        'An Dàmhair,Dàmh',
+        'An t-Samhain,Samh',
+        'An Dùbhlachd,Dùbh'
+    ];
+
+    test('parse', function (assert) {
+        function equalTest(monthName, monthFormat, monthNum) {
+            assert.equal(moment(monthName, monthFormat).month(), monthNum, monthName + ' should be month ' + (monthNum + 1));
+        }
+
+        for (var i = 0; i < 12; i++) {
+            var testMonth = months[i].split(',');
+            equalTest(testMonth[0], 'MMM', i);
+            equalTest(testMonth[1], 'MMM', i);
+            equalTest(testMonth[0], 'MMMM', i);
+            equalTest(testMonth[1], 'MMMM', i);
+            equalTest(testMonth[0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(testMonth[1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(testMonth[0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(testMonth[1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+            ['dddd, MMMM Do YYYY, h:mm:ss a', 'Didòmhnaich, An Gearran 14mh 2010, 3:25:50 pm'],
+            ['ddd, hA', 'Did, 3PM'],
+            ['M Mo MM MMMM MMM', '2 2na 02 An Gearran Gear'],
+            ['YYYY YY', '2010 10'],
+            ['D Do DD', '14 14mh 14'],
+            ['d do dddd ddd dd', '0 0mh Didòmhnaich Did Dò'],
+            ['DDD DDDo DDDD', '45 45mh 045'],
+            ['w wo ww', '6 6mh 06'],
+            ['h hh', '3 03'],
+            ['H HH', '15 15'],
+            ['m mm', '25 25'],
+            ['s ss', '50 50'],
+            ['a A', 'pm PM'],
+            ['[an] DDDo [latha den bhliadhna]', 'an 45mh latha den bhliadhna'],
+            ['LTS', '15:25:50'],
+            ['L', '14/02/2010'],
+            ['LL', '14 An Gearran 2010'],
+            ['LLL', '14 An Gearran 2010 15:25'],
+            ['LLLL', 'Didòmhnaich, 14 An Gearran 2010 15:25'],
+            ['l', '14/2/2010'],
+            ['ll', '14 Gear 2010'],
+            ['lll', '14 Gear 2010 15:25'],
+            ['llll', 'Did, 14 Gear 2010 15:25']
+        ],
+        b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+        i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1d', '1d');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2na', '2na');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3mh', '3mh');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4mh', '4mh');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5mh', '5mh');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6mh', '6mh');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7mh', '7mh');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8mh', '8mh');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9mh', '9mh');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10mh', '10mh');
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11mh', '11mh');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12na', '12na');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13mh', '13mh');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14mh', '14mh');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15mh', '15mh');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16mh', '16mh');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17mh', '17mh');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18mh', '18mh');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19mh', '19mh');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20mh', '20mh');
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21mh', '21mh');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22na', '22na');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23mh', '23mh');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24mh', '24mh');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25mh', '25mh');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26mh', '26mh');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27mh', '27mh');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28mh', '28mh');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29mh', '29mh');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30mh', '30mh');
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31mh', '31mh');
+    });
+
+    test('format month', function (assert) {
+        var expected = months;
+        for (var i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM,MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = ['Didòmhnaich Did Dò', 'Diluain Dil Lu', 'Dimàirt Dim Mà', 'Diciadain Dic Ci', 'Diardaoin Dia Ar', 'Dihaoine Dih Ha', 'Disathairne Dis Sa'];
+        for (var i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true), 'beagan diogan', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true), 'mionaid', '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true), 'mionaid', '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true), '2 mionaidean', '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true), '44 mionaidean', '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true), 'uair', '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true), 'uair', '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true), '2 uairean', '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true), '5 uairean', '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true), '21 uairean', '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true), 'latha', '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true), 'latha', '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true), '2 latha', '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true), 'latha', '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true), '5 latha', '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true), '25 latha', '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true), 'mìos', '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true), 'mìos', '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true), 'mìos', '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true), '2 mìosan', '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true), '2 mìosan', '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true), '3 mìosan', '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true), 'mìos', '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true), '5 mìosan', '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'bliadhna', '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 bliadhna', '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true), 'bliadhna', '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true), '5 bliadhna', '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'ann an beagan diogan', 'prefix');
+        assert.equal(moment(0).from(30000), 'bho chionn beagan diogan', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'bho chionn beagan diogan', 'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'ann an beagan diogan', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'ann an 5 latha', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(), 'An-diugh aig 02:00', 'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(), 'An-diugh aig 02:25', 'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(), 'An-diugh aig 03:00', 'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(), 'A-màireach aig 02:00', 'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(), 'An-diugh aig 01:00', 'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(), 'An-dè aig 02:00', 'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(), m.format('dddd [aig] LT'), 'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(), m.format('dddd [aig] LT'), 'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(), m.format('dddd [aig] LT'), 'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(), m.format('dddd [seo chaidh] [aig] LT'), 'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(), m.format('dddd [seo chaidh] [aig] LT'), 'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(), m.format('dddd [seo chaidh] [aig] LT'), 'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+           weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(), weeksAgo.format('L'), '1 week ago');
+        assert.equal(weeksFromNow.calendar(), weeksFromNow.format('L'), 'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(), weeksAgo.format('L'), '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(), weeksFromNow.format('L'), 'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Faoi  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(), 1, 'Faoi  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(), 1, 'Faoi  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(), 2, 'Faoi  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Faoi 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(), 1, 'Faoi  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(), 1, 'Faoi  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(), 2, 'Faoi  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Faoi 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Faoi 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dùbh 31 2007 should be week 1');
+        assert.equal(moment([2008, 0, 1]).week(), 1, 'Faoi  1 2008 should be week 1');
+        assert.equal(moment([2008, 0, 6]).week(), 1, 'Faoi  6 2008 should be week 1');
+        assert.equal(moment([2008, 0, 7]).week(), 2, 'Faoi  7 2008 should be week 2');
+        assert.equal(moment([2008, 0, 13]).week(), 2, 'Faoi 13 2008 should be week 2');
+        assert.equal(moment([2008, 0, 14]).week(), 3, 'Faoi 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dùbh 30 2002 should be week 1');
+        assert.equal(moment([2003, 0, 1]).week(), 1, 'Faoi  1 2003 should be week 1');
+        assert.equal(moment([2003, 0, 5]).week(), 1, 'Faoi  5 2003 should be week 1');
+        assert.equal(moment([2003, 0, 6]).week(), 2, 'Faoi  6 2003 should be week 2');
+        assert.equal(moment([2003, 0, 12]).week(), 2, 'Faoi 12 2003 should be week 2');
+        assert.equal(moment([2003, 0, 13]).week(), 3, 'Faoi 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dùbh 29 2008 should be week 1');
+        assert.equal(moment([2009, 0, 1]).week(), 1, 'Faoi  1 2009 should be week 1');
+        assert.equal(moment([2009, 0, 4]).week(), 1, 'Faoi  4 2009 should be week 1');
+        assert.equal(moment([2009, 0, 5]).week(), 2, 'Faoi  5 2009 should be week 2');
+        assert.equal(moment([2009, 0, 11]).week(), 2, 'Faoi 11 2009 should be week 2');
+        assert.equal(moment([2009, 0, 13]).week(), 3, 'Faoi 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dùbh 28 2009 should be week 53');
+        assert.equal(moment([2010, 0, 1]).week(), 53, 'Faoi  1 2010 should be week 53');
+        assert.equal(moment([2010, 0, 3]).week(), 53, 'Faoi  3 2010 should be week 53');
+        assert.equal(moment([2010, 0, 4]).week(), 1, 'Faoi  4 2010 should be week 1');
+        assert.equal(moment([2010, 0, 10]).week(), 1, 'Faoi 10 2010 should be week 1');
+        assert.equal(moment([2010, 0, 11]).week(), 2, 'Faoi 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dùbh 27 2010 should be week 52');
+        assert.equal(moment([2011, 0, 1]).week(), 52, 'Faoi  1 2011 should be week 52');
+        assert.equal(moment([2011, 0, 2]).week(), 52, 'Faoi  2 2011 should be week 52');
+        assert.equal(moment([2011, 0, 3]).week(), 1, 'Faoi  3 2011 should be week 1');
+        assert.equal(moment([2011, 0, 9]).week(), 1, 'Faoi  9 2011 should be week 1');
+        assert.equal(moment([2011, 0, 10]).week(), 2, 'Faoi 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0, 1]).format('w ww wo'), '52 52 52na', 'Faoi  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).format('w ww wo'), '1 01 1d', 'Faoi  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).format('w ww wo'), '1 01 1d', 'Faoi  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).format('w ww wo'), '2 02 2na', 'Faoi  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '2 02 2na', 'Faoi 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12731,8 +14481,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -12741,12 +14492,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -12764,8 +14517,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13051,8 +14804,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -13061,12 +14815,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13084,8 +14840,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13434,8 +15190,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -13444,12 +15201,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13467,8 +15226,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13486,7 +15245,7 @@
     localeModule('hr');
 
     test('parse', function (assert) {
-        var tests = 'sječanj sje._veljača vel._ožujak ožu._travanj tra._svibanj svi._lipanj lip._srpanj srp._kolovoz kol._rujan ruj._listopad lis._studeni stu._prosinac pro.'.split('_'), i;
+        var tests = 'siječanj sij._veljača velj._ožujak ožu._travanj tra._svibanj svi._lipanj lip._srpanj srp._kolovoz kol._rujan ruj._listopad lis._studeni stu._prosinac pro.'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -13505,9 +15264,9 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, Do MMMM YYYY, h:mm:ss a',      'nedjelja, 14. veljača 2010, 3:25:50 pm'],
+                ['dddd, Do MMMM YYYY, h:mm:ss a',      'nedjelja, 14. veljače 2010, 3:25:50 pm'],
                 ['ddd, hA',                            'ned., 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2. 02 veljača vel.'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 veljača velj.'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14. 14'],
                 ['d do dddd ddd dd',                   '0 0. nedjelja ned. ne'],
@@ -13525,9 +15284,9 @@
                 ['LLL',                                '14. veljača 2010 15:25'],
                 ['LLLL',                               'nedjelja, 14. veljača 2010 15:25'],
                 ['l',                                  '14. 2. 2010'],
-                ['ll',                                 '14. vel. 2010'],
-                ['lll',                                '14. vel. 2010 15:25'],
-                ['llll',                               'ned., 14. vel. 2010 15:25']
+                ['ll',                                 '14. velj. 2010'],
+                ['lll',                                '14. velj. 2010 15:25'],
+                ['llll',                               'ned., 14. velj. 2010 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -13574,7 +15333,7 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'sječanj sje._veljača vel._ožujak ožu._travanj tra._svibanj svi._lipanj lip._srpanj srp._kolovoz kol._rujan ruj._listopad lis._studeni stu._prosinac pro.'.split('_'), i;
+        var expected = 'siječanj sij._veljača velj._ožujak ožu._travanj tra._svibanj svi._lipanj lip._srpanj srp._kolovoz kol._rujan ruj._listopad lis._studeni stu._prosinac pro.'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -13822,8 +15581,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -13832,12 +15592,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13855,8 +15617,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -13909,11 +15671,11 @@
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '2010.02.14.'],
                 ['LL',                                 '2010. február 14.'],
-                ['LLL',                                '2010. február 14., 15:25'],
+                ['LLL',                                '2010. február 14. 15:25'],
                 ['LLLL',                               '2010. február 14., vasárnap 15:25'],
                 ['l',                                  '2010.2.14.'],
                 ['ll',                                 '2010. feb 14.'],
-                ['lll',                                '2010. feb 14., 15:25'],
+                ['lll',                                '2010. feb 14. 15:25'],
                 ['llll',                               '2010. feb 14., vas 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
@@ -14191,8 +15953,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -14201,12 +15964,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -14224,8 +15989,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -14616,8 +16381,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -14626,12 +16392,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -14649,8 +16417,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -14946,8 +16714,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -14956,12 +16725,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -14979,8 +16750,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -15308,8 +17079,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -15318,12 +17090,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -15341,8 +17115,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -15384,7 +17158,7 @@
                 ['M Mo MM MMMM MMM',                   '2 2º 02 febbraio feb'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14º 14'],
-                ['d do dddd ddd dd',                   '0 0º Domenica Dom D'],
+                ['d do dddd ddd dd',                   '0 0º Domenica Dom Do'],
                 ['DDD DDDo DDDD',                      '45 45º 045'],
                 ['w wo ww',                            '6 6º 06'],
                 ['h hh',                               '3 03'],
@@ -15455,7 +17229,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'Domenica Dom D_Lunedì Lun L_Martedì Mar Ma_Mercoledì Mer Me_Giovedì Gio G_Venerdì Ven V_Sabato Sab S'.split('_'), i;
+        var expected = 'Domenica Dom Do_Lunedì Lun Lu_Martedì Mar Ma_Mercoledì Mer Me_Giovedì Gio Gi_Venerdì Ven Ve_Sabato Sab Sa'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -15662,8 +17436,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -15672,12 +17447,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -15695,8 +17472,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -15980,8 +17757,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -15990,12 +17768,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -16013,8 +17793,345 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('jv');
+
+
+    test('parse', function (assert) {
+        var tests = 'Januari Jan_Februari Feb_Maret Mar_April Apr_Mei Mei_Juni Jun_Juli Jul_Agustus Ags_September Sep_Oktober Okt_Nopember Nop_Desember Des'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Minggu, Februari 14 2010, 3:25:50 sonten'],
+                ['ddd, hA',                            'Min, 3sonten'],
+                ['M Mo MM MMMM MMM',                   '2 2 02 Februari Feb'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14 14'],
+                ['d do dddd ddd dd',                   '0 0 Minggu Min Mg'],
+                ['DDD DDDo DDDD',                      '45 45 045'],
+                ['w wo ww',                            '7 7 07'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'sonten sonten'],
+                ['[the] DDDo [day of the year]',       'the 45 day of the year'],
+                ['LTS',                                '15.25.50'],
+                ['L',                                  '14/02/2010'],
+                ['LL',                                 '14 Februari 2010'],
+                ['LLL',                                '14 Februari 2010 pukul 15.25'],
+                ['LLLL',                               'Minggu, 14 Februari 2010 pukul 15.25'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 Feb 2010'],
+                ['lll',                                '14 Feb 2010 pukul 15.25'],
+                ['llll',                               'Min, 14 Feb 2010 pukul 15.25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format month', function (assert) {
+        var expected = 'Januari Jan_Februari Feb_Maret Mar_April Apr_Mei Mei_Juni Jun_Juli Jul_Agustus Ags_September Sep_Oktober Okt_Nopember Nop_Desember Des'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Minggu Min Mg_Senen Sen Sn_Seloso Sel Sl_Rebu Reb Rb_Kemis Kem Km_Jemuwah Jem Jm_Septu Sep Sp'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'sawetawis detik', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'setunggal menit',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'setunggal menit',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 menit',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 menit',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'setunggal jam',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'setunggal jam',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 jam',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 jam',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 jam',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'sedinten',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'sedinten',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 dinten',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'sedinten',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 dinten',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 dinten',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'sewulan',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'sewulan',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'sewulan',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 wulan',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 wulan',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 wulan',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'sewulan',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 wulan',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'setaun',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 taun',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'setaun',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 taun',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'wonten ing sawetawis detik',  'prefix');
+        assert.equal(moment(0).from(30000), 'sawetawis detik ingkang kepengker', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'sawetawis detik ingkang kepengker',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'wonten ing sawetawis detik', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'wonten ing 5 dinten', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Dinten puniko pukul 02.00', 'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Dinten puniko pukul 02.25', 'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Dinten puniko pukul 03.00', 'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Mbenjang pukul 02.00',    'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Dinten puniko pukul 01.00', 'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Kala wingi pukul 02.00',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [kepengker pukul] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [kepengker pukul] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [kepengker pukul] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    // Monday is the first day of the week.
+    // The week that contains Jan 1st is the first week of the year.
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2011, 11, 26]).week(), 1, 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).week(), 2, 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).week(), 3, 'Jan  9 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 12]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 1, 'Dec 28 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 should be week 1');
+        assert.equal(moment([2010,  0,  4]).week(), 2, 'Jan  4 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 should be week 2');
+        assert.equal(moment([2010,  0, 11]).week(), 3, 'Jan 11 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 1, 'Dec 27 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 should be week 1');
+        assert.equal(moment([2011,  0,  3]).week(), 2, 'Jan  3 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 should be week 2');
+        assert.equal(moment([2011,  0, 10]).week(), 3, 'Jan 10 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '1 01 1', 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).format('w ww wo'), '1 01 1', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '2 02 2', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).format('w ww wo'), '2 02 2', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '3 03 3', 'Jan  9 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('meridiem invariant', function (assert) {
+        var h, m, t1, t2;
+        for (h = 0; h < 24; ++h) {
+            for (m = 0; m < 60; m += 15) {
+                t1 = moment.utc([2000, 0, 1, h, m]);
+                t2 = moment(t1.format('A h:mm'), 'A h:mm');
+                assert.equal(t2.format('HH:mm'), t1.format('HH:mm'),
+                        'meridiem at ' + t1.format('HH:mm'));
+            }
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -16070,9 +18187,9 @@
                 ['წლის DDDo დღე',                 'წლის 45-ე დღე'],
                 ['LTS',                           '3:25:50 PM'],
                 ['L',                             '14/02/2010'],
-                ['LL',                            '14 თებერვალი 2010'],
-                ['LLL',                           '14 თებერვალი 2010 3:25 PM'],
-                ['LLLL',                          'კვირა, 14 თებერვალი 2010 3:25 PM'],
+                ['LL',                            '14 თებერვალს 2010'],
+                ['LLL',                           '14 თებერვალს 2010 3:25 PM'],
+                ['LLLL',                          'კვირა, 14 თებერვალს 2010 3:25 PM'],
                 ['l',                             '14/2/2010'],
                 ['ll',                            '14 თებ 2010'],
                 ['lll',                           '14 თებ 2010 3:25 PM'],
@@ -16348,8 +18465,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -16358,12 +18476,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -16381,8 +18501,367 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('kk');
+
+    test('parse', function (assert) {
+        var tests = 'Қаңтар Қаң_Ақпан Ақп_Наурыз Нау_Сәуір Сәу_Мамыр Мам_Маусым Мау_Шілде Шіл_Тамыз Там_Қыркүйек Қыр_Қазан Қаз_Қараша Қар_Желтоқсан Жел'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, Do MMMM YYYY, HH:mm:ss',       'Жексенбі, 14-ші Ақпан 2010, 15:25:50'],
+                ['ddd, hA',                            'Жек, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2-ші 02 Ақпан Ақп'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14-ші 14'],
+                ['d do dddd ddd dd',                   '0 0-ші Жексенбі Жек Жк'],
+                ['DDD DDDo DDDD',                      '45 45-ші 045'],
+                ['w wo ww',                            '7 7-ші 07'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[жылдың] DDDo [күні]',               'жылдың 45-ші күні'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 '14 Ақпан 2010'],
+                ['LLL',                                '14 Ақпан 2010 15:25'],
+                ['LLLL',                               'Жексенбі, 14 Ақпан 2010 15:25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 '14 Ақп 2010'],
+                ['lll',                                '14 Ақп 2010 15:25'],
+                ['llll',                               'Жек, 14 Ақп 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1-ші', '1st');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2-ші', '2nd');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3-ші', '3rd');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4-ші', '4th');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5-ші', '5th');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6-шы', '6th');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7-ші', '7th');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8-ші', '8th');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9-шы', '9th');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10-шы', '10th');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11-ші', '11th');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12-ші', '12th');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13-ші', '13th');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14-ші', '14th');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15-ші', '15th');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16-шы', '16th');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17-ші', '17th');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18-ші', '18th');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19-шы', '19th');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20-шы', '20th');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21-ші', '21st');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22-ші', '22nd');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23-ші', '23rd');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24-ші', '24th');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25-ші', '25th');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26-шы', '26th');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27-ші', '27th');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28-ші', '28th');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29-шы', '29th');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30-шы', '30th');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31-ші', '31st');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'Қаңтар Қаң_Ақпан Ақп_Наурыз Нау_Сәуір Сәу_Мамыр Мам_Маусым Мау_Шілде Шіл_Тамыз Там_Қыркүйек Қыр_Қазан Қаз_Қараша Қар_Желтоқсан Жел'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Жексенбі Жек Жк_Дүйсенбі Дүй Дй_Сейсенбі Сей Сй_Сәрсенбі Сәр Ср_Бейсенбі Бей Бй_Жұма Жұм Жм_Сенбі Сен Сн'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'бірнеше секунд', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'бір минут',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'бір минут',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 минут',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 минут',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'бір сағат',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'бір сағат',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 сағат',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 сағат',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 сағат',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'бір күн',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'бір күн',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 күн',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'бір күн',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 күн',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 күн',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'бір ай',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'бір ай',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'бір ай',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 ай',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 ай',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 ай',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'бір ай',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 ай',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'бір жыл',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 жыл',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'бір жыл',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 жыл',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'бірнеше секунд ішінде',  'prefix');
+        assert.equal(moment(0).from(30000), 'бірнеше секунд бұрын', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'бірнеше секунд бұрын',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'бірнеше секунд ішінде', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), '5 күн ішінде', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Бүгін сағат 02:00',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Бүгін сағат 02:25',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Бүгін сағат 03:00',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Ертең сағат 02:00',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Бүгін сағат 01:00',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Кеше сағат 02:00',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [сағат] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [сағат] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [сағат] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[Өткен аптаның] dddd [сағат] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[Өткен аптаның] dddd [сағат] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[Өткен аптаның] dddd [сағат] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2011, 11, 25]).week(), 52, 'Dec 25 2011 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(), 2, 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012, 0, 8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 9]).week(), 3, 'Jan  9 2012 should be week 3');
+        assert.equal(moment([2012, 0, 15]).week(), 3, 'Jan 15 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 1, 'Dec 28 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 should be week 1');
+        assert.equal(moment([2010,  0,  4]).week(), 2, 'Jan  4 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 should be week 2');
+        assert.equal(moment([2010,  0, 11]).week(), 3, 'Jan 11 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 1, 'Dec 27 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 should be week 1');
+        assert.equal(moment([2011,  0,  3]).week(), 2, 'Jan  3 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 should be week 2');
+        assert.equal(moment([2011,  0, 10]).week(), 3, 'Jan 10 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'),   '1 01 1-ші', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),   '2 02 2-ші', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),   '2 02 2-ші', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '3 03 3-ші', 'Jan  9 2012 should be week 3');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '3 03 3-ші', 'Jan 15 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -16558,19 +19037,19 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(), 'ថ្ងៃនៈ ម៉ោង 02:00', 'today at the same time');
+        assert.equal(moment(a).calendar(), 'ថ្ងៃនេះ ម៉ោង 02:00', 'today at the same time');
         assert.equal(moment(a).add({
             m: 25
-        }).calendar(), 'ថ្ងៃនៈ ម៉ោង 02:25', 'Now plus 25 min');
+        }).calendar(), 'ថ្ងៃនេះ ម៉ោង 02:25', 'Now plus 25 min');
         assert.equal(moment(a).add({
             h: 1
-        }).calendar(), 'ថ្ងៃនៈ ម៉ោង 03:00', 'Now plus 1 hour');
+        }).calendar(), 'ថ្ងៃនេះ ម៉ោង 03:00', 'Now plus 1 hour');
         assert.equal(moment(a).add({
             d: 1
         }).calendar(), 'ស្អែក ម៉ោង 02:00', 'tomorrow at the same time');
         assert.equal(moment(a).subtract({
             h: 1
-        }).calendar(), 'ថ្ងៃនៈ ម៉ោង 01:00', 'Now minus 1 hour');
+        }).calendar(), 'ថ្ងៃនេះ ម៉ោង 01:00', 'Now minus 1 hour');
         assert.equal(moment(a).subtract({
             d: 1
         }).calendar(), 'ម្សិលមិញ ម៉ោង 02:00', 'yesterday at the same time');
@@ -16734,8 +19213,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -16744,12 +19224,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -16767,8 +19249,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17125,8 +19607,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -17135,12 +19618,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17158,8 +19643,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17351,8 +19836,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -17361,12 +19847,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17384,8 +19872,367 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('lo');
+
+    test('parse', function (assert) {
+        var tests = 'ມັງກອນ ມັງກອນ_ກຸມພາ ກຸມພາ_ມີນາ ມີນາ_ເມສາ ເມສາ_ພຶດສະພາ ພຶດສະພາ_ມິຖຸນາ ມິຖຸນາ_ກໍລະກົດ ກໍລະກົດ_ສິງຫາ ສິງຫາ_ກັນຍາ ກັນຍາ_ຕຸລາ ຕຸລາ_ພະຈິກ ພະຈິກ_ທັນວາ ທັນວາ'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'ອາທິດ, ກຸມພາ ທີ່14 2010, 3:25:50 ຕອນແລງ'],
+                ['ddd, hA',                            'ທິດ, 3ຕອນແລງ'],
+                ['M Mo MM MMMM MMM',                   '2 ທີ່2 02 ກຸມພາ ກຸມພາ'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 ທີ່14 14'],
+                ['d do dddd ddd dd',                   '0 ທີ່0 ອາທິດ ທິດ ທ'],
+                ['DDD DDDo DDDD',                      '45 ທີ່45 045'],
+                ['w wo ww',                            '8 ທີ່8 08'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'ຕອນແລງ ຕອນແລງ'],
+                ['[ວັນ]DDDo [ຂອງປີ]',                   'ວັນທີ່45 ຂອງປີ'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14/02/2010'],
+                ['LL',                                 '14 ກຸມພາ 2010'],
+                ['LLL',                                '14 ກຸມພາ 2010 15:25'],
+                ['LLLL',                               'ວັນອາທິດ 14 ກຸມພາ 2010 15:25'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 ກຸມພາ 2010'],
+                ['lll',                                '14 ກຸມພາ 2010 15:25'],
+                ['llll',                               'ວັນທິດ 14 ກຸມພາ 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), 'ທີ່1', 'ທີ່1');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), 'ທີ່2', 'ທີ່2');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), 'ທີ່3', 'ທີ່3');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), 'ທີ່4', 'ທີ່4');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), 'ທີ່5', 'ທີ່5');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), 'ທີ່6', 'ທີ່6');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), 'ທີ່7', 'ທີ່7');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), 'ທີ່8', 'ທີ່8');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), 'ທີ່9', 'ທີ່9');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), 'ທີ່10', 'ທີ່10');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), 'ທີ່11', 'ທີ່11');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), 'ທີ່12', 'ທີ່12');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), 'ທີ່13', 'ທີ່13');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), 'ທີ່14', 'ທີ່14');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), 'ທີ່15', 'ທີ່15');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), 'ທີ່16', 'ທີ່16');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), 'ທີ່17', 'ທີ່17');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), 'ທີ່18', 'ທີ່18');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), 'ທີ່19', 'ທີ່19');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), 'ທີ່20', 'ທີ່20');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), 'ທີ່21', 'ທີ່21');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), 'ທີ່22', 'ທີ່22');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), 'ທີ່23', 'ທີ່23');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), 'ທີ່24', 'ທີ່24');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), 'ທີ່25', 'ທີ່25');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), 'ທີ່26', 'ທີ່26');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), 'ທີ່27', 'ທີ່27');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), 'ທີ່28', 'ທີ່28');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), 'ທີ່29', 'ທີ່29');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), 'ທີ່30', 'ທີ່30');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), 'ທີ່31', 'ທີ່31');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'ມັງກອນ ມັງກອນ_ກຸມພາ ກຸມພາ_ມີນາ ມີນາ_ເມສາ ເມສາ_ພຶດສະພາ ພຶດສະພາ_ມິຖຸນາ ມິຖຸນາ_ກໍລະກົດ ກໍລະກົດ_ສິງຫາ ສິງຫາ_ກັນຍາ ກັນຍາ_ຕຸລາ ຕຸລາ_ພະຈິກ ພະຈິກ_ທັນວາ ທັນວາ'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'ອາທິດ ທິດ ທ_ຈັນ ຈັນ ຈ_ອັງຄານ ອັງຄານ ອຄ_ພຸດ ພຸດ ພ_ພະຫັດ ພະຫັດ ພຫ_ສຸກ ສຸກ ສກ_ເສົາ ເສົາ ສ'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'ບໍ່ເທົ່າໃດວິນາທີ', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  '1 ນາທີ',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  '1 ນາທີ',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 ນາທີ',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 ນາທີ',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  '1 ຊົ່ວໂມງ',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  '1 ຊົ່ວໂມງ',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 ຊົ່ວໂມງ',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 ຊົ່ວໂມງ',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 ຊົ່ວໂມງ',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  '1 ມື້',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  '1 ມື້',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 ມື້',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   '1 ມື້',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 ມື້',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 ມື້',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  '1 ເດືອນ',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  '1 ເດືອນ',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  '1 ເດືອນ',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 ເດືອນ',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 ເດືອນ',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 ເດືອນ',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   '1 ເດືອນ',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 ເດືອນ',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), '1 ປີ',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 ປີ',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   '1 ປີ',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 ປີ',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'ອີກ ບໍ່ເທົ່າໃດວິນາທີ',  'prefix');
+        assert.equal(moment(0).from(30000), 'ບໍ່ເທົ່າໃດວິນາທີຜ່ານມາ', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'ບໍ່ເທົ່າໃດວິນາທີຜ່ານມາ',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'ອີກ ບໍ່ເທົ່າໃດວິນາທີ', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'ອີກ 5 ມື້', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                   'ມື້ນີ້ເວລາ 02:00',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'ມື້ນີ້ເວລາ 02:25',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'ມື້ນີ້ເວລາ 03:00',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'ມື້ອື່ນເວລາ 02:00',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'ມື້ນີ້ເວລາ 01:00',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'ມື້ວານນີ້ເວລາ 02:00',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ໜ້າເວລາ] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ໜ້າເວລາ] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ໜ້າເວລາ] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ແລ້ວນີ້ເວລາ] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ແລ້ວນີ້ເວລາ] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[ວັນ]dddd[ແລ້ວນີ້ເວລາ] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  7]).week(), 1, 'Jan  7 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).week(), 2, 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 3, 'Jan 15 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2006, 11, 31]).week(), 1, 'Dec 31 2006 should be week 1');
+        assert.equal(moment([2007,  0,  1]).week(), 1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007,  0,  6]).week(), 1, 'Jan  6 2007 should be week 1');
+        assert.equal(moment([2007,  0,  7]).week(), 2, 'Jan  7 2007 should be week 2');
+        assert.equal(moment([2007,  0, 13]).week(), 2, 'Jan 13 2007 should be week 2');
+        assert.equal(moment([2007,  0, 14]).week(), 3, 'Jan 14 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 29]).week(), 52, 'Dec 29 2007 should be week 52');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  5]).week(), 1, 'Jan  5 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 2, 'Jan  6 2008 should be week 2');
+        assert.equal(moment([2008,  0, 12]).week(), 2, 'Jan 12 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 3, 'Jan 13 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 29]).week(), 1, 'Dec 29 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  4]).week(), 1, 'Jan  4 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 2, 'Jan  5 2003 should be week 2');
+        assert.equal(moment([2003,  0, 11]).week(), 2, 'Jan 11 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 3, 'Jan 12 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 28]).week(), 1, 'Dec 28 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  3]).week(), 1, 'Jan  3 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 2, 'Jan  4 2009 should be week 2');
+        assert.equal(moment([2009,  0, 10]).week(), 2, 'Jan 10 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 3, 'Jan 11 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 27]).week(), 1, 'Dec 27 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  2]).week(), 1, 'Jan  2 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 2, 'Jan  3 2010 should be week 2');
+        assert.equal(moment([2010,  0,  9]).week(), 2, 'Jan  9 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 3, 'Jan 10 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 26]).week(), 1, 'Dec 26 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 2, 'Jan  2 2011 should be week 2');
+        assert.equal(moment([2011,  0,  8]).week(), 2, 'Jan  8 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 3, 'Jan  9 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday format', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '1 01 ທີ່1', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  7]).format('w ww wo'), '1 01 ທີ່1', 'Jan  7 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '2 02 ທີ່2', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).format('w ww wo'), '2 02 ທີ່2', 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '3 03 ທີ່3', 'Jan 15 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17403,7 +20250,7 @@
     localeModule('lt');
 
     test('parse', function (assert) {
-        var tests = 'sausio sau_vasario vas_kovo kov_balandžio bal_gegužės geg_birželio bir_liepos lie_rugpjūčio rgp_rugsėjo rgs_spalio spa_lapkričio lap_gruodžio grd'.split('_'), i;
+        var tests = 'sausis sau_vasaris vas_kovas kov_balandis bal_gegužė geg_birželis bir_liepa lie_rugpjūtis rgp_rugsėjis rgs_spalis spa_lapkritis lap_gruodis grd'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -17424,7 +20271,7 @@
         var a = [
                 ['dddd, Do MMMM YYYY, h:mm:ss a',      'sekmadienis, 14-oji vasario 2010, 3:25:50 pm'],
                 ['ddd, hA',                            'Sek, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2-oji 02 vasario vas'],
+                ['M Mo MM MMMM MMM',                   '2 2-oji 02 vasaris vas'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14-oji 14'],
                 ['d do dddd ddd dd',                   '0 0-oji sekmadienis Sek S'],
@@ -17438,13 +20285,13 @@
                 ['DDDo [metų diena]',                  '45-oji metų diena'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '2010-02-14'],
-                ['LL',                                 '2010 m. vasario 14 d.'],
-                ['LLL',                                '2010 m. vasario 14 d., 15:25 val.'],
-                ['LLLL',                               '2010 m. vasario 14 d., sekmadienis, 15:25 val.'],
+                ['LL',                                 '2010 m. vasaris 14 d.'],
+                ['LLL',                                '2010 m. vasaris 14 d., 15:25 val.'],
+                ['LLLL',                               '2010 m. vasaris 14 d., sekmadienis, 15:25 val.'],
                 ['l',                                  '2010-02-14'],
-                ['ll',                                 '2010 m. vasario 14 d.'],
-                ['lll',                                '2010 m. vasario 14 d., 15:25 val.'],
-                ['llll',                               '2010 m. vasario 14 d., Sek, 15:25 val.']
+                ['ll',                                 '2010 m. vasaris 14 d.'],
+                ['lll',                                '2010 m. vasaris 14 d., 15:25 val.'],
+                ['llll',                               '2010 m. vasaris 14 d., Sek, 15:25 val.']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -17491,7 +20338,7 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'sausio sau_vasario vas_kovo kov_balandžio bal_gegužės geg_birželio bir_liepos lie_rugpjūčio rgp_rugsėjo rgs_spalio spa_lapkričio lap_gruodžio grd'.split('_'), i;
+        var expected = 'sausis sau_vasaris vas_kovas kov_balandis bal_gegužė geg_birželis bir_liepa lie_rugpjūtis rgp_rugsėjis rgs_spalis spa_lapkritis lap_gruodis grd'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -17723,8 +20570,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -17733,12 +20581,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17756,8 +20606,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -17809,11 +20659,11 @@
                 ['a A',                                'pm PM'],
                 ['[the] DDDo [day of the year]',       'the 45. day of the year'],
                 ['LTS',                                '15:25:50'],
-                ['L',                                  '14.02.2010'],
+                ['L',                                  '14.02.2010.'],
                 ['LL',                                 '2010. gada 14. februāris'],
                 ['LLL',                                '2010. gada 14. februāris, 15:25'],
                 ['LLLL',                               '2010. gada 14. februāris, svētdiena, 15:25'],
-                ['l',                                  '14.2.2010'],
+                ['l',                                  '14.2.2010.'],
                 ['ll',                                 '2010. gada 14. feb'],
                 ['lll',                                '2010. gada 14. feb, 15:25'],
                 ['llll',                               '2010. gada 14. feb, Sv, 15:25']
@@ -17876,50 +20726,71 @@
         }
     });
 
+    // Includes testing the cases of withoutSuffix = true and false.
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'dažas sekundes',    '44 seconds = seconds');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'minūti',      '45 seconds = a minute');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'minūti',      '89 seconds = a minute');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minūtes',     '90 seconds = 2 minutes');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minūtes',    '44 minutes = 44 minutes');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'stundu',       '45 minutes = an hour');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'stundu',       '89 minutes = an hour');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 stundas',       '90 minutes = 2 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 stundas',       '5 hours = 5 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 stunda',      '21 hours = 21 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'dienu',         '22 hours = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'dienu',         '35 hours = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 dienas',        '36 hours = 2 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'dienu',         '1 day = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 dienas',        '5 days = 5 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 dienas',       '25 days = 25 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'mēnesi',       '26 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'mēnesi',       '30 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'mēnesi',       '43 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 mēneši',      '46 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 mēneši',      '75 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 mēneši',      '76 days = 3 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'mēnesi',       '1 month = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 mēneši',      '5 months = 5 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'gadu',        '345 days = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 gadi',       '548 days = 2 years');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'gadu',        '1 year = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 gadi',       '5 years = 5 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),   'dažas sekundes',       '44 seconds = seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), false),  'pirms dažām sekundēm', '44 seconds with suffix = seconds ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),   'minūte',               '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), false),  'pirms minūtes',        '45 seconds with suffix = a minute ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),   'minūte',               '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: -89}), false), 'pēc minūtes',          '89 seconds with suffix/prefix = in a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),   '2 minūtes',            '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), false),  'pirms 2 minūtēm',      '90 seconds with suffix = 2 minutes ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),   '44 minūtes',           '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), false),  'pirms 44 minūtēm',     '44 minutes with suffix = 44 minutes ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),   'stunda',               '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), false),  'pirms stundas',        '45 minutes with suffix = an hour ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),   'stunda',               '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),   '2 stundas',            '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: -90}), false), 'pēc 2 stundām',        '90 minutes with suffix = in 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),    '5 stundas',            '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), false),   'pirms 5 stundām',      '5 hours with suffix = 5 hours ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),   '21 stunda',            '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), false),  'pirms 21 stundas',     '21 hours with suffix = 21 hours ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),   'diena',                '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), false),  'pirms dienas',         '22 hours with suffix = a day ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),   'diena',                '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),   '2 dienas',             '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), false),  'pirms 2 dienām',       '36 hours with suffix = 2 days ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),    'diena',                '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),    '5 dienas',             '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), false),   'pirms 5 dienām',       '5 days with suffix = 5 days ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),   '25 dienas',            '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), false),  'pirms 25 dienām',      '25 days with suffix = 25 days ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),   'mēnesis',              '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), false),  'pirms mēneša',         '26 days with suffix = a month ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),   'mēnesis',              '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),   'mēnesis',              '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),   '2 mēneši',             '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), false),  'pirms 2 mēnešiem',     '46 days with suffix = 2 months ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),   '2 mēneši',             '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),   '3 mēneši',             '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), false),  'pirms 3 mēnešiem',     '76 days with suffix = 3 months ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),    'mēnesis',              '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),    '5 mēneši',             '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), false),   'pirms 5 mēnešiem',     '5 months with suffix = 5 months ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true),  'gads',                 '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), false), 'pirms gada',           '345 days with suffix = a year ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true),  '2 gadi',               '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), false), 'pirms 2 gadiem',       '548 days with suffix = 2 years ago');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),    'gads',                 '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),    '5 gadi',               '5 years = 5 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), false),   'pirms 5 gadiem',       '5 years with suffix = 5 years ago');
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'dažas sekundes vēlāk',  'prefix');
-        assert.equal(moment(0).from(30000), 'dažas sekundes agrāk', 'suffix');
+        assert.equal(moment(30000).from(0), 'pēc dažām sekundēm',  'prefix');
+        assert.equal(moment(0).from(30000), 'pirms dažām sekundēm', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'dažas sekundes agrāk',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'pirms dažām sekundēm',  'now from now should display as in the past');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'dažas sekundes vēlāk', 'in seconds');
-        assert.equal(moment().add({d: 5}).fromNow(), '5 dienas vēlāk', 'in 5 days');
+        assert.equal(moment().add({s: 30}).fromNow(), 'pēc dažām sekundēm', 'in seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'pēc 5 dienām', 'in 5 days');
     });
 
     test('calendar day', function (assert) {
@@ -18078,8 +20949,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -18088,12 +20960,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18111,8 +20985,404 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('me');
+
+    test('parse', function (assert) {
+        var tests = 'januar jan._februar feb._mart mar._april apr._maj maj_jun jun_jul jul_avgust avg._septembar sep._oktobar okt._novembar nov._decembar dec.'.split('_'),
+            i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, Do MMMM YYYY, h:mm:ss a',      'nedjelja, 14. februar 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'ned., 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 februar feb.'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14. 14'],
+                ['d do dddd ddd dd',                   '0 0. nedjelja ned. ne'],
+                ['DDD DDDo DDDD',                      '45 45. 045'],
+                ['w wo ww',                            '7 7. 07'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[the] DDDo [day of the year]',       'the 45. day of the year'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14. 02. 2010'],
+                ['LL',                                 '14. februar 2010'],
+                ['LLL',                                '14. februar 2010 15:25'],
+                ['LLLL',                               'nedjelja, 14. februar 2010 15:25'],
+                ['l',                                  '14. 2. 2010'],
+                ['ll',                                 '14. feb. 2010'],
+                ['lll',                                '14. feb. 2010 15:25'],
+                ['llll',                               'ned., 14. feb. 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1.', '1.');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2.', '2.');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3.', '3.');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4.', '4.');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5.', '5.');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6.', '6.');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7.', '7.');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8.', '8.');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9.', '9.');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10.', '10.');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11.', '11.');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12.', '12.');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13.', '13.');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14.', '14.');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15.', '15.');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16.', '16.');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17.', '17.');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18.', '18.');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19.', '19.');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20.', '20.');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21.', '21.');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22.', '22.');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23.', '23.');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24.', '24.');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25.', '25.');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26.', '26.');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27.', '27.');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28.', '28.');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29.', '29.');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30.', '30.');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31.', '31.');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'januar jan._februar feb._mart mar._april apr._maj maj_jun jun_jul jul_avgust avg._septembar sep._oktobar okt._novembar nov._decembar dec.'.split('_'),
+            i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'nedjelja ned. ne_ponedjeljak pon. po_utorak uto. ut_srijeda sri. sr_četvrtak čet. če_petak pet. pe_subota sub. su'.split('_'),
+            i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'nekoliko sekundi', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'jedan minut',   '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'jedan minut',   '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minuta',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minuta',     '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'jedan sat',      '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'jedan sat',      '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 sata',        '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 sati',         '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 sati',        '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'dan',       '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'dan',       '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 dana',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'dan',       '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 dana',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 dana',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'mjesec',     '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'mjesec',     '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'mjesec',     '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 mjeseca',     '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 mjeseca',     '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 mjeseca',     '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'mjesec',     '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 mjeseci',    '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'godinu',     '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 godine',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'godinu',     '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 godina',        '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'za nekoliko sekundi',  'prefix');
+        assert.equal(moment(0).from(30000), 'prije nekoliko sekundi', 'prefix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'prije nekoliko sekundi',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'za nekoliko sekundi', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'za 5 dana', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                   'danas u 2:00',  'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'danas u 2:25',  'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'danas u 3:00',  'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'sjutra u 2:00',  'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'danas u 1:00',  'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'juče u 2:00', 'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+
+        function makeFormat(d) {
+            switch (d.day()) {
+            case 0:
+                return '[u] [nedjelju] [u] LT';
+            case 3:
+                return '[u] [srijedu] [u] LT';
+            case 6:
+                return '[u] [subotu] [u] LT';
+            case 1:
+            case 2:
+            case 4:
+            case 5:
+                return '[u] dddd [u] LT';
+            }
+        }
+
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        function makeFormat(d) {
+            var lastWeekDay = [
+                    '[prošle] [nedjelje] [u] LT',
+                    '[prošlog] [ponedjeljka] [u] LT',
+                    '[prošlog] [utorka] [u] LT',
+                    '[prošle] [srijede] [u] LT',
+                    '[prošlog] [četvrtka] [u] LT',
+                    '[prošlog] [petka] [u] LT',
+                    '[prošle] [subote] [u] LT'
+                ];
+
+            return lastWeekDay[d.day()];
+        }
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    // Monday is the first day of the week.
+    // The week that contains Jan 1st is the first week of the year.
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2011, 11, 26]).week(), 1, 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).week(), 2, 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).week(), 3, 'Jan  9 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 12]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 1, 'Dec 28 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 should be week 1');
+        assert.equal(moment([2010,  0,  4]).week(), 2, 'Jan  4 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 should be week 2');
+        assert.equal(moment([2010,  0, 11]).week(), 3, 'Jan 11 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 1, 'Dec 27 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 should be week 1');
+        assert.equal(moment([2011,  0,  3]).week(), 2, 'Jan  3 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 should be week 2');
+        assert.equal(moment([2011,  0, 10]).week(), 3, 'Jan 10 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '1 01 1.', 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).format('w ww wo'), '1 01 1.', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '2 02 2.', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).format('w ww wo'), '2 02 2.', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '3 03 3.', 'Jan  9 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18264,8 +21534,8 @@
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'после неколку секунди',  'prefix');
-        assert.equal(moment(0).from(30000), 'пред неколку секунди', 'suffix');
+        assert.equal(moment(30000).from(0), 'после неколку секунди', 'prefix');
+        assert.equal(moment(0).from(30000), 'пред неколку секунди',  'suffix');
     });
 
     test('now from now', function (assert) {
@@ -18274,13 +21544,13 @@
 
     test('fromNow', function (assert) {
         assert.equal(moment().add({s: 30}).fromNow(), 'после неколку секунди', 'in a few seconds');
-        assert.equal(moment().add({d: 5}).fromNow(), 'после 5 дена', 'in 5 days');
+        assert.equal(moment().add({d: 5}).fromNow(),  'после 5 дена', 'in 5 days');
     });
 
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     'Денес во 2:00',  'today at the same time');
+        assert.equal(moment(a).calendar(),                   'Денес во 2:00',  'today at the same time');
         assert.equal(moment(a).add({m: 25}).calendar(),      'Денес во 2:25',  'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),       'Денес во 3:00',  'Now plus 1 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),       'Утре во 2:00',  'tomorrow at the same time');
@@ -18292,11 +21562,11 @@
         var i, m;
         for (i = 2; i < 7; i++) {
             m = moment().add({d: i});
-            assert.equal(m.calendar(),       m.format('dddd [во] LT'),  'Today + ' + i + ' days current time');
+            assert.equal(m.calendar(),       m.format('[Во] dddd [во] LT'),  'Today + ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format('dddd [во] LT'),  'Today + ' + i + ' days beginning of day');
+            assert.equal(m.calendar(),       m.format('[Во] dddd [во] LT'),  'Today + ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format('dddd [во] LT'),  'Today + ' + i + ' days end of day');
+            assert.equal(m.calendar(),       m.format('[Во] dddd [во] LT'),  'Today + ' + i + ' days end of day');
         }
     });
 
@@ -18308,12 +21578,12 @@
             case 0:
             case 3:
             case 6:
-                return '[Во изминатата] dddd [во] LT';
+                return '[Изминатата] dddd [во] LT';
             case 1:
             case 2:
             case 4:
             case 5:
-                return '[Во изминатиот] dddd [во] LT';
+                return '[Изминатиот] dddd [во] LT';
             }
         }
 
@@ -18448,8 +21718,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -18458,12 +21729,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18481,8 +21754,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18819,8 +22092,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -18829,12 +22103,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18852,8 +22128,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -18973,7 +22249,7 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'सेकंद', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'काही सेकंद', '44 seconds = a few seconds');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'एक मिनिट',      '45 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'एक मिनिट',      '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '२ मिनिटे',     '90 seconds = 2 minutes');
@@ -19004,17 +22280,17 @@
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'सेकंद नंतर', 'prefix');
-        assert.equal(moment(0).from(30000), 'सेकंद पूर्वी', 'suffix');
+        assert.equal(moment(30000).from(0), 'काही सेकंदांमध्ये', 'prefix');
+        assert.equal(moment(0).from(30000), 'काही सेकंदांपूर्वी', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'सेकंद पूर्वी',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'काही सेकंदांपूर्वी',  'now from now should display as in the past');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'सेकंद नंतर', 'सेकंद नंतर');
-        assert.equal(moment().add({d: 5}).fromNow(), '५ दिवस नंतर', '५ दिवस नंतर');
+        assert.equal(moment().add({s: 30}).fromNow(), 'काही सेकंदांमध्ये', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), '५ दिवसांमध्ये', 'in 5 days');
     });
 
     test('calendar day', function (assert) {
@@ -19202,8 +22478,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -19212,12 +22489,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -19235,8 +22514,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -19578,8 +22857,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -19588,12 +22868,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -19611,8 +22893,387 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('ms');
+
+    test('parse', function (assert) {
+        var i,
+            tests = 'Januari Jan_Februari Feb_Mac Mac_April Apr_Mei Mei_Jun Jun_Julai Jul_Ogos Ogs_September Sep_Oktober Okt_November Nov_Disember Dis'.split('_');
+
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' sepatutnya bulan ' + (i + 1));
+        }
+
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Ahad, Februari 14 2010, 3:25:50 petang'],
+                ['ddd, hA',                            'Ahd, 3petang'],
+                ['M Mo MM MMMM MMM',                   '2 2 02 Februari Feb'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14 14'],
+                ['d do dddd ddd dd',                   '0 0 Ahad Ahd Ah'],
+                ['DDD DDDo DDDD',                      '45 45 045'],
+                ['w wo ww',                            '7 7 07'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'petang petang'],
+                ['[hari] [ke] DDDo [tahun] ini', 'hari ke 45 tahun ini'],
+                ['LTS',                                '15.25.50'],
+                ['L',                                  '14/02/2010'],
+                ['LL',                                 '14 Februari 2010'],
+                ['LLL',                                '14 Februari 2010 pukul 15.25'],
+                ['LLLL',                               'Ahad, 14 Februari 2010 pukul 15.25'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 Feb 2010'],
+                ['lll',                                '14 Feb 2010 pukul 15.25'],
+                ['llll',                               'Ahd, 14 Feb 2010 pukul 15.25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1', '1');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2', '2');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3', '3');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4', '4');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5', '5');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6', '6');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7', '7');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8', '8');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9', '9');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10', '10');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11', '11');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12', '12');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13', '13');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14', '14');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15', '15');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16', '16');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17', '17');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18', '18');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19', '19');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20', '20');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21', '21');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22', '22');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23', '23');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24', '24');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25', '25');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26', '26');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27', '27');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28', '28');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29', '29');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30', '30');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31', '31');
+    });
+
+    test('format month', function (assert) {
+        var i,
+            expected = 'Januari Jan_Februari Feb_Mac Mac_April Apr_Mei Mei_Jun Jun_Julai Jul_Ogos Ogs_September Sep_Oktober Okt_November Nov_Disember Dis'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var i,
+            expected = 'Ahad Ahd Ah_Isnin Isn Is_Selasa Sel Sl_Rabu Rab Rb_Khamis Kha Km_Jumaat Jum Jm_Sabtu Sab Sb'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'beberapa saat', '44 saat = beberapa saat');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'seminit',      '45 saat = seminit');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'seminit',      '89 saat = seminit');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minit',     '90 saat = 2 minit');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minit',    '44 minit = 44 minit');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'sejam',       '45 minit = sejam');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'sejam',       '89 minit = sejam');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 jam',       '90 minit = 2 jam');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 jam',       '5 jam = 5 jam');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 jam',      '21 jam = 21 jam');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'sehari',         '22 jam = sehari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'sehari',         '35 jam = sehari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 hari',        '36 jam = 2 hari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'sehari',         '1 hari = sehari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 hari',        '5 hari = 5 hari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 hari',       '25 hari = 25 hari');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'sebulan',       '26 hari = sebulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'sebulan',       '30 hari = sebulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'sebulan',       '45 hari = sebulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 bulan',      '46 hari = 2 bulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 bulan',      '75 hari = 2 bulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 bulan',      '76 hari = 3 bulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'sebulan',       '1 bulan = sebulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 bulan',      '5 bulan = 5 bulan');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'setahun',        '345 hari = setahun');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 tahun',       '548 hari = 2 tahun');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'setahun',        '1 tahun = setahun');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 tahun',       '5 tahun = 5 tahun');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'dalam beberapa saat',  'prefix');
+        assert.equal(moment(0).from(30000), 'beberapa saat yang lepas', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'beberapa saat yang lepas',  'waktu sekarang dari sekarang sepatutnya menunjukkan sebagai telah lepas');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'dalam beberapa saat', 'dalam beberapa saat');
+        assert.equal(moment().add({d: 5}).fromNow(), 'dalam 5 hari', 'dalam 5 hari');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'Hari ini pukul 02.00',     'hari ini pada waktu yang sama');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'Hari ini pukul 02.25',     'Sekarang tambah 25 minit');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'Hari ini pukul 03.00',     'Sekarang tambah 1 jam');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'Esok pukul 02.00',  'esok pada waktu yang sama');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'Hari ini pukul 01.00',     'Sekarang tolak 1 jam');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'Kelmarin pukul 02.00', 'kelmarin pada waktu yang sama');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Hari ini + ' + i + ' hari waktu sekarang');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Hari ini + ' + i + ' hari permulaan hari');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [pukul] LT'),  'Hari ini + ' + i + ' hari tamat hari');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [lepas] [pukul] LT'),  'Hari ini - ' + i + ' hari waktu sekarang');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [lepas] [pukul] LT'),  'Hari ini - ' + i + ' hari permulaan hari');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [lepas] [pukul] LT'),  'Hari ini - ' + i + ' hari tamat hari');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 minggu lepas');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'dalam 1 minggu');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 minggu lepas');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'dalam 2 minggu');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0,  1]).week(), 1, 'Jan  1 2012 sepatutnya minggu 1');
+        assert.equal(moment([2012, 0,  7]).week(), 2, 'Jan  7 2012 sepatutnya minggu 2');
+        assert.equal(moment([2012, 0,  8]).week(), 2, 'Jan  8 2012 sepatutnya minggu 2');
+        assert.equal(moment([2012, 0, 14]).week(), 3, 'Jan 14 2012 sepatutnya minggu 3');
+        assert.equal(moment([2012, 0, 15]).week(), 3, 'Jan 15 2012 sepatutnya minggu 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2006, 11, 31]).week(), 53, 'Dec 31 2006 sepatutnya minggu 53');
+        assert.equal(moment([2007,  0,  1]).week(), 1, 'Jan  1 2007 sepatutnya minggu 1');
+        assert.equal(moment([2007,  0,  6]).week(), 1, 'Jan  6 2007 sepatutnya minggu 1');
+        assert.equal(moment([2007,  0,  7]).week(), 1, 'Jan  7 2007 sepatutnya minggu 1');
+        assert.equal(moment([2007,  0, 13]).week(), 2, 'Jan 13 2007 sepatutnya minggu 2');
+        assert.equal(moment([2007,  0, 14]).week(), 2, 'Jan 14 2007 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 30]).week(), 52, 'Dec 30 2007 sepatutnya minggu 52');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 sepatutnya minggu 1');
+        assert.equal(moment([2008,  0,  5]).week(), 1, 'Jan  5 2008 sepatutnya minggu 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 sepatutnya minggu 1');
+        assert.equal(moment([2008,  0, 12]).week(), 2, 'Jan 12 2008 sepatutnya minggu 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 29]).week(), 52, 'Dec 29 2002 sepatutnya minggu 52');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 sepatutnya minggu 1');
+        assert.equal(moment([2003,  0,  4]).week(), 1, 'Jan  4 2003 sepatutnya minggu 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 sepatutnya minggu 1');
+        assert.equal(moment([2003,  0, 11]).week(), 2, 'Jan 11 2003 sepatutnya minggu 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 28]).week(), 52, 'Dec 28 2008 sepatutnya minggu 52');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 sepatutnya minggu 1');
+        assert.equal(moment([2009,  0,  3]).week(), 1, 'Jan  3 2009 sepatutnya minggu 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 sepatutnya minggu 1');
+        assert.equal(moment([2009,  0, 10]).week(), 2, 'Jan 10 2009 sepatutnya minggu 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 27]).week(), 52, 'Dec 27 2009 sepatutnya minggu 52');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 sepatutnya minggu 1');
+        assert.equal(moment([2010,  0,  2]).week(), 1, 'Jan  2 2010 sepatutnya minggu 1');
+        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 sepatutnya minggu 1');
+        assert.equal(moment([2010,  0,  9]).week(), 2, 'Jan  9 2010 sepatutnya minggu 2');
+        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 26]).week(), 52, 'Dec 26 2010 sepatutnya minggu 52');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 sepatutnya minggu 1');
+        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 sepatutnya minggu 1');
+        assert.equal(moment([2011,  0,  8]).week(), 2, 'Jan  8 2011 sepatutnya minggu 2');
+        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 sepatutnya minggu 2');
+    });
+
+    test('weeks year starting sunday format', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '1 01 1', 'Jan  1 2012 sepatutnya minggu 1');
+        assert.equal(moment([2012, 0,  7]).format('w ww wo'), '2 02 2', 'Jan  7 2012 sepatutnya minggu 2');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '2 02 2', 'Jan  8 2012 sepatutnya minggu 2');
+        assert.equal(moment([2012, 0, 14]).format('w ww wo'), '3 03 3', 'Jan 14 2012 sepatutnya minggu 3');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '3 03 3', 'Jan 15 2012 sepatutnya minggu 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('meridiem invariant', function (assert) {
+        var h, m, t1, t2;
+        for (h = 0; h < 24; ++h) {
+            for (m = 0; m < 60; m += 15) {
+                t1 = moment.utc([2000, 0, 1, h, m]);
+                t2 = moment(t1.format('A h:mm'), 'A h:mm');
+                assert.equal(t2.format('HH:mm'), t1.format('HH:mm'),
+                        'meridiem at ' + t1.format('HH:mm'));
+            }
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -19728,7 +23389,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'တနင်္ဂနွေ နွေ နွေ_တနင်္လာ လာ လာ_အင်္ဂါ င်္ဂါ င်္ဂါ_ဗုဒ္ဓဟူး ဟူး ဟူး_ကြာသပတေး ကြာ ကြာ_သောကြာ သော သော_စနေ နေ နေ'.split('_'),
+        var expected = 'တနင်္ဂနွေ နွေ နွေ_တနင်္လာ လာ လာ_အင်္ဂါ ဂါ ဂါ_ဗုဒ္ဓဟူး ဟူး ဟူး_ကြာသပတေး ကြာ ကြာ_သောကြာ သော သော_စနေ နေ နေ'.split('_'),
             i;
 
         for (i = 0; i < expected.length; i++) {
@@ -20021,8 +23682,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -20031,12 +23693,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -20054,8 +23718,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -20073,7 +23737,7 @@
     localeModule('nb');
 
     test('parse', function (assert) {
-        var tests = 'januar jan_februar feb_mars mar_april apr_mai mai_juni jun_juli jul_august aug_september sep_oktober okt_november nov_desember des'.split('_'),
+        var tests = 'januar jan._februar feb._mars mars_april april_mai mai_juni juni_juli juli_august aug._september sep._oktober okt._november nov._desember des.'.split('_'),
             i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
@@ -20094,11 +23758,11 @@
     test('format', function (assert) {
         var a = [
                 ['dddd, MMMM Do YYYY, h:mm:ss a',      'søndag, februar 14. 2010, 3:25:50 pm'],
-                ['ddd, hA',                            'søn, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2. 02 februar feb'],
+                ['ddd, hA',                            'sø., 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 februar feb.'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14. 14'],
-                ['d do dddd ddd dd',                   '0 0. søndag søn sø'],
+                ['d do dddd ddd dd',                   '0 0. søndag sø. sø'],
                 ['DDD DDDo DDDD',                      '45 45. 045'],
                 ['w wo ww',                            '6 6. 06'],
                 ['h hh',                               '3 03'],
@@ -20107,15 +23771,15 @@
                 ['s ss',                               '50 50'],
                 ['a A',                                'pm PM'],
                 ['[den] DDDo [dagen i året]',          'den 45. dagen i året'],
-                ['LTS',                                '15.25.50'],
+                ['LTS',                                '15:25:50'],
                 ['L',                                  '14.02.2010'],
                 ['LL',                                 '14. februar 2010'],
-                ['LLL',                                '14. februar 2010 kl. 15.25'],
-                ['LLLL',                               'søndag 14. februar 2010 kl. 15.25'],
+                ['LLL',                                '14. februar 2010 kl. 15:25'],
+                ['LLLL',                               'søndag 14. februar 2010 kl. 15:25'],
                 ['l',                                  '14.2.2010'],
-                ['ll',                                 '14. feb 2010'],
-                ['lll',                                '14. feb 2010 kl. 15.25'],
-                ['llll',                               'søn 14. feb 2010 kl. 15.25']
+                ['ll',                                 '14. feb. 2010'],
+                ['lll',                                '14. feb. 2010 kl. 15:25'],
+                ['llll',                               'sø. 14. feb. 2010 kl. 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -20162,14 +23826,14 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'januar jan_februar feb_mars mar_april apr_mai mai_juni jun_juli jul_august aug_september sep_oktober okt_november nov_desember des'.split('_'), i;
+        var expected = 'januar jan._februar feb._mars mars_april april_mai mai_juni juni_juli juli_august aug._september sep._oktober okt._november nov._desember des.'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
     });
 
     test('format week', function (assert) {
-        var expected = 'søndag søn sø_mandag man ma_tirsdag tirs ti_onsdag ons on_torsdag tors to_fredag fre fr_lørdag lør lø'.split('_'), i;
+        var expected = 'søndag sø. sø_mandag ma. ma_tirsdag ti. ti_onsdag on. on_torsdag to. to_fredag fr. fr_lørdag lø. lø'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -20224,12 +23888,12 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     'i dag kl. 2.00',     'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(),      'i dag kl. 2.25',     'Now plus 25 min');
-        assert.equal(moment(a).add({h: 1}).calendar(),       'i dag kl. 3.00',     'Now plus 1 hour');
-        assert.equal(moment(a).add({d: 1}).calendar(),       'i morgen kl. 2.00',  'tomorrow at the same time');
-        assert.equal(moment(a).subtract({h: 1}).calendar(),  'i dag kl. 1.00',     'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  'i går kl. 2.00',     'yesterday at the same time');
+        assert.equal(moment(a).calendar(),                     'i dag kl. 02:00',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'i dag kl. 02:25',     'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'i dag kl. 03:00',     'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'i morgen kl. 02:00',  'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'i dag kl. 01:00',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'i går kl. 02:00',     'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -20377,8 +24041,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -20387,12 +24052,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -20410,8 +24077,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -20448,28 +24115,28 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, Do MMMM YYYY, aको h:mm:ss बजे',       'आइतबार, १४ फेब्रुवरी २०१०, बेलुकाको ३:२५:५० बजे'],
-                ['ddd, aको h बजे',                                                      'आइत., बेलुकाको ३ बजे'],
+                ['dddd, Do MMMM YYYY, aको h:mm:ss बजे',      'आइतबार, १४ फेब्रुवरी २०१०, दिउँसोको ३:२५:५० बजे'],
+                ['ddd, aको h बजे',                                                'आइत., दिउँसोको ३ बजे'],
                 ['M Mo MM MMMM MMM',                   '२ २ ०२ फेब्रुवरी फेब्रु.'],
                 ['YYYY YY',                            '२०१० १०'],
                 ['D Do DD',                            '१४ १४ १४'],
-                ['d do dddd ddd dd',                   '० ० आइतबार आइत. आइ.'],
+                ['d do dddd ddd dd',                   '० ० आइतबार आइत. आ.'],
                 ['DDD DDDo DDDD',                      '४५ ४५ ०४५'],
-                ['w wo ww',                            '७ ७ ०७'],
+                ['w wo ww',                            '८ ८ ०८'],
                 ['h hh',                               '३ ०३'],
                 ['H HH',                               '१५ १५'],
                 ['m mm',                               '२५ २५'],
                 ['s ss',                               '५० ५०'],
-                ['a A',                                'बेलुका बेलुका'],
-                ['LTS',                                'बेलुकाको ३:२५:५० बजे'],
+                ['a A',                                'दिउँसो दिउँसो'],
+                ['LTS',                                'दिउँसोको ३:२५:५० बजे'],
                 ['L',                                  '१४/०२/२०१०'],
                 ['LL',                                 '१४ फेब्रुवरी २०१०'],
-                ['LLL',                                '१४ फेब्रुवरी २०१०, बेलुकाको ३:२५ बजे'],
-                ['LLLL',                               'आइतबार, १४ फेब्रुवरी २०१०, बेलुकाको ३:२५ बजे'],
+                ['LLL',                                '१४ फेब्रुवरी २०१०, दिउँसोको ३:२५ बजे'],
+                ['LLLL',                               'आइतबार, १४ फेब्रुवरी २०१०, दिउँसोको ३:२५ बजे'],
                 ['l',                                  '१४/२/२०१०'],
                 ['ll',                                 '१४ फेब्रु. २०१०'],
-                ['lll',                                '१४ फेब्रु. २०१०, बेलुकाको ३:२५ बजे'],
-                ['llll',                               'आइत., १४ फेब्रु. २०१०, बेलुकाको ३:२५ बजे']
+                ['lll',                                '१४ फेब्रु. २०१०, दिउँसोको ३:२५ बजे'],
+                ['llll',                               'आइत., १४ फेब्रु. २०१०, दिउँसोको ३:२५ बजे']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -20523,7 +24190,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'आइतबार आइत. आइ._सोमबार सोम. सो._मङ्गलबार मङ्गल. मङ्_बुधबार बुध. बु._बिहिबार बिहि. बि._शुक्रबार शुक्र. शु._शनिबार शनि. श.'.split('_'), i;
+        var expected = 'आइतबार आइत. आ._सोमबार सोम. सो._मङ्गलबार मङ्गल. मं._बुधबार बुध. बु._बिहिबार बिहि. बि._शुक्रबार शुक्र. शु._शनिबार शनि. श.'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -20531,7 +24198,7 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'केही समय', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'केही क्षण', '44 seconds = a few seconds');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'एक मिनेट',      '45 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'एक मिनेट',      '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '२ मिनेट',     '90 seconds = 2 minutes');
@@ -20562,28 +24229,28 @@
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'केही समयमा',  'prefix');
-        assert.equal(moment(0).from(30000), 'केही समय अगाडी', 'suffix');
+        assert.equal(moment(30000).from(0), 'केही क्षणमा',  'prefix');
+        assert.equal(moment(0).from(30000), 'केही क्षण अगाडि', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'केही समय अगाडी',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'केही क्षण अगाडि',  'now from now should display as in the past');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'केही समयमा', 'केही समयमा');
+        assert.equal(moment().add({s: 30}).fromNow(), 'केही क्षणमा', 'केही क्षणमा');
         assert.equal(moment().add({d: 5}).fromNow(), '५ दिनमा', '५ दिनमा');
     });
 
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     'आज रातीको २:०० बजे',     'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(),      'आज रातीको २:२५ बजे',     'Now plus 25 min');
+        assert.equal(moment(a).calendar(),                   'आज रातिको २:०० बजे',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'आज रातिको २:२५ बजे',     'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),       'आज बिहानको ३:०० बजे',     'Now plus 1 hour');
-        assert.equal(moment(a).add({d: 1}).calendar(),       'भोली रातीको २:०० बजे',  'tomorrow at the same time');
-        assert.equal(moment(a).subtract({h: 1}).calendar(),  'आज रातीको १:०० बजे',     'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  'हिजो रातीको २:०० बजे', 'yesterday at the same time');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'भोलि रातिको २:०० बजे',  'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'आज रातिको १:०० बजे',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'हिजो रातिको २:०० बजे', 'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -20625,88 +24292,89 @@
     });
 
     test('meridiem', function (assert) {
-        assert.equal(moment([2011, 2, 23,  2, 30]).format('a'), 'राती', 'before dawn');
+        assert.equal(moment([2011, 2, 23,  2, 30]).format('a'), 'राति', 'before dawn');
         assert.equal(moment([2011, 2, 23,  9, 30]).format('a'), 'बिहान', 'morning');
         assert.equal(moment([2011, 2, 23, 14, 30]).format('a'), 'दिउँसो', 'during day');
-        assert.equal(moment([2011, 2, 23, 17, 30]).format('a'), 'बेलुका', 'evening');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('a'), 'साँझ', 'evening');
         assert.equal(moment([2011, 2, 23, 19, 30]).format('a'), 'साँझ', 'late evening');
-        assert.equal(moment([2011, 2, 23, 21, 20]).format('a'), 'राती', 'night');
+        assert.equal(moment([2011, 2, 23, 21, 20]).format('a'), 'राति', 'night');
 
-        assert.equal(moment([2011, 2, 23,  2, 30]).format('A'), 'राती', 'before dawn');
+        assert.equal(moment([2011, 2, 23,  2, 30]).format('A'), 'राति', 'before dawn');
         assert.equal(moment([2011, 2, 23,  9, 30]).format('A'), 'बिहान', 'morning');
         assert.equal(moment([2011, 2, 23, 14, 30]).format('A'), 'दिउँसो', 'during day');
-        assert.equal(moment([2011, 2, 23, 17, 30]).format('A'), 'बेलुका', 'evening');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('A'), 'साँझ', 'evening');
         assert.equal(moment([2011, 2, 23, 19, 30]).format('A'), 'साँझ', 'late evening');
-        assert.equal(moment([2011, 2, 23, 21, 20]).format('A'), 'राती', 'night');
+        assert.equal(moment([2011, 2, 23, 21, 20]).format('A'), 'राति', 'night');
     });
 
     test('weeks year starting sunday', function (assert) {
-        assert.equal(moment([2011, 11, 26]).week(), 1, 'Dec 26 2011 should be week 1');
-        assert.equal(moment([2012,  0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
-        assert.equal(moment([2012,  0,  2]).week(), 2, 'Jan  2 2012 should be week 2');
-        assert.equal(moment([2012,  0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
-        assert.equal(moment([2012,  0,  9]).week(), 3, 'Jan  9 2012 should be week 3');
+        assert.equal(moment([2012, 0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  7]).week(), 1, 'Jan  7 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).week(), 2, 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 3, 'Jan 15 2012 should be week 3');
     });
 
     test('weeks year starting monday', function (assert) {
-        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
-        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
-        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
-        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
-        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+        assert.equal(moment([2006, 11, 31]).week(), 1, 'Dec 31 2006 should be week 1');
+        assert.equal(moment([2007,  0,  1]).week(), 1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007,  0,  6]).week(), 1, 'Jan  6 2007 should be week 1');
+        assert.equal(moment([2007,  0,  7]).week(), 2, 'Jan  7 2007 should be week 2');
+        assert.equal(moment([2007,  0, 13]).week(), 2, 'Jan 13 2007 should be week 2');
+        assert.equal(moment([2007,  0, 14]).week(), 3, 'Jan 14 2007 should be week 3');
     });
 
     test('weeks year starting tuesday', function (assert) {
-        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2007, 11, 29]).week(), 52, 'Dec 29 2007 should be week 52');
         assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
-        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
-        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
-        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
-        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+        assert.equal(moment([2008,  0,  5]).week(), 1, 'Jan  5 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 2, 'Jan  6 2008 should be week 2');
+        assert.equal(moment([2008,  0, 12]).week(), 2, 'Jan 12 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 3, 'Jan 13 2008 should be week 3');
     });
 
     test('weeks year starting wednesday', function (assert) {
-        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2002, 11, 29]).week(), 1, 'Dec 29 2002 should be week 1');
         assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
-        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
-        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
-        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
-        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+        assert.equal(moment([2003,  0,  4]).week(), 1, 'Jan  4 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 2, 'Jan  5 2003 should be week 2');
+        assert.equal(moment([2003,  0, 11]).week(), 2, 'Jan 11 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 3, 'Jan 12 2003 should be week 3');
     });
 
     test('weeks year starting thursday', function (assert) {
-        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2008, 11, 28]).week(), 1, 'Dec 28 2008 should be week 1');
         assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
-        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
-        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
-        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
-        assert.equal(moment([2009,  0, 12]).week(), 3, 'Jan 12 2009 should be week 3');
+        assert.equal(moment([2009,  0,  3]).week(), 1, 'Jan  3 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 2, 'Jan  4 2009 should be week 2');
+        assert.equal(moment([2009,  0, 10]).week(), 2, 'Jan 10 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 3, 'Jan 11 2009 should be week 3');
     });
 
     test('weeks year starting friday', function (assert) {
-        assert.equal(moment([2009, 11, 28]).week(), 1, 'Dec 28 2009 should be week 1');
+        assert.equal(moment([2009, 11, 27]).week(), 1, 'Dec 27 2009 should be week 1');
         assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
-        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 should be week 1');
-        assert.equal(moment([2010,  0,  4]).week(), 2, 'Jan  4 2010 should be week 2');
-        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 should be week 2');
-        assert.equal(moment([2010,  0, 11]).week(), 3, 'Jan 11 2010 should be week 3');
+        assert.equal(moment([2010,  0,  2]).week(), 1, 'Jan  2 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 2, 'Jan  3 2010 should be week 2');
+        assert.equal(moment([2010,  0,  9]).week(), 2, 'Jan  9 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 3, 'Jan 10 2010 should be week 3');
     });
 
     test('weeks year starting saturday', function (assert) {
-        assert.equal(moment([2010, 11, 27]).week(), 1, 'Dec 27 2010 should be week 1');
+        assert.equal(moment([2010, 11, 26]).week(), 1, 'Dec 26 2010 should be week 1');
         assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
-        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 should be week 1');
-        assert.equal(moment([2011,  0,  3]).week(), 2, 'Jan  3 2011 should be week 2');
-        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 should be week 2');
-        assert.equal(moment([2011,  0, 10]).week(), 3, 'Jan 10 2011 should be week 3');
+        assert.equal(moment([2011,  0,  2]).week(), 2, 'Jan  2 2011 should be week 2');
+        assert.equal(moment([2011,  0,  8]).week(), 2, 'Jan  8 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 3, 'Jan  9 2011 should be week 3');
     });
 
+
     test('weeks year starting sunday formatted', function (assert) {
-        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '१ ०१ १', 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '५३ ५३ ५३', 'Dec 26 2011 should be week 53');
         assert.equal(moment([2012,  0,  1]).format('w ww wo'), '१ ०१ १', 'Jan  1 2012 should be week 1');
-        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '२ ०२ २', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '१ ०१ १', 'Jan  2 2012 should be week 1');
         assert.equal(moment([2012,  0,  8]).format('w ww wo'), '२ ०२ २', 'Jan  8 2012 should be week 2');
-        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '३ ०३ ३', 'Jan  9 2012 should be week 3');
+        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '२ ०२ २', 'Jan  9 2012 should be week 2');
     });
 
     test('lenient ordinal parsing', function (assert) {
@@ -20759,8 +24427,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -20769,12 +24438,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -20792,8 +24463,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21119,8 +24790,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -21129,12 +24801,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21152,8 +24826,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21206,13 +24880,13 @@
                 ['[the] DDDo [day of the year]',       'the 45. day of the year'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14.02.2010'],
-                ['LL',                                 '14 februar 2010'],
-                ['LLL',                                '14 februar 2010 15:25'],
-                ['LLLL',                               'sundag 14 februar 2010 15:25'],
+                ['LL',                                 '14. februar 2010'],
+                ['LLL',                                '14. februar 2010 kl. 15:25'],
+                ['LLLL',                               'sundag 14. februar 2010 kl. 15:25'],
                 ['l',                                  '14.2.2010'],
-                ['ll',                                 '14 feb 2010'],
-                ['lll',                                '14 feb 2010 15:25'],
-                ['llll',                               'sun 14 feb 2010 15:25']
+                ['ll',                                 '14. feb 2010'],
+                ['lll',                                '14. feb 2010 kl. 15:25'],
+                ['llll',                               'sun 14. feb 2010 kl. 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -21474,8 +25148,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -21484,12 +25159,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21507,8 +25184,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21526,7 +25203,7 @@
     localeModule('pl');
 
     test('parse', function (assert) {
-        var tests = 'styczeń sty_luty lut_marzec mar_kwiecień kwi_maj maj_czerwiec cze_lipiec lip_sierpień sie_wrzesień wrz_październik paź_listopad lis_grudzień gru'.split('_'), i;
+        var tests = 'styczeń stycznia sty_luty lutego lut_marzec marca mar_kwiecień kwietnia kwi_maj maja maj_czerwiec czerwca cze_lipiec lipca lip_sierpień sierpnia sie_wrzesień września wrz_październik października paź_listopad listopada lis_grudzień grudnia gru'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -21534,12 +25211,35 @@
             tests[i] = tests[i].split(' ');
             equalTest(tests[i][0], 'MMM', i);
             equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][2], 'MMM', i);
             equalTest(tests[i][0], 'MMMM', i);
             equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][2], 'MMMM', i);
             equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
             equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][2].toLocaleLowerCase(), 'MMMM', i);
             equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
             equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][2].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('parse strict', function (assert) {
+        var tests = 'styczeń stycznia sty_luty lutego lut_marzec marca mar_kwiecień kwietnia kwi_maj maja maj_czerwiec czerwca cze_lipiec lipca lip_sierpień sierpnia sie_wrzesień września wrz_październik października paź_listopad listopada lis_grudzień grudnia gru'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm, true).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][2], 'MMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][2].toLocaleLowerCase(), 'MMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][2].toLocaleUpperCase(), 'MMM', i);
         }
     });
 
@@ -21550,7 +25250,7 @@
                 ['M Mo MM MMMM MMM',                   '2 2. 02 luty lut'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14. 14'],
-                ['d do dddd ddd dd',                   '0 0. niedziela nie N'],
+                ['d do dddd ddd dd',                   '0 0. niedziela nie Nd'],
                 ['DDD DDDo DDDD',                      '45 45. 045'],
                 ['w wo ww',                            '6 6. 06'],
                 ['h hh',                               '3 03'],
@@ -21621,7 +25321,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'niedziela nie N_poniedziałek pon Pn_wtorek wt Wt_środa śr Śr_czwartek czw Cz_piątek pt Pt_sobota sb So'.split('_'), i;
+        var expected = 'niedziela nie Nd_poniedziałek pon Pn_wtorek wt Wt_środa śr Śr_czwartek czw Cz_piątek pt Pt_sobota sb So'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -21850,8 +25550,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -21860,12 +25561,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21883,8 +25586,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -21923,12 +25626,12 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'domingo, fevereiro 14º 2010, 3:25:50 pm'],
-                ['ddd, hA',                            'dom, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2º 02 fevereiro fev'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Domingo, Fevereiro 14º 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'Dom, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2º 02 Fevereiro Fev'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14º 14'],
-                ['d do dddd ddd',                      '0 0º domingo dom'],
+                ['d do dddd ddd',                      '0 0º Domingo Dom'],
                 ['DDD DDDo DDDD',                      '45 45º 045'],
                 ['w wo ww',                            '8 8º 08'],
                 ['h hh',                               '3 03'],
@@ -21939,13 +25642,13 @@
                 ['[the] DDDo [day of the year]',       'the 45º day of the year'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14/02/2010'],
-                ['LL',                                 '14 de fevereiro de 2010'],
-                ['LLL',                                '14 de fevereiro de 2010 às 15:25'],
-                ['LLLL',                               'domingo, 14 de fevereiro de 2010 às 15:25'],
+                ['LL',                                 '14 de Fevereiro de 2010'],
+                ['LLL',                                '14 de Fevereiro de 2010 às 15:25'],
+                ['LLLL',                               'Domingo, 14 de Fevereiro de 2010 às 15:25'],
                 ['l',                                  '14/2/2010'],
-                ['ll',                                 '14 de fev de 2010'],
-                ['lll',                                '14 de fev de 2010 às 15:25'],
-                ['llll',                               'dom, 14 de fev de 2010 às 15:25']
+                ['ll',                                 '14 de Fev de 2010'],
+                ['lll',                                '14 de Fev de 2010 às 15:25'],
+                ['llll',                               'Dom, 14 de Fev de 2010 às 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -21992,14 +25695,14 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'janeiro jan_fevereiro fev_março mar_abril abr_maio mai_junho jun_julho jul_agosto ago_setembro set_outubro out_novembro nov_dezembro dez'.split('_'), i;
+        var expected = 'Janeiro Jan_Fevereiro Fev_Março Mar_Abril Abr_Maio Mai_Junho Jun_Julho Jul_Agosto Ago_Setembro Set_Outubro Out_Novembro Nov_Dezembro Dez'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
     });
 
     test('format week', function (assert) {
-        var expected = 'domingo dom_segunda-feira seg_terça-feira ter_quarta-feira qua_quinta-feira qui_sexta-feira sex_sábado sáb'.split('_'), i;
+        var expected = 'Domingo Dom_Segunda-Feira Seg_Terça-Feira Ter_Quarta-Feira Qua_Quinta-Feira Qui_Sexta-Feira Sex_Sábado Sáb'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd'), expected[i], expected[i]);
         }
@@ -22007,7 +25710,7 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'segundos',    '44 seconds = seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'poucos segundos', '44 seconds = seconds');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'um minuto',   '45 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'um minuto',   '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minutos',  '90 seconds = 2 minutes');
@@ -22038,12 +25741,12 @@
     });
 
     test('suffix', function (assert) {
-        assert.equal(moment(30000).from(0), 'em segundos', 'prefix');
-        assert.equal(moment(0).from(30000), 'segundos atrás', 'suffix');
+        assert.equal(moment(30000).from(0), 'em poucos segundos', 'prefix');
+        assert.equal(moment(0).from(30000), 'poucos segundos atrás', 'suffix');
     });
 
     test('fromNow', function (assert) {
-        assert.equal(moment().add({s: 30}).fromNow(), 'em segundos', 'in seconds');
+        assert.equal(moment().add({s: 30}).fromNow(), 'em poucos segundos', 'in seconds');
         assert.equal(moment().add({d: 5}).fromNow(), 'em 5 dias', 'in 5 days');
     });
 
@@ -22203,8 +25906,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -22213,12 +25917,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22236,8 +25942,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22274,12 +25980,12 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a',      'domingo, fevereiro 14º 2010, 3:25:50 pm'],
-                ['ddd, hA',                            'dom, 3PM'],
-                ['M Mo MM MMMM MMM',                   '2 2º 02 fevereiro fev'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Domingo, Fevereiro 14º 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'Dom, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2º 02 Fevereiro Fev'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14º 14'],
-                ['d do dddd ddd dd',                   '0 0º domingo dom dom'],
+                ['d do dddd ddd',                      '0 0º Domingo Dom'],
                 ['DDD DDDo DDDD',                      '45 45º 045'],
                 ['w wo ww',                            '6 6º 06'],
                 ['h hh',                               '3 03'],
@@ -22290,13 +25996,13 @@
                 ['[the] DDDo [day of the year]',       'the 45º day of the year'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14/02/2010'],
-                ['LL',                                 '14 de fevereiro de 2010'],
-                ['LLL',                                '14 de fevereiro de 2010 15:25'],
-                ['LLLL',                               'domingo, 14 de fevereiro de 2010 15:25'],
+                ['LL',                                 '14 de Fevereiro de 2010'],
+                ['LLL',                                '14 de Fevereiro de 2010 15:25'],
+                ['LLLL',                               'Domingo, 14 de Fevereiro de 2010 15:25'],
                 ['l',                                  '14/2/2010'],
-                ['ll',                                 '14 de fev de 2010'],
-                ['lll',                                '14 de fev de 2010 15:25'],
-                ['llll',                               'dom, 14 de fev de 2010 15:25']
+                ['ll',                                 '14 de Fev de 2010'],
+                ['lll',                                '14 de Fev de 2010 15:25'],
+                ['llll',                               'Dom, 14 de Fev de 2010 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -22343,14 +26049,14 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'janeiro jan_fevereiro fev_março mar_abril abr_maio mai_junho jun_julho jul_agosto ago_setembro set_outubro out_novembro nov_dezembro dez'.split('_'), i;
+        var expected = 'Janeiro Jan_Fevereiro Fev_Março Mar_Abril Abr_Maio Mai_Junho Jun_Julho Jul_Agosto Ago_Setembro Set_Outubro Out_Novembro Nov_Dezembro Dez'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
     });
 
     test('format week', function (assert) {
-        var expected = 'domingo dom dom_segunda-feira seg 2ª_terça-feira ter 3ª_quarta-feira qua 4ª_quinta-feira qui 5ª_sexta-feira sex 6ª_sábado sáb sáb'.split('_'), i;
+        var expected = 'Domingo Dom Dom_Segunda-Feira Seg 2ª_Terça-Feira Ter 3ª_Quarta-Feira Qua 4ª_Quinta-Feira Qui 5ª_Sexta-Feira Sex 6ª_Sábado Sáb Sáb'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -22554,8 +26260,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -22564,12 +26271,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22587,8 +26296,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22917,8 +26626,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -22927,12 +26637,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22950,8 +26662,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -22969,9 +26681,12 @@
     localeModule('ru');
 
     test('parse', function (assert) {
-        var tests = 'январь янв_февраль фев_март март_апрель апр_май май_июнь июнь_июль июль_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split('_'), i;
+        var tests = 'Январь янв_Февраль фев_Март март_Апрель апр_Май май_Июнь июнь_Июль июль_Август авг_Сентябрь сен_Октябрь окт_Ноябрь ноя_Декабрь дек'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        function equalTestStrict(input, mmm, monthIndex) {
+            assert.equal(moment(input, mmm, true).month(), monthIndex, input + ' ' + mmm + ' should be strict month ' + (monthIndex + 1));
         }
         for (i = 0; i < 12; i++) {
             tests[i] = tests[i].split(' ');
@@ -22983,21 +26698,28 @@
             equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
             equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
             equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+
+            equalTestStrict(tests[i][1], 'MMM', i);
+            equalTestStrict(tests[i][0], 'MMMM', i);
+            equalTestStrict(tests[i][1].toLocaleLowerCase(), 'MMM', i);
+            equalTestStrict(tests[i][1].toLocaleUpperCase(), 'MMM', i);
+            equalTestStrict(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTestStrict(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
         }
     });
 
     test('parse exceptional case', function (assert) {
-        assert.equal(moment('11 мая 1989', ['DD MMMM YYYY']).format('DD-MM-YYYY'), '11-05-1989');
+        assert.equal(moment('11 Мая 1989', ['DD MMMM YYYY']).format('DD-MM-YYYY'), '11-05-1989');
     });
 
     test('format', function (assert) {
         var a = [
-                ['dddd, Do MMMM YYYY, HH:mm:ss',       'воскресенье, 14-го февраля 2010, 15:25:50'],
-                ['ddd, h A',                           'вс, 3 дня'],
-                ['M Mo MM MMMM MMM',                   '2 2-й 02 февраль фев'],
+                ['dddd, Do MMMM YYYY, HH:mm:ss',       'Воскресенье, 14-го Февраля 2010, 15:25:50'],
+                ['ddd, h A',                           'Вс, 3 дня'],
+                ['M Mo MM MMMM MMM',                   '2 2-й 02 Февраль фев'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14-го 14'],
-                ['d do dddd ddd dd',                   '0 0-й воскресенье вс вс'],
+                ['d do dddd ddd dd',                   '0 0-й Воскресенье Вс Вс'],
                 ['DDD DDDo DDDD',                      '45 45-й 045'],
                 ['w wo ww',                            '7 7-я 07'],
                 ['h hh',                               '3 03'],
@@ -23008,13 +26730,13 @@
                 ['DDDo [день года]',                   '45-й день года'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14.02.2010'],
-                ['LL',                                 '14 февраля 2010 г.'],
-                ['LLL',                                '14 февраля 2010 г., 15:25'],
-                ['LLLL',                               'воскресенье, 14 февраля 2010 г., 15:25'],
+                ['LL',                                 '14 Февраля 2010 г.'],
+                ['LLL',                                '14 Февраля 2010 г., 15:25'],
+                ['LLLL',                               'Воскресенье, 14 Февраля 2010 г., 15:25'],
                 ['l',                                  '14.2.2010'],
                 ['ll',                                 '14 фев 2010 г.'],
                 ['lll',                                '14 фев 2010 г., 15:25'],
-                ['llll',                               'вс, 14 фев 2010 г., 15:25']
+                ['llll',                               'Вс, 14 фев 2010 г., 15:25']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -23072,7 +26794,7 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'январь янв_февраль фев_март март_апрель апр_май май_июнь июнь_июль июль_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split('_'), i;
+        var expected = 'Январь янв_Февраль фев_Март март_Апрель апр_Май май_Июнь июнь_Июль июль_Август авг_Сентябрь сен_Октябрь окт_Ноябрь ноя_Декабрь дек'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -23080,8 +26802,8 @@
 
     test('format month case', function (assert) {
         var months = {
-            'nominative': 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
-            'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
+            'nominative': 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_'),
+            'accusative': 'Января_Февраля_Марта_Апреля_Мая_Июня_Июля_Августа_Сентября_Октября_Ноября_Декабря'.split('_')
         }, i;
         for (i = 0; i < 12; i++) {
             assert.equal(moment([2011, i, 1]).format('D MMMM'), '1 ' + months.accusative[i], '1 ' + months.accusative[i]);
@@ -23102,8 +26824,8 @@
 
     test('format month case with escaped symbols', function (assert) {
         var months = {
-            'nominative': 'январь_февраль_март_апрель_май_июнь_июль_август_сентябрь_октябрь_ноябрь_декабрь'.split('_'),
-            'accusative': 'января_февраля_марта_апреля_мая_июня_июля_августа_сентября_октября_ноября_декабря'.split('_')
+            'nominative': 'Январь_Февраль_Март_Апрель_Май_Июнь_Июль_Август_Сентябрь_Октябрь_Ноябрь_Декабрь'.split('_'),
+            'accusative': 'Января_Февраля_Марта_Апреля_Мая_Июня_Июля_Августа_Сентября_Октября_Ноября_Декабря'.split('_')
         }, i;
         for (i = 0; i < 12; i++) {
             assert.equal(moment([2013, i, 1]).format('D[] MMMM'), '1 ' + months.accusative[i], '1 ' + months.accusative[i]);
@@ -23127,7 +26849,7 @@
     });
 
     test('format week', function (assert) {
-        var expected = 'воскресенье вс вс_понедельник пн пн_вторник вт вт_среда ср ср_четверг чт чт_пятница пт пт_суббота сб сб'.split('_'), i;
+        var expected = 'Воскресенье Вс Вс_Понедельник Пн Пн_Вторник Вт Вт_Среда Ср Ср_Четверг Чт Чт_Пятница Пт Пт_Суббота Сб Сб'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
         }
@@ -23192,18 +26914,50 @@
     });
 
     test('calendar next week', function (assert) {
-        var i, m;
-        function makeFormat(d) {
-            return d.day() === 2 ? '[Во] dddd [в] LT' : '[В] dddd [в] LT';
+        var i, m, now;
+
+        function makeFormatNext(d) {
+            switch (d.day()) {
+            case 0:
+                return '[В следующее] dddd [в] LT';
+            case 1:
+            case 2:
+            case 4:
+                return '[В следующий] dddd [в] LT';
+            case 3:
+            case 5:
+            case 6:
+                return '[В следующую] dddd [в] LT';
+            }
         }
 
+        function makeFormatThis(d) {
+            if (d.day() === 2) {
+                return '[Во] dddd [в] LT';
+            }
+            else {
+                return '[В] dddd [в] LT';
+            }
+        }
+
+        now = moment().startOf('week');
         for (i = 2; i < 7; i++) {
-            m = moment().add({d: i});
-            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days current time');
+            m = moment(now).add({d: i});
+            assert.equal(m.calendar(now),       m.format(makeFormatThis(m)),  'Today + ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days beginning of day');
+            assert.equal(m.calendar(now),       m.format(makeFormatThis(m)),  'Today + ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format(makeFormat(m)),  'Today + ' + i + ' days end of day');
+            assert.equal(m.calendar(now),       m.format(makeFormatThis(m)),  'Today + ' + i + ' days end of day');
+        }
+
+        now = moment().endOf('week');
+        for (i = 2; i < 7; i++) {
+            m = moment(now).add({d: i});
+            assert.equal(m.calendar(now),       m.format(makeFormatNext(m)),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(now),       m.format(makeFormatNext(m)),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(now),       m.format(makeFormatNext(m)),  'Today + ' + i + ' days end of day');
         }
     });
 
@@ -23226,15 +26980,10 @@
         }
 
         function makeFormatThis(d) {
-            switch (d.day()) {
-            case 2:
+            if (d.day() === 2) {
                 return '[Во] dddd [в] LT';
-            case 0:
-            case 1:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
+            }
+            else {
                 return '[В] dddd [в] LT';
             }
         }
@@ -23381,8 +27130,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -23391,12 +27141,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -23414,8 +27166,669 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('se');
+
+    test('parse', function (assert) {
+        var i,
+            tests = 'ođđajagemánnu ođđj_guovvamánnu guov_njukčamánnu njuk_cuoŋománnu cuo_miessemánnu mies_geassemánnu geas_suoidnemánnu suoi_borgemánnu borg_čakčamánnu čakč_golggotmánnu golg_skábmamánnu skáb_juovlamánnu juov'.split('_');
+
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'sotnabeaivi, guovvamánnu 14. 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'sotn, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 guovvamánnu guov'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14. 14'],
+                ['d do dddd ddd dd',                   '0 0. sotnabeaivi sotn s'],
+                ['DDD DDDo DDDD',                      '45 45. 045'],
+                ['w wo ww',                            '6 6. 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[jagi] DDDo [beaivi]',               'jagi 45. beaivi'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 'guovvamánnu 14. b. 2010'],
+                ['LLL',                                'guovvamánnu 14. b. 2010 ti. 15:25'],
+                ['LLLL',                               'sotnabeaivi, guovvamánnu 14. b. 2010 ti. 15:25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 'guov 14. b. 2010'],
+                ['lll',                                'guov 14. b. 2010 ti. 15:25'],
+                ['llll',                               'sotn, guov 14. b. 2010 ti. 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1.', '1.');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2.', '2.');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3.', '3.');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4.', '4.');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5.', '5.');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6.', '6.');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7.', '7.');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8.', '8.');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9.', '9.');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10.', '10.');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11.', '11.');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12.', '12.');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13.', '13.');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14.', '14.');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15.', '15.');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16.', '16.');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17.', '17.');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18.', '18.');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19.', '19.');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20.', '20.');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21.', '21.');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22.', '22.');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23.', '23.');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24.', '24.');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25.', '25.');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26.', '26.');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27.', '27.');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28.', '28.');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29.', '29.');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30.', '30.');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31.', '31.');
+    });
+
+    test('format month', function (assert) {
+        var i,
+            expected = 'ođđajagemánnu ođđj_guovvamánnu guov_njukčamánnu njuk_cuoŋománnu cuo_miessemánnu mies_geassemánnu geas_suoidnemánnu suoi_borgemánnu borg_čakčamánnu čakč_golggotmánnu golg_skábmamánnu skáb_juovlamánnu juov'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var i,
+            expected = 'sotnabeaivi sotn s_vuossárga vuos v_maŋŋebárga maŋ m_gaskavahkku gask g_duorastat duor d_bearjadat bear b_lávvardat láv L'.split('_');
+
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'moadde sekunddat', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'okta minuhta',  '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'okta minuhta',  '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minuhtat',    '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 minuhtat',   '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'okta diimmu',   '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'okta diimmu',   '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 diimmut',     '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 diimmut',     '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 diimmut',    '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'okta beaivi',   '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'okta beaivi',   '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 beaivvit',    '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'okta beaivi',   '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 beaivvit',    '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 beaivvit',   '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'okta mánnu',    '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'okta mánnu',    '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'okta mánnu',    '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 mánut',       '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 mánut',       '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 mánut',       '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'okta mánnu',    '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 mánut',       '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'okta jahki',    '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 jagit',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'okta jahki',    '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 jagit',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'moadde sekunddat geažes',  'prefix');
+        assert.equal(moment(0).from(30000), 'maŋit moadde sekunddat', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'maŋit moadde sekunddat',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'moadde sekunddat geažes', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), '5 beaivvit geažes', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                   'otne ti 02:00',     'Today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'otne ti 02:25',     'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'otne ti 03:00',     'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'ihttin ti 02:00',   'Tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'otne ti 01:00',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'ikte ti 02:00',     'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [ti] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [ti] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [ti] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[ovddit] dddd [ti] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[ovddit] dddd [ti] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[ovddit] dddd [ti] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52.', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),  '1 01 1.', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),  '1 01 1.', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),  '2 02 2.', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),  '2 02 2.', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('si');
+
+    /*jshint -W100*/
+    test('parse', function (assert) {
+        var tests = 'ජනවාරි ජන_පෙබරවාරි පෙබ_මාර්තු මාර්_අප්‍රේල් අප්_මැයි මැයි_ජූනි ජූනි_ජූලි ජූලි_අගෝස්තු අගෝ_සැප්තැම්බර් සැප්_ඔක්තෝබර් ඔක්_නොවැම්බර් නොවැ_දෙසැම්බර් දෙසැ'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['YYYY MMMM Do dddd, a h:mm:ss',       '2010 පෙබරවාරි 14 වැනි ඉරිදා, ප.ව. 3:25:50'],
+                ['YYYY MMMM Do dddd, a h:mm:ss',       '2010 පෙබරවාරි 14 වැනි ඉරිදා, ප.ව. 3:25:50'],
+                ['ddd, A h',                            'ඉරි, පස් වරු 3'],
+                ['M Mo MM MMMM MMM',                   '2 2 වැනි 02 පෙබරවාරි පෙබ'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14 වැනි 14'],
+                ['d do dddd ddd dd',                   '0 0 වැනි ඉරිදා ඉරි ඉ'],
+                ['DDD DDDo DDDD',                      '45 45 වැනි 045'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'ප.ව. පස් වරු'],
+                ['[වසරේ] DDDo [දිනය]',                      'වසරේ 45 වැනි දිනය'],
+                ['LTS',                                'ප.ව. 3:25:50'],
+                ['LT',                                 'ප.ව. 3:25'],
+                ['L',                                  '2010/02/14'],
+                ['LL',                                 '2010 පෙබරවාරි 14'],
+                ['LLL',                                '2010 පෙබරවාරි 14, ප.ව. 3:25'],
+                ['LLLL',                               '2010 පෙබරවාරි 14 වැනි ඉරිදා, ප.ව. 3:25:50'],
+                ['l',                                  '2010/2/14'],
+                ['ll',                                 '2010 පෙබ 14'],
+                ['lll',                                '2010 පෙබ 14, ප.ව. 3:25'],
+                ['llll',                               '2010 පෙබ 14 වැනි ඉරි, ප.ව. 3:25:50']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1 වැනි', '1 වැනි');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2 වැනි', '2 වැනි');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3 වැනි', '3 වැනි');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4 වැනි', '4 වැනි');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5 වැනි', '5 වැනි');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6 වැනි', '6 වැනි');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7 වැනි', '7 වැනි');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8 වැනි', '8 වැනි');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9 වැනි', '9 වැනි');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10 වැනි', '10 වැනි');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11 වැනි', '11 වැනි');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12 වැනි', '12 වැනි');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13 වැනි', '13 වැනි');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14 වැනි', '14 වැනි');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15 වැනි', '15 වැනි');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16 වැනි', '16 වැනි');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17 වැනි', '17 වැනි');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18 වැනි', '18 වැනි');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19 වැනි', '19 වැනි');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20 වැනි', '20 වැනි');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21 වැනි', '21 වැනි');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22 වැනි', '22 වැනි');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23 වැනි', '23 වැනි');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24 වැනි', '24 වැනි');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25 වැනි', '25 වැනි');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26 වැනි', '26 වැනි');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27 වැනි', '27 වැනි');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28 වැනි', '28 වැනි');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29 වැනි', '29 වැනි');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30 වැනි', '30 වැනි');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31 වැනි', '31 වැනි');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'ජනවාරි ජන_පෙබරවාරි පෙබ_මාර්තු මාර්_අප්‍රේල් අප්_මැයි මැයි_ජූනි ජූනි_ජූලි ජූලි_අගෝස්තු අගෝ_සැප්තැම්බර් සැප්_ඔක්තෝබර් ඔක්_නොවැම්බර් නොවැ_දෙසැම්බර් දෙසැ'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'ඉරිදා ඉරි ඉ_සඳුදා සඳු ස_අඟහරුවාදා අඟ අ_බදාදා බදා බ_බ්‍රහස්පතින්දා බ්‍රහ බ්‍ර_සිකුරාදා සිකු සි_සෙනසුරාදා සෙන සෙ'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'තත්පර කිහිපය', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'මිනිත්තුව',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'මිනිත්තුව',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  'මිනිත්තු 2',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  'මිනිත්තු 44',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'පැය',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'පැය',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  'පැය 2',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   'පැය 5',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  'පැය 21',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'දිනය',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'දිනය',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  'දින 2',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'දිනය',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   'දින 5',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  'දින 25',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'මාසය',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'මාසය',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'මාසය',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  'මාස 2',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  'මාස 2',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  'මාස 3',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'මාසය',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   'මාස 5',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'වසර',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), 'වසර 2',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'වසර',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   'වසර 5',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'තත්පර කිහිපයකින්',  'prefix');
+        assert.equal(moment(0).from(30000), 'තත්පර කිහිපයකට පෙර', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'තත්පර කිහිපයකට පෙර',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'තත්පර කිහිපයකින්', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'දින 5කින්', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                   'අද පෙ.ව. 2:00ට',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'අද පෙ.ව. 2:25ට',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'අද පෙ.ව. 3:00ට',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'හෙට පෙ.ව. 2:00ට',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'අද පෙ.ව. 1:00ට',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'ඊයේ පෙ.ව. 2:00ට',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd LT[ට]'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd LT[ට]'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd LT[ට]'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[පසුගිය] dddd LT[ට]'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[පසුගිය] dddd LT[ට]'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[පසුගිය] dddd LT[ට]'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -23824,8 +28237,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -23834,12 +28248,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -23857,8 +28273,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -24007,20 +28423,110 @@
         assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 leti',       '548 days = 2 years');
         assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'eno leto',     '1 year = a year');
         assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 let',        '5 years = 5 years');
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 1}), true),  'ena minuta', 'a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 2}), true),  '2 minuti',   '2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 3}), true),  '3 minute',   '3 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 4}), true),  '4 minute',   '4 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 5}), true),  '5 minut',    '5 minutes');
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 1}), true),  'ena ura', 'an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 2}), true),  '2 uri',   '2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 3}), true),  '3 ure',   '3 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 4}), true),  '4 ure',   '4 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),  '5 ur',    '5 hours');
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),  'en dan', 'a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 2}), true),  '2 dni',  '2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 3}), true),  '3 dni',  '3 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 4}), true),  '4 dni',  '4 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),  '5 dni',  '5 days');
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),  'en mesec',  'a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 2}), true),  '2 meseca',  '2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 3}), true),  '3 mesece',  '3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 4}), true),  '4 mesece',  '4 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),  '5 mesecev', '5 months');
+
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),  'eno leto', 'a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 2}), true),  '2 leti',   '2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 3}), true),  '3 leta',   '3 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 4}), true),  '4 leta',   '4 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),  '5 let',    '5 years');
     });
 
     test('suffix', function (assert) {
         assert.equal(moment(30000).from(0), 'čez nekaj sekund',  'prefix');
-        assert.equal(moment(0).from(30000), 'nekaj sekund nazaj', 'suffix');
+        assert.equal(moment(0).from(30000), 'pred nekaj sekundami', 'suffix');
     });
 
     test('now from now', function (assert) {
-        assert.equal(moment().fromNow(), 'nekaj sekund nazaj',  'now from now should display as in the past');
+        assert.equal(moment().fromNow(), 'pred nekaj sekundami',  'now from now should display as in the past');
     });
 
-    test('fromNow', function (assert) {
+    test('fromNow (future)', function (assert) {
         assert.equal(moment().add({s: 30}).fromNow(), 'čez nekaj sekund', 'in a few seconds');
-        assert.equal(moment().add({d: 5}).fromNow(), 'čez 5 dni', 'in 5 days');
+        assert.equal(moment().add({m: 1}).fromNow(),  'čez eno minuto', 'in a minute');
+        assert.equal(moment().add({m: 2}).fromNow(),  'čez 2 minuti',   'in 2 minutes');
+        assert.equal(moment().add({m: 3}).fromNow(),  'čez 3 minute',   'in 3 minutes');
+        assert.equal(moment().add({m: 4}).fromNow(),  'čez 4 minute',   'in 4 minutes');
+        assert.equal(moment().add({m: 5}).fromNow(),  'čez 5 minut',    'in 5 minutes');
+
+        assert.equal(moment().add({h: 1}).fromNow(),  'čez eno uro', 'in an hour');
+        assert.equal(moment().add({h: 2}).fromNow(),  'čez 2 uri',   'in 2 hours');
+        assert.equal(moment().add({h: 3}).fromNow(),  'čez 3 ure',   'in 3 hours');
+        assert.equal(moment().add({h: 4}).fromNow(),  'čez 4 ure',   'in 4 hours');
+        assert.equal(moment().add({h: 5}).fromNow(),  'čez 5 ur',    'in 5 hours');
+
+        assert.equal(moment().add({d: 1}).fromNow(),  'čez en dan', 'in a day');
+        assert.equal(moment().add({d: 2}).fromNow(),  'čez 2 dni',  'in 2 days');
+        assert.equal(moment().add({d: 3}).fromNow(),  'čez 3 dni',  'in 3 days');
+        assert.equal(moment().add({d: 4}).fromNow(),  'čez 4 dni',  'in 4 days');
+        assert.equal(moment().add({d: 5}).fromNow(),  'čez 5 dni',  'in 5 days');
+
+        assert.equal(moment().add({M: 1}).fromNow(),  'čez en mesec',  'in a month');
+        assert.equal(moment().add({M: 2}).fromNow(),  'čez 2 meseca',  'in 2 months');
+        assert.equal(moment().add({M: 3}).fromNow(),  'čez 3 mesece',  'in 3 months');
+        assert.equal(moment().add({M: 4}).fromNow(),  'čez 4 mesece',  'in 4 months');
+        assert.equal(moment().add({M: 5}).fromNow(),  'čez 5 mesecev', 'in 5 months');
+
+        assert.equal(moment().add({y: 1}).fromNow(),  'čez eno leto', 'in a year');
+        assert.equal(moment().add({y: 2}).fromNow(),  'čez 2 leti',   'in 2 years');
+        assert.equal(moment().add({y: 3}).fromNow(),  'čez 3 leta',   'in 3 years');
+        assert.equal(moment().add({y: 4}).fromNow(),  'čez 4 leta',   'in 4 years');
+        assert.equal(moment().add({y: 5}).fromNow(),  'čez 5 let',    'in 5 years');
+
+        assert.equal(moment().subtract({s: 30}).fromNow(), 'pred nekaj sekundami', 'a few seconds ago');
+
+        assert.equal(moment().subtract({m: 1}).fromNow(),  'pred eno minuto', 'a minute ago');
+        assert.equal(moment().subtract({m: 2}).fromNow(),  'pred 2 minutama', '2 minutes ago');
+        assert.equal(moment().subtract({m: 3}).fromNow(),  'pred 3 minutami', '3 minutes ago');
+        assert.equal(moment().subtract({m: 4}).fromNow(),  'pred 4 minutami', '4 minutes ago');
+        assert.equal(moment().subtract({m: 5}).fromNow(),  'pred 5 minutami', '5 minutes ago');
+
+        assert.equal(moment().subtract({h: 1}).fromNow(),  'pred eno uro', 'an hour ago');
+        assert.equal(moment().subtract({h: 2}).fromNow(),  'pred 2 urama', '2 hours ago');
+        assert.equal(moment().subtract({h: 3}).fromNow(),  'pred 3 urami', '3 hours ago');
+        assert.equal(moment().subtract({h: 4}).fromNow(),  'pred 4 urami', '4 hours ago');
+        assert.equal(moment().subtract({h: 5}).fromNow(),  'pred 5 urami', '5 hours ago');
+
+        assert.equal(moment().subtract({d: 1}).fromNow(),  'pred enim dnem', 'a day ago');
+        assert.equal(moment().subtract({d: 2}).fromNow(),  'pred 2 dnevoma', '2 days ago');
+        assert.equal(moment().subtract({d: 3}).fromNow(),  'pred 3 dnevi',   '3 days ago');
+        assert.equal(moment().subtract({d: 4}).fromNow(),  'pred 4 dnevi',   '4 days ago');
+        assert.equal(moment().subtract({d: 5}).fromNow(),  'pred 5 dnevi',   '5 days ago');
+
+        assert.equal(moment().subtract({M: 1}).fromNow(),  'pred enim mesecem', 'a month ago');
+        assert.equal(moment().subtract({M: 2}).fromNow(),  'pred 2 mesecema',   '2 months ago');
+        assert.equal(moment().subtract({M: 3}).fromNow(),  'pred 3 meseci',     '3 months ago');
+        assert.equal(moment().subtract({M: 4}).fromNow(),  'pred 4 meseci',     '4 months ago');
+        assert.equal(moment().subtract({M: 5}).fromNow(),  'pred 5 meseci',     '5 months ago');
+
+        assert.equal(moment().subtract({y: 1}).fromNow(),  'pred enim letom', 'a year ago');
+        assert.equal(moment().subtract({y: 2}).fromNow(),  'pred 2 letoma',   '2 years ago');
+        assert.equal(moment().subtract({y: 3}).fromNow(),  'pred 3 leti',     '3 years ago');
+        assert.equal(moment().subtract({y: 4}).fromNow(),  'pred 4 leti',     '4 years ago');
+        assert.equal(moment().subtract({y: 5}).fromNow(),  'pred 5 leti',     '5 years ago');
     });
 
     test('calendar day', function (assert) {
@@ -24069,9 +28575,11 @@
         function makeFormat(d) {
             switch (d.day()) {
             case 0:
+                return '[prejšnjo] [nedeljo] [ob] LT';
             case 3:
+                return '[prejšnjo] [sredo] [ob] LT';
             case 6:
-                return '[prejšnja] dddd [ob] LT';
+                return '[prejšnjo] [soboto] [ob] LT';
             case 1:
             case 2:
             case 4:
@@ -24211,8 +28719,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -24221,12 +28730,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -24244,8 +28755,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -24582,8 +29093,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -24592,12 +29104,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -24615,8 +29129,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -24972,8 +29486,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -24982,12 +29497,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25005,8 +29522,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25362,8 +29879,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -25372,12 +29890,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25395,8 +29915,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25517,7 +30037,7 @@
 
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'några sekunder', '44 sekunder = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'några sekunder', '44 seconds = a few seconds');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'en minut',      '45 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'en minut',      '89 seconds = a minute');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 minuter',     '90 seconds = 2 minutes');
@@ -25576,11 +30096,11 @@
         var i, m;
         for (i = 2; i < 7; i++) {
             m = moment().add({d: i});
-            assert.equal(m.calendar(),       m.format('dddd LT'),  'Today + ' + i + ' days current time');
+            assert.equal(m.calendar(),       m.format('[På] dddd LT'),  'Today + ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format('dddd LT'),  'Today + ' + i + ' days beginning of day');
+            assert.equal(m.calendar(),       m.format('[På] dddd LT'),  'Today + ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format('dddd LT'),  'Today + ' + i + ' days end of day');
+            assert.equal(m.calendar(),       m.format('[På] dddd LT'),  'Today + ' + i + ' days end of day');
         }
     });
 
@@ -25588,11 +30108,11 @@
         var i, m;
         for (i = 2; i < 7; i++) {
             m = moment().subtract({d: i});
-            assert.equal(m.calendar(),       m.format('[Förra] dddd[en] LT'),  'Today - ' + i + ' days current time');
+            assert.equal(m.calendar(),       m.format('[I] dddd[s] LT'),  'Today - ' + i + ' days current time');
             m.hours(0).minutes(0).seconds(0).milliseconds(0);
-            assert.equal(m.calendar(),       m.format('[Förra] dddd[en] LT'),  'Today - ' + i + ' days beginning of day');
+            assert.equal(m.calendar(),       m.format('[I] dddd[s] LT'),  'Today - ' + i + ' days beginning of day');
             m.hours(23).minutes(59).seconds(59).milliseconds(999);
-            assert.equal(m.calendar(),       m.format('[Förra] dddd[en] LT'),  'Today - ' + i + ' days end of day');
+            assert.equal(m.calendar(),       m.format('[I] dddd[s] LT'),  'Today - ' + i + ' days end of day');
         }
     });
 
@@ -25717,8 +30237,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -25727,12 +30248,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25750,8 +30273,366 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('sw');
+
+    test('parse', function (assert) {
+        var tests = 'Januari Jan_Februari Feb_Machi Mac_Aprili Apr_Mei Mei_Juni Jun_Julai Jul_Agosti Ago_Septemba Sep_Oktoba Okt_Novemba Nov_Desemba Des'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'Jumapili, Februari 14 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'Jpl, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2 02 Februari Feb'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14 14'],
+                ['d do dddd ddd dd',                   '0 0 Jumapili Jpl J2'],
+                ['DDD DDDo DDDD',                      '45 45 045'],
+                ['w wo ww',                            '7 7 07'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[siku] DDDo [ya mwaka]',             'siku 45 ya mwaka'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 '14 Februari 2010'],
+                ['LLL',                                '14 Februari 2010 15:25'],
+                ['LLLL',                               'Jumapili, 14 Februari 2010 15:25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 '14 Feb 2010'],
+                ['lll',                                '14 Feb 2010 15:25'],
+                ['llll',                               'Jpl, 14 Feb 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1', '1');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2', '2');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3', '3');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4', '4');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5', '5');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6', '6');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7', '7');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8', '8');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9', '9');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10', '10');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11', '11');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12', '12');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13', '13');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14', '14');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15', '15');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16', '16');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17', '17');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18', '18');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19', '19');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20', '20');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21', '21');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22', '22');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23', '23');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24', '24');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25', '25');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26', '26');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27', '27');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28', '28');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29', '29');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30', '30');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31', '31');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'Januari Jan_Februari Feb_Machi Mac_Aprili Apr_Mei Mei_Juni Jun_Julai Jul_Agosti Ago_Septemba Sep_Oktoba Okt_Novemba Nov_Desemba Des'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Jumapili Jpl J2_Jumatatu Jtat J3_Jumanne Jnne J4_Jumatano Jtan J5_Alhamisi Alh Al_Ijumaa Ijm Ij_Jumamosi Jmos J1'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'hivi punde',   '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'dakika moja',  '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'dakika moja',  '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  'dakika 2',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  'dakika 44',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'saa limoja',   '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'saa limoja',   '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  'masaa 2',      '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   'masaa 5',      '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  'masaa 21',     '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'siku moja',    '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'siku moja',    '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  'masiku 2',     '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'siku moja',    '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   'masiku 5',     '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  'masiku 25',    '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'mwezi mmoja',  '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'mwezi mmoja',  '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'mwezi mmoja',  '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  'miezi 2',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  'miezi 2',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  'miezi 3',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'mwezi mmoja',  '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   'miezi 5',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'mwaka mmoja',  '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), 'miaka 2',      '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'mwaka mmoja',  '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   'miaka 5',      '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'hivi punde baadaye',  'prefix');
+        assert.equal(moment(0).from(30000), 'tokea hivi punde', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'tokea hivi punde',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'hivi punde baadaye', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'masiku 5 baadaye', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+        assert.equal(moment(a).calendar(),                   'leo saa 02:00',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'leo saa 02:25',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'leo saa 03:00',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'kesho saa 02:00',    'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'leo saa 01:00',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'jana 02:00',         'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('[wiki ijayo] dddd [saat] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[wiki ijayo] dddd [saat] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[wiki ijayo] dddd [saat] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[wiki iliyopita] dddd [saat] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[wiki iliyopita] dddd [saat] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[wiki iliyopita] dddd [saat] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),      '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2011, 11, 26]).week(), 1, 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).week(), 2, 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).week(), 3, 'Jan  9 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 12]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 1, 'Dec 28 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 1, 'Jan  3 2010 should be week 1');
+        assert.equal(moment([2010,  0,  4]).week(), 2, 'Jan  4 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 2, 'Jan 10 2010 should be week 2');
+        assert.equal(moment([2010,  0, 11]).week(), 3, 'Jan 11 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 1, 'Dec 27 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 1, 'Jan  2 2011 should be week 1');
+        assert.equal(moment([2011,  0,  3]).week(), 2, 'Jan  3 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 2, 'Jan  9 2011 should be week 2');
+        assert.equal(moment([2011,  0, 10]).week(), 3, 'Jan 10 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday format', function (assert) {
+        assert.equal(moment([2011, 11, 26]).format('w ww wo'), '1 01 1', 'Dec 26 2011 should be week 1');
+        assert.equal(moment([2012,  0,  1]).format('w ww wo'), '1 01 1', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012,  0,  2]).format('w ww wo'), '2 02 2', 'Jan  2 2012 should be week 2');
+        assert.equal(moment([2012,  0,  8]).format('w ww wo'), '2 02 2', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012,  0,  9]).format('w ww wo'), '3 03 3', 'Jan  9 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -25788,29 +30669,29 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, MMMM Do YYYY, h:mm:ss a', 'ஞாயிற்றுக்கிழமை, பிப்ரவரி 14வது 2010, 3:25:50  எற்பாடு'],
-                ['ddd, hA',                       'ஞாயிறு, 3 எற்பாடு'],
-                ['M Mo MM MMMM MMM',              '2 2வது 02 பிப்ரவரி பிப்ரவரி'],
-                ['YYYY YY',                       '2010 10'],
-                ['D Do DD',                       '14 14வது 14'],
-                ['d do dddd ddd dd',              '0 0வது ஞாயிற்றுக்கிழமை ஞாயிறு ஞா'],
-                ['DDD DDDo DDDD',                 '45 45வது 045'],
-                ['w wo ww',                       '8 8வது 08'],
-                ['h hh',                          '3 03'],
-                ['H HH',                          '15 15'],
-                ['m mm',                          '25 25'],
-                ['s ss',                          '50 50'],
+                ['dddd, MMMM Do YYYY, h:mm:ss a', 'ஞாயிற்றுக்கிழமை, பிப்ரவரி ௧௪வது ௨௦௧௦, ௩:௨௫:௫௦  எற்பாடு'],
+                ['ddd, hA',                       'ஞாயிறு, ௩ எற்பாடு'],
+                ['M Mo MM MMMM MMM',              '௨ ௨வது ௦௨ பிப்ரவரி பிப்ரவரி'],
+                ['YYYY YY',                       '௨௦௧௦ ௧௦'],
+                ['D Do DD',                       '௧௪ ௧௪வது ௧௪'],
+                ['d do dddd ddd dd',              '௦ ௦வது ஞாயிற்றுக்கிழமை ஞாயிறு ஞா'],
+                ['DDD DDDo DDDD',                 '௪௫ ௪௫வது ௦௪௫'],
+                ['w wo ww',                       '௮ ௮வது ௦௮'],
+                ['h hh',                          '௩ ௦௩'],
+                ['H HH',                          '௧௫ ௧௫'],
+                ['m mm',                          '௨௫ ௨௫'],
+                ['s ss',                          '௫௦ ௫௦'],
                 ['a A',                           ' எற்பாடு  எற்பாடு'],
-                ['[ஆண்டின்] DDDo  [நாள்]', 'ஆண்டின் 45வது  நாள்'],
-                ['LTS',                           '15:25:50'],
-                ['L',                             '14/02/2010'],
-                ['LL',                            '14 பிப்ரவரி 2010'],
-                ['LLL',                           '14 பிப்ரவரி 2010, 15:25'],
-                ['LLLL',                          'ஞாயிற்றுக்கிழமை, 14 பிப்ரவரி 2010, 15:25'],
-                ['l',                             '14/2/2010'],
-                ['ll',                            '14 பிப்ரவரி 2010'],
-                ['lll',                           '14 பிப்ரவரி 2010, 15:25'],
-                ['llll',                          'ஞாயிறு, 14 பிப்ரவரி 2010, 15:25']
+                ['[ஆண்டின்] DDDo  [நாள்]', 'ஆண்டின் ௪௫வது  நாள்'],
+                ['LTS',                           '௧௫:௨௫:௫௦'],
+                ['L',                             '௧௪/௦௨/௨௦௧௦'],
+                ['LL',                            '௧௪ பிப்ரவரி ௨௦௧௦'],
+                ['LLL',                           '௧௪ பிப்ரவரி ௨௦௧௦, ௧௫:௨௫'],
+                ['LLLL',                          'ஞாயிற்றுக்கிழமை, ௧௪ பிப்ரவரி ௨௦௧௦, ௧௫:௨௫'],
+                ['l',                             '௧௪/௨/௨௦௧௦'],
+                ['ll',                            '௧௪ பிப்ரவரி ௨௦௧௦'],
+                ['lll',                           '௧௪ பிப்ரவரி ௨௦௧௦, ௧௫:௨௫'],
+                ['llll',                          'ஞாயிறு, ௧௪ பிப்ரவரி ௨௦௧௦, ௧௫:௨௫']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -25820,40 +30701,40 @@
     });
 
     test('format ordinal', function (assert) {
-        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1வது', '1வது');
-        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2வது', '2வது');
-        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3வது', '3வது');
-        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4வது', '4வது');
-        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5வது', '5வது');
-        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6வது', '6வது');
-        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7வது', '7வது');
-        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8வது', '8வது');
-        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9வது', '9வது');
-        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10வது', '10வது');
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '௧வது', '௧வது');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '௨வது', '௨வது');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '௩வது', '௩வது');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '௪வது', '௪வது');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '௫வது', '௫வது');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '௬வது', '௬வது');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '௭வது', '௭வது');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '௮வது', '௮வது');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '௯வது', '௯வது');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '௧௦வது', '௧௦வது');
 
-        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11வது', '11வது');
-        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12வது', '12வது');
-        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13வது', '13வது');
-        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14வது', '14வது');
-        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15வது', '15வது');
-        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16வது', '16வது');
-        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17வது', '17வது');
-        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18வது', '18வது');
-        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19வது', '19வது');
-        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20வது', '20வது');
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '௧௧வது', '௧௧வது');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '௧௨வது', '௧௨வது');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '௧௩வது', '௧௩வது');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '௧௪வது', '௧௪வது');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '௧௫வது', '௧௫வது');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '௧௬வது', '௧௬வது');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '௧௭வது', '௧௭வது');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '௧௮வது', '௧௮வது');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '௧௯வது', '௧௯வது');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '௨௦வது', '௨௦வது');
 
-        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21வது', '21வது');
-        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22வது', '22வது');
-        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23வது', '23வது');
-        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24வது', '24வது');
-        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25வது', '25வது');
-        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26வது', '26வது');
-        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27வது', '27வது');
-        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28வது', '28வது');
-        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29வது', '29வது');
-        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30வது', '30வது');
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '௨௧வது', '௨௧வது');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '௨௨வது', '௨௨வது');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '௨௩வது', '௨௩வது');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '௨௪வது', '௨௪வது');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '௨௫வது', '௨௫வது');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '௨௬வது', '௨௬வது');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '௨௭வது', '௨௭வது');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '௨௮வது', '௨௮வது');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '௨௯வது', '௨௯வது');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '௩௦வது', '௩௦வது');
 
-        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31வது', '31வது');
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '௩௧வது', '௩௧வது');
     });
 
     test('format month', function (assert) {
@@ -25875,31 +30756,31 @@
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'ஒரு சில விநாடிகள்', '44 விநாடிகள் = ஒரு சில விநாடிகள்');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'ஒரு நிமிடம்',      '45 விநாடிகள் = ஒரு நிமிடம்');
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'ஒரு நிமிடம்',      '89 விநாடிகள் = ஒரு நிமிடம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 நிமிடங்கள்',     '90 விநாடிகள் = 2 நிமிடங்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 நிமிடங்கள்',    '44 நிமிடங்கள் = 44 நிமிடங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '௨ நிமிடங்கள்',     '90 விநாடிகள் = ௨ நிமிடங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '௪௪ நிமிடங்கள்',    '44 நிமிடங்கள் = 44 நிமிடங்கள்');
         assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'ஒரு மணி நேரம்',       '45 நிமிடங்கள் = ஒரு மணி நேரம்');
         assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'ஒரு மணி நேரம்',       '89 நிமிடங்கள் = ஒரு மணி நேரம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 மணி நேரம்',       '90 நிமிடங்கள் = 2 மணி நேரம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 மணி நேரம்',       '5 மணி நேரம் = 5 மணி நேரம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 மணி நேரம்',      '21 மணி நேரம் = 21 மணி நேரம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'ஒரு நாள்',         '22 மணி நேரம் = ஒரு நாள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'ஒரு நாள்',         '35 மணி நேரம் = ஒரு நாள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 நாட்கள்',        '36 மணி நேரம் = 2 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'ஒரு நாள்',         '1 நாள் = ஒரு நாள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 நாட்கள்',        '5 நாட்கள் = 5 நாட்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 நாட்கள்',       '25 நாட்கள் = 25 நாட்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'ஒரு மாதம்',       '26 நாட்கள் = ஒரு மாதம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'ஒரு மாதம்',       '30 நாட்கள் = ஒரு மாதம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '௨ மணி நேரம்',       '90 நிமிடங்கள் = ௨ மணி நேரம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '௫ மணி நேரம்',       '5 மணி நேரம் = 5 மணி நேரம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '௨௧ மணி நேரம்',      '௨௧ மணி நேரம் = ௨௧ மணி நேரம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'ஒரு நாள்',         '௨௨ மணி நேரம் = ஒரு நாள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'ஒரு நாள்',         '௩5 மணி நேரம் = ஒரு நாள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '௨ நாட்கள்',        '௩6 மணி நேரம் = ௨ days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'ஒரு நாள்',         '௧ நாள் = ஒரு நாள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '௫ நாட்கள்',        '5 நாட்கள் = 5 நாட்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '௨௫ நாட்கள்',       '௨5 நாட்கள் = ௨5 நாட்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'ஒரு மாதம்',       '௨6 நாட்கள் = ஒரு மாதம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'ஒரு மாதம்',       '௩0 நாட்கள் = ஒரு மாதம்');
         assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'ஒரு மாதம்',       '45 நாட்கள் = ஒரு மாதம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 மாதங்கள்',      '46 நாட்கள் = 2 மாதங்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 மாதங்கள்',      '75 நாட்கள் = 2 மாதங்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 மாதங்கள்',      '76 நாட்கள் = 3 மாதங்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'ஒரு மாதம்',       '1 மாதம் = ஒரு மாதம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 மாதங்கள்',      '5 மாதங்கள் = 5 மாதங்கள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'ஒரு வருடம்',        '345 நாட்கள் = ஒரு வருடம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 ஆண்டுகள்',       '548 நாட்கள் = 2 ஆண்டுகள்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'ஒரு வருடம்',        '1 வருடம் = ஒரு வருடம்');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 ஆண்டுகள்',       '5 ஆண்டுகள் = 5 ஆண்டுகள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '௨ மாதங்கள்',      '46 நாட்கள் = ௨ மாதங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '௨ மாதங்கள்',      '75 நாட்கள் = ௨ மாதங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '௩ மாதங்கள்',      '76 நாட்கள் = ௩ மாதங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'ஒரு மாதம்',       '௧ மாதம் = ஒரு மாதம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '௫ மாதங்கள்',      '5 மாதங்கள் = 5 மாதங்கள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'ஒரு வருடம்',        '௩45 நாட்கள் = ஒரு வருடம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '௨ ஆண்டுகள்',       '548 நாட்கள் = ௨ ஆண்டுகள்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'ஒரு வருடம்',        '௧ வருடம் = ஒரு வருடம்');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '௫ ஆண்டுகள்',       '5 ஆண்டுகள் = 5 ஆண்டுகள்');
     });
 
     test('suffix', function (assert) {
@@ -25913,18 +30794,18 @@
 
     test('fromNow', function (assert) {
         assert.equal(moment().add({s: 30}).fromNow(), 'ஒரு சில விநாடிகள் இல்', 'ஒரு சில விநாடிகள் இல்');
-        assert.equal(moment().add({d: 5}).fromNow(), '5 நாட்கள் இல்', '5 நாட்கள் இல்');
+        assert.equal(moment().add({d: 5}).fromNow(), '௫ நாட்கள் இல்', '5 நாட்கள் இல்');
     });
 
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),  'இன்று 02:00', 'இன்று  02:00');
-        assert.equal(moment(a).add({m: 25}).calendar(), 'இன்று 02:25', 'இன்று  02:25');
-        assert.equal(moment(a).add({h: 1}).calendar(), 'இன்று 03:00', 'இன்று  03:00');
-        assert.equal(moment(a).add({d: 1}).calendar(), 'நாளை 02:00', 'நாளை  02:00');
-        assert.equal(moment(a).subtract({h: 1}).calendar(),  'இன்று 01:00',      'இன்று  01:00');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  'நேற்று 02:00',  'நேற்று  02:00');
+        assert.equal(moment(a).calendar(),  'இன்று ௦௨:௦௦', 'இன்று  02:00');
+        assert.equal(moment(a).add({m: 25}).calendar(), 'இன்று ௦௨:௨௫', 'இன்று  02:25');
+        assert.equal(moment(a).add({h: 1}).calendar(), 'இன்று ௦௩:௦௦', 'இன்று  03:00');
+        assert.equal(moment(a).add({d: 1}).calendar(), 'நாளை ௦௨:௦௦', 'நாளை  02:00');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'இன்று ௦௧:௦௦',      'இன்று  0௧:00');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'நேற்று ௦௨:௦௦',  'நேற்று  02:00');
     });
 
     test('calendar next week', function (assert) {
@@ -26087,8 +30968,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -26097,12 +30979,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -26120,8 +31004,394 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('te');
+
+    test('parse', function (assert) {
+        var tests = 'జనవరి జన._ఫిబ్రవరి ఫిబ్ర._మార్చి మార్చి_ఏప్రిల్ ఏప్రి._మే మే_జూన్ జూన్_జూలై జూలై_ఆగస్టు ఆగ._సెప్టెంబర్ సెప్._అక్టోబర్ అక్టో._నవంబర్ నవ._డిసెంబర్ డిసె.'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, Do తేదీ MMMM YYYY, a h:mm:ss',  'ఆదివారం, 14వ తేదీ ఫిబ్రవరి 2010, మధ్యాహ్నం 3:25:50'],
+                ['ddd, a h గంటలు',                 'ఆది, మధ్యాహ్నం 3 గంటలు'],
+                ['M Mo నెల MM MMMM MMM',                   '2 2వ నెల 02 ఫిబ్రవరి ఫిబ్ర.'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14వ 14'],
+                ['d do dddd ddd dd',                   '0 0వ ఆదివారం ఆది ఆ'],
+                ['DDD DDDo DDDD',                      '45 45వ 045'],
+                ['w wo ww',                            '8 8వ 08'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'మధ్యాహ్నం మధ్యాహ్నం'],
+                ['LTS',                                'మధ్యాహ్నం 3:25:50'],
+                ['L',                                  '14/02/2010'],
+                ['LL',                                 '14 ఫిబ్రవరి 2010'],
+                ['LLL',                                '14 ఫిబ్రవరి 2010, మధ్యాహ్నం 3:25'],
+                ['LLLL',                               'ఆదివారం, 14 ఫిబ్రవరి 2010, మధ్యాహ్నం 3:25'],
+                ['l',                                  '14/2/2010'],
+                ['ll',                                 '14 ఫిబ్ర. 2010'],
+                ['lll',                                '14 ఫిబ్ర. 2010, మధ్యాహ్నం 3:25'],
+                ['llll',                               'ఆది, 14 ఫిబ్ర. 2010, మధ్యాహ్నం 3:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1వ', '1వ');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2వ', '2వ');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3వ', '3వ');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4వ', '4వ');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5వ', '5వ');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6వ', '6వ');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7వ', '7వ');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8వ', '8వ');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9వ', '9వ');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10వ', '10వ');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11వ', '11వ');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12వ', '12వ');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13వ', '13వ');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14వ', '14వ');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15వ', '15వ');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16వ', '16వ');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17వ', '17వ');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18వ', '18వ');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19వ', '19వ');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20వ', '20వ');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21వ', '21వ');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22వ', '22వ');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23వ', '23వ');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24వ', '24వ');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25వ', '25వ');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26వ', '26వ');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27వ', '27వ');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28వ', '28వ');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29వ', '29వ');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30వ', '30వ');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31వ', '31వ');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'జనవరి జన._ఫిబ్రవరి ఫిబ్ర._మార్చి మార్చి_ఏప్రిల్ ఏప్రి._మే మే_జూన్ జూన్_జూలై జూలై_ఆగస్టు ఆగ._సెప్టెంబర్ సెప్._అక్టోబర్ అక్టో._నవంబర్ నవ._డిసెంబర్ డిసె.'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'ఆదివారం ఆది ఆ_సోమవారం సోమ సో_మంగళవారం మంగళ మం_బుధవారం బుధ బు_గురువారం గురు గు_శుక్రవారం శుక్ర శు_శనివారం శని శ'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'కొన్ని క్షణాలు', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'ఒక నిమిషం',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'ఒక నిమిషం',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 నిమిషాలు',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 నిమిషాలు',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'ఒక గంట',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'ఒక గంట',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 గంటలు',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 గంటలు',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 గంటలు',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'ఒక రోజు',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'ఒక రోజు',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 రోజులు',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'ఒక రోజు',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 రోజులు',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 రోజులు',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'ఒక నెల',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'ఒక నెల',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'ఒక నెల',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 నెలలు',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 నెలలు',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 నెలలు',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'ఒక నెల',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 నెలలు',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'ఒక సంవత్సరం',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 సంవత్సరాలు',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'ఒక సంవత్సరం',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 సంవత్సరాలు',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'కొన్ని క్షణాలు లో',  'prefix');
+        assert.equal(moment(0).from(30000), 'కొన్ని క్షణాలు క్రితం', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'కొన్ని క్షణాలు క్రితం',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'కొన్ని క్షణాలు లో', 'కొన్ని క్షణాలు లో');
+        assert.equal(moment().add({d: 5}).fromNow(), '5 రోజులు లో', '5 రోజులు లో');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'నేడు రాత్రి 2:00',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'నేడు రాత్రి 2:25',     'Now plus 25 min');
+        assert.equal(moment(a).add({h: 3}).calendar(),       'నేడు ఉదయం 5:00',     'Now plus 3 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'రేపు రాత్రి 2:00',  'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'నేడు రాత్రి 1:00',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'నిన్న రాత్రి 2:00', 'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd[,] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd[,] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd[,] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[గత] dddd[,] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[గత] dddd[,] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[గత] dddd[,] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('meridiem invariant', function (assert) {
+        assert.equal(moment([2011, 2, 23,  2, 30]).format('a'), 'రాత్రి', 'before dawn');
+        assert.equal(moment([2011, 2, 23,  9, 30]).format('a'), 'ఉదయం', 'morning');
+        assert.equal(moment([2011, 2, 23, 14, 30]).format('a'), 'మధ్యాహ్నం', 'during day');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('a'), 'సాయంత్రం', 'evening');
+        assert.equal(moment([2011, 2, 23, 19, 30]).format('a'), 'సాయంత్రం', 'late evening');
+        assert.equal(moment([2011, 2, 23, 21, 20]).format('a'), 'రాత్రి', 'night');
+
+        assert.equal(moment([2011, 2, 23,  2, 30]).format('A'), 'రాత్రి', 'before dawn');
+        assert.equal(moment([2011, 2, 23,  9, 30]).format('A'), 'ఉదయం', 'morning');
+        assert.equal(moment([2011, 2, 23, 14, 30]).format('A'), 'మధ్యాహ్నం', ' during day');
+        assert.equal(moment([2011, 2, 23, 17, 30]).format('A'), 'సాయంత్రం', 'evening');
+        assert.equal(moment([2011, 2, 23, 19, 30]).format('A'), 'సాయంత్రం', 'late evening');
+        assert.equal(moment([2011, 2, 23, 21, 20]).format('A'), 'రాత్రి', 'night');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0,  1]).week(), 1, 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  7]).week(), 1, 'Jan  7 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).week(), 2, 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).week(), 2, 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 3, 'Jan 15 2012 should be week 3');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2006, 11, 31]).week(), 1, 'Dec 31 2006 should be week 1');
+        assert.equal(moment([2007,  0,  1]).week(), 1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007,  0,  6]).week(), 1, 'Jan  6 2007 should be week 1');
+        assert.equal(moment([2007,  0,  7]).week(), 2, 'Jan  7 2007 should be week 2');
+        assert.equal(moment([2007,  0, 13]).week(), 2, 'Jan 13 2007 should be week 2');
+        assert.equal(moment([2007,  0, 14]).week(), 3, 'Jan 14 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 29]).week(), 52, 'Dec 29 2007 should be week 52');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  5]).week(), 1, 'Jan  5 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 2, 'Jan  6 2008 should be week 2');
+        assert.equal(moment([2008,  0, 12]).week(), 2, 'Jan 12 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 3, 'Jan 13 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 29]).week(), 1, 'Dec 29 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  4]).week(), 1, 'Jan  4 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 2, 'Jan  5 2003 should be week 2');
+        assert.equal(moment([2003,  0, 11]).week(), 2, 'Jan 11 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 3, 'Jan 12 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 28]).week(), 1, 'Dec 28 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  3]).week(), 1, 'Jan  3 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 2, 'Jan  4 2009 should be week 2');
+        assert.equal(moment([2009,  0, 10]).week(), 2, 'Jan 10 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 3, 'Jan 11 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 27]).week(), 1, 'Dec 27 2009 should be week 1');
+        assert.equal(moment([2010,  0,  1]).week(), 1, 'Jan  1 2010 should be week 1');
+        assert.equal(moment([2010,  0,  2]).week(), 1, 'Jan  2 2010 should be week 1');
+        assert.equal(moment([2010,  0,  3]).week(), 2, 'Jan  3 2010 should be week 2');
+        assert.equal(moment([2010,  0,  9]).week(), 2, 'Jan  9 2010 should be week 2');
+        assert.equal(moment([2010,  0, 10]).week(), 3, 'Jan 10 2010 should be week 3');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 26]).week(), 1, 'Dec 26 2010 should be week 1');
+        assert.equal(moment([2011,  0,  1]).week(), 1, 'Jan  1 2011 should be week 1');
+        assert.equal(moment([2011,  0,  2]).week(), 2, 'Jan  2 2011 should be week 2');
+        assert.equal(moment([2011,  0,  8]).week(), 2, 'Jan  8 2011 should be week 2');
+        assert.equal(moment([2011,  0,  9]).week(), 3, 'Jan  9 2011 should be week 3');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '1 01 1వ', 'Jan  1 2012 should be week 1');
+        assert.equal(moment([2012, 0,  7]).format('w ww wo'), '1 01 1వ', 'Jan  7 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'), '2 02 2వ', 'Jan  8 2012 should be week 2');
+        assert.equal(moment([2012, 0, 14]).format('w ww wo'), '2 02 2వ', 'Jan 14 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'), '3 03 3వ', 'Jan 15 2012 should be week 3');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('meridiem', function (assert) {
+        var h, m, t1, t2;
+        for (h = 0; h < 24; ++h) {
+            for (m = 0; m < 60; m += 15) {
+                t1 = moment.utc([2000, 0, 1, h, m]);
+                t2 = moment(t1.format('A h:mm'), 'A h:mm');
+                assert.equal(t2.format('HH:mm'), t1.format('HH:mm'),
+                        'meridiem at ' + t1.format('HH:mm'));
+            }
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -26405,8 +31675,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -26415,12 +31686,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -26438,8 +31711,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -26759,8 +32032,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -26769,12 +32043,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -26792,8 +32068,382 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('tlh');
+
+    //Current parsing method doesn't allow parsing correctly months 10, 11 and 12.
+    /*
+     * test('parse', function (assert) {
+        var tests = 'tera’ jar wa’.jar wa’_tera’ jar cha’.jar cha’_tera’ jar wej.jar wej_tera’ jar loS.jar loS_tera’ jar vagh.jar vagh_tera’ jar jav.jar jav_tera’ jar Soch.jar Soch_tera’ jar chorgh.jar chorgh_tera’ jar Hut.jar Hut_tera’ jar wa’maH.jar wa’maH_tera’ jar wa’maH wa’.jar wa’maH wa’_tera’ jar wa’maH cha’.jar wa’maH cha’'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split('.');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+    */
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h:mm:ss a',      'lojmItjaj, tera’ jar cha’ 14. 2010, 3:25:50 pm'],
+                ['ddd, hA',                            'lojmItjaj, 3PM'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 tera’ jar cha’ jar cha’'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14. 14'],
+                ['d do dddd ddd dd',                   '0 0. lojmItjaj lojmItjaj lojmItjaj'],
+                ['DDD DDDo DDDD',                      '45 45. 045'],
+                ['w wo ww',                            '6 6. 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'pm PM'],
+                ['[DIS jaj] DDDo',                     'DIS jaj 45.'],
+                ['LTS',                                '15:25:50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 '14 tera’ jar cha’ 2010'],
+                ['LLL',                                '14 tera’ jar cha’ 2010 15:25'],
+                ['LLLL',                               'lojmItjaj, 14 tera’ jar cha’ 2010 15:25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 '14 jar cha’ 2010'],
+                ['lll',                                '14 jar cha’ 2010 15:25'],
+                ['llll',                               'lojmItjaj, 14 jar cha’ 2010 15:25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1.', '1.');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2.', '2.');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3.', '3.');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4.', '4.');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5.', '5.');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6.', '6.');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7.', '7.');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8.', '8.');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9.', '9.');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10.', '10.');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11.', '11.');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12.', '12.');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13.', '13.');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14.', '14.');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15.', '15.');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16.', '16.');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17.', '17.');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18.', '18.');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19.', '19.');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20.', '20.');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21.', '21.');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22.', '22.');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23.', '23.');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24.', '24.');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25.', '25.');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26.', '26.');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27.', '27.');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28.', '28.');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29.', '29.');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30.', '30.');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31.', '31.');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'tera’ jar wa’ jar wa’_tera’ jar cha’ jar cha’_tera’ jar wej jar wej_tera’ jar loS jar loS_tera’ jar vagh jar vagh_tera’ jar jav jar jav_tera’ jar Soch jar Soch_tera’ jar chorgh jar chorgh_tera’ jar Hut jar Hut_tera’ jar wa’maH jar wa’maH_tera’ jar wa’maH wa’ jar wa’maH wa’_tera’ jar wa’maH cha’ jar wa’maH cha’'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'lojmItjaj lojmItjaj lojmItjaj_DaSjaj DaSjaj DaSjaj_povjaj povjaj povjaj_ghItlhjaj ghItlhjaj ghItlhjaj_loghjaj loghjaj loghjaj_buqjaj buqjaj buqjaj_ghInjaj ghInjaj ghInjaj'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'puS lup',  '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  'wa’ tup',        '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  'wa’ tup',        '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  'cha’ tup',      '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  'loSmaH loS tup',     '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  'wa’ rep',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  'wa’ rep',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  'cha’ rep',     '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   'vagh rep',      '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  'cha’maH wa’ rep',     '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  'wa’ jaj',       '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  'wa’ jaj',       '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  'cha’ jaj',         '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   'wa’ jaj',       '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   'vagh jaj',         '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  'cha’maH vagh jaj',        '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  'wa’ jar',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  'wa’ jar',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  'wa’ jar',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  'cha’ jar',    '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  'cha’ jar',    '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  'wej jar',    '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   'wa’ jar',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   'vagh jar',    '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), 'wa’ DIS',           '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), 'cha’ DIS',        '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   'wa’ DIS',           '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   'vagh DIS',         '5 years = 5 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 112}), true), 'wa’vatlh wa’maH cha’ DIS',       '112 years = 112 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 122}), true), 'wa’vatlh cha’maH cha’ DIS',      '122 years = 122 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 213}), true), 'cha’vatlh wa’maH wej DIS',       '213 years = 213 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 223}), true), 'cha’vatlh cha’maH wej DIS',      '223 years = 223 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'puS lup pIq',  'suffix');
+        assert.equal(moment(0).from(30000), 'puS lup ret', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'puS lup ret',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'puS lup pIq', 'in a few seconds');
+        assert.equal(moment().add({h: 1}).fromNow(), 'wa’ rep pIq', 'in an hour');
+        assert.equal(moment().add({d: 5}).fromNow(), 'vagh leS', 'in 5 days');
+        assert.equal(moment().add({M: 2}).fromNow(), 'cha’ waQ', 'in 2 months');
+        assert.equal(moment().add({y: 1}).fromNow(), 'wa’ nem', 'in a year');
+        assert.equal(moment().add({s: -30}).fromNow(), 'puS lup ret', 'a few seconds ago');
+        assert.equal(moment().add({h: -1}).fromNow(), 'wa’ rep ret', 'an hour ago');
+        assert.equal(moment().add({d: -5}).fromNow(), 'vagh Hu’', '5 days ago');
+        assert.equal(moment().add({M: -2}).fromNow(), 'cha’ wen', '2 months ago');
+        assert.equal(moment().add({y: -1}).fromNow(), 'wa’ ben', 'a year ago');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                   'DaHjaj 02:00',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'DaHjaj 02:25',     'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'DaHjaj 03:00',     'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'wa’leS 02:00',     'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'DaHjaj 01:00',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'wa’Hu’ 02:00',     'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('LLL'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('LLL'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('LLL'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(), m.format('LLL'), 'Today - ' + i + ' days current time');
+
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(), m.format('LLL'), 'Today - ' + i + ' days beginning of day');
+
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(), m.format('LLL'), 'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52.', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),   '1 01 1.', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),   '1 01 1.', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '2 02 2.', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '2 02 2.', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27125,8 +32775,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -27135,12 +32786,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27158,8 +32811,370 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    localeModule('tzl');
+
+    test('parse', function (assert) {
+        var tests = 'Januar Jan_Fevraglh Fev_Març Mar_Avrïu Avr_Mai Mai_Gün Gün_Julia Jul_Guscht Gus_Setemvar Set_Listopäts Lis_Noemvar Noe_Zecemvar Zec'.split('_'), i;
+        function equalTest(input, mmm, i) {
+            assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
+        }
+        for (i = 0; i < 12; i++) {
+            tests[i] = tests[i].split(' ');
+            equalTest(tests[i][0], 'MMM', i);
+            equalTest(tests[i][1], 'MMM', i);
+            equalTest(tests[i][0], 'MMMM', i);
+            equalTest(tests[i][1], 'MMMM', i);
+            equalTest(tests[i][0].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleLowerCase(), 'MMMM', i);
+            equalTest(tests[i][0].toLocaleUpperCase(), 'MMMM', i);
+            equalTest(tests[i][1].toLocaleUpperCase(), 'MMMM', i);
+        }
+    });
+
+    test('format', function (assert) {
+        var a = [
+                ['dddd, MMMM Do YYYY, h.mm.ss a',      'Súladi, Fevraglh 14. 2010, 3.25.50 d\'o'],
+                ['ddd, hA',                            'Súl, 3D\'O'],
+                ['M Mo MM MMMM MMM',                   '2 2. 02 Fevraglh Fev'],
+                ['YYYY YY',                            '2010 10'],
+                ['D Do DD',                            '14 14. 14'],
+                ['d do dddd ddd dd',                   '0 0. Súladi Súl Sú'],
+                ['DDD DDDo DDDD',                      '45 45. 045'],
+                ['w wo ww',                            '6 6. 06'],
+                ['h hh',                               '3 03'],
+                ['H HH',                               '15 15'],
+                ['m mm',                               '25 25'],
+                ['s ss',                               '50 50'],
+                ['a A',                                'd\'o D\'O'],
+                ['[the] DDDo [day of the year]',       'the 45. day of the year'],
+                ['LTS',                                '15.25.50'],
+                ['L',                                  '14.02.2010'],
+                ['LL',                                 '14. Fevraglh dallas 2010'],
+                ['LLL',                                '14. Fevraglh dallas 2010 15.25'],
+                ['LLLL',                               'Súladi, li 14. Fevraglh dallas 2010 15.25'],
+                ['l',                                  '14.2.2010'],
+                ['ll',                                 '14. Fev dallas 2010'],
+                ['lll',                                '14. Fev dallas 2010 15.25'],
+                ['llll',                               'Súl, li 14. Fev dallas 2010 15.25']
+            ],
+            b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
+            i;
+        for (i = 0; i < a.length; i++) {
+            assert.equal(b.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
+        }
+    });
+
+    test('format ordinal', function (assert) {
+        assert.equal(moment([2011, 0, 1]).format('DDDo'), '1.', '1.');
+        assert.equal(moment([2011, 0, 2]).format('DDDo'), '2.', '2.');
+        assert.equal(moment([2011, 0, 3]).format('DDDo'), '3.', '3.');
+        assert.equal(moment([2011, 0, 4]).format('DDDo'), '4.', '4.');
+        assert.equal(moment([2011, 0, 5]).format('DDDo'), '5.', '5.');
+        assert.equal(moment([2011, 0, 6]).format('DDDo'), '6.', '6.');
+        assert.equal(moment([2011, 0, 7]).format('DDDo'), '7.', '7.');
+        assert.equal(moment([2011, 0, 8]).format('DDDo'), '8.', '8.');
+        assert.equal(moment([2011, 0, 9]).format('DDDo'), '9.', '9.');
+        assert.equal(moment([2011, 0, 10]).format('DDDo'), '10.', '10.');
+
+        assert.equal(moment([2011, 0, 11]).format('DDDo'), '11.', '11.');
+        assert.equal(moment([2011, 0, 12]).format('DDDo'), '12.', '12.');
+        assert.equal(moment([2011, 0, 13]).format('DDDo'), '13.', '13.');
+        assert.equal(moment([2011, 0, 14]).format('DDDo'), '14.', '14.');
+        assert.equal(moment([2011, 0, 15]).format('DDDo'), '15.', '15.');
+        assert.equal(moment([2011, 0, 16]).format('DDDo'), '16.', '16.');
+        assert.equal(moment([2011, 0, 17]).format('DDDo'), '17.', '17.');
+        assert.equal(moment([2011, 0, 18]).format('DDDo'), '18.', '18.');
+        assert.equal(moment([2011, 0, 19]).format('DDDo'), '19.', '19.');
+        assert.equal(moment([2011, 0, 20]).format('DDDo'), '20.', '20.');
+
+        assert.equal(moment([2011, 0, 21]).format('DDDo'), '21.', '21.');
+        assert.equal(moment([2011, 0, 22]).format('DDDo'), '22.', '22.');
+        assert.equal(moment([2011, 0, 23]).format('DDDo'), '23.', '23.');
+        assert.equal(moment([2011, 0, 24]).format('DDDo'), '24.', '24.');
+        assert.equal(moment([2011, 0, 25]).format('DDDo'), '25.', '25.');
+        assert.equal(moment([2011, 0, 26]).format('DDDo'), '26.', '26.');
+        assert.equal(moment([2011, 0, 27]).format('DDDo'), '27.', '27.');
+        assert.equal(moment([2011, 0, 28]).format('DDDo'), '28.', '28.');
+        assert.equal(moment([2011, 0, 29]).format('DDDo'), '29.', '29.');
+        assert.equal(moment([2011, 0, 30]).format('DDDo'), '30.', '30.');
+
+        assert.equal(moment([2011, 0, 31]).format('DDDo'), '31.', '31.');
+    });
+
+    test('format month', function (assert) {
+        var expected = 'Januar Jan_Fevraglh Fev_Març Mar_Avrïu Avr_Mai Mai_Gün Gün_Julia Jul_Guscht Gus_Setemvar Set_Listopäts Lis_Noemvar Noe_Zecemvar Zec'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
+        }
+    });
+
+    test('format week', function (assert) {
+        var expected = 'Súladi Súl Sú_Lúneçi Lún Lú_Maitzi Mai Ma_Márcuri Már Má_Xhúadi Xhú Xh_Viénerçi Vié Vi_Sáturi Sát Sá'.split('_'), i;
+        for (i = 0; i < expected.length; i++) {
+            assert.equal(moment([2011, 0, 2 + i]).format('dddd ddd dd'), expected[i], expected[i]);
+        }
+    });
+
+    test('from', function (assert) {
+        var start = moment([2007, 1, 28]);
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  'viensas secunds', '44 seconds = a few seconds');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  '\'n míut',      '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  '\'n míut',      '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 míuts',     '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 míuts',    '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  '\'n þora',       '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  '\'n þora',       '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 þoras',       '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 þoras',       '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 þoras',      '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  '\'n ziua',         '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  '\'n ziua',         '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 ziuas',        '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   '\'n ziua',         '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 ziuas',        '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 ziuas',       '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  '\'n mes',       '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  '\'n mes',       '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  '\'n mes',       '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 mesen',      '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 mesen',      '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 mesen',      '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   '\'n mes',       '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 mesen',      '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), '\'n ar',        '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 ars',       '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   '\'n ar',        '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 ars',       '5 years = 5 years');
+    });
+
+    test('suffix', function (assert) {
+        assert.equal(moment(30000).from(0), 'osprei viensas secunds',  'prefix');
+        assert.equal(moment(0).from(30000), 'ja\'iensas secunds', 'suffix');
+    });
+
+    test('now from now', function (assert) {
+        assert.equal(moment().fromNow(), 'ja\'iensas secunds',  'now from now should display as in the past');
+    });
+
+    test('fromNow', function (assert) {
+        assert.equal(moment().add({s: 30}).fromNow(), 'osprei viensas secunds', 'in a few seconds');
+        assert.equal(moment().add({d: 5}).fromNow(), 'osprei 5 ziuas', 'in 5 days');
+    });
+
+    test('calendar day', function (assert) {
+        var a = moment().hours(2).minutes(0).seconds(0);
+
+        assert.equal(moment(a).calendar(),                     'oxhi à 02.00',      'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      'oxhi à 02.25',      'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       'oxhi à 03.00',      'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       'demà à 02.00',   'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  'oxhi à 01.00',      'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  'ieiri à 02.00',  'yesterday at the same time');
+    });
+
+    test('calendar next week', function (assert) {
+        var i, m;
+        for (i = 2; i < 7; i++) {
+            m = moment().add({d: i});
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('dddd [à] LT'),  'Today + ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar last week', function (assert) {
+        var i, m;
+
+        for (i = 2; i < 7; i++) {
+            m = moment().subtract({d: i});
+            assert.equal(m.calendar(),       m.format('[sür el] dddd [lasteu à] LT'),  'Today - ' + i + ' days current time');
+            m.hours(0).minutes(0).seconds(0).milliseconds(0);
+            assert.equal(m.calendar(),       m.format('[sür el] dddd [lasteu à] LT'),  'Today - ' + i + ' days beginning of day');
+            m.hours(23).minutes(59).seconds(59).milliseconds(999);
+            assert.equal(m.calendar(),       m.format('[sür el] dddd [lasteu à] LT'),  'Today - ' + i + ' days end of day');
+        }
+    });
+
+    test('calendar all else', function (assert) {
+        var weeksAgo = moment().subtract({w: 1}),
+            weeksFromNow = moment().add({w: 1});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '1 week ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 1 week');
+
+        weeksAgo = moment().subtract({w: 2});
+        weeksFromNow = moment().add({w: 2});
+
+        assert.equal(weeksAgo.calendar(),       weeksAgo.format('L'),  '2 weeks ago');
+        assert.equal(weeksFromNow.calendar(),   weeksFromNow.format('L'),  'in 2 weeks');
+    });
+
+    // Monday is the first day of the week.
+    // The week that contains Jan 4th is the first week of the year.
+
+    test('weeks year starting sunday', function (assert) {
+        assert.equal(moment([2012, 0, 1]).week(), 52, 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0, 2]).week(),  1, 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0, 8]).week(),  1, 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0, 9]).week(),  2, 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).week(), 2, 'Jan 15 2012 should be week 2');
+    });
+
+    test('weeks year starting monday', function (assert) {
+        assert.equal(moment([2007, 0, 1]).week(),  1, 'Jan  1 2007 should be week 1');
+        assert.equal(moment([2007, 0, 7]).week(),  1, 'Jan  7 2007 should be week 1');
+        assert.equal(moment([2007, 0, 8]).week(),  2, 'Jan  8 2007 should be week 2');
+        assert.equal(moment([2007, 0, 14]).week(), 2, 'Jan 14 2007 should be week 2');
+        assert.equal(moment([2007, 0, 15]).week(), 3, 'Jan 15 2007 should be week 3');
+    });
+
+    test('weeks year starting tuesday', function (assert) {
+        assert.equal(moment([2007, 11, 31]).week(), 1, 'Dec 31 2007 should be week 1');
+        assert.equal(moment([2008,  0,  1]).week(), 1, 'Jan  1 2008 should be week 1');
+        assert.equal(moment([2008,  0,  6]).week(), 1, 'Jan  6 2008 should be week 1');
+        assert.equal(moment([2008,  0,  7]).week(), 2, 'Jan  7 2008 should be week 2');
+        assert.equal(moment([2008,  0, 13]).week(), 2, 'Jan 13 2008 should be week 2');
+        assert.equal(moment([2008,  0, 14]).week(), 3, 'Jan 14 2008 should be week 3');
+    });
+
+    test('weeks year starting wednesday', function (assert) {
+        assert.equal(moment([2002, 11, 30]).week(), 1, 'Dec 30 2002 should be week 1');
+        assert.equal(moment([2003,  0,  1]).week(), 1, 'Jan  1 2003 should be week 1');
+        assert.equal(moment([2003,  0,  5]).week(), 1, 'Jan  5 2003 should be week 1');
+        assert.equal(moment([2003,  0,  6]).week(), 2, 'Jan  6 2003 should be week 2');
+        assert.equal(moment([2003,  0, 12]).week(), 2, 'Jan 12 2003 should be week 2');
+        assert.equal(moment([2003,  0, 13]).week(), 3, 'Jan 13 2003 should be week 3');
+    });
+
+    test('weeks year starting thursday', function (assert) {
+        assert.equal(moment([2008, 11, 29]).week(), 1, 'Dec 29 2008 should be week 1');
+        assert.equal(moment([2009,  0,  1]).week(), 1, 'Jan  1 2009 should be week 1');
+        assert.equal(moment([2009,  0,  4]).week(), 1, 'Jan  4 2009 should be week 1');
+        assert.equal(moment([2009,  0,  5]).week(), 2, 'Jan  5 2009 should be week 2');
+        assert.equal(moment([2009,  0, 11]).week(), 2, 'Jan 11 2009 should be week 2');
+        assert.equal(moment([2009,  0, 13]).week(), 3, 'Jan 12 2009 should be week 3');
+    });
+
+    test('weeks year starting friday', function (assert) {
+        assert.equal(moment([2009, 11, 28]).week(), 53, 'Dec 28 2009 should be week 53');
+        assert.equal(moment([2010,  0,  1]).week(), 53, 'Jan  1 2010 should be week 53');
+        assert.equal(moment([2010,  0,  3]).week(), 53, 'Jan  3 2010 should be week 53');
+        assert.equal(moment([2010,  0,  4]).week(),  1, 'Jan  4 2010 should be week 1');
+        assert.equal(moment([2010,  0, 10]).week(),  1, 'Jan 10 2010 should be week 1');
+        assert.equal(moment([2010,  0, 11]).week(),  2, 'Jan 11 2010 should be week 2');
+    });
+
+    test('weeks year starting saturday', function (assert) {
+        assert.equal(moment([2010, 11, 27]).week(), 52, 'Dec 27 2010 should be week 52');
+        assert.equal(moment([2011,  0,  1]).week(), 52, 'Jan  1 2011 should be week 52');
+        assert.equal(moment([2011,  0,  2]).week(), 52, 'Jan  2 2011 should be week 52');
+        assert.equal(moment([2011,  0,  3]).week(),  1, 'Jan  3 2011 should be week 1');
+        assert.equal(moment([2011,  0,  9]).week(),  1, 'Jan  9 2011 should be week 1');
+        assert.equal(moment([2011,  0, 10]).week(),  2, 'Jan 10 2011 should be week 2');
+    });
+
+    test('weeks year starting sunday formatted', function (assert) {
+        assert.equal(moment([2012, 0,  1]).format('w ww wo'), '52 52 52.', 'Jan  1 2012 should be week 52');
+        assert.equal(moment([2012, 0,  2]).format('w ww wo'),   '1 01 1.', 'Jan  2 2012 should be week 1');
+        assert.equal(moment([2012, 0,  8]).format('w ww wo'),   '1 01 1.', 'Jan  8 2012 should be week 1');
+        assert.equal(moment([2012, 0,  9]).format('w ww wo'),   '2 02 2.', 'Jan  9 2012 should be week 2');
+        assert.equal(moment([2012, 0, 15]).format('w ww wo'),   '2 02 2.', 'Jan 15 2012 should be week 2');
+    });
+
+    test('lenient ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing ' + i + ' date check');
+        }
+    });
+
+    test('lenient ordinal parsing of number', function (assert) {
+        var i, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            testMoment = moment('2014 01 ' + i, 'YYYY MM Do');
+            assert.equal(testMoment.year(), 2014,
+                    'lenient ordinal parsing of number ' + i + ' year check');
+            assert.equal(testMoment.month(), 0,
+                    'lenient ordinal parsing of number ' + i + ' month check');
+            assert.equal(testMoment.date(), i,
+                    'lenient ordinal parsing of number ' + i + ' date check');
+        }
+    });
+
+    test('strict ordinal parsing', function (assert) {
+        var i, ordinalStr, testMoment;
+        for (i = 1; i <= 31; ++i) {
+            ordinalStr = moment([2014, 0, i]).format('YYYY MM Do');
+            testMoment = moment(ordinalStr, 'YYYY MM Do', true);
+            assert.ok(testMoment.isValid(), 'strict ordinal parsing ' + i);
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27478,8 +33493,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -27488,12 +33504,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27511,8 +33529,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27831,8 +33849,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -27841,12 +33860,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -27864,8 +33885,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28219,8 +34240,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -28229,12 +34251,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28252,8 +34276,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28271,7 +34295,7 @@
     localeModule('uz');
 
     test('parse', function (assert) {
-        var tests = 'январь янв_февраль фев_март мар_апрель апр_май май_июнь июнь_июль июль_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split('_'), i;
+        var tests = 'январ янв_феврал фев_март мар_апрел апр_май май_июн июн_июл июл_август авг_сентябр сен_октябр окт_ноябр ноя_декабр дек'.split('_'), i;
         function equalTest(input, mmm, i) {
             assert.equal(moment(input, mmm).month(), i, input + ' should be month ' + (i + 1));
         }
@@ -28290,9 +34314,9 @@
 
     test('format', function (assert) {
         var a = [
-                ['dddd, Do-MMMM YYYY, h:mm:ss',        'Якшанба, 14-февраль 2010, 3:25:50'],
+                ['dddd, Do-MMMM YYYY, h:mm:ss',        'Якшанба, 14-феврал 2010, 3:25:50'],
                 ['ddd, h:mm',                          'Якш, 3:25'],
-                ['M Mo MM MMMM MMM',                   '2 2 02 февраль фев'],
+                ['M Mo MM MMMM MMM',                   '2 2 02 феврал фев'],
                 ['YYYY YY',                            '2010 10'],
                 ['D Do DD',                            '14 14 14'],
                 ['d do dddd ddd dd',                   '0 0 Якшанба Якш Як'],
@@ -28306,9 +34330,9 @@
                 ['[йилнинг] DDDo-[куни]',             'йилнинг 45-куни'],
                 ['LTS',                                '15:25:50'],
                 ['L',                                  '14/02/2010'],
-                ['LL',                                 '14 февраль 2010'],
-                ['LLL',                                '14 февраль 2010 15:25'],
-                ['LLLL',                               '14 февраль 2010, Якшанба 15:25'],
+                ['LL',                                 '14 феврал 2010'],
+                ['LLL',                                '14 феврал 2010 15:25'],
+                ['LLLL',                               '14 феврал 2010, Якшанба 15:25'],
                 ['l',                                  '14/2/2010'],
                 ['ll',                                 '14 фев 2010'],
                 ['lll',                                '14 фев 2010 15:25'],
@@ -28359,7 +34383,7 @@
     });
 
     test('format month', function (assert) {
-        var expected = 'январь янв_февраль фев_март мар_апрель апр_май май_июнь июн_июль июл_август авг_сентябрь сен_октябрь окт_ноябрь ноя_декабрь дек'.split('_'), i;
+        var expected = 'январ янв_феврал фев_март мар_апрел апр_май май_июн июн_июл июл_август авг_сентябр сен_октябр окт_ноябр ноя_декабр дек'.split('_'), i;
         for (i = 0; i < expected.length; i++) {
             assert.equal(moment([2011, i, 1]).format('MMMM MMM'), expected[i], expected[i]);
         }
@@ -28421,7 +34445,7 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     'Бугун соат 02:00 да',      'today at the same time');
+        assert.equal(moment(a).calendar(),                   'Бугун соат 02:00 да',      'today at the same time');
         assert.equal(moment(a).add({m: 25}).calendar(),      'Бугун соат 02:25 да',      'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),       'Бугун соат 03:00 да',      'Now plus 1 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),       'Эртага 02:00 да',   'tomorrow at the same time');
@@ -28575,8 +34599,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -28585,12 +34610,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28608,8 +34635,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28941,8 +34968,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -28951,12 +34979,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -28974,8 +35004,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -29031,12 +35061,12 @@
                 ['LTS',                                '下午3点25分50秒'],
                 ['L',                                  '2010-02-14'],
                 ['LL',                                 '2010年2月14日'],
-                ['LLL',                                '2010年2月14日下午3点25'],
-                ['LLLL',                               '2010年2月14日星期日下午3点25'],
+                ['LLL',                                '2010年2月14日下午3点25分'],
+                ['LLLL',                               '2010年2月14日星期日下午3点25分'],
                 ['l',                                  '2010-02-14'],
                 ['ll',                                 '2010年2月14日'],
-                ['lll',                                '2010年2月14日下午3点25'],
-                ['llll',                               '2010年2月14日星期日下午3点25']
+                ['lll',                                '2010年2月14日下午3点25分'],
+                ['llll',                               '2010年2月14日星期日下午3点25分']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -29065,33 +35095,33 @@
     test('from', function (assert) {
         var start = moment([2007, 1, 28]);
         assert.equal(start.from(moment([2007, 1, 28]).add({s: 44}), true),  '几秒',   '44 seconds = a few seconds');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  '1分钟', '45 seconds = a minute');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  '1分钟', '89 seconds = a minute');
-        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2分钟',  '90 seconds = 2 minutes');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44分钟', '44 minutes = 44 minutes');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  '1小时', '45 minutes = an hour');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  '1小时', '89 minutes = an hour');
-        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2小时',  '90 minutes = 2 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5小时',  '5 hours = 5 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21小时', '21 hours = 21 hours');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  '1天',   '22 hours = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  '1天',   '35 hours = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2天',   '36 hours = 2 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   '1天',   '1 day = a day');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5天',   '5 days = 5 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25天',  '25 days = 25 days');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  '1个月', '26 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  '1个月', '30 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  '1个月', '43 days = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2个月',  '46 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2个月',  '75 days = 2 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3个月',  '76 days = 3 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   '1个月', '1 month = a month');
-        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5个月',  '5 months = 5 months');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), '1年',   '345 days = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2年',   '548 days = 2 years');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   '1年',   '1 year = a year');
-        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5年',   '5 years = 5 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 45}), true),  '1 分钟', '45 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 89}), true),  '1 分钟', '89 seconds = a minute');
+        assert.equal(start.from(moment([2007, 1, 28]).add({s: 90}), true),  '2 分钟',  '90 seconds = 2 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 44}), true),  '44 分钟', '44 minutes = 44 minutes');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 45}), true),  '1 小时', '45 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 89}), true),  '1 小时', '89 minutes = an hour');
+        assert.equal(start.from(moment([2007, 1, 28]).add({m: 90}), true),  '2 小时',  '90 minutes = 2 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 5}), true),   '5 小时',  '5 hours = 5 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 21}), true),  '21 小时', '21 hours = 21 hours');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 22}), true),  '1 天',   '22 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 35}), true),  '1 天',   '35 hours = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({h: 36}), true),  '2 天',   '36 hours = 2 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 1}), true),   '1 天',   '1 day = a day');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 5}), true),   '5 天',   '5 days = 5 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 25}), true),  '25 天',  '25 days = 25 days');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 26}), true),  '1 个月', '26 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 30}), true),  '1 个月', '30 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 43}), true),  '1 个月', '43 days = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 46}), true),  '2 个月',  '46 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 74}), true),  '2 个月',  '75 days = 2 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 76}), true),  '3 个月',  '76 days = 3 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 1}), true),   '1 个月', '1 month = a month');
+        assert.equal(start.from(moment([2007, 1, 28]).add({M: 5}), true),   '5 个月',  '5 months = 5 months');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 345}), true), '1 年',   '345 days = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({d: 548}), true), '2 年',   '548 days = 2 years');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 1}), true),   '1 年',   '1 year = a year');
+        assert.equal(start.from(moment([2007, 1, 28]).add({y: 5}), true),   '5 年',   '5 years = 5 years');
     });
 
     test('suffix', function (assert) {
@@ -29105,14 +35135,14 @@
 
     test('fromNow', function (assert) {
         assert.equal(moment().add({s: 30}).fromNow(), '几秒内', 'in a few seconds');
-        assert.equal(moment().add({d: 5}).fromNow(), '5天内', 'in 5 days');
+        assert.equal(moment().add({d: 5}).fromNow(), '5 天内', 'in 5 days');
     });
 
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     '今天凌晨2点整',     'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(),      '今天凌晨2点25',     'Now plus 25 min');
+        assert.equal(moment(a).calendar(),                   '今天凌晨2点整',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      '今天凌晨2点25分',   'Now plus 25 min');
         assert.equal(moment(a).add({h: 1}).calendar(),       '今天凌晨3点整',     'Now plus 1 hour');
         assert.equal(moment(a).add({d: 1}).calendar(),       '明天凌晨2点整',     'tomorrow at the same time');
         assert.equal(moment(a).subtract({h: 1}).calendar(),  '今天凌晨1点整',     'Now minus 1 hour');
@@ -29295,8 +35325,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -29305,12 +35336,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -29328,8 +35361,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -29383,12 +35416,12 @@
                 ['LTS',                                '下午3點25分50秒'],
                 ['L',                                  '2010年2月14日'],
                 ['LL',                                 '2010年2月14日'],
-                ['LLL',                                '2010年2月14日下午3點25'],
-                ['LLLL',                               '2010年2月14日星期日下午3點25'],
+                ['LLL',                                '2010年2月14日下午3點25分'],
+                ['LLLL',                               '2010年2月14日星期日下午3點25分'],
                 ['l',                                  '2010年2月14日'],
                 ['ll',                                 '2010年2月14日'],
-                ['lll',                                '2010年2月14日下午3點25'],
-                ['llll',                               '2010年2月14日星期日下午3點25']
+                ['lll',                                '2010年2月14日下午3點25分'],
+                ['llll',                               '2010年2月14日星期日下午3點25分']
             ],
             b = moment(new Date(2010, 1, 14, 15, 25, 50, 125)),
             i;
@@ -29463,12 +35496,12 @@
     test('calendar day', function (assert) {
         var a = moment().hours(2).minutes(0).seconds(0);
 
-        assert.equal(moment(a).calendar(),                     '今天早上2點00',     'today at the same time');
-        assert.equal(moment(a).add({m: 25}).calendar(),      '今天早上2點25',     'Now plus 25 min');
-        assert.equal(moment(a).add({h: 1}).calendar(),       '今天早上3點00',     'Now plus 1 hour');
-        assert.equal(moment(a).add({d: 1}).calendar(),       '明天早上2點00',     'tomorrow at the same time');
-        assert.equal(moment(a).subtract({h: 1}).calendar(),  '今天早上1點00',     'Now minus 1 hour');
-        assert.equal(moment(a).subtract({d: 1}).calendar(),  '昨天早上2點00',     'yesterday at the same time');
+        assert.equal(moment(a).calendar(),                   '今天早上2點00分',     'today at the same time');
+        assert.equal(moment(a).add({m: 25}).calendar(),      '今天早上2點25分',     'Now plus 25 min');
+        assert.equal(moment(a).add({h: 1}).calendar(),       '今天早上3點00分',     'Now plus 1 hour');
+        assert.equal(moment(a).add({d: 1}).calendar(),       '明天早上2點00分',     'tomorrow at the same time');
+        assert.equal(moment(a).subtract({h: 1}).calendar(),  '今天早上1點00分',     'Now minus 1 hour');
+        assert.equal(moment(a).subtract({d: 1}).calendar(),  '昨天早上2點00分',     'yesterday at the same time');
     });
 
     test('calendar next week', function (assert) {
@@ -29642,8 +35675,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -29652,12 +35686,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -29675,8 +35711,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -29988,6 +36024,7 @@
         // Detect Safari bug and bail. Hours on 13th March 2011 are shifted
         // with 1 ahead.
         if (new Date(2011, 2, 13, 5, 0, 0).getHours() !== 5) {
+            expect(0);
             return;
         }
 
@@ -30015,8 +36052,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -30025,12 +36063,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -30048,8 +36088,75 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    // These tests are for locale independent features
+    // locale dependent tests would be in locale test folder
+    module('calendar');
+
+    test('passing a function', function (assert) {
+        var a  = moment().hours(2).minutes(0).seconds(0);
+        assert.equal(moment(a).calendar(null, {
+            'sameDay': function () {
+                return 'h:mmA';
+            }
+        }), '2:00AM', 'should equate');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -30075,6 +36182,11 @@
         assert.ok(moment([2010, 1, 12, 1, 1, 1]).toDate() instanceof Date, '[2010, 1, 12, 1, 1, 1]');
         assert.ok(moment([2010, 1, 12, 1, 1, 1, 1]).toDate() instanceof Date, '[2010, 1, 12, 1, 1, 1, 1]');
         assert.equal(+moment(new Date(2010, 1, 14, 15, 25, 50, 125)), +moment([2010, 1, 14, 15, 25, 50, 125]), 'constructing with array === constructing with new Date()');
+    });
+
+    test('array with invalid arguments', function (assert) {
+        assert.ok(!moment([2010, null, null]).isValid(), '[2010, null, null]');
+        assert.ok(!moment([1945, null, null]).isValid(), '[1945, null, null] (pre-1970)');
     });
 
     test('array copying', function (assert) {
@@ -30173,6 +36285,11 @@
 
     test('undefined', function (assert) {
         assert.ok(moment().toDate() instanceof Date, 'undefined');
+    });
+
+    test('iso with bad input', function (assert) {
+        assert.ok(!moment('a', moment.ISO_8601).isValid(), 'iso parsing with invalid string');
+        assert.ok(!moment('a', moment.ISO_8601, true).isValid(), 'iso parsing with invalid string, strict');
     });
 
     test('iso format 24hrs', function (assert) {
@@ -30301,6 +36418,13 @@
             assert.ok(m.isValid());
             assert.equal(m.format(a[i][0]), a[i][1], a[i][0] + ' ---> ' + a[i][1]);
         }
+    });
+
+    test('2 digit year with YYYY format', function (assert) {
+        assert.equal(moment('9/2/99', 'D/M/YYYY').format('DD/MM/YYYY'), '09/02/1999', 'D/M/YYYY ---> 9/2/99');
+        assert.equal(moment('9/2/1999', 'D/M/YYYY').format('DD/MM/YYYY'), '09/02/1999', 'D/M/YYYY ---> 9/2/1999');
+        assert.equal(moment('9/2/68', 'D/M/YYYY').format('DD/MM/YYYY'), '09/02/2068', 'D/M/YYYY ---> 9/2/68');
+        assert.equal(moment('9/2/69', 'D/M/YYYY').format('DD/MM/YYYY'), '09/02/1969', 'D/M/YYYY ---> 9/2/69');
     });
 
     test('unix timestamp format', function (assert) {
@@ -30474,6 +36598,10 @@
             '-' + pad(-hourOffset) + ':' + pad(-minOffset),
         tz2 = tz.replace(':', ''),
         tz3 = tz2.slice(0, 3),
+        //Tz3 removes minutes digit so will break the tests when parsed if they all use the same minutes digit
+        minutesForTz3 = pad((4 + minOffset) % 60),
+        minute = pad(4 + minOffset),
+
         formats = [
             ['2011-10-08',                    '2011-10-08T00:00:00.000' + tz],
             ['2011-10-08T18',                 '2011-10-08T18:00:00.000' + tz],
@@ -30483,8 +36611,8 @@
             ['2011-10-08T18:04:20' + tz,      '2011-10-08T18:04:20.000' + tz],
             ['2011-10-08T18:04' + tz2,        '2011-10-08T18:04:00.000' + tz],
             ['2011-10-08T18:04:20' + tz2,     '2011-10-08T18:04:20.000' + tz],
-            ['2011-10-08T18:04' + tz3,        '2011-10-08T18:04:00.000' + tz],
-            ['2011-10-08T18:04:20' + tz3,     '2011-10-08T18:04:20.000' + tz],
+            ['2011-10-08T18:04' + tz3,        '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-10-08T18:04:20' + tz3,     '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-10-08T18:04:20.1' + tz2,   '2011-10-08T18:04:20.100' + tz],
             ['2011-10-08T18:04:20.11' + tz2,  '2011-10-08T18:04:20.110' + tz],
             ['2011-10-08T18:04:20.111' + tz2, '2011-10-08T18:04:20.111' + tz],
@@ -30495,8 +36623,8 @@
             ['2011-10-08 18:04:20' + tz,      '2011-10-08T18:04:20.000' + tz],
             ['2011-10-08 18:04' + tz2,        '2011-10-08T18:04:00.000' + tz],
             ['2011-10-08 18:04:20' + tz2,     '2011-10-08T18:04:20.000' + tz],
-            ['2011-10-08 18:04' + tz3,        '2011-10-08T18:04:00.000' + tz],
-            ['2011-10-08 18:04:20' + tz3,     '2011-10-08T18:04:20.000' + tz],
+            ['2011-10-08 18:04' + tz3,        '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-10-08 18:04:20' + tz3,     '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-10-08 18:04:20.1' + tz2,   '2011-10-08T18:04:20.100' + tz],
             ['2011-10-08 18:04:20.11' + tz2,  '2011-10-08T18:04:20.110' + tz],
             ['2011-10-08 18:04:20.111' + tz2, '2011-10-08T18:04:20.111' + tz],
@@ -30509,8 +36637,8 @@
             ['2011-W40-6T18:04:20' + tz,      '2011-10-08T18:04:20.000' + tz],
             ['2011-W40-6T18:04' + tz2,        '2011-10-08T18:04:00.000' + tz],
             ['2011-W40-6T18:04:20' + tz2,     '2011-10-08T18:04:20.000' + tz],
-            ['2011-W40-6T18:04' + tz3,        '2011-10-08T18:04:00.000' + tz],
-            ['2011-W40-6T18:04:20' + tz3,     '2011-10-08T18:04:20.000' + tz],
+            ['2011-W40-6T18:04' + tz3,        '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-W40-6T18:04:20' + tz3,     '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-W40-6T18:04:20.1' + tz2,   '2011-10-08T18:04:20.100' + tz],
             ['2011-W40-6T18:04:20.11' + tz2,  '2011-10-08T18:04:20.110' + tz],
             ['2011-W40-6T18:04:20.111' + tz2, '2011-10-08T18:04:20.111' + tz],
@@ -30521,8 +36649,8 @@
             ['2011-W40-6 18:04:20' + tz,      '2011-10-08T18:04:20.000' + tz],
             ['2011-W40-6 18:04' + tz2,        '2011-10-08T18:04:00.000' + tz],
             ['2011-W40-6 18:04:20' + tz2,     '2011-10-08T18:04:20.000' + tz],
-            ['2011-W40-6 18:04' + tz3,        '2011-10-08T18:04:00.000' + tz],
-            ['2011-W40-6 18:04:20' + tz3,     '2011-10-08T18:04:20.000' + tz],
+            ['2011-W40-6 18:04' + tz3,        '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-W40-6 18:04:20' + tz3,     '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-W40-6 18:04:20.1' + tz2,   '2011-10-08T18:04:20.100' + tz],
             ['2011-W40-6 18:04:20.11' + tz2,  '2011-10-08T18:04:20.110' + tz],
             ['2011-W40-6 18:04:20.111' + tz2, '2011-10-08T18:04:20.111' + tz],
@@ -30534,8 +36662,8 @@
             ['2011-281T18:04:20' + tz,        '2011-10-08T18:04:20.000' + tz],
             ['2011-281T18:04' + tz2,          '2011-10-08T18:04:00.000' + tz],
             ['2011-281T18:04:20' + tz2,       '2011-10-08T18:04:20.000' + tz],
-            ['2011-281T18:04' + tz3,          '2011-10-08T18:04:00.000' + tz],
-            ['2011-281T18:04:20' + tz3,       '2011-10-08T18:04:20.000' + tz],
+            ['2011-281T18:04' + tz3,          '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-281T18:04:20' + tz3,       '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-281T18:04:20.1' + tz2,     '2011-10-08T18:04:20.100' + tz],
             ['2011-281T18:04:20.11' + tz2,    '2011-10-08T18:04:20.110' + tz],
             ['2011-281T18:04:20.111' + tz2,   '2011-10-08T18:04:20.111' + tz],
@@ -30546,15 +36674,104 @@
             ['2011-281 18:04:20' + tz,        '2011-10-08T18:04:20.000' + tz],
             ['2011-281 18:04' + tz2,          '2011-10-08T18:04:00.000' + tz],
             ['2011-281 18:04:20' + tz2,       '2011-10-08T18:04:20.000' + tz],
-            ['2011-281 18:04' + tz3,          '2011-10-08T18:04:00.000' + tz],
-            ['2011-281 18:04:20' + tz3,       '2011-10-08T18:04:20.000' + tz],
+            ['2011-281 18:04' + tz3,          '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011-281 18:04:20' + tz3,       '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
             ['2011-281 18:04:20.1' + tz2,     '2011-10-08T18:04:20.100' + tz],
             ['2011-281 18:04:20.11' + tz2,    '2011-10-08T18:04:20.110' + tz],
-            ['2011-281 18:04:20.111' + tz2,   '2011-10-08T18:04:20.111' + tz]
+            ['2011-281 18:04:20.111' + tz2,   '2011-10-08T18:04:20.111' + tz],
+            ['20111008T18',                   '2011-10-08T18:00:00.000' + tz],
+            ['20111008T1804',                 '2011-10-08T18:04:00.000' + tz],
+            ['20111008T180420',               '2011-10-08T18:04:20.000' + tz],
+            ['20111008T1804' + tz,            '2011-10-08T18:04:00.000' + tz],
+            ['20111008T180420' + tz,          '2011-10-08T18:04:20.000' + tz],
+            ['20111008T1804' + tz2,           '2011-10-08T18:04:00.000' + tz],
+            ['20111008T180420' + tz2,         '2011-10-08T18:04:20.000' + tz],
+            ['20111008T1804' + tz3,           '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['20111008T180420' + tz3,         '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['20111008T180420,1' + tz2,       '2011-10-08T18:04:20.100' + tz],
+            ['20111008T180420,11' + tz2,      '2011-10-08T18:04:20.110' + tz],
+            ['20111008T180420,111' + tz2,     '2011-10-08T18:04:20.111' + tz],
+            ['20111008 18',                   '2011-10-08T18:00:00.000' + tz],
+            ['20111008 1804',                 '2011-10-08T18:04:00.000' + tz],
+            ['20111008 180420',               '2011-10-08T18:04:20.000' + tz],
+            ['20111008 1804' + tz,            '2011-10-08T18:04:00.000' + tz],
+            ['20111008 180420' + tz,          '2011-10-08T18:04:20.000' + tz],
+            ['20111008 1804' + tz2,           '2011-10-08T18:04:00.000' + tz],
+            ['20111008 180420' + tz2,         '2011-10-08T18:04:20.000' + tz],
+            ['20111008 1804' + tz3,           '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['20111008 180420' + tz3,         '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['20111008 180420,1' + tz2,       '2011-10-08T18:04:20.100' + tz],
+            ['20111008 180420,11' + tz2,      '2011-10-08T18:04:20.110' + tz],
+            ['20111008 180420,111' + tz2,     '2011-10-08T18:04:20.111' + tz],
+            ['2011W40',                       '2011-10-03T00:00:00.000' + tz],
+            ['2011W406',                      '2011-10-08T00:00:00.000' + tz],
+            ['2011W406T18',                   '2011-10-08T18:00:00.000' + tz],
+            ['2011W406T1804',                 '2011-10-08T18:04:00.000' + tz],
+            ['2011W406T180420',               '2011-10-08T18:04:20.000' + tz],
+            ['2011W406 1804' + tz2,           '2011-10-08T18:04:00.000' + tz],
+            ['2011W406T1804' + tz,            '2011-10-08T18:04:00.000' + tz],
+            ['2011W406T180420' + tz,          '2011-10-08T18:04:20.000' + tz],
+            ['2011W406T1804' + tz2,           '2011-10-08T18:04:00.000' + tz],
+            ['2011W406T180420' + tz2,         '2011-10-08T18:04:20.000' + tz],
+            ['2011W406T1804' + tz3,           '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011W406T180420' + tz3,         '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['2011W406T180420,1' + tz2,       '2011-10-08T18:04:20.100' + tz],
+            ['2011W406T180420,11' + tz2,      '2011-10-08T18:04:20.110' + tz],
+            ['2011W406T180420,111' + tz2,     '2011-10-08T18:04:20.111' + tz],
+            ['2011W406 18',                   '2011-10-08T18:00:00.000' + tz],
+            ['2011W406 1804',                 '2011-10-08T18:04:00.000' + tz],
+            ['2011W406 180420',               '2011-10-08T18:04:20.000' + tz],
+            ['2011W406 1804' + tz,            '2011-10-08T18:04:00.000' + tz],
+            ['2011W406 180420' + tz,          '2011-10-08T18:04:20.000' + tz],
+            ['2011W406 180420' + tz2,         '2011-10-08T18:04:20.000' + tz],
+            ['2011W406 1804' + tz3,           '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011W406 180420' + tz3,         '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['2011W406 180420,1' + tz2,       '2011-10-08T18:04:20.100' + tz],
+            ['2011W406 180420,11' + tz2,      '2011-10-08T18:04:20.110' + tz],
+            ['2011W406 180420,111' + tz2,     '2011-10-08T18:04:20.111' + tz],
+            ['2011281',                       '2011-10-08T00:00:00.000' + tz],
+            ['2011281T18',                    '2011-10-08T18:00:00.000' + tz],
+            ['2011281T1804',                  '2011-10-08T18:04:00.000' + tz],
+            ['2011281T180420',                '2011-10-08T18:04:20.000' + tz],
+            ['2011281T1804' + tz,             '2011-10-08T18:04:00.000' + tz],
+            ['2011281T180420' + tz,           '2011-10-08T18:04:20.000' + tz],
+            ['2011281T1804' + tz2,            '2011-10-08T18:04:00.000' + tz],
+            ['2011281T180420' + tz2,          '2011-10-08T18:04:20.000' + tz],
+            ['2011281T1804' + tz3,            '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011281T180420' + tz3,          '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['2011281T180420,1' + tz2,        '2011-10-08T18:04:20.100' + tz],
+            ['2011281T180420,11' + tz2,       '2011-10-08T18:04:20.110' + tz],
+            ['2011281T180420,111' + tz2,      '2011-10-08T18:04:20.111' + tz],
+            ['2011281 18',                    '2011-10-08T18:00:00.000' + tz],
+            ['2011281 1804',                  '2011-10-08T18:04:00.000' + tz],
+            ['2011281 180420',                '2011-10-08T18:04:20.000' + tz],
+            ['2011281 1804' + tz,             '2011-10-08T18:04:00.000' + tz],
+            ['2011281 180420' + tz,           '2011-10-08T18:04:20.000' + tz],
+            ['2011281 1804' + tz2,            '2011-10-08T18:04:00.000' + tz],
+            ['2011281 180420' + tz2,          '2011-10-08T18:04:20.000' + tz],
+            ['2011281 1804' + tz3,            '2011-10-08T18:' + minutesForTz3 + ':00.000' + tz],
+            ['2011281 180420' + tz3,          '2011-10-08T18:' + minutesForTz3 + ':20.000' + tz],
+            ['2011281 180420,1' + tz2,        '2011-10-08T18:04:20.100' + tz],
+            ['2011281 180420,11' + tz2,       '2011-10-08T18:04:20.110' + tz],
+            ['2011281 180420,111' + tz2,      '2011-10-08T18:04:20.111' + tz]
         ], i;
         for (i = 0; i < formats.length; i++) {
-            assert.equal(moment(formats[i][0]).format('YYYY-MM-DDTHH:mm:ss.SSSZ'), formats[i][1], 'moment should be able to parse ISO ' + formats[i][0]);
+            assert.equal(moment(formats[i][0]).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
+                    formats[i][1], 'moment should be able to parse ISO ' + formats[i][0]);
+            assert.equal(moment(formats[i][0], moment.ISO_8601).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
+                    formats[i][1], 'moment should be able to parse specified ISO ' + formats[i][0]);
+            assert.equal(moment(formats[i][0], moment.ISO_8601, true).format('YYYY-MM-DDTHH:mm:ss.SSSZ'),
+                    formats[i][1], 'moment should be able to parse specified strict ISO ' + formats[i][0]);
         }
+    });
+
+    test('non iso 8601 strings', function (assert) {
+        assert.ok(!moment('2015-10T10:15', moment.ISO_8601, true).isValid(), 'incomplete date with time');
+        assert.ok(!moment('2015-W10T10:15', moment.ISO_8601, true).isValid(), 'incomplete week date with time');
+        assert.ok(!moment('201510', moment.ISO_8601, true).isValid(), 'basic YYYYMM is not allowed');
+        assert.ok(!moment('2015W10T1015', moment.ISO_8601, true).isValid(), 'incomplete week date with time (basic)');
+        assert.ok(!moment('2015-10-08T1015', moment.ISO_8601, true).isValid(), 'mixing extended and basic format');
+        assert.ok(!moment('20151008T10:15', moment.ISO_8601, true).isValid(), 'mixing basic and extended format');
     });
 
     test('parsing iso week year/week/weekday', function (assert) {
@@ -30700,7 +36917,6 @@
         assert.equal(moment([99, 0, 1]).format('YYYY-MM-DD'), '0099-01-01', 'Year AD 99');
         assert.equal(moment([999, 0, 1]).format('YYYY-MM-DD'), '0999-01-01', 'Year AD 999');
         assert.equal(moment('0 1 1', 'YYYY MM DD').format('YYYY-MM-DD'), '0000-01-01', 'Year AD 0');
-        assert.equal(moment('99 1 1', 'YYYY MM DD').format('YYYY-MM-DD'), '0099-01-01', 'Year AD 99');
         assert.equal(moment('999 1 1', 'YYYY MM DD').format('YYYY-MM-DD'), '0999-01-01', 'Year AD 999');
         assert.equal(moment('0 1 1', 'YYYYY MM DD').format('YYYYY-MM-DD'), '00000-01-01', 'Year AD 0');
         assert.equal(moment('99 1 1', 'YYYYY MM DD').format('YYYYY-MM-DD'), '00099-01-01', 'Year AD 99');
@@ -30932,14 +37148,75 @@
         assert.equal(moment(['2014', '7', '31']).isValid(), true, 'string array + isValid');
     });
 
+    test('object with strings', function (assert) {
+        assert.equal(moment({year: '2014', month: '7', day: '31'}).isValid(), true, 'string object + isValid');
+    });
+
     test('utc with array of formats', function (assert) {
         assert.equal(moment.utc('2014-01-01', ['YYYY-MM-DD', 'YYYY-MM']).format(), '2014-01-01T00:00:00+00:00', 'moment.utc works with array of formats');
     });
 
+    test('parsing invalid string weekdays', function (assert) {
+        assert.equal(false, moment('a', 'dd').isValid(),
+                'dd with invalid weekday, non-strict');
+        assert.equal(false, moment('a', 'dd', true).isValid(),
+                'dd with invalid weekday, strict');
+        assert.equal(false, moment('a', 'ddd').isValid(),
+                'ddd with invalid weekday, non-strict');
+        assert.equal(false, moment('a', 'ddd', true).isValid(),
+                'ddd with invalid weekday, strict');
+        assert.equal(false, moment('a', 'dddd').isValid(),
+                'dddd with invalid weekday, non-strict');
+        assert.equal(false, moment('a', 'dddd', true).isValid(),
+                'dddd with invalid weekday, strict');
+    });
+
+    test('milliseconds', function (assert) {
+        assert.equal(moment('1', 'S').millisecond(), 100);
+        assert.equal(moment('12', 'SS').millisecond(), 120);
+        assert.equal(moment('123', 'SSS').millisecond(), 123);
+        assert.equal(moment('1234', 'SSSS').millisecond(), 123);
+        assert.equal(moment('12345', 'SSSSS').millisecond(), 123);
+        assert.equal(moment('123456', 'SSSSSS').millisecond(), 123);
+        assert.equal(moment('1234567', 'SSSSSSS').millisecond(), 123);
+        assert.equal(moment('12345678', 'SSSSSSSS').millisecond(), 123);
+        assert.equal(moment('123456789', 'SSSSSSSSS').millisecond(), 123);
+    });
+
+    test('hmm', function (assert) {
+        assert.equal(moment('123', 'hmm', true).format('HH:mm:ss'), '01:23:00', '123 with hmm');
+        assert.equal(moment('123a', 'hmmA', true).format('HH:mm:ss'), '01:23:00', '123a with hmmA');
+        assert.equal(moment('123p', 'hmmA', true).format('HH:mm:ss'), '13:23:00', '123p with hmmA');
+
+        assert.equal(moment('1234', 'hmm', true).format('HH:mm:ss'), '12:34:00', '1234 with hmm');
+        assert.equal(moment('1234a', 'hmmA', true).format('HH:mm:ss'), '00:34:00', '1234a with hmmA');
+        assert.equal(moment('1234p', 'hmmA', true).format('HH:mm:ss'), '12:34:00', '1234p with hmmA');
+
+        assert.equal(moment('12345', 'hmmss', true).format('HH:mm:ss'), '01:23:45', '12345 with hmmss');
+        assert.equal(moment('12345a', 'hmmssA', true).format('HH:mm:ss'), '01:23:45', '12345a with hmmssA');
+        assert.equal(moment('12345p', 'hmmssA', true).format('HH:mm:ss'), '13:23:45', '12345p with hmmssA');
+        assert.equal(moment('112345', 'hmmss', true).format('HH:mm:ss'), '11:23:45', '112345 with hmmss');
+        assert.equal(moment('112345a', 'hmmssA', true).format('HH:mm:ss'), '11:23:45', '112345a with hmmssA');
+        assert.equal(moment('112345p', 'hmmssA', true).format('HH:mm:ss'), '23:23:45', '112345p with hmmssA');
+
+        assert.equal(moment('023', 'Hmm', true).format('HH:mm:ss'), '00:23:00', '023 with Hmm');
+        assert.equal(moment('123', 'Hmm', true).format('HH:mm:ss'), '01:23:00', '123 with Hmm');
+        assert.equal(moment('1234', 'Hmm', true).format('HH:mm:ss'), '12:34:00', '1234 with Hmm');
+        assert.equal(moment('1534', 'Hmm', true).format('HH:mm:ss'), '15:34:00', '1234 with Hmm');
+        assert.equal(moment('12345', 'Hmmss', true).format('HH:mm:ss'), '01:23:45', '12345 with Hmmss');
+        assert.equal(moment('112345', 'Hmmss', true).format('HH:mm:ss'), '11:23:45', '112345 with Hmmss');
+        assert.equal(moment('172345', 'Hmmss', true).format('HH:mm:ss'), '17:23:45', '112345 with Hmmss');
+    });
+
+    test('Y token', function (assert) {
+        assert.equal(moment('1-1-2010', 'M-D-Y', true).year(), 2010, 'parsing Y');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -30948,12 +37225,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -30971,8 +37250,94 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('creation data');
+
+    test('valid date', function (assert) {
+        var dat = moment('1992-10-22');
+        var orig = dat.creationData();
+
+        assert.equal(dat.isValid(), true, '1992-10-22 is valid');
+        assert.equal(orig.input, '1992-10-22', 'original input is not correct.');
+        assert.equal(orig.format, 'YYYY-MM-DD', 'original format is defined.');
+        assert.equal(orig.locale._abbr, 'en', 'default locale is en');
+        assert.equal(orig.isUTC, false, 'not a UTC date');
+    });
+
+    test('valid date at fr locale', function (assert) {
+        var dat = moment('1992-10-22', 'YYYY-MM-DD', 'fr');
+        var orig = dat.creationData();
+
+        assert.equal(orig.locale._abbr, 'fr', 'locale is fr');
+    });
+
+    test('valid date with formats', function (assert) {
+        var dat = moment('29-06-1995', ['MM-DD-YYYY', 'DD-MM', 'DD-MM-YYYY']);
+        var orig = dat.creationData();
+
+        assert.equal(orig.format, 'DD-MM-YYYY', 'DD-MM-YYYY format is defined.');
+    });
+
+    test('strict', function (assert) {
+        assert.ok(moment('2015-01-02', 'YYYY-MM-DD', true).creationData().strict, 'strict is true');
+        assert.ok(!moment('2015-01-02', 'YYYY-MM-DD').creationData().strict, 'strict is true');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -30994,12 +37359,10 @@
         }
     }
 
-    var helpers_each = each;
-
     module('days in month');
 
     test('days in month', function (assert) {
-        helpers_each([31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], function (days, i) {
+        each([31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], function (days, i) {
             var firstDay = moment([2012, i]),
                 lastDay  = moment([2012, i, days]);
             assert.equal(firstDay.daysInMonth(), days, firstDay.format('L') + ' should have ' + days + ' days.');
@@ -31016,8 +37379,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -31026,12 +37390,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -31049,8 +37415,140 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function hasOwnProp(a, b) {
+        return Object.prototype.hasOwnProperty.call(a, b);
+    }
+
+    function extend(a, b) {
+        for (var i in b) {
+            if (hasOwnProp(b, i)) {
+                a[i] = b[i];
+            }
+        }
+
+        if (hasOwnProp(b, 'toString')) {
+            a.toString = b.toString;
+        }
+
+        if (hasOwnProp(b, 'valueOf')) {
+            a.valueOf = b.valueOf;
+        }
+
+        return a;
+    }
+
+    var hookCallback;
+
+    function hooks () {
+        return hookCallback.apply(null, arguments);
+    }
+
+    // This is done to register the method called with moment()
+    // without creating circular dependencies.
+    function setHookCallback (callback) {
+        hookCallback = callback;
+    }
+
+    function isUndefined(input) {
+        return input === void 0;
+    }
+
+    function warn(msg) {
+        if (hooks.suppressDeprecationWarnings === false &&
+                (typeof console !==  'undefined') && console.warn) {
+            console.warn('Deprecation warning: ' + msg);
+        }
+    }
+
+    function deprecate(msg, fn) {
+        var firstTime = true;
+
+        return extend(function () {
+            if (firstTime) {
+                warn(msg + '\nArguments: ' + Array.prototype.slice.call(arguments).join(', ') + '\n' + (new Error()).stack);
+                firstTime = false;
+            }
+            return fn.apply(this, arguments);
+        }, fn);
+    }
+
+    var deprecations = {};
+
+    function deprecateSimple(name, msg) {
+        if (!deprecations[name]) {
+            warn(msg);
+            deprecations[name] = true;
+        }
+    }
+
+    hooks.suppressDeprecationWarnings = false;
+
+    module('deprecate');
+
+    test('deprecate', function (assert) {
+        var fn = function () {};
+        var deprecatedFn = deprecate('testing deprecation', fn);
+        deprecatedFn();
+
+        expect(0);
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -31104,7 +37602,7 @@
         assert.equal(moment(1000).diff(500), 500, '1 second - 0.5 seconds = 500');
         assert.equal(moment(0).diff(1000), -1000, '0 - 1 second = -1000');
         assert.equal(moment(new Date(1000)).diff(1000), 0, '1 second - 1 second = 0');
-        var oneHourDate = new Date(),
+        var oneHourDate = new Date(2015, 5, 21),
         nowDate = new Date(+oneHourDate);
         oneHourDate.setHours(oneHourDate.getHours() + 1);
         assert.equal(moment(oneHourDate).diff(nowDate), 60 * 60 * 1000, '1 hour from now = 3600000');
@@ -31299,8 +37797,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -31309,12 +37808,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -31332,8 +37833,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -31527,6 +38028,13 @@
         assert.equal(moment.duration('1.02:03:04.9999999').minutes(), 3, '3 minutes');
         assert.equal(moment.duration('1.02:03:04.9999999').seconds(), 4, '4 seconds');
         assert.equal(moment.duration('1.02:03:04.9999999').milliseconds(), 999, '999 milliseconds');
+
+        assert.equal(moment.duration('1 02:03:04.9999999').years(), 0, '0 years');
+        assert.equal(moment.duration('1 02:03:04.9999999').days(), 1, '1 day');
+        assert.equal(moment.duration('1 02:03:04.9999999').hours(), 2, '2 hours');
+        assert.equal(moment.duration('1 02:03:04.9999999').minutes(), 3, '3 minutes');
+        assert.equal(moment.duration('1 02:03:04.9999999').seconds(), 4, '4 seconds');
+        assert.equal(moment.duration('1 02:03:04.9999999').milliseconds(), 999, '999 milliseconds');
     });
 
     test('instatiation from serialized C# TimeSpan without days', function (assert) {
@@ -31567,7 +38075,7 @@
 
         assert.equal(d.years(), 29227, '29227 years');
         assert.equal(d.months(), 8, '8 months');
-        assert.equal(d.days(), 17, '17 day');  // this should be 13
+        assert.equal(d.days(), 12, '12 day');  // if you have to change this value -- just do it
 
         assert.equal(d.hours(), 2, '2 hours');
         assert.equal(d.minutes(), 48, '48 minutes');
@@ -31580,7 +38088,7 @@
 
         assert.equal(d.years(), -29227, '29653 years');
         assert.equal(d.months(), -8, '8 day');
-        assert.equal(d.days(), -17, '17 day'); // this should be 13
+        assert.equal(d.days(), -12, '12 day');  // if you have to change this value -- just do it
 
         assert.equal(d.hours(), -2, '2 hours');
         assert.equal(d.minutes(), -48, '48 minutes');
@@ -31605,6 +38113,7 @@
         assert.equal(moment.duration({s: -0.5}).toISOString(), '-PT0.5S', 'one half second ago');
         assert.equal(moment.duration({y: -0.5, M: 1}).toISOString(), '-P5M', 'a month after half a year ago');
         assert.equal(moment.duration({}).toISOString(), 'P0D', 'zero duration');
+        assert.equal(moment.duration({M: 16, d:40, s: 86465}).toISOString(), 'P1Y4M40DT24H1M5S', 'all fields');
     });
 
     test('toString acts as toISOString', function (assert) {
@@ -31614,6 +38123,7 @@
         assert.equal(moment.duration({s: -0.5}).toString(), '-PT0.5S', 'one half second ago');
         assert.equal(moment.duration({y: -0.5, M: 1}).toString(), '-P5M', 'a month after half a year ago');
         assert.equal(moment.duration({}).toString(), 'P0D', 'zero duration');
+        assert.equal(moment.duration({M: 16, d:40, s: 86465}).toString(), 'P1Y4M40DT24H1M5S', 'all fields');
     });
 
     test('toIsoString deprecation', function (assert) {
@@ -31717,12 +38227,12 @@
         assert.equal(moment.duration({months: 13}).months(), 1,  '13 months is 1 month left over');
         assert.equal(moment.duration({months: 13}).years(),  1,  '13 months makes 1 year');
 
-        assert.equal(moment.duration({days: 29}).days(),   29, '29 days is 29 days');
-        assert.equal(moment.duration({days: 29}).months(), 0,  '29 days makes no month');
-        assert.equal(moment.duration({days: 30}).days(),   0,  '30 days is 0 days left over');
-        assert.equal(moment.duration({days: 30}).months(), 1,  '30 days is a month');
-        assert.equal(moment.duration({days: 31}).days(),   1,  '31 days is 1 day left over');
+        assert.equal(moment.duration({days: 30}).days(),   30, '30 days is 30 days');
+        assert.equal(moment.duration({days: 30}).months(), 0,  '30 days makes no month');
+        assert.equal(moment.duration({days: 31}).days(),   0,  '31 days is 0 days left over');
         assert.equal(moment.duration({days: 31}).months(), 1,  '31 days is a month');
+        assert.equal(moment.duration({days: 32}).days(),   1,  '32 days is 1 day left over');
+        assert.equal(moment.duration({days: 32}).months(), 1,  '32 days is a month');
 
         assert.equal(moment.duration({hours: 23}).hours(), 23, '23 hours is 23 hours');
         assert.equal(moment.duration({hours: 23}).days(),  0,  '23 hours makes no day');
@@ -31732,13 +38242,30 @@
         assert.equal(moment.duration({hours: 25}).days(),  1,  '25 hours makes 1 day');
     });
 
+    test('bubbling consistency', function (assert) {
+        var days = 0, months = 0, newDays, newMonths, totalDays, d;
+        for (totalDays = 1; totalDays <= 500; ++totalDays) {
+            d = moment.duration(totalDays, 'days');
+            newDays = d.days();
+            newMonths = d.months() + d.years() * 12;
+            assert.ok(
+                    (months === newMonths && days + 1 === newDays) ||
+                    (months + 1 === newMonths && newDays === 0),
+                    'consistent total days ' + totalDays +
+                    ' was ' + months + ' ' + days +
+                    ' now ' + newMonths + ' ' + newDays);
+            days = newDays;
+            months = newMonths;
+        }
+    });
+
     test('effective equivalency', function (assert) {
         assert.deepEqual(moment.duration({seconds: 1})._data,  moment.duration({milliseconds: 1000})._data, '1 second is the same as 1000 milliseconds');
         assert.deepEqual(moment.duration({seconds: 60})._data, moment.duration({minutes: 1})._data,         '1 minute is the same as 60 seconds');
         assert.deepEqual(moment.duration({minutes: 60})._data, moment.duration({hours: 1})._data,           '1 hour is the same as 60 minutes');
         assert.deepEqual(moment.duration({hours: 24})._data,   moment.duration({days: 1})._data,            '1 day is the same as 24 hours');
         assert.deepEqual(moment.duration({days: 7})._data,     moment.duration({weeks: 1})._data,           '1 week is the same as 7 days');
-        assert.deepEqual(moment.duration({days: 30})._data,    moment.duration({months: 1})._data,          '1 month is the same as 30 days');
+        assert.deepEqual(moment.duration({days: 31})._data,    moment.duration({months: 1})._data,          '1 month is the same as 30 days');
         assert.deepEqual(moment.duration({months: 12})._data,  moment.duration({years: 1})._data,           '1 years is the same as 12 months');
     });
 
@@ -31877,17 +38404,53 @@
     });
 
     test('add and bubble', function (assert) {
+        var d;
+
         assert.equal(moment.duration(1, 'second').add(1000, 'milliseconds').seconds(), 2, 'Adding milliseconds should bubble up to seconds');
         assert.equal(moment.duration(1, 'minute').add(60, 'second').minutes(), 2, 'Adding seconds should bubble up to minutes');
         assert.equal(moment.duration(1, 'hour').add(60, 'minutes').hours(), 2, 'Adding minutes should bubble up to hours');
         assert.equal(moment.duration(1, 'day').add(24, 'hours').days(), 2, 'Adding hours should bubble up to days');
+
+        d = moment.duration(-1, 'day').add(1, 'hour');
+        assert.equal(d.hours(), -23, '-1 day + 1 hour == -23 hour (component)');
+        assert.equal(d.asHours(), -23, '-1 day + 1 hour == -23 hours');
+
+        d = moment.duration(-1, 'year').add(1, 'day');
+        assert.equal(d.days(), -30, '- 1 year + 1 day == -30 days (component)');
+        assert.equal(d.months(), -11, '- 1 year + 1 day == -11 months (component)');
+        assert.equal(d.years(), 0, '- 1 year + 1 day == 0 years (component)');
+        assert.equal(d.asDays(), -364, '- 1 year + 1 day == -364 days');
+
+        d = moment.duration(-1, 'year').add(1, 'hour');
+        assert.equal(d.hours(), -23, '- 1 year + 1 hour == -23 hours (component)');
+        assert.equal(d.days(), -30, '- 1 year + 1 hour == -30 days (component)');
+        assert.equal(d.months(), -11, '- 1 year + 1 hour == -11 months (component)');
+        assert.equal(d.years(), 0, '- 1 year + 1 hour == 0 years (component)');
     });
 
     test('subtract and bubble', function (assert) {
+        var d;
+
         assert.equal(moment.duration(2, 'second').subtract(1000, 'milliseconds').seconds(), 1, 'Subtracting milliseconds should bubble up to seconds');
         assert.equal(moment.duration(2, 'minute').subtract(60, 'second').minutes(), 1, 'Subtracting seconds should bubble up to minutes');
         assert.equal(moment.duration(2, 'hour').subtract(60, 'minutes').hours(), 1, 'Subtracting minutes should bubble up to hours');
         assert.equal(moment.duration(2, 'day').subtract(24, 'hours').days(), 1, 'Subtracting hours should bubble up to days');
+
+        d = moment.duration(1, 'day').subtract(1, 'hour');
+        assert.equal(d.hours(), 23, '1 day - 1 hour == 23 hour (component)');
+        assert.equal(d.asHours(), 23, '1 day - 1 hour == 23 hours');
+
+        d = moment.duration(1, 'year').subtract(1, 'day');
+        assert.equal(d.days(), 30, '1 year - 1 day == 30 days (component)');
+        assert.equal(d.months(), 11, '1 year - 1 day == 11 months (component)');
+        assert.equal(d.years(), 0, '1 year - 1 day == 0 years (component)');
+        assert.equal(d.asDays(), 364, '1 year - 1 day == 364 days');
+
+        d = moment.duration(1, 'year').subtract(1, 'hour');
+        assert.equal(d.hours(), 23, '1 year - 1 hour == 23 hours (component)');
+        assert.equal(d.days(), 30, '1 year - 1 hour == 30 days (component)');
+        assert.equal(d.months(), 11, '1 year - 1 hour == 11 months (component)');
+        assert.equal(d.years(), 0, '1 year - 1 hour == 0 years (component)');
     });
 
     test('subtract', function (assert) {
@@ -31916,8 +38479,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -31926,12 +38490,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -31949,8 +38515,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32010,8 +38576,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -32020,12 +38587,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32043,8 +38612,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32368,6 +38937,12 @@
         assert.equal(moment(c).local().calendar(d), 'Tomorrow at 11:59 PM', 'Tomorrow at 11:59 PM, not Yesterday, or the wrong time');
     });
 
+    test('calendar with custom formats', function (assert) {
+        assert.equal(moment().calendar(null, {sameDay: '[Today]'}), 'Today', 'Today');
+        assert.equal(moment().add(1, 'days').calendar(null, {nextDay: '[Tomorrow]'}), 'Tomorrow', 'Tomorrow');
+        assert.equal(moment([1985, 1, 4]).calendar(null, {sameElse: 'YYYY-MM-DD'}), '1985-02-04', 'Else');
+    });
+
     test('invalid', function (assert) {
         assert.equal(moment.invalid().format(), 'Invalid date');
         assert.equal(moment.invalid().format('YYYY-MM-DD'), 'Invalid date');
@@ -32383,10 +38958,115 @@
         assert.equal(moment([2000, 0,  2]).format('[Q]Q-YYYY'), 'Q1-2000', 'Jan  2 2000 is Q1');
     });
 
+    test('quarter ordinal formats', function (assert) {
+        assert.equal(moment([1985, 1, 4]).format('Qo'), '1st', 'Feb 4 1985 is 1st quarter');
+        assert.equal(moment([2029, 8, 18]).format('Qo'), '3rd', 'Sep 18 2029 is 3rd quarter');
+        assert.equal(moment([2013, 3, 24]).format('Qo'), '2nd', 'Apr 24 2013 is 2nd quarter');
+        assert.equal(moment([2015, 2,  5]).format('Qo'), '1st', 'Mar  5 2015 is 1st quarter');
+        assert.equal(moment([1970, 0,  2]).format('Qo'), '1st', 'Jan  2 1970 is 1st quarter');
+        assert.equal(moment([2001, 11, 12]).format('Qo'), '4th', 'Dec 12 2001 is 4th quarter');
+        assert.equal(moment([2000, 0,  2]).format('Qo [quarter] YYYY'), '1st quarter 2000', 'Jan  2 2000 is 1st quarter');
+    });
+
+    test('full expanded format is returned from abbreviated formats', function (assert) {
+        function forEach(ar, fn) {
+            if (ar.forEach) {
+                return ar.forEach(fn);
+            } else {
+                // IE8
+                for (var i = 0; i < ar.length; i += 1) {
+                    fn(ar[i]);
+                }
+            }
+        }
+        function objectKeys(obj) {
+            if (Object.keys) {
+                return Object.keys(obj);
+            } else {
+                // IE8
+                var res = [], i;
+                for (i in obj) {
+                    if (obj.hasOwnProperty(i)) {
+                        res.push(i);
+                    }
+                }
+                return res;
+            }
+        }
+
+        var locales =
+            'ar-sa ar-tn ar az be bg bn bo br bs ca cs cv cy da de-at de dv el ' +
+            'en-au en-ca en-gb en-ie en-nz eo es et eu fa fi fo fr-ca fr-ch fr fy ' +
+            'gd gl he hi hr hu hy-am id is it ja jv ka kk km ko lb lo lt lv me mk ml ' +
+            'mr ms-my ms my nb ne nl nn pl pt-br pt ro ru se si sk sl sq sr-cyrl ' +
+            'sr sv sw ta te th tl-ph tlh tr tzl tzm-latn tzm uk uz vi zh-cn zh-tw';
+
+        forEach(locales.split(' '), function (locale) {
+            var data, tokens;
+            data = moment().locale(locale).localeData()._longDateFormat;
+            tokens = objectKeys(data);
+            forEach(tokens, function (token) {
+                // Check each format string to make sure it does not contain any
+                // tokens that need to be expanded.
+                forEach(tokens, function (i) {
+                    // strip escaped sequences
+                    var format = data[i].replace(/(\[[^\]]*\])/g, '');
+                    assert.equal(false, !!~format.indexOf(token), 'locale ' + locale + ' contains ' + token + ' in ' + i);
+                });
+            });
+        });
+    });
+
+    test('milliseconds', function (assert) {
+        var m = moment('123', 'SSS');
+
+        assert.equal(m.format('S'), '1');
+        assert.equal(m.format('SS'), '12');
+        assert.equal(m.format('SSS'), '123');
+        assert.equal(m.format('SSSS'), '1230');
+        assert.equal(m.format('SSSSS'), '12300');
+        assert.equal(m.format('SSSSSS'), '123000');
+        assert.equal(m.format('SSSSSSS'), '1230000');
+        assert.equal(m.format('SSSSSSSS'), '12300000');
+        assert.equal(m.format('SSSSSSSSS'), '123000000');
+    });
+
+    test('hmm and hmmss', function (assert) {
+        assert.equal(moment('12:34:56', 'HH:mm:ss').format('hmm'), '1234');
+        assert.equal(moment('01:34:56', 'HH:mm:ss').format('hmm'), '134');
+        assert.equal(moment('13:34:56', 'HH:mm:ss').format('hmm'), '134');
+
+        assert.equal(moment('12:34:56', 'HH:mm:ss').format('hmmss'), '123456');
+        assert.equal(moment('01:34:56', 'HH:mm:ss').format('hmmss'), '13456');
+        assert.equal(moment('13:34:56', 'HH:mm:ss').format('hmmss'), '13456');
+    });
+
+    test('Hmm and Hmmss', function (assert) {
+        assert.equal(moment('12:34:56', 'HH:mm:ss').format('Hmm'), '1234');
+        assert.equal(moment('01:34:56', 'HH:mm:ss').format('Hmm'), '134');
+        assert.equal(moment('13:34:56', 'HH:mm:ss').format('Hmm'), '1334');
+
+        assert.equal(moment('12:34:56', 'HH:mm:ss').format('Hmmss'), '123456');
+        assert.equal(moment('01:34:56', 'HH:mm:ss').format('Hmmss'), '13456');
+        assert.equal(moment('08:34:56', 'HH:mm:ss').format('Hmmss'), '83456');
+        assert.equal(moment('18:34:56', 'HH:mm:ss').format('Hmmss'), '183456');
+    });
+
+    test('Y token', function (assert) {
+        assert.equal(moment('2010-01-01', 'YYYY-MM-DD', true).format('Y'), '2010', 'format 2010 with Y');
+        assert.equal(moment('-123-01-01', 'Y-MM-DD', true).format('Y'), '-123', 'format -123 with Y');
+        assert.equal(moment('12345-01-01', 'Y-MM-DD', true).format('Y'), '+12345', 'format 12345 with Y');
+        assert.equal(moment('0-01-01', 'Y-MM-DD', true).format('Y'), '0', 'format 0 with Y');
+        assert.equal(moment('1-01-01', 'Y-MM-DD', true).format('Y'), '1', 'format 1 with Y');
+        assert.equal(moment('9999-01-01', 'Y-MM-DD', true).format('Y'), '9999', 'format 9999 with Y');
+        assert.equal(moment('10000-01-01', 'Y-MM-DD', true).format('Y'), '+10000', 'format 10000 with Y');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -32395,12 +39075,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32418,8 +39100,112 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('from_to');
+
+    test('from', function (assert) {
+        var start = moment();
+        moment.locale('en');
+        assert.equal(start.from(start.clone().add(5, 'seconds')),  'a few seconds ago', '5 seconds = a few seconds ago');
+        assert.equal(start.from(start.clone().add(1, 'minute')),  'a minute ago', '1 minute = a minute ago');
+        assert.equal(start.from(start.clone().add(5, 'minutes')),  '5 minutes ago', '5 minutes = 5 minutes ago');
+
+        assert.equal(start.from(start.clone().subtract(5, 'seconds')),  'in a few seconds', '5 seconds = in a few seconds');
+        assert.equal(start.from(start.clone().subtract(1, 'minute')),  'in a minute', '1 minute = in a minute');
+        assert.equal(start.from(start.clone().subtract(5, 'minutes')),  'in 5 minutes', '5 minutes = in 5 minutes');
+    });
+
+    test('from with absolute duration', function (assert) {
+        var start = moment();
+        moment.locale('en');
+        assert.equal(start.from(start.clone().add(5, 'seconds'), true),  'a few seconds', '5 seconds = a few seconds');
+        assert.equal(start.from(start.clone().add(1, 'minute'), true),  'a minute', '1 minute = a minute');
+        assert.equal(start.from(start.clone().add(5, 'minutes'), true),  '5 minutes', '5 minutes = 5 minutes');
+
+        assert.equal(start.from(start.clone().subtract(5, 'seconds'), true),  'a few seconds', '5 seconds = a few seconds');
+        assert.equal(start.from(start.clone().subtract(1, 'minute'), true),  'a minute', '1 minute = a minute');
+        assert.equal(start.from(start.clone().subtract(5, 'minutes'), true),  '5 minutes', '5 minutes = 5 minutes');
+    });
+
+    test('to', function (assert) {
+        var start = moment();
+        moment.locale('en');
+        assert.equal(start.to(start.clone().subtract(5, 'seconds')),  'a few seconds ago', '5 seconds = a few seconds ago');
+        assert.equal(start.to(start.clone().subtract(1, 'minute')),  'a minute ago', '1 minute = a minute ago');
+        assert.equal(start.to(start.clone().subtract(5, 'minutes')),  '5 minutes ago', '5 minutes = 5 minutes ago');
+
+        assert.equal(start.to(start.clone().add(5, 'seconds')),  'in a few seconds', '5 seconds = in a few seconds');
+        assert.equal(start.to(start.clone().add(1, 'minute')),  'in a minute', '1 minute = in a minute');
+        assert.equal(start.to(start.clone().add(5, 'minutes')),  'in 5 minutes', '5 minutes = in 5 minutes');
+    });
+
+    test('to with absolute duration', function (assert) {
+        var start = moment();
+        moment.locale('en');
+        assert.equal(start.to(start.clone().add(5, 'seconds'), true),  'a few seconds', '5 seconds = a few seconds');
+        assert.equal(start.to(start.clone().add(1, 'minute'), true),  'a minute', '1 minute = a minute');
+        assert.equal(start.to(start.clone().add(5, 'minutes'), true),  '5 minutes', '5 minutes = 5 minutes');
+
+        assert.equal(start.to(start.clone().subtract(5, 'seconds'), true),  'a few seconds', '5 seconds = a few seconds');
+        assert.equal(start.to(start.clone().subtract(1, 'minute'), true),  'a minute', '1 minute = a minute');
+        assert.equal(start.to(start.clone().subtract(5, 'minutes'), true),  '5 minutes', '5 minutes = 5 minutes');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32672,8 +39458,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -32682,12 +39469,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32705,8 +39494,88 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('instanceof');
+
+    test('instanceof', function (assert) {
+        var mm = moment([2010, 0, 1]);
+
+        var extend = function (a, b) {
+            var i;
+            for (i in b) {
+                a[i] = b[i];
+            }
+            return a;
+        };
+
+        assert.equal(moment() instanceof moment, true, 'simple moment object');
+        assert.equal(extend({}, moment()) instanceof moment, false, 'extended moment object');
+        assert.equal(moment(null) instanceof moment, true, 'invalid moment object');
+
+        assert.equal(new Date() instanceof moment, false, 'date object is not moment object');
+        assert.equal(Object instanceof moment, false, 'Object is not moment object');
+        assert.equal('foo' instanceof moment, false, 'string is not moment object');
+        assert.equal(1 instanceof moment, false, 'number is not moment object');
+        assert.equal(NaN instanceof moment, false, 'NaN is not moment object');
+        assert.equal(null instanceof moment, false, 'null is not moment object');
+        assert.equal(undefined instanceof moment, false, 'undefined is not moment object');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32746,10 +39615,163 @@
         assert.ok(isNaN(m.valueOf()));
     });
 
+    test('invalid operations', function (assert) {
+        var invalids = [
+                moment.invalid(),
+                moment('xyz', 'l'),
+                moment('2015-01-35', 'YYYY-MM-DD'),
+                moment('2015-01-25 a', 'YYYY-MM-DD', true)
+            ],
+            i,
+            invalid,
+            valid = moment();
+
+        for (i = 0; i < invalids.length; ++i) {
+            invalid = invalids[i];
+
+            assert.ok(!invalid.clone().add(5, 'hours').isValid(), 'invalid.add is invalid');
+            assert.equal(invalid.calendar(), 'Invalid date', 'invalid.calendar is \'Invalid date\'');
+            assert.ok(!invalid.clone().isValid(), 'invalid.clone is invalid');
+            assert.ok(isNaN(invalid.diff(valid)), 'invalid.diff(valid) is NaN');
+            assert.ok(isNaN(valid.diff(invalid)), 'valid.diff(invalid) is NaN');
+            assert.ok(isNaN(invalid.diff(invalid)), 'invalid.diff(invalid) is NaN');
+            assert.ok(!invalid.clone().endOf('month').isValid(), 'invalid.endOf is invalid');
+            assert.equal(invalid.format(), 'Invalid date', 'invalid.format is \'Invalid date\'');
+            assert.equal(invalid.from(), 'Invalid date');
+            assert.equal(invalid.from(valid), 'Invalid date');
+            assert.equal(valid.from(invalid), 'Invalid date');
+            assert.equal(invalid.fromNow(), 'Invalid date');
+            assert.equal(invalid.to(), 'Invalid date');
+            assert.equal(invalid.to(valid), 'Invalid date');
+            assert.equal(valid.to(invalid), 'Invalid date');
+            assert.equal(invalid.toNow(), 'Invalid date');
+            assert.ok(isNaN(invalid.get('year')), 'invalid.get is NaN');
+            // TODO invalidAt
+            assert.ok(!invalid.isAfter(valid));
+            assert.ok(!valid.isAfter(invalid));
+            assert.ok(!invalid.isAfter(invalid));
+            assert.ok(!invalid.isBefore(valid));
+            assert.ok(!valid.isBefore(invalid));
+            assert.ok(!invalid.isBefore(invalid));
+            assert.ok(!invalid.isBetween(valid, valid));
+            assert.ok(!valid.isBetween(invalid, valid));
+            assert.ok(!valid.isBetween(valid, invalid));
+            assert.ok(!invalid.isSame(invalid));
+            assert.ok(!invalid.isSame(valid));
+            assert.ok(!valid.isSame(invalid));
+            assert.ok(!invalid.isValid());
+            assert.equal(invalid.locale(), 'en');
+            assert.equal(invalid.localeData()._abbr, 'en');
+            assert.ok(!invalid.clone().max(valid).isValid());
+            assert.ok(!valid.clone().max(invalid).isValid());
+            assert.ok(!invalid.clone().max(invalid).isValid());
+            assert.ok(!invalid.clone().min(valid).isValid());
+            assert.ok(!valid.clone().min(invalid).isValid());
+            assert.ok(!invalid.clone().min(invalid).isValid());
+            assert.ok(!moment.min(invalid, valid).isValid());
+            assert.ok(!moment.min(valid, invalid).isValid());
+            assert.ok(!moment.max(invalid, valid).isValid());
+            assert.ok(!moment.max(valid, invalid).isValid());
+            assert.ok(!invalid.clone().set('year', 2005).isValid());
+            assert.ok(!invalid.clone().startOf('month').isValid());
+
+            assert.ok(!invalid.clone().subtract(5, 'days').isValid());
+            assert.deepEqual(invalid.toArray(), [NaN, NaN, NaN, NaN, NaN, NaN, NaN]);
+            assert.deepEqual(invalid.toObject(), {
+                years: NaN,
+                months: NaN,
+                date: NaN,
+                hours: NaN,
+                minutes: NaN,
+                seconds: NaN,
+                milliseconds: NaN
+            });
+            assert.ok(moment.isDate(invalid.toDate()));
+            assert.ok(isNaN(invalid.toDate().valueOf()));
+            assert.equal(invalid.toJSON(), 'null');
+            assert.equal(invalid.toString(), 'Invalid date');
+            assert.ok(isNaN(invalid.unix()));
+            assert.ok(isNaN(invalid.valueOf()));
+
+            assert.ok(isNaN(invalid.year()));
+            assert.ok(isNaN(invalid.weekYear()));
+            assert.ok(isNaN(invalid.isoWeekYear()));
+            assert.ok(isNaN(invalid.quarter()));
+            assert.ok(isNaN(invalid.quarters()));
+            assert.ok(isNaN(invalid.month()));
+            assert.ok(isNaN(invalid.daysInMonth()));
+            assert.ok(isNaN(invalid.week()));
+            assert.ok(isNaN(invalid.weeks()));
+            assert.ok(isNaN(invalid.isoWeek()));
+            assert.ok(isNaN(invalid.isoWeeks()));
+            assert.ok(isNaN(invalid.weeksInYear()));
+            assert.ok(isNaN(invalid.isoWeeksInYear()));
+            assert.ok(isNaN(invalid.date()));
+            assert.ok(isNaN(invalid.day()));
+            assert.ok(isNaN(invalid.days()));
+            assert.ok(isNaN(invalid.weekday()));
+            assert.ok(isNaN(invalid.isoWeekday()));
+            assert.ok(isNaN(invalid.dayOfYear()));
+            assert.ok(isNaN(invalid.hour()));
+            assert.ok(isNaN(invalid.hours()));
+            assert.ok(isNaN(invalid.minute()));
+            assert.ok(isNaN(invalid.minutes()));
+            assert.ok(isNaN(invalid.second()));
+            assert.ok(isNaN(invalid.seconds()));
+            assert.ok(isNaN(invalid.millisecond()));
+            assert.ok(isNaN(invalid.milliseconds()));
+            assert.ok(isNaN(invalid.utcOffset()));
+
+            assert.ok(!invalid.clone().year(2001).isValid());
+            assert.ok(!invalid.clone().weekYear(2001).isValid());
+            assert.ok(!invalid.clone().isoWeekYear(2001).isValid());
+            assert.ok(!invalid.clone().quarter(1).isValid());
+            assert.ok(!invalid.clone().quarters(1).isValid());
+            assert.ok(!invalid.clone().month(1).isValid());
+            assert.ok(!invalid.clone().week(1).isValid());
+            assert.ok(!invalid.clone().weeks(1).isValid());
+            assert.ok(!invalid.clone().isoWeek(1).isValid());
+            assert.ok(!invalid.clone().isoWeeks(1).isValid());
+            assert.ok(!invalid.clone().date(1).isValid());
+            assert.ok(!invalid.clone().day(1).isValid());
+            assert.ok(!invalid.clone().days(1).isValid());
+            assert.ok(!invalid.clone().weekday(1).isValid());
+            assert.ok(!invalid.clone().isoWeekday(1).isValid());
+            assert.ok(!invalid.clone().dayOfYear(1).isValid());
+            assert.ok(!invalid.clone().hour(1).isValid());
+            assert.ok(!invalid.clone().hours(1).isValid());
+            assert.ok(!invalid.clone().minute(1).isValid());
+            assert.ok(!invalid.clone().minutes(1).isValid());
+            assert.ok(!invalid.clone().second(1).isValid());
+            assert.ok(!invalid.clone().seconds(1).isValid());
+            assert.ok(!invalid.clone().millisecond(1).isValid());
+            assert.ok(!invalid.clone().milliseconds(1).isValid());
+            assert.ok(!invalid.clone().utcOffset(1).isValid());
+
+            assert.ok(!invalid.clone().utc().isValid());
+            assert.ok(!invalid.clone().local().isValid());
+            assert.ok(!invalid.clone().parseZone('05:30').isValid());
+            assert.ok(!invalid.hasAlignedHourOffset());
+            assert.ok(!invalid.isDST());
+            assert.ok(!invalid.isDSTShifted());
+            assert.ok(!invalid.isLocal());
+            assert.ok(!invalid.isUtcOffset());
+            assert.ok(!invalid.isUtc());
+            assert.ok(!invalid.isUTC());
+
+            assert.ok(!invalid.isLeapYear());
+
+            assert.equal(moment.duration({from: invalid, to: valid}).asMilliseconds(), 0);
+            assert.equal(moment.duration({from: valid, to: invalid}).asMilliseconds(), 0);
+            assert.equal(moment.duration({from: invalid, to: invalid}).asMilliseconds(), 0);
+        }
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -32758,12 +39780,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32781,8 +39805,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32959,10 +39983,24 @@
         assert.equal(+m, +mCopy, 'isAfter millisecond should not change moment');
     });
 
+    test('is after invalid', function (assert) {
+        var m = moment(), invalid = moment.invalid();
+        assert.equal(m.isAfter(invalid), false, 'valid moment is not after invalid moment');
+        assert.equal(invalid.isAfter(m), false, 'invalid moment is not after valid moment');
+        assert.equal(m.isAfter(invalid, 'year'), false, 'invalid moment year');
+        assert.equal(m.isAfter(invalid, 'month'), false, 'invalid moment month');
+        assert.equal(m.isAfter(invalid, 'day'), false, 'invalid moment day');
+        assert.equal(m.isAfter(invalid, 'hour'), false, 'invalid moment hour');
+        assert.equal(m.isAfter(invalid, 'minute'), false, 'invalid moment minute');
+        assert.equal(m.isAfter(invalid, 'second'), false, 'invalid moment second');
+        assert.equal(m.isAfter(invalid, 'milliseconds'), false, 'invalid moment milliseconds');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -32971,12 +40009,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -32994,8 +40034,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33172,10 +40212,24 @@
         assert.equal(+m, +mCopy, 'isBefore millisecond should not change moment');
     });
 
+    test('is before invalid', function (assert) {
+        var m = moment(), invalid = moment.invalid();
+        assert.equal(m.isBefore(invalid), false, 'valid moment is not before invalid moment');
+        assert.equal(invalid.isBefore(m), false, 'invalid moment is not before valid moment');
+        assert.equal(m.isBefore(invalid, 'year'), false, 'invalid moment year');
+        assert.equal(m.isBefore(invalid, 'month'), false, 'invalid moment month');
+        assert.equal(m.isBefore(invalid, 'day'), false, 'invalid moment day');
+        assert.equal(m.isBefore(invalid, 'hour'), false, 'invalid moment hour');
+        assert.equal(m.isBefore(invalid, 'minute'), false, 'invalid moment minute');
+        assert.equal(m.isBefore(invalid, 'second'), false, 'invalid moment second');
+        assert.equal(m.isBefore(invalid, 'milliseconds'), false, 'invalid moment milliseconds');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -33184,12 +40238,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33207,8 +40263,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33443,8 +40499,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -33453,12 +40510,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33476,8 +40535,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33516,8 +40575,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -33526,12 +40586,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33549,8 +40611,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33608,8 +40670,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -33618,12 +40681,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33641,8 +40706,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33802,10 +40867,15 @@
                 'zoned vs (differently) zoned moment');
     });
 
+    test('is same with invalid moments', function (assert) {
+        assert.equal(moment.invalid().isSame(moment.invalid()), false, 'invalid moments are not considered equal');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -33814,12 +40884,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33837,8 +40909,476 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('is same or after');
+
+    test('is same or after without units', function (assert) {
+        var m = moment(new Date(2011, 3, 2, 3, 4, 5, 10)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 3, 2, 3, 5, 5, 10))), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 3, 2, 3, 3, 5, 10))), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 4, 2, 3, 4, 5, 10))), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 3, 4, 5, 10))), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 3, 3, 4, 5, 10))), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 1, 3, 4, 5, 10))), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 4, 4, 5, 10))), false, 'hour is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 2, 4, 5, 10))), true, 'hour is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 5, 5, 10))), false, 'minute is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 3, 5, 10))), true, 'minute is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 6, 10))), false, 'second is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 4, 11))), true, 'second is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 5, 10))), true, 'millisecond match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 5, 11))), false, 'millisecond is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 5, 9))), true, 'millisecond is earlier');
+        assert.equal(m.isSameOrAfter(m), true, 'moments are the same as themselves');
+        assert.equal(+m, +mCopy, 'isSameOrAfter second should not change moment');
+    });
+
+    test('is same or after year', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'year'), true, 'year match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'years'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 5, 6, 7, 8, 9, 10)), 'year'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 5, 6, 7, 8, 9, 10)), 'year'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 0, 1, 0, 0, 0, 0)), 'year'), true, 'exact start of year');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 11, 31, 23, 59, 59, 999)), 'year'), true, 'exact end of year');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 0, 1, 0, 0, 0, 0)), 'year'), false, 'start of next year');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 11, 31, 23, 59, 59, 999)), 'year'), true, 'end of previous year');
+        assert.equal(m.isSameOrAfter(m, 'year'), true, 'same moments are in the same year');
+        assert.equal(+m, +mCopy, 'isSameOrAfter year should not change moment');
+    });
+
+    test('is same or after month', function (assert) {
+        var m = moment(new Date(2011, 2, 3, 4, 5, 6, 7)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 6, 7, 8, 9, 10)), 'month'), true, 'month match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 6, 7, 8, 9, 10)), 'months'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 2, 6, 7, 8, 9, 10)), 'month'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 2, 6, 7, 8, 9, 10)), 'month'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'month'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 6, 7, 8, 9, 10)), 'month'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 1, 0, 0, 0, 0)), 'month'), true, 'exact start of month');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 31, 23, 59, 59, 999)), 'month'), true, 'exact end of month');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 1, 0, 0, 0, 0)), 'month'), false, 'start of next month');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 27, 23, 59, 59, 999)), 'month'), true, 'end of previous month');
+        assert.equal(m.isSameOrAfter(m, 'month'), true, 'same moments are in the same month');
+        assert.equal(+m, +mCopy, 'isSameOrAfter month should not change moment');
+    });
+
+    test('is same or after day', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 7, 8, 9, 10)), 'day'), true, 'day match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 7, 8, 9, 10)), 'days'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 1, 2, 7, 8, 9, 10)), 'day'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 1, 2, 7, 8, 9, 10)), 'day'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 7, 8, 9, 10)), 'day'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 12, 2, 7, 8, 9, 10)), 'day'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 3, 7, 8, 9, 10)), 'day'), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 1, 7, 8, 9, 10)), 'day'), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 0, 0, 0, 0)), 'day'), true, 'exact start of day');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 23, 59, 59, 999)), 'day'), true, 'exact end of day');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 3, 0, 0, 0, 0)), 'day'), false, 'start of next day');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 1, 23, 59, 59, 999)), 'day'), true, 'end of previous day');
+        assert.equal(m.isSameOrAfter(m, 'day'), true, 'same moments are in the same day');
+        assert.equal(+m, +mCopy, 'isSameOrAfter day should not change moment');
+    });
+
+    test('is same or after hour', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 8, 9, 10)), 'hour'), true, 'hour match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 8, 9, 10)), 'hours'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 1, 2, 3, 8, 9, 10)), 'hour'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 1, 2, 3, 8, 9, 10)), 'hour'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 3, 8, 9, 10)), 'hour'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 12, 2, 3, 8, 9, 10)), 'hour'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 3, 3, 8, 9, 10)), 'hour'), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 1, 3, 8, 9, 10)), 'hour'), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 4, 8, 9, 10)), 'hour'), false, 'hour is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 2, 8, 9, 10)), 'hour'), true, 'hour is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 0, 0, 0)), 'hour'), true, 'exact start of hour');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 59, 59, 999)), 'hour'), true, 'exact end of hour');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 4, 0, 0, 0)), 'hour'), false, 'start of next hour');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 2, 59, 59, 999)), 'hour'), true, 'end of previous hour');
+        assert.equal(m.isSameOrAfter(m, 'hour'), true, 'same moments are in the same hour');
+        assert.equal(+m, +mCopy, 'isSameOrAfter hour should not change moment');
+    });
+
+    test('is same or after minute', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 9, 10)), 'minute'), true, 'minute match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 9, 10)), 'minutes'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 1, 2, 3, 4, 9, 10)), 'minute'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 1, 2, 3, 4, 9, 10)), 'minute'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 3, 4, 9, 10)), 'minute'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 12, 2, 3, 4, 9, 10)), 'minute'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 3, 3, 4, 9, 10)), 'minute'), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 1, 3, 4, 9, 10)), 'minute'), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 4, 4, 9, 10)), 'minute'), false, 'hour is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 2, 4, 9, 10)), 'minute'), true, 'hour is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 5, 9, 10)), 'minute'), false, 'minute is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 3, 9, 10)), 'minute'), true, 'minute is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 0, 0)), 'minute'), true, 'exact start of minute');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 59, 999)), 'minute'), true, 'exact end of minute');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 5, 0, 0)), 'minute'), false, 'start of next minute');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 3, 59, 999)), 'minute'), true, 'end of previous minute');
+        assert.equal(m.isSameOrAfter(m, 'minute'), true, 'same moments are in the same minute');
+        assert.equal(+m, +mCopy, 'isSameOrAfter minute should not change moment');
+    });
+
+    test('is same or after second', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 5, 10)), 'second'), true, 'second match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 5, 10)), 'seconds'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 1, 2, 3, 4, 5, 10)), 'second'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 1, 2, 3, 4, 5, 10)), 'second'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 3, 4, 5, 10)), 'second'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 12, 2, 3, 4, 5, 10)), 'second'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 3, 3, 4, 5, 10)), 'second'), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 1, 3, 4, 5, 10)), 'second'), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 4, 4, 5, 10)), 'second'), false, 'hour is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 2, 4, 5, 10)), 'second'), true, 'hour is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 5, 5, 10)), 'second'), false, 'minute is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 3, 5, 10)), 'second'), true, 'minute is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 6, 10)), 'second'), false, 'second is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 4, 10)), 'second'), true, 'second is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 5, 0)), 'second'), true, 'exact start of second');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 5, 999)), 'second'), true, 'exact end of second');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 6, 0)), 'second'), false, 'start of next second');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 1, 2, 3, 4, 4, 999)), 'second'), true, 'end of previous second');
+        assert.equal(m.isSameOrAfter(m, 'second'), true, 'same moments are in the same second');
+        assert.equal(+m, +mCopy, 'isSameOrAfter second should not change moment');
+    });
+
+    test('is same or after millisecond', function (assert) {
+        var m = moment(new Date(2011, 3, 2, 3, 4, 5, 10)), mCopy = moment(m);
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 5, 10)), 'millisecond'), true, 'millisecond match');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 5, 10)), 'milliseconds'), true, 'plural should work');
+        assert.equal(m.isSameOrAfter(moment(new Date(2012, 3, 2, 3, 4, 5, 10)), 'millisecond'), false, 'year is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2010, 3, 2, 3, 4, 5, 10)), 'millisecond'), true, 'year is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 4, 2, 3, 4, 5, 10)), 'millisecond'), false, 'month is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 2, 2, 3, 4, 5, 10)), 'millisecond'), true, 'month is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 3, 3, 4, 5, 10)), 'millisecond'), false, 'day is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 1, 1, 4, 5, 10)), 'millisecond'), true, 'day is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 4, 4, 5, 10)), 'millisecond'), false, 'hour is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 1, 4, 1, 5, 10)), 'millisecond'), true, 'hour is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 5, 5, 10)), 'millisecond'), false, 'minute is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 3, 5, 10)), 'millisecond'), true, 'minute is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 6, 10)), 'millisecond'), false, 'second is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 4, 5)), 'millisecond'), true, 'second is earlier');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 6, 11)), 'millisecond'), false, 'millisecond is later');
+        assert.equal(m.isSameOrAfter(moment(new Date(2011, 3, 2, 3, 4, 4, 9)), 'millisecond'), true, 'millisecond is earlier');
+        assert.equal(m.isSameOrAfter(m, 'millisecond'), true, 'same moments are in the same millisecond');
+        assert.equal(+m, +mCopy, 'isSameOrAfter millisecond should not change moment');
+    });
+
+    test('is same or after with utc offset moments', function (assert) {
+        assert.ok(moment.parseZone('2013-02-01T-05:00').isSameOrAfter(moment('2013-02-01'), 'year'), 'zoned vs local moment');
+        assert.ok(moment('2013-02-01').isSameOrAfter(moment('2013-02-01').utcOffset('-05:00'), 'year'), 'local vs zoned moment');
+        assert.ok(moment.parseZone('2013-02-01T-05:00').isSameOrAfter(moment.parseZone('2013-02-01T-06:30'), 'year'),
+                'zoned vs (differently) zoned moment');
+    });
+
+    test('is same or after with invalid moments', function (assert) {
+        var m = moment(), invalid = moment.invalid();
+        assert.equal(invalid.isSameOrAfter(invalid), false, 'invalid moments are not considered equal');
+        assert.equal(m.isSameOrAfter(invalid), false, 'valid moment is not after invalid moment');
+        assert.equal(invalid.isSameOrAfter(m), false, 'invalid moment is not after valid moment');
+        assert.equal(m.isSameOrAfter(invalid, 'year'), false, 'invalid moment year');
+        assert.equal(m.isSameOrAfter(invalid, 'month'), false, 'invalid moment month');
+        assert.equal(m.isSameOrAfter(invalid, 'day'), false, 'invalid moment day');
+        assert.equal(m.isSameOrAfter(invalid, 'hour'), false, 'invalid moment hour');
+        assert.equal(m.isSameOrAfter(invalid, 'minute'), false, 'invalid moment minute');
+        assert.equal(m.isSameOrAfter(invalid, 'second'), false, 'invalid moment second');
+        assert.equal(m.isSameOrAfter(invalid, 'milliseconds'), false, 'invalid moment milliseconds');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('is same or before');
+
+    test('is same or before without units', function (assert) {
+        var m = moment(new Date(2011, 3, 2, 3, 4, 5, 10)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 3, 2, 3, 5, 5, 10))), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 3, 2, 3, 3, 5, 10))), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 4, 2, 3, 4, 5, 10))), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 3, 4, 5, 10))), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 3, 3, 4, 5, 10))), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 1, 3, 4, 5, 10))), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 4, 4, 5, 10))), true, 'hour is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 2, 4, 5, 10))), false, 'hour is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 5, 5, 10))), true, 'minute is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 3, 5, 10))), false, 'minute is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 6, 10))), true, 'second is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 4, 11))), false, 'second is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 5, 10))), true, 'millisecond match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 5, 11))), true, 'millisecond is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 5, 9))), false, 'millisecond is earlier');
+        assert.equal(m.isSameOrBefore(m), true, 'moments are the same as themselves');
+        assert.equal(+m, +mCopy, 'isSameOrBefore second should not change moment');
+    });
+
+    test('is same or before year', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'year'), true, 'year match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'years'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 5, 6, 7, 8, 9, 10)), 'year'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 5, 6, 7, 8, 9, 10)), 'year'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 0, 1, 0, 0, 0, 0)), 'year'), true, 'exact start of year');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 11, 31, 23, 59, 59, 999)), 'year'), true, 'exact end of year');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 0, 1, 0, 0, 0, 0)), 'year'), true, 'start of next year');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 11, 31, 23, 59, 59, 999)), 'year'), false, 'end of previous year');
+        assert.equal(m.isSameOrBefore(m, 'year'), true, 'same moments are in the same year');
+        assert.equal(+m, +mCopy, 'isSameOrBefore year should not change moment');
+    });
+
+    test('is same or before month', function (assert) {
+        var m = moment(new Date(2011, 2, 3, 4, 5, 6, 7)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 6, 7, 8, 9, 10)), 'month'), true, 'month match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 6, 7, 8, 9, 10)), 'months'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 2, 6, 7, 8, 9, 10)), 'month'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 2, 6, 7, 8, 9, 10)), 'month'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 5, 6, 7, 8, 9, 10)), 'month'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 6, 7, 8, 9, 10)), 'month'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 1, 0, 0, 0, 0)), 'month'), true, 'exact start of month');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 31, 23, 59, 59, 999)), 'month'), true, 'exact end of month');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 1, 0, 0, 0, 0)), 'month'), true, 'start of next month');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 27, 23, 59, 59, 999)), 'month'), false, 'end of previous month');
+        assert.equal(m.isSameOrBefore(m, 'month'), true, 'same moments are in the same month');
+        assert.equal(+m, +mCopy, 'isSameOrBefore month should not change moment');
+    });
+
+    test('is same or before day', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 7, 8, 9, 10)), 'day'), true, 'day match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 7, 8, 9, 10)), 'days'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 1, 2, 7, 8, 9, 10)), 'day'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 1, 2, 7, 8, 9, 10)), 'day'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 7, 8, 9, 10)), 'day'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 12, 2, 7, 8, 9, 10)), 'day'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 3, 7, 8, 9, 10)), 'day'), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 1, 7, 8, 9, 10)), 'day'), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 0, 0, 0, 0)), 'day'), true, 'exact start of day');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 23, 59, 59, 999)), 'day'), true, 'exact end of day');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 3, 0, 0, 0, 0)), 'day'), true, 'start of next day');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 1, 23, 59, 59, 999)), 'day'), false, 'end of previous day');
+        assert.equal(m.isSameOrBefore(m, 'day'), true, 'same moments are in the same day');
+        assert.equal(+m, +mCopy, 'isSameOrBefore day should not change moment');
+    });
+
+    test('is same or before hour', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 8, 9, 10)), 'hour'), true, 'hour match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 8, 9, 10)), 'hours'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 1, 2, 3, 8, 9, 10)), 'hour'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 1, 2, 3, 8, 9, 10)), 'hour'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 3, 8, 9, 10)), 'hour'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 12, 2, 3, 8, 9, 10)), 'hour'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 3, 3, 8, 9, 10)), 'hour'), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 1, 3, 8, 9, 10)), 'hour'), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 4, 8, 9, 10)), 'hour'), true, 'hour is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 2, 8, 9, 10)), 'hour'), false, 'hour is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 0, 0, 0)), 'hour'), true, 'exact start of hour');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 59, 59, 999)), 'hour'), true, 'exact end of hour');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 4, 0, 0, 0)), 'hour'), true, 'start of next hour');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 2, 59, 59, 999)), 'hour'), false, 'end of previous hour');
+        assert.equal(m.isSameOrBefore(m, 'hour'), true, 'same moments are in the same hour');
+        assert.equal(+m, +mCopy, 'isSameOrBefore hour should not change moment');
+    });
+
+    test('is same or before minute', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 9, 10)), 'minute'), true, 'minute match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 9, 10)), 'minutes'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 1, 2, 3, 4, 9, 10)), 'minute'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 1, 2, 3, 4, 9, 10)), 'minute'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 3, 4, 9, 10)), 'minute'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 12, 2, 3, 4, 9, 10)), 'minute'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 3, 3, 4, 9, 10)), 'minute'), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 1, 3, 4, 9, 10)), 'minute'), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 4, 4, 9, 10)), 'minute'), true, 'hour is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 2, 4, 9, 10)), 'minute'), false, 'hour is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 5, 9, 10)), 'minute'), true, 'minute is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 3, 9, 10)), 'minute'), false, 'minute is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 0, 0)), 'minute'), true, 'exact start of minute');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 59, 999)), 'minute'), true, 'exact end of minute');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 5, 0, 0)), 'minute'), true, 'start of next minute');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 3, 59, 999)), 'minute'), false, 'end of previous minute');
+        assert.equal(m.isSameOrBefore(m, 'minute'), true, 'same moments are in the same minute');
+        assert.equal(+m, +mCopy, 'isSameOrBefore minute should not change moment');
+    });
+
+    test('is same or before second', function (assert) {
+        var m = moment(new Date(2011, 1, 2, 3, 4, 5, 6)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 5, 10)), 'second'), true, 'second match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 5, 10)), 'seconds'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 1, 2, 3, 4, 5, 10)), 'second'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 1, 2, 3, 4, 5, 10)), 'second'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 3, 4, 5, 10)), 'second'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 12, 2, 3, 4, 5, 10)), 'second'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 3, 3, 4, 5, 10)), 'second'), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 1, 3, 4, 5, 10)), 'second'), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 4, 4, 5, 10)), 'second'), true, 'hour is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 2, 4, 5, 10)), 'second'), false, 'hour is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 5, 5, 10)), 'second'), true, 'minute is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 3, 5, 10)), 'second'), false, 'minute is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 6, 10)), 'second'), true, 'second is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 4, 10)), 'second'), false, 'second is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 5, 0)), 'second'), true, 'exact start of second');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 5, 999)), 'second'), true, 'exact end of second');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 6, 0)), 'second'), true, 'start of next second');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 1, 2, 3, 4, 4, 999)), 'second'), false, 'end of previous second');
+        assert.equal(m.isSameOrBefore(m, 'second'), true, 'same moments are in the same second');
+        assert.equal(+m, +mCopy, 'isSameOrBefore second should not change moment');
+    });
+
+    test('is same or before millisecond', function (assert) {
+        var m = moment(new Date(2011, 3, 2, 3, 4, 5, 10)), mCopy = moment(m);
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 5, 10)), 'millisecond'), true, 'millisecond match');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 5, 10)), 'milliseconds'), true, 'plural should work');
+        assert.equal(m.isSameOrBefore(moment(new Date(2012, 3, 2, 3, 4, 5, 10)), 'millisecond'), true, 'year is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2010, 3, 2, 3, 4, 5, 10)), 'millisecond'), false, 'year is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 4, 2, 3, 4, 5, 10)), 'millisecond'), true, 'month is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 2, 2, 3, 4, 5, 10)), 'millisecond'), false, 'month is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 3, 3, 4, 5, 10)), 'millisecond'), true, 'day is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 1, 1, 4, 5, 10)), 'millisecond'), false, 'day is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 4, 4, 5, 10)), 'millisecond'), true, 'hour is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 1, 4, 1, 5, 10)), 'millisecond'), false, 'hour is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 5, 5, 10)), 'millisecond'), true, 'minute is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 3, 5, 10)), 'millisecond'), false, 'minute is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 6, 10)), 'millisecond'), true, 'second is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 4, 5)), 'millisecond'), false, 'second is earlier');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 6, 11)), 'millisecond'), true, 'millisecond is later');
+        assert.equal(m.isSameOrBefore(moment(new Date(2011, 3, 2, 3, 4, 4, 9)), 'millisecond'), false, 'millisecond is earlier');
+        assert.equal(m.isSameOrBefore(m, 'millisecond'), true, 'same moments are in the same millisecond');
+        assert.equal(+m, +mCopy, 'isSameOrBefore millisecond should not change moment');
+    });
+
+    test('is same with utc offset moments', function (assert) {
+        assert.ok(moment.parseZone('2013-02-01T-05:00').isSameOrBefore(moment('2013-02-01'), 'year'), 'zoned vs local moment');
+        assert.ok(moment('2013-02-01').isSameOrBefore(moment('2013-02-01').utcOffset('-05:00'), 'year'), 'local vs zoned moment');
+        assert.ok(moment.parseZone('2013-02-01T-05:00').isSameOrBefore(moment.parseZone('2013-02-01T-06:30'), 'year'),
+                'zoned vs (differently) zoned moment');
+    });
+
+    test('is same with invalid moments', function (assert) {
+        var m = moment(), invalid = moment.invalid();
+        assert.equal(invalid.isSameOrBefore(invalid), false, 'invalid moments are not considered equal');
+        assert.equal(m.isSameOrBefore(invalid), false, 'valid moment is not before invalid moment');
+        assert.equal(invalid.isSameOrBefore(m), false, 'invalid moment is not before valid moment');
+        assert.equal(m.isSameOrBefore(invalid, 'year'), false, 'invalid moment year');
+        assert.equal(m.isSameOrBefore(invalid, 'month'), false, 'invalid moment month');
+        assert.equal(m.isSameOrBefore(invalid, 'day'), false, 'invalid moment day');
+        assert.equal(m.isSameOrBefore(invalid, 'hour'), false, 'invalid moment hour');
+        assert.equal(m.isSameOrBefore(invalid, 'minute'), false, 'invalid moment minute');
+        assert.equal(m.isSameOrBefore(invalid, 'second'), false, 'invalid moment second');
+        assert.equal(m.isSameOrBefore(invalid, 'milliseconds'), false, 'invalid moment milliseconds');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -33942,8 +41482,8 @@
         ], i;
 
         for (i = 0; i < tests.length; i++) {
-            assert.equal(moment(tests[i]).isValid(), false, tests[i] + ' should be invalid');
-            assert.equal(moment.utc(tests[i]).isValid(), false, tests[i] + ' should be invalid');
+            assert.equal(moment(tests[i], moment.ISO_8601).isValid(), false, tests[i] + ' should be invalid');
+            assert.equal(moment.utc(tests[i], moment.ISO_8601).isValid(), false, tests[i] + ' should be invalid');
         }
     });
 
@@ -33955,12 +41495,33 @@
             '2010-01-40T24:01+00:00',
             '2010-01-40T23:60+00:00',
             '2010-01-40T23:59:60+00:00',
-            '2010-01-40T23:59:59.9999+00:00'
+            '2010-01-40T23:59:59.9999+00:00',
+            '2010-01-40T23:59:59,9999+00:00'
         ], i;
 
         for (i = 0; i < tests.length; i++) {
-            assert.equal(moment(tests[i]).isValid(), false, tests[i] + ' should be invalid');
-            assert.equal(moment.utc(tests[i]).isValid(), false, tests[i] + ' should be invalid');
+            assert.equal(moment(tests[i], moment.ISO_8601).isValid(), false, tests[i] + ' should be invalid');
+            assert.equal(moment.utc(tests[i], moment.ISO_8601).isValid(), false, tests[i] + ' should be invalid');
+        }
+    });
+
+    test('valid string iso 8601 - not strict', function (assert) {
+        var tests = [
+            '2010-01-30 00:00:00,000Z',
+            '20100101',
+            '20100130',
+            '20100130T23+00:00',
+            '20100130T2359+0000',
+            '20100130T235959+0000',
+            '20100130T235959,999+0000',
+            '20100130T235959,999-0700',
+            '20100130T000000,000+0700',
+            '20100130 000000,000Z'
+        ];
+
+        for (var i = 0; i < tests.length; i++) {
+            assert.equal(moment(tests[i]).isValid(), true, tests[i] + ' should be valid in normal');
+            assert.equal(moment.utc(tests[i]).isValid(), true, tests[i] + ' should be valid in normal');
         }
     });
 
@@ -33974,12 +41535,16 @@
             '2010-01-30T23:59:59.999+00:00',
             '2010-01-30T23:59:59.999-07:00',
             '2010-01-30T00:00:00.000+07:00',
-            '2010-01-30T00:00:00.000+07'
+            '2010-01-30T23:59:59.999-07',
+            '2010-01-30T00:00:00.000+07',
+            '2010-01-30 00:00:00.000Z'
         ], i;
 
         for (i = 0; i < tests.length; i++) {
-            assert.equal(moment(tests[i]).isValid(), true, tests[i] + ' should be valid');
-            assert.equal(moment.utc(tests[i]).isValid(), true, tests[i] + ' should be valid');
+            assert.equal(moment(tests[i]).isValid(), true, tests[i] + ' should be valid in normal');
+            assert.equal(moment.utc(tests[i]).isValid(), true, tests[i] + ' should be valid in normal');
+            assert.equal(moment(tests[i], moment.ISO_8601, true).isValid(), true, tests[i] + ' should be valid in strict');
+            assert.equal(moment.utc(tests[i], moment.ISO_8601, true).isValid(), true, tests[i] + ' should be valid in strict');
         }
     });
 
@@ -34096,10 +41661,18 @@
         assert.ok(moment('3:25', ['h:mma', 'hh:mma', 'H:mm', 'HH:mm']).isValid());
     });
 
+    test('0 hour is invalid in strict', function (assert) {
+        assert.equal(moment('00:01', 'hh:mm', true).isValid(), false, '00 hour is invalid in strict');
+        assert.equal(moment('00:01', 'hh:mm').isValid(), true, '00 hour is valid in normal');
+        assert.equal(moment('0:01', 'h:mm', true).isValid(), false, '0 hour is invalid in strict');
+        assert.equal(moment('0:01', 'h:mm').isValid(), true, '0 hour is valid in normal');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34108,12 +41681,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34131,8 +41706,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34158,8 +41733,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34168,12 +41744,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34191,8 +41769,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34287,8 +41865,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34297,12 +41876,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34320,8 +41901,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34343,12 +41924,10 @@
         }
     }
 
-    var helpers_each = each;
-
     module('locale', {
         setup : function () {
             // TODO: Remove once locales are switched to ES6
-            helpers_each([{
+            each([{
                 name: 'en-gb',
                 data: {}
             }, {
@@ -34579,6 +42158,11 @@
         assert.equal(moment.duration().lang(), moment.duration().localeData(), 'duration.lang is the same as duration.localeData');
     });
 
+    test('from and fromNow with invalid date', function (assert) {
+        assert.equal(moment(NaN).from(), 'Invalid date', 'moment.from with invalid moment');
+        assert.equal(moment(NaN).fromNow(), 'Invalid date', 'moment.fromNow with invalid moment');
+    });
+
     test('from relative time future', function (assert) {
         var start = moment([2007, 1, 28]);
 
@@ -34783,10 +42367,44 @@
                 'preserve global locale in case of bad locale id');
     });
 
+
+    // TODO: Enable this after fixing pl months parse hack hack
+    // test('monthsParseExact', function (assert) {
+    //     var locale = 'test-months-parse-exact';
+
+    //     moment.defineLocale(locale, {
+    //         monthsParseExact: true,
+    //         months: 'A_AA_AAA_B_B B_BB  B_C_C-C_C,C2C_D_D+D_D`D*D'.split('_'),
+    //         monthsShort: 'E_EE_EEE_F_FF_FFF_G_GG_GGG_H_HH_HHH'.split('_')
+    //     });
+
+    //     assert.equal(moment('A', 'MMMM', true).month(), 0, 'parse long month 0 with MMMM');
+    //     assert.equal(moment('AA', 'MMMM', true).month(), 1, 'parse long month 1 with MMMM');
+    //     assert.equal(moment('AAA', 'MMMM', true).month(), 2, 'parse long month 2 with MMMM');
+    //     assert.equal(moment('B B', 'MMMM', true).month(), 4, 'parse long month 4 with MMMM');
+    //     assert.equal(moment('BB  B', 'MMMM', true).month(), 5, 'parse long month 5 with MMMM');
+    //     assert.equal(moment('C-C', 'MMMM', true).month(), 7, 'parse long month 7 with MMMM');
+    //     assert.equal(moment('C,C2C', 'MMMM', true).month(), 8, 'parse long month 8 with MMMM');
+    //     assert.equal(moment('D+D', 'MMMM', true).month(), 10, 'parse long month 10 with MMMM');
+    //     assert.equal(moment('D`D*D', 'MMMM', true).month(), 11, 'parse long month 11 with MMMM');
+
+    //     assert.equal(moment('E', 'MMM', true).month(), 0, 'parse long month 0 with MMM');
+    //     assert.equal(moment('EE', 'MMM', true).month(), 1, 'parse long month 1 with MMM');
+    //     assert.equal(moment('EEE', 'MMM', true).month(), 2, 'parse long month 2 with MMM');
+
+    //     assert.equal(moment('A', 'MMM').month(), 0, 'non-strict parse long month 0 with MMM');
+    //     assert.equal(moment('AA', 'MMM').month(), 1, 'non-strict parse long month 1 with MMM');
+    //     assert.equal(moment('AAA', 'MMM').month(), 2, 'non-strict parse long month 2 with MMM');
+    //     assert.equal(moment('E', 'MMMM').month(), 0, 'non-strict parse short month 0 with MMMM');
+    //     assert.equal(moment('EE', 'MMMM').month(), 1, 'non-strict parse short month 1 with MMMM');
+    //     assert.equal(moment('EEE', 'MMMM').month(), 2, 'non-strict parse short month 2 with MMMM');
+    // });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34795,12 +42413,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34818,8 +42438,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34839,7 +42459,8 @@
     test('min', function (assert) {
         var now = moment(),
             future = now.clone().add(1, 'month'),
-            past = now.clone().subtract(1, 'month');
+            past = now.clone().subtract(1, 'month'),
+            invalid = moment.invalid();
 
         assert.equal(moment.min(now, future, past), past, 'min(now, future, past)');
         assert.equal(moment.min(future, now, past), past, 'min(future, now, past)');
@@ -34852,12 +42473,16 @@
         assert.equal(moment.min([now, future, past]), past, 'min([now, future, past])');
         assert.equal(moment.min([now, past]), past, 'min(now, past)');
         assert.equal(moment.min([now]), now, 'min(now)');
+
+        assert.equal(moment.min([now, invalid]), invalid, 'min(now, invalid)');
+        assert.equal(moment.min([invalid, now]), invalid, 'min(invalid, now)');
     });
 
     test('max', function (assert) {
         var now = moment(),
             future = now.clone().add(1, 'month'),
-            past = now.clone().subtract(1, 'month');
+            past = now.clone().subtract(1, 'month'),
+            invalid = moment.invalid();
 
         assert.equal(moment.max(now, future, past), future, 'max(now, future, past)');
         assert.equal(moment.max(future, now, past), future, 'max(future, now, past)');
@@ -34870,12 +42495,16 @@
         assert.equal(moment.max([now, future, past]), future, 'max([now, future, past])');
         assert.equal(moment.max([now, past]), now, 'max(now, past)');
         assert.equal(moment.max([now]), now, 'max(now)');
+
+        assert.equal(moment.max([now, invalid]), invalid, 'max(now, invalid)');
+        assert.equal(moment.max([invalid, now]), invalid, 'max(invalid, now)');
     });
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34884,12 +42513,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34907,8 +42538,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34949,8 +42580,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -34959,12 +42591,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -34982,8 +42616,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35029,8 +42663,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -35039,12 +42674,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35062,8 +42699,116 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('now');
+
+    test('now', function (assert) {
+        var startOfTest = new Date().valueOf(),
+            momentNowTime = moment.now(),
+            afterMomentCreationTime = new Date().valueOf();
+
+        assert.ok(startOfTest <= momentNowTime, 'moment now() time should be now, not in the past');
+        assert.ok(momentNowTime <= afterMomentCreationTime, 'moment now() time should be now, not in the future');
+    });
+
+    test('now - Date mocked', function (assert) {
+        // We need to test mocking the global Date object, so disable 'Read Only' jshint check
+        /* jshint -W020 */
+        var RealDate = Date,
+            customTimeMs = moment('2015-01-01T01:30:00.000Z').valueOf();
+
+        function MockDate() {
+            return new RealDate(customTimeMs);
+        }
+
+        MockDate.now = function () {
+            return new MockDate().valueOf();
+        };
+
+        MockDate.prototype = RealDate.prototype;
+
+        Date = MockDate;
+
+        try {
+            assert.equal(moment().valueOf(), customTimeMs, 'moment now() time should use the global Date object');
+        } finally {
+            Date = RealDate;
+        }
+    });
+
+    test('now - custom value', function (assert) {
+        var customTimeStr = '2015-01-01T01:30:00.000Z',
+            customTime = moment(customTimeStr, moment.ISO_8601).valueOf(),
+            oldFn = moment.now;
+
+        moment.now = function () {
+            return customTime;
+        };
+
+        try {
+            assert.ok(moment().toISOString() === customTimeStr, 'moment() constructor should use the function defined by moment.now, but it did not');
+            assert.ok(moment.utc().toISOString() === customTimeStr, 'moment() constructor should use the function defined by moment.now, but it did not');
+            assert.ok(moment.utc([]).toISOString() === '2015-01-01T00:00:00.000Z', 'moment() constructor should fall back to the date defined by moment.now when an empty array is given, but it did not');
+        } finally {
+            moment.now = oldFn;
+        }
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35246,8 +42991,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -35256,12 +43002,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35279,8 +43027,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35365,8 +43113,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -35375,12 +43124,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35398,8 +43149,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35515,8 +43266,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -35525,12 +43277,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35548,8 +43302,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35566,7 +43320,7 @@
 
     module('relative time');
 
-    test('default thresholds', function (assert) {
+    test('default thresholds fromNow', function (assert) {
         var a = moment();
 
         // Seconds to minutes threshold
@@ -35604,11 +43358,60 @@
         assert.equal(a.fromNow(), 'a year ago', 'Above default days to years threshold');
     });
 
+    test('default thresholds toNow', function (assert) {
+        var a = moment();
+
+        // Seconds to minutes threshold
+        a.subtract(44, 'seconds');
+        assert.equal(a.toNow(), 'in a few seconds', 'Below default seconds to minutes threshold');
+        a.subtract(1, 'seconds');
+        assert.equal(a.toNow(), 'in a minute', 'Above default seconds to minutes threshold');
+
+        // Minutes to hours threshold
+        a = moment();
+        a.subtract(44, 'minutes');
+        assert.equal(a.toNow(), 'in 44 minutes', 'Below default minute to hour threshold');
+        a.subtract(1, 'minutes');
+        assert.equal(a.toNow(), 'in an hour', 'Above default minute to hour threshold');
+
+        // Hours to days threshold
+        a = moment();
+        a.subtract(21, 'hours');
+        assert.equal(a.toNow(), 'in 21 hours', 'Below default hours to day threshold');
+        a.subtract(1, 'hours');
+        assert.equal(a.toNow(), 'in a day', 'Above default hours to day threshold');
+
+        // Days to month threshold
+        a = moment();
+        a.subtract(25, 'days');
+        assert.equal(a.toNow(), 'in 25 days', 'Below default days to month (singular) threshold');
+        a.subtract(1, 'days');
+        assert.equal(a.toNow(), 'in a month', 'Above default days to month (singular) threshold');
+
+        // months to year threshold
+        a = moment();
+        a.subtract(10, 'months');
+        assert.equal(a.toNow(), 'in 10 months', 'Below default days to years threshold');
+        a.subtract(1, 'month');
+        assert.equal(a.toNow(), 'in a year', 'Above default days to years threshold');
+    });
+
     test('custom thresholds', function (assert) {
+        var a;
+
+        // Seconds to minute threshold, under 30
+        moment.relativeTimeThreshold('s', 25);
+
+        a = moment();
+        a.subtract(24, 'seconds');
+        assert.equal(a.fromNow(), 'a few seconds ago', 'Below custom seconds to minute threshold, s < 30');
+        a.subtract(1, 'seconds');
+        assert.equal(a.fromNow(), 'a minute ago', 'Above custom seconds to minute threshold, s < 30');
+
         // Seconds to minutes threshold
         moment.relativeTimeThreshold('s', 55);
 
-        var a = moment();
+        a = moment();
         a.subtract(54, 'seconds');
         assert.equal(a.fromNow(), 'a few seconds ago', 'Below custom seconds to minutes threshold');
         a.subtract(1, 'seconds');
@@ -35662,8 +43465,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -35672,12 +43476,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -35695,8 +43501,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36069,8 +43875,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -36079,12 +43886,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36102,8 +43911,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36134,8 +43943,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -36144,12 +43954,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36167,8 +43979,82 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                moment.locale('en');
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    module('to type');
+
+    test('toObject', function (assert) {
+        var expected = {
+            years:2010,
+            months:3,
+            date:5,
+            hours:15,
+            minutes:10,
+            seconds:3,
+            milliseconds:123
+        };
+        assert.deepEqual(moment(expected).toObject(), expected, 'toObject invalid');
+    });
+
+    test('toArray', function (assert) {
+        var expected = [2014, 11, 26, 11, 46, 58, 17];
+        assert.deepEqual(moment(expected).toArray(), expected, 'toArray invalid');
+    });
+
+}));
+
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
+   typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
+   factory(global.moment)
+}(this, function (moment) { 'use strict';
+
+    /*global QUnit:false*/
+
+    var test = QUnit.test;
+
+    var expect = QUnit.expect;
+
+    function module (name, lifecycle) {
+        QUnit.module(name, {
+            setup : function () {
+                moment.locale('en');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
+                };
+                if (lifecycle && lifecycle.setup) {
+                    lifecycle.setup();
+                }
+            },
+            teardown : function () {
+                if (lifecycle && lifecycle.teardown) {
+                    lifecycle.teardown();
+                }
+            }
+        });
+    }
+
+    function localeModule (name, lifecycle) {
+        QUnit.module('locale:' + name, {
+            setup : function () {
+                moment.locale(name);
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36202,7 +44088,7 @@
             assert.equal(m.date(), 2, 'the date should be correct for local');
             assert.equal(m.day(), 3, 'the day should be correct for local');
         }
-        offset = Math.ceil(m.utcOffset() / 60);
+        offset = Math.floor(m.utcOffset() / 60);
         expected = (24 + 3 + offset) % 24;
         assert.equal(m.hours(), expected, 'the hours (' + m.hours() + ') should be correct for local');
         assert.equal(moment().utc().utcOffset(), 0, 'timezone in utc should always be zero');
@@ -36261,8 +44147,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -36271,12 +44158,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36294,8 +44183,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36336,6 +44225,10 @@
         assert.equal(m.clone().utcOffset(-90).utcOffset(), -90, 'utcOffset -90');
         assert.equal(m.clone().utcOffset('-01:30').utcOffset(), -90, 'utcOffset +01:30 is 90');
         assert.equal(m.clone().utcOffset('-0130').utcOffset(), -90, 'utcOffset +0130 is 90');
+        assert.equal(m.clone().utcOffset('+00:10').utcOffset(), 10, 'utcOffset +00:10 is 10');
+        assert.equal(m.clone().utcOffset('-00:10').utcOffset(), -10, 'utcOffset +00:10 is 10');
+        assert.equal(m.clone().utcOffset('+0010').utcOffset(), 10, 'utcOffset +0010 is 10');
+        assert.equal(m.clone().utcOffset('-0010').utcOffset(), -10, 'utcOffset +0010 is 10');
     });
 
     test('utcOffset shorthand hours -> minutes', function (assert) {
@@ -36875,8 +44768,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -36885,12 +44779,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36908,8 +44804,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -36987,10 +44883,73 @@
         assert.equal(moment([2009, 11, 28]).weekYear(), 2010);
     });
 
+    // Verifies that the week number, week day computation is correct for all dow, doy combinations
+    test('week year roundtrip', function (assert) {
+        var dow, doy, wd, m;
+        for (dow = 0; dow < 7; ++dow) {
+            for (doy = dow; doy < dow + 7; ++doy) {
+                for (wd = 0; wd < 7; ++wd) {
+                    moment.locale('dow: ' + dow + ', doy: ' + doy, {week: {dow: dow, doy: doy}});
+                    // We use the 10th week as the 1st one can spill to the previous year
+                    m = moment('2015 10 ' + wd, 'gggg w d', true);
+                    assert.equal(m.format('gggg w d'), '2015 10 ' + wd, 'dow: ' + dow + ' doy: ' + doy + ' wd: ' + wd);
+                    m = moment('2015 10 ' + wd, 'gggg w e', true);
+                    assert.equal(m.format('gggg w e'), '2015 10 ' + wd, 'dow: ' + dow + ' doy: ' + doy + ' wd: ' + wd);
+                }
+            }
+        }
+    });
+
+    test('week numbers 2012/2013', function (assert) {
+        moment.locale('dow: 6, doy: 12', {week: {dow: 6, doy: 12}});
+        assert.equal(52, moment('2012-12-28', 'YYYY-MM-DD').week(), '2012-12-28 is week 52'); // 51 -- should be 52?
+        assert.equal(1, moment('2012-12-29', 'YYYY-MM-DD').week(), '2012-12-29 is week 1'); // 52 -- should be 1
+        assert.equal(1, moment('2013-01-01', 'YYYY-MM-DD').week(), '2013-01-01 is week 1'); // 52 -- should be 1
+        assert.equal(2, moment('2013-01-08', 'YYYY-MM-DD').week(), '2013-01-08 is week 2'); // 53 -- should be 2
+        assert.equal(2, moment('2013-01-11', 'YYYY-MM-DD').week(), '2013-01-11 is week 2'); // 53 -- should be 2
+        assert.equal(3, moment('2013-01-12', 'YYYY-MM-DD').week(), '2013-01-12 is week 3'); // 1 -- should be 3
+        assert.equal(52, moment('2012-01-01', 'YYYY-MM-DD').weeksInYear(), 'weeks in 2012 are 52'); // 52
+    });
+
+    test('week year overflows', function (assert) {
+        assert.equal('2005-01-01', moment.utc('2004-W53-6', moment.ISO_8601, true).format('YYYY-MM-DD'), '2004-W53-6 is 1st Jan 2005');
+        assert.equal('2007-12-31', moment.utc('2008-W01-1', moment.ISO_8601, true).format('YYYY-MM-DD'), '2008-W01-1 is 31st Dec 2007');
+    });
+
+    test('weeks overflow', function (assert) {
+        assert.equal(7, moment.utc('2004-W54-1', moment.ISO_8601, true).parsingFlags().overflow, '2004 has only 53 weeks');
+        assert.equal(7, moment.utc('2004-W00-1', moment.ISO_8601, true).parsingFlags().overflow, 'there is no 0th week');
+    });
+
+    test('weekday overflow', function (assert) {
+        assert.equal(8, moment.utc('2004-W30-0', moment.ISO_8601, true).parsingFlags().overflow, 'there is no 0 iso weekday');
+        assert.equal(8, moment.utc('2004-W30-8', moment.ISO_8601, true).parsingFlags().overflow, 'there is no 8 iso weekday');
+        assert.equal(8, moment.utc('2004-w30-7', 'gggg-[w]ww-e', true).parsingFlags().overflow, 'there is no 7 \'e\' weekday');
+        assert.equal(8, moment.utc('2004-w30-7', 'gggg-[w]ww-d', true).parsingFlags().overflow, 'there is no 7 \'d\' weekday');
+    });
+
+    test('week year setter works', function (assert) {
+        for (var year = 2000; year <= 2020; year += 1) {
+            assert.equal(moment.utc('2012-12-31T00:00:00.000Z').isoWeekYear(year).isoWeekYear(), year, 'setting iso-week-year to ' + year);
+            assert.equal(moment.utc('2012-12-31T00:00:00.000Z').weekYear(year).weekYear(), year, 'setting week-year to ' + year);
+        }
+
+        assert.equal(moment.utc('2004-W53-1', moment.ISO_8601, true).isoWeekYear(2013).format('GGGG-[W]WW-E'), '2013-W52-1', '2004-W53-1 to 2013');
+        assert.equal(moment.utc('2004-W53-1', moment.ISO_8601, true).isoWeekYear(2020).format('GGGG-[W]WW-E'), '2020-W53-1', '2004-W53-1 to 2020');
+        assert.equal(moment.utc('2005-W52-1', moment.ISO_8601, true).isoWeekYear(2004).format('GGGG-[W]WW-E'), '2004-W52-1', '2005-W52-1 to 2004');
+        assert.equal(moment.utc('2013-W30-4', moment.ISO_8601, true).isoWeekYear(2015).format('GGGG-[W]WW-E'), '2015-W30-4', '2013-W30-4 to 2015');
+
+        assert.equal(moment.utc('2005-w53-0', 'gggg-[w]ww-e', true).weekYear(2013).format('gggg-[w]ww-e'), '2013-w52-0', '2005-w53-0 to 2013');
+        assert.equal(moment.utc('2005-w53-0', 'gggg-[w]ww-e', true).weekYear(2016).format('gggg-[w]ww-e'), '2016-w53-0', '2005-w53-0 to 2016');
+        assert.equal(moment.utc('2004-w52-0', 'gggg-[w]ww-e', true).weekYear(2005).format('gggg-[w]ww-e'), '2005-w52-0', '2004-w52-0 to 2005');
+        assert.equal(moment.utc('2013-w30-4', 'gggg-[w]ww-e', true).weekYear(2015).format('gggg-[w]ww-e'), '2015-w30-4', '2013-w30-4 to 2015');
+    });
+
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -36999,12 +44958,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37022,8 +44983,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37170,8 +45131,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -37180,12 +45142,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37203,8 +45167,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37443,8 +45407,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -37453,12 +45418,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37476,8 +45443,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37579,8 +45546,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -37589,12 +45557,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37612,8 +45582,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37719,8 +45689,9 @@
 
 }));
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../../moment')) :
    typeof define === 'function' && define.amd ? define(['../../moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -37729,12 +45700,14 @@
 
     var test = QUnit.test;
 
+    var expect = QUnit.expect;
+
     function module (name, lifecycle) {
         QUnit.module(name, {
             setup : function () {
                 moment.locale('en');
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37752,8 +45725,8 @@
         QUnit.module('locale:' + name, {
             setup : function () {
                 moment.locale(name);
-                moment.createFromInputFallback = function () {
-                    throw new Error('input not handled by moment');
+                moment.createFromInputFallback = function (config) {
+                    throw new Error('input not handled by moment: ' + config._i);
                 };
                 if (lifecycle && lifecycle.setup) {
                     lifecycle.setup();
@@ -37816,6 +45789,9 @@
 
         zone.zone('2013-03-07T07:00:00+0100');
         assert.equal(zone.zone(), -60, 'set the zone with a string that uses the +0000 syntax');
+
+        zone.zone('2013-03-07T07:00:00+02');
+        assert.equal(zone.zone(), -120, 'set the zone with a string that uses the +00 syntax');
 
         zone.zone('03-07-2013T07:00:00-08:00');
         assert.equal(zone.zone(), 480, 'set the zone with a string with a non-ISO 8601 date');

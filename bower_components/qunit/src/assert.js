@@ -15,30 +15,55 @@ QUnit.assert = Assert.prototype = {
 		}
 	},
 
-	// Increment this Test's semaphore counter, then return a single-use function that
+	// Increment this Test's semaphore counter, then return a function that
 	// decrements that counter a maximum of once.
-	async: function() {
+	async: function( count ) {
 		var test = this.test,
-			popped = false;
+			popped = false,
+			acceptCallCount = count;
+
+		if ( typeof acceptCallCount === "undefined" ) {
+			acceptCallCount = 1;
+		}
 
 		test.semaphore += 1;
 		test.usedAsync = true;
 		pauseProcessing();
 
 		return function done() {
-			if ( !popped ) {
-				test.semaphore -= 1;
-				popped = true;
-				resumeProcessing();
-			} else {
-				test.pushFailure( "Called the callback returned from `assert.async` more than once",
+
+			if ( popped ) {
+				test.pushFailure( "Too many calls to the `assert.async` callback",
 					sourceFromStacktrace( 2 ) );
+				return;
 			}
+			acceptCallCount -= 1;
+			if ( acceptCallCount > 0 ) {
+				return;
+			}
+
+			test.semaphore -= 1;
+			popped = true;
+			resumeProcessing();
 		};
 	},
 
 	// Exports test.push() to the user API
-	push: function( /* result, actual, expected, message */ ) {
+	// Alias of pushResult.
+	push: function( result, actual, expected, message, negative ) {
+		var currentAssert = this instanceof Assert ? this : QUnit.config.current.assert;
+		return currentAssert.pushResult( {
+			result: result,
+			actual: actual,
+			expected: expected,
+			message: message,
+			negative: negative
+		} );
+	},
+
+	pushResult: function( resultInfo ) {
+
+		// resultInfo = { result, actual, expected, message, negative }
 		var assert = this,
 			currentTest = ( assert instanceof Assert && assert.test ) || QUnit.config.current;
 
@@ -61,57 +86,112 @@ QUnit.assert = Assert.prototype = {
 		if ( !( assert instanceof Assert ) ) {
 			assert = currentTest.assert;
 		}
-		return assert.test.push.apply( assert.test, arguments );
+
+		return assert.test.pushResult( resultInfo );
 	},
 
 	ok: function( result, message ) {
 		message = message || ( result ? "okay" : "failed, expected argument to be truthy, was: " +
 			QUnit.dump.parse( result ) );
-		this.push( !!result, result, true, message );
+		this.pushResult( {
+			result: !!result,
+			actual: result,
+			expected: true,
+			message: message
+		} );
 	},
 
 	notOk: function( result, message ) {
 		message = message || ( !result ? "okay" : "failed, expected argument to be falsy, was: " +
 			QUnit.dump.parse( result ) );
-		this.push( !result, result, false, message );
+		this.pushResult( {
+			result: !result,
+			actual: result,
+			expected: false,
+			message: message
+		} );
 	},
 
 	equal: function( actual, expected, message ) {
 		/*jshint eqeqeq:false */
-		this.push( expected == actual, actual, expected, message );
+		this.pushResult( {
+			result: expected == actual,
+			actual: actual,
+			expected: expected,
+			message: message
+		} );
 	},
 
 	notEqual: function( actual, expected, message ) {
 		/*jshint eqeqeq:false */
-		this.push( expected != actual, actual, expected, message );
+		this.pushResult( {
+			result: expected != actual,
+			actual: actual,
+			expected: expected,
+			message: message,
+			negative: true
+		} );
 	},
 
 	propEqual: function( actual, expected, message ) {
 		actual = objectValues( actual );
 		expected = objectValues( expected );
-		this.push( QUnit.equiv( actual, expected ), actual, expected, message );
+		this.pushResult( {
+			result: QUnit.equiv( actual, expected ),
+			actual: actual,
+			expected: expected,
+			message: message
+		} );
 	},
 
 	notPropEqual: function( actual, expected, message ) {
 		actual = objectValues( actual );
 		expected = objectValues( expected );
-		this.push( !QUnit.equiv( actual, expected ), actual, expected, message );
+		this.pushResult( {
+			result: !QUnit.equiv( actual, expected ),
+			actual: actual,
+			expected: expected,
+			message: message,
+			negative: true
+		} );
 	},
 
 	deepEqual: function( actual, expected, message ) {
-		this.push( QUnit.equiv( actual, expected ), actual, expected, message );
+		this.pushResult( {
+			result: QUnit.equiv( actual, expected ),
+			actual: actual,
+			expected: expected,
+			message: message
+		} );
 	},
 
 	notDeepEqual: function( actual, expected, message ) {
-		this.push( !QUnit.equiv( actual, expected ), actual, expected, message );
+		this.pushResult( {
+			result: !QUnit.equiv( actual, expected ),
+			actual: actual,
+			expected: expected,
+			message: message,
+			negative: true
+		} );
 	},
 
 	strictEqual: function( actual, expected, message ) {
-		this.push( expected === actual, actual, expected, message );
+		this.pushResult( {
+			result: expected === actual,
+			actual: actual,
+			expected: expected,
+			message: message
+		} );
 	},
 
 	notStrictEqual: function( actual, expected, message ) {
-		this.push( expected !== actual, actual, expected, message );
+		this.pushResult( {
+			result: expected !== actual,
+			actual: actual,
+			expected: expected,
+			message: message,
+			negative: true
+		} );
 	},
 
 	"throws": function( block, expected, message ) {
@@ -167,13 +247,38 @@ QUnit.assert = Assert.prototype = {
 			}
 		}
 
-		currentTest.assert.push( ok, actual, expectedOutput, message );
+		currentTest.assert.pushResult( {
+			result: ok,
+			actual: actual,
+			expected: expectedOutput,
+			message: message
+		} );
 	}
 };
 
-// Provide an alternative to assert.throws(), for enviroments that consider throws a reserved word
+// Provide an alternative to assert.throws(), for environments that consider throws a reserved word
 // Known to us are: Closure Compiler, Narwhal
 (function() {
 	/*jshint sub:true */
 	Assert.prototype.raises = Assert.prototype[ "throws" ];
 }());
+
+function errorString( error ) {
+	var name, message,
+		resultErrorString = error.toString();
+	if ( resultErrorString.substring( 0, 7 ) === "[object" ) {
+		name = error.name ? error.name.toString() : "Error";
+		message = error.message ? error.message.toString() : "";
+		if ( name && message ) {
+			return name + ": " + message;
+		} else if ( name ) {
+			return name;
+		} else if ( message ) {
+			return message;
+		} else {
+			return "Error";
+		}
+	} else {
+		return resultErrorString;
+	}
+}

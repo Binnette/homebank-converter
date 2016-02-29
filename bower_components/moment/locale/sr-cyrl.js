@@ -2,8 +2,9 @@
 //! locale : Serbian-cyrillic (sr-cyrl)
 //! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../moment')) :
    typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -40,11 +41,11 @@
         weekdaysMin: ['не', 'по', 'ут', 'ср', 'че', 'пе', 'су'],
         longDateFormat: {
             LT: 'H:mm',
-            LTS : 'LT:ss',
+            LTS : 'H:mm:ss',
             L: 'DD. MM. YYYY',
             LL: 'D. MMMM YYYY',
-            LLL: 'D. MMMM YYYY LT',
-            LLLL: 'dddd, D. MMMM YYYY LT'
+            LLL: 'D. MMMM YYYY H:mm',
+            LLLL: 'dddd, D. MMMM YYYY H:mm'
         },
         calendar: {
             sameDay: '[данас у] LT',

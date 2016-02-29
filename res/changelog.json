@@ -1,5 +1,10 @@
 [
   {
+    "date": "2016-02-29",
+    "version": "v0.13.0",
+    "comment": "update libs, error management, errors in modal."
+  },
+  {
     "date": "2015-05-01",
     "version": "v0.12.0",
     "comment": "update libs, fix icons not working."

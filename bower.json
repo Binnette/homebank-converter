@@ -1,6 +1,6 @@
 {
   "name": "homebank-converter",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "homepage": "https://github.com/Binnette/homebank-converter",
   "authors": [
     "Binnette <binnette@gmail.com>"
@@ -14,15 +14,15 @@
     "converter"
   ],
   "license": "AGPL v3",
+  "private": true,
   "ignore": [
     "**/.*",
     "bower_components"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "bootstrap": "~3.3.4",
-    "file-saver": "*",
-    "moment": "~2.10.2",
-    "qunit": "~1.18.0"
+    "bootstrap": "^3.3.6",
+    "qunit": "^1.22.0",
+    "moment": "^2.11.2",
+    "file-saver": "*"
   }
 }

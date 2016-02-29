@@ -3,8 +3,9 @@
 //! author : Nedim Cholich : https://github.com/frontyard
 //! based on (hr) translation by Bojan Marković
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../moment')) :
    typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -71,11 +72,11 @@
         weekdaysMin : 'ne_po_ut_sr_če_pe_su'.split('_'),
         longDateFormat : {
             LT : 'H:mm',
-            LTS : 'LT:ss',
+            LTS : 'H:mm:ss',
             L : 'DD. MM. YYYY',
             LL : 'D. MMMM YYYY',
-            LLL : 'D. MMMM YYYY LT',
-            LLLL : 'dddd, D. MMMM YYYY LT'
+            LLL : 'D. MMMM YYYY H:mm',
+            LLLL : 'dddd, D. MMMM YYYY H:mm'
         },
         calendar : {
             sameDay  : '[danas u] LT',

@@ -1,4 +1,31 @@
 /* Common functions */
+function formatErrors(result) {
+  if (result.errors.length <= 0) {
+    return result.message;
+  }
+  var br = "";
+  if (result.message) {
+    br= "<br/>"; 
+  }
+  return result.message + br + "Errors:<ul><li>" + result.errors.join("</li><li>") + "</li></ul>";
+}
+
+function showError(error) {
+  $("#modal-title").html("Error");
+  $("#modal-body p").html(error);
+  $('#modal').modal('show')
+}
+
+function onConvertEnd(result) {
+  var title = result.status ? "Warning" : "Error";
+  $("#modal-title").html(title);
+  var body = formatErrors(result);
+  if (body) {
+    $("#modal-body p").html(body);
+    $('#modal').modal('show') 
+  }
+}
+
 function resetInputFiles() {
   $("#inputOptimize")[0].value = "";
   onInputOptimizeChange();
@@ -81,42 +108,34 @@ function onAboutClick() {
 /* Optimizer functions */
 function onInputOptimizeChange() {
   var file = getInputFile("#inputOptimize");
-  if (isFileValid(file)) {
-    $("#btnOptimize").prop("disabled", false);
-  } else {
-    $("#btnOptimize").prop("disabled", true);
-  }
+  var isValid = isFileValid(file);
+  $("#btnOptimize").prop("disabled", !isValid);
 }
 
 function optimizeClick() {
   var file = getInputFile("#inputOptimize");
-  if (isFileValid(file)) {
-    optimizeFile(file);
-    resetInputFiles();
+  if (!isFileValid(file)) {
+    showError("No file selected or selected file is empty.");
   } else {
-    $("#modalContent p").html("No file selected or selected file is empty.");
-    $('#modal').modal();
+    optimizeFile(file, showError);
   }
+  resetInputFiles();
 }
 /* Converter functions */
 function onInputConvertChange() {
   var file = getInputFile("#inputConvert");
-  if (isFileValid(file)) {
-    $("#btnConvert").prop("disabled", false);
-  } else {
-    $("#btnConvert").prop("disabled", true);
-  }
+  var isValid = isFileValid(file);
+  $("#btnConvert").prop("disabled", !isValid);
 }
 
 function convertClick(idBank) {
   var file = getInputFile("#inputConvert");
-  if (isFileValid(file)) {
-    convertFile(idBank, file);
-    resetInputFiles();
+  if (!isFileValid(file)) {
+    showError("No file selected or selected file is empty.");
   } else {
-    $("#modalContent p").html("No file selected or selected file is empty.");
-    $('#modal').modal();
+    convertFile(idBank, file, onConvertEnd);
   }
+  resetInputFiles();
 }
 /* UI init functions */
 function loadChangelog() {

@@ -1,34 +1,36 @@
 var PayMemo = [];
 
-function convertFile(idBank, file) {
+function convertFile(idBank, file, endConvertCallback) {
   var reader = new FileReader();
   reader.readAsText(file, banks[idBank].encoding);
   reader.onload = function (e) {
-    var outData = convertData(idBank, e.target.result, file.name);
-    saveFile(outData, file.name, "converted", ".csv");
+      var result = convertData(idBank, e.target.result, file.name);
+      if (result.status) {
+        saveFile(result.data, file.name, "converted", ".csv");
+      }
+      endConvertCallback(result);
   };
 }
 
-function optimizeFile(file) {
+function optimizeFile(file, errorCallback) {
   var reader = new FileReader();
   reader.readAsText(file, ENCODINGS[1]);
   reader.onload = function (e) {
-    var outData = optimizeData(e.target.result);
-    saveFile(outData, file.name, "optimized", ".xhb");
+    try {
+      var outData = optimizeData(e.target.result);
+      saveFile(outData, file.name, "optimized", ".xhb");
+    } catch (ex) {
+      errorCallback(ex); 
+    }
   };
 }
 
 function saveFile(outData, curfilename, suffix, extension) {
-  if (outData) {
     var blob = new Blob([outData], {
       type: "text/plain;charset=utf-8"
     });
     var filename = getNewFileName(curfilename, suffix, extension);
     saveAs(blob, filename);
-  } else {
-    $("#dialog > p").html("File not supported.");
-    $("#dialog").dialog("open");
-  }
 }
 
 function getNewFileName(filename, suffix, extension) {
@@ -46,9 +48,8 @@ function convertData(idBank, data, filename) {
   var bank = banks[idBank];
   if (bank) {
     return bank.convert(data, filename);
-  } else {
-    return null;
   }
+  throw "Can not find bank for idBank=" + idBank;
 }
 
 function optimizeData(data) {

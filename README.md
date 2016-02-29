@@ -47,11 +47,11 @@ Javascript libraries:
 
 | Library                                                  | version    |
 | -------------------------------------------------------- | ---------- |
-| [jQuery](https://jquery.com/)                            | 2.1.4      |
-| [Bootstrap](http://getbootstrap.com/)                    | 3.3.4      |
-| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2015-03-23 |
-| [Moment.js](http://momentjs.com/)                        | 2.10.2     |
-| [QUnit](http://qunitjs.com/)                             | 1.18.0     |
+| [jQuery](https://jquery.com/)                            | 2.2.1      |
+| [Bootstrap](http://getbootstrap.com/)                    | 3.3.6      |
+| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2015-12-10 |
+| [Moment.js](http://momentjs.com/)                        | 2.11.2     |
+| [QUnit](http://qunitjs.com/)                             | 1.22.0     |
 
 ## Who ? ##
 Developper(s):

@@ -9,6 +9,11 @@ import toInt from '../utils/to-int';
 
 // FORMATTING
 
+addFormatToken('Y', 0, 0, function () {
+    var y = this.year();
+    return y <= 9999 ? '' + y : '+' + y;
+});
+
 addFormatToken(0, ['YY', 2], 0, function () {
     return this.year() % 100;
 });
@@ -29,9 +34,15 @@ addRegexToken('YYYY',   match1to4, match4);
 addRegexToken('YYYYY',  match1to6, match6);
 addRegexToken('YYYYYY', match1to6, match6);
 
-addParseToken(['YYYY', 'YYYYY', 'YYYYYY'], YEAR);
+addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+addParseToken('YYYY', function (input, array) {
+    array[YEAR] = input.length === 2 ? hooks.parseTwoDigitYear(input) : toInt(input);
+});
 addParseToken('YY', function (input, array) {
     array[YEAR] = hooks.parseTwoDigitYear(input);
+});
+addParseToken('Y', function (input, array) {
+    array[YEAR] = parseInt(input, 10);
 });
 
 // HELPERS
@@ -57,4 +68,3 @@ export var getSetYear = makeGetSet('FullYear', false);
 export function getIsLeapYear () {
     return isLeapYear(this.year());
 }
-

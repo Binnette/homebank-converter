@@ -1,3 +1,60 @@
+
+1.22.0 / 2016-02-23
+==================
+
+  * Assert: Implement Assert#pushResult
+  * Assert: Extend Assert methods to QUnit for backwards compatibility
+  * HTML Reporter: Escape setUrl output
+
+1.21.0 / 2016-02-01
+==================
+
+  * Assert: Improve size and speed of QUnit.equiv
+  * Assert: Fully support Object-wrapped primitives in deepEqual
+  * Assert: Register notOk as a non-negative assertion
+  * CSS: Fix hidden test results under static parents
+  * Core: Improve regular expression comparisons
+  * Core: Support filtering by regular expression
+  * Test: Prevents skiping tests after rerun reordering
+  * Tests: Differentiate QUnit.equiv assertions
+
+1.20.0 / 2015-10-27
+==================
+
+  * Assert: Exposes assert.raises() to the global scope
+  * Assert: Add a calls count parameter on assert.async
+  * Build: Improve grunt speed using grunt-concurrent
+  * Core: Implement QUnit.only
+  * Core: Support Symbol types on QUnit.equiv
+  * Core: QUnit.start fails if called with a non-numeric argument
+  * Core: Implement Nested modules
+  * Core: Equivalency for descendants of null constructors
+  * HTML Reporter: Adds indicator for filtered test
+  * HTML Reporter: Collapse details for successive failed tests
+  * Test: Fix regression when a failing test canceled the module hooks
+  * Tests: Isolate and improve tests for Object equivalency
+  * Tests: Split browserstack runs on CI to avoid timeout errors
+
+1.19.0 / 2015-09-01
+==================
+
+  * Assert: Add support to ES6' Map and Set equiv objects
+  * Build: Enable IRC notifications for Travis CI
+  * Build: Add 'Readme' to commitplease components
+  * Build: Remove unintended QUnit global export on Node
+  * Build: Remove testSwarm job
+  * Core: Implement QUnit.stack
+  * Dump: Escape backslash when quoting strings
+  * HTML Reporter: Avoid readyState issue with PhantomJS
+  * HTML Reporter: HTML reporter enhancements for negative asserts
+  * HTML Reporter: Show diff only when it helps
+  * Tests: Avoid loosen errors on autostart test
+  * Tests: HTML Reporter tests are now isolated with reordering disabled
+  * Tests: Rename stack error tests
+  * Test: Release module hooks to avoid memory leaks
+  * Test: Don't pass Promise fulfillment value to QUnit.start
+  * Test: Source Displayed Even for Passed Test
+
 1.18.0 / 2015-04-03
 ==================
 
@@ -226,7 +283,7 @@
   * Add testswarm integration as grunt task
   * Added padding on URL config checkboxes.
   * Cleanup composite addon: Use callback registration instead of overwriting them. Set the correct src on rerun link (and dblclick). Remove the composite test itself, as that was a crazy hack not worth maintaining
-  * Cleanup reset() test and usage - run testDone callback first, to allow listeneres ignoring reset assertions
+  * Cleanup reset() test and usage - run testDone callback first, to allow listeners ignoring reset assertions
   * Double clicking on composite test rows opens individual test page
   * test-message for all message-bearing API reporting details
 
@@ -280,11 +337,11 @@
   * Fix CommonJS export by assigning QUnit to module.exports.
   * Remove the testEnvironmentArg to test(). Most obscure, never used anywhere. test() is still heavily overloaded with argument shifting, this makes it a little more sane. Fixes #172
   * Serialize expected and actual values only when test fails. Speeds up output of valid tests, especially for lots of large objects. Fixes #183
-  * Fix sourceFromsTacktrace to get the right line in Firefox. Shift the 'error' line away in Chrome to get a match.
+  * Fix sourceFromsStacktrace to get the right line in Firefox. Shift the 'error' line away in Chrome to get a match.
   * Fix references to test/deepEqual.js
   * In autorun mode, moduleDone is called without matching moduleStart. Fix issue #184
   * Fixture test: allow anything falsy in test as getAttribute in oldIE will return empty string instead of null. We don't really care.
-  * Keep label and checkbox together ( http://i.imgur.com/5Wk3A.png )
+  * Keep label and checkbox together ( https://i.imgur.com/5Wk3A.png )
   * Add readme for themes
   * Fix bad global in reset()
   * Some cleanup in theme addons
@@ -311,7 +368,7 @@
   * Using node-qunit port, the start/stop function are not exposed so we need to prefix any call to them with 'QUnit'. Aka: start() -> QUnit.start()
   * Remove the 'let teardown clean up globals test' - IE<9 doesn't support (==buggy) deleting window properties, and that's not worth the trouble, as everything else passes just fine. Fixes #155
   * Fix globals in test.js, part 2
-  * Fix globals in test.js. ?tell wwalser to use ?noglobals everyonce in a while
+  * Fix globals in test.js. ?tell wwalser to use ?noglobals every once in a while
   * Extend readme regarding release process
 
 1.1.0 / 2011-10-11
@@ -475,7 +532,7 @@
   * Optimized and cleaned up CSS file
   * Making the reset-method non-global (only module, test and assertions should be global), and fixing the fixture reset by using jQuery's html() method again, doesn't work with innerHTML, yet
   * Introducing #qunit-fixture element, deprecating the (never documented) #main element. Doesn't require inline styles and is now independent of jQuery.
-  * Ammending previous commit: Remove jQuery-core specific resets (will be replaced within jQuery testsuite). Fixes issue #19 - QUnit.reset() removes global jQuery ajax event handlers
+  * Amending previous commit: Remove jQuery-core specific resets (will be replaced within jQuery testsuite). Fixes issue #19 - QUnit.reset() removes global jQuery ajax event handlers
   * Remove jQuery-core specific resets (will be replaced within jQuery testsuite). Fixes issue #19 - QUnit.reset() removes global jQuery ajax event handlers
   * Cleaning up rubble from the previous commit.
   * Added raises assertion, reusing some of kensnyder's code.
@@ -505,8 +562,8 @@
   * Expose QUnit.config, but don't make config a global
   * Expose QUnit.config as global to make external workarounds easier
   * Merge branch 'asyncsetup'
-  * Allowing async setup and teardown. Fixes http://github.com/jquery/qunit/issues#issue/20
-  * Always output expected and actual result (no reason not to). Fixes http://github.com/jquery/qunit/issues#issue/21
+  * Allowing async setup and teardown. Fixes https://github.com/jquery/qunit/issues#issue/20
+  * Always output expected and actual result (no reason not to). Fixes https://github.com/jquery/qunit/issues#issue/21
   * More changes to the detection of types in jsDump's typeOf.
   * Change the typeOf checks in QUnit to be more accurate.
   * Added test for jsDump and modified its options to properly output results when document.createTextNode is used; currently tests for DOM elements cause a stackoverflow error in IEs, works fine, with the correct output, elsewhere
@@ -530,7 +587,7 @@
   * IE 6 and 7 weren't respecting the CSS rules for the banner, used a different technique instead.
   * Went a bit further and made extra-sure that the target was specified correctly.
   * Fixed problem where double-clicking an entry in IE caused an error to occur.
-  * Path for http://dev.jquery.com/ticket/5426 - fix the microformat test result
+  * Path for https://dev.jquery.com/ticket/5426 - fix the microformat test result
   * Fixed test() to use 'expected' 2nd param
   * Remove the named function expressions, to stop Safari 2 from freaking out. Fixes #5.
   * Each test can extend the module testEnvironment
@@ -592,7 +649,7 @@
   * qunit: added missing semicolons
   * qunit: fixed a semicolon, that should have been a comma
   * QUnit: implemented error handling for Opera as proposed by #3628
-  * qunit: fix for http://dev.jquery.com/ticket/3215 changing wording of testresults, to something more positive (x of y passed, z failed)
+  * qunit: fix for https://dev.jquery.com/ticket/3215 changing wording of testresults, to something more positive (x of y passed, z failed)
   * QUnit: testrunner.js: Ensures equality of types (String, Boolean, Number) declared with the 'new' prefix. See comments #3, #4 and #5 on http://philrathe.com/articles/equiv
   * qunit: wrap name of test in span when a module is used for better styling
   * qunit: auto-prepend default mark (#header, #banner, #userAgent, #tests) when not present

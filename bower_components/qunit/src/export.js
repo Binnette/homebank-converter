@@ -1,23 +1,23 @@
+// Deprecated
+// Extend assert methods to QUnit for Backwards compatibility
+(function() {
+	var i,
+		assertions = Assert.prototype;
+
+	function applyCurrent( current ) {
+		return function() {
+			var assert = new Assert( QUnit.config.current );
+			current.apply( assert, arguments );
+		};
+	}
+
+	for ( i in assertions ) {
+		QUnit[ i ] = applyCurrent( assertions[ i ] );
+	}
+})();
+
 // For browser, export only select globals
-if ( typeof window !== "undefined" ) {
-
-	// Deprecated
-	// Extend assert methods to QUnit and Global scope through Backwards compatibility
-	(function() {
-		var i,
-			assertions = Assert.prototype;
-
-		function applyCurrent( current ) {
-			return function() {
-				var assert = new Assert( QUnit.config.current );
-				current.apply( assert, arguments );
-			};
-		}
-
-		for ( i in assertions ) {
-			QUnit[ i ] = applyCurrent( assertions[ i ] );
-		}
-	})();
+if ( defined.document ) {
 
 	(function() {
 		var i, l,
@@ -38,7 +38,8 @@ if ( typeof window !== "undefined" ) {
 				"notDeepEqual",
 				"strictEqual",
 				"notStrictEqual",
-				"throws"
+				"throws",
+				"raises"
 			];
 
 		for ( i = 0, l = keys.length; i < l; i++ ) {

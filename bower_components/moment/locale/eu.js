@@ -2,8 +2,9 @@
 //! locale : euskara (eu)
 //! author : Eneko Illarramendi : https://github.com/eillarra
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../moment')) :
    typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -17,15 +18,15 @@
         weekdaysMin : 'ig_al_ar_az_og_ol_lr'.split('_'),
         longDateFormat : {
             LT : 'HH:mm',
-            LTS : 'LT:ss',
+            LTS : 'HH:mm:ss',
             L : 'YYYY-MM-DD',
             LL : 'YYYY[ko] MMMM[ren] D[a]',
-            LLL : 'YYYY[ko] MMMM[ren] D[a] LT',
-            LLLL : 'dddd, YYYY[ko] MMMM[ren] D[a] LT',
+            LLL : 'YYYY[ko] MMMM[ren] D[a] HH:mm',
+            LLLL : 'dddd, YYYY[ko] MMMM[ren] D[a] HH:mm',
             l : 'YYYY-M-D',
             ll : 'YYYY[ko] MMM D[a]',
-            lll : 'YYYY[ko] MMM D[a] LT',
-            llll : 'ddd, YYYY[ko] MMM D[a] LT'
+            lll : 'YYYY[ko] MMM D[a] HH:mm',
+            llll : 'ddd, YYYY[ko] MMM D[a] HH:mm'
         },
         calendar : {
             sameDay : '[gaur] LT[etan]',

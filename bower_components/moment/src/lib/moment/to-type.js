@@ -14,3 +14,21 @@ export function toArray () {
     var m = this;
     return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
 }
+
+export function toObject () {
+    var m = this;
+    return {
+        years: m.year(),
+        months: m.month(),
+        date: m.date(),
+        hours: m.hours(),
+        minutes: m.minutes(),
+        seconds: m.seconds(),
+        milliseconds: m.milliseconds()
+    };
+}
+
+export function toJSON () {
+    // JSON.stringify(new Date(NaN)) === 'null'
+    return this.isValid() ? this.toISOString() : 'null';
+}

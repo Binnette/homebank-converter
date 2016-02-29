@@ -6,8 +6,9 @@
 //! - Kyungwook, Park : https://github.com/kyungw00k
 //! - Jeeeyul Lee <jeeeyul@gmail.com>
 
-(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('../moment')) :
+;(function (global, factory) {
+   typeof exports === 'object' && typeof module !== 'undefined'
+       && typeof require === 'function' ? factory(require('../moment')) :
    typeof define === 'function' && define.amd ? define(['moment'], factory) :
    factory(global.moment)
 }(this, function (moment) { 'use strict';
@@ -24,8 +25,8 @@
             LTS : 'A h시 m분 s초',
             L : 'YYYY.MM.DD',
             LL : 'YYYY년 MMMM D일',
-            LLL : 'YYYY년 MMMM D일 LT',
-            LLLL : 'YYYY년 MMMM D일 dddd LT'
+            LLL : 'YYYY년 MMMM D일 A h시 m분',
+            LLLL : 'YYYY년 MMMM D일 dddd A h시 m분'
         },
         calendar : {
             sameDay : '오늘 LT',

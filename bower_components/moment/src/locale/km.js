@@ -12,14 +12,14 @@ export default moment.defineLocale('km', {
     weekdaysMin: 'អាទិត្យ_ច័ន្ទ_អង្គារ_ពុធ_ព្រហស្បតិ៍_សុក្រ_សៅរ៍'.split('_'),
     longDateFormat: {
         LT: 'HH:mm',
-        LTS : 'LT:ss',
+        LTS : 'HH:mm:ss',
         L: 'DD/MM/YYYY',
         LL: 'D MMMM YYYY',
-        LLL: 'D MMMM YYYY LT',
-        LLLL: 'dddd, D MMMM YYYY LT'
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd, D MMMM YYYY HH:mm'
     },
     calendar: {
-        sameDay: '[ថ្ងៃនៈ ម៉ោង] LT',
+        sameDay: '[ថ្ងៃនេះ ម៉ោង] LT',
         nextDay: '[ស្អែក ម៉ោង] LT',
         nextWeek: 'dddd [ម៉ោង] LT',
         lastDay: '[ម្សិលមិញ ម៉ោង] LT',

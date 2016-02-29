@@ -1,3 +1,6 @@
+var focused = false;
+var priorityCount = 0;
+
 function Test( settings ) {
 	var i, l;
 
@@ -70,9 +73,11 @@ Test.prototype = {
 
 		config.current = this;
 
+		if ( this.module.testEnvironment ) {
+			delete this.module.testEnvironment.beforeEach;
+			delete this.module.testEnvironment.afterEach;
+		}
 		this.testEnvironment = extend( {}, this.module.testEnvironment );
-		delete this.testEnvironment.beforeEach;
-		delete this.testEnvironment.afterEach;
 
 		this.started = now();
 		runLoggingCallbacks( "testStart", {
@@ -98,14 +103,12 @@ Test.prototype = {
 		this.callbackStarted = now();
 
 		if ( config.notrycatch ) {
-			promise = this.callback.call( this.testEnvironment, this.assert );
-			this.resolvePromise( promise );
+			runTest( this );
 			return;
 		}
 
 		try {
-			promise = this.callback.call( this.testEnvironment, this.assert );
-			this.resolvePromise( promise );
+			runTest( this );
 		} catch ( e ) {
 			this.pushFailure( "Died on test #" + ( this.assertions.length + 1 ) + " " +
 				this.stack + ": " + ( e.message || e ), extractStacktrace( e, 0 ) );
@@ -117,6 +120,11 @@ Test.prototype = {
 			if ( config.blocking ) {
 				QUnit.start();
 			}
+		}
+
+		function runTest( test ) {
+			promise = test.callback.call( test.testEnvironment, test.assert );
+			test.resolvePromise( promise );
 		}
 	},
 
@@ -130,16 +138,19 @@ Test.prototype = {
 		return function runHook() {
 			config.current = test;
 			if ( config.notrycatch ) {
-				promise = hook.call( test.testEnvironment, test.assert );
-				test.resolvePromise( promise, hookName );
+				callHook();
 				return;
 			}
 			try {
-				promise = hook.call( test.testEnvironment, test.assert );
-				test.resolvePromise( promise, hookName );
+				callHook();
 			} catch ( error ) {
 				test.pushFailure( hookName + " failed on " + test.testName + ": " +
-					( error.message || error ), extractStacktrace( error, 0 ) );
+				( error.message || error ), extractStacktrace( error, 0 ) );
+			}
+
+			function callHook() {
+				promise = hook.call( test.testEnvironment, test.assert );
+				test.resolvePromise( promise, hookName );
 			}
 		};
 	},
@@ -148,16 +159,20 @@ Test.prototype = {
 	hooks: function( handler ) {
 		var hooks = [];
 
+		function processHooks( test, module ) {
+			if ( module.parentModule ) {
+				processHooks( test, module.parentModule );
+			}
+			if ( module.testEnvironment &&
+				QUnit.objectType( module.testEnvironment[ handler ] ) === "function" ) {
+				hooks.push( test.queueHook( module.testEnvironment[ handler ], handler ) );
+			}
+		}
+
 		// Hooks are ignored on skipped tests
-		if ( this.skip ) {
-			return hooks;
+		if ( !this.skip ) {
+			processHooks( this, this.module );
 		}
-
-		if ( this.module.testEnvironment &&
-				QUnit.objectType( this.module.testEnvironment[ handler ] ) === "function" ) {
-			hooks.push( this.queueHook( this.module.testEnvironment[ handler ], handler ) );
-		}
-
 		return hooks;
 	},
 
@@ -202,6 +217,9 @@ Test.prototype = {
 			assertions: this.assertions,
 			testId: this.testId,
 
+			// Source of Test
+			source: this.stack,
+
 			// DEPRECATED: this property will be removed in 2.0.0, use runtime instead
 			duration: this.runtime
 		});
@@ -215,7 +233,7 @@ Test.prototype = {
 	},
 
 	queue: function() {
-		var bad,
+		var priority,
 			test = this;
 
 		if ( !this.valid() ) {
@@ -231,7 +249,6 @@ Test.prototype = {
 				},
 
 				test.hooks( "beforeEach" ),
-
 				function() {
 					test.run();
 				},
@@ -247,32 +264,30 @@ Test.prototype = {
 			]);
 		}
 
-		// `bad` initialized at top of scope
-		// defer when previous test run passed, if storage is available
-		bad = QUnit.config.reorder && defined.sessionStorage &&
+		// Prioritize previously failed tests, detected from sessionStorage
+		priority = QUnit.config.reorder && defined.sessionStorage &&
 				+sessionStorage.getItem( "qunit-test-" + this.module.name + "-" + this.testName );
 
-		if ( bad ) {
-			run();
-		} else {
-			synchronize( run, true );
-		}
+		return synchronize( run, priority );
 	},
 
-	push: function( result, actual, expected, message ) {
+	pushResult: function( resultInfo ) {
+
+		// resultInfo = { result, actual, expected, message, negative }
 		var source,
 			details = {
 				module: this.module.name,
 				name: this.testName,
-				result: result,
-				message: message,
-				actual: actual,
-				expected: expected,
+				result: resultInfo.result,
+				message: resultInfo.message,
+				actual: resultInfo.actual,
+				expected: resultInfo.expected,
 				testId: this.testId,
+				negative: resultInfo.negative || false,
 				runtime: now() - this.started
 			};
 
-		if ( !result ) {
+		if ( !resultInfo.result ) {
 			source = sourceFromStacktrace();
 
 			if ( source ) {
@@ -283,13 +298,13 @@ Test.prototype = {
 		runLoggingCallbacks( "log", details );
 
 		this.assertions.push({
-			result: !!result,
-			message: message
+			result: !!resultInfo.result,
+			message: resultInfo.message
 		});
 	},
 
 	pushFailure: function( message, source, actual ) {
-		if ( !this instanceof Test ) {
+		if ( !( this instanceof Test ) ) {
 			throw new Error( "pushFailure() assertion outside test context, was " +
 				sourceFromStacktrace( 2 ) );
 		}
@@ -325,7 +340,7 @@ Test.prototype = {
 				QUnit.stop();
 				then.call(
 					promise,
-					QUnit.start,
+					function() { QUnit.start(); },
 					function( error ) {
 						message = "Promise rejected " +
 							( !phase ? "during" : phase.replace( /Each$/, "" ) ) +
@@ -344,10 +359,21 @@ Test.prototype = {
 	},
 
 	valid: function() {
-		var include,
-			filter = config.filter && config.filter.toLowerCase(),
+		var filter = config.filter,
+			regexFilter = /^(!?)\/([\w\W]*)\/(i?$)/.exec( filter ),
 			module = QUnit.urlParams.module && QUnit.urlParams.module.toLowerCase(),
-			fullName = ( this.module.name + ": " + this.testName ).toLowerCase();
+			fullName = ( this.module.name + ": " + this.testName );
+
+		function testInModuleChain( testModule ) {
+			var testModuleName = testModule.name ? testModule.name.toLowerCase() : null;
+			if ( testModuleName === module ) {
+				return true;
+			} else if ( testModule.parentModule ) {
+				return testInModuleChain( testModule.parentModule );
+			} else {
+				return false;
+			}
+		}
 
 		// Internally-generated tests are always valid
 		if ( this.callback && this.callback.validTest ) {
@@ -358,7 +384,7 @@ Test.prototype = {
 			return false;
 		}
 
-		if ( module && ( !this.module.name || this.module.name.toLowerCase() !== module ) ) {
+		if ( module && !testInModuleChain( this.module ) ) {
 			return false;
 		}
 
@@ -366,7 +392,23 @@ Test.prototype = {
 			return true;
 		}
 
-		include = filter.charAt( 0 ) !== "!";
+		return regexFilter ?
+			this.regexFilter( !!regexFilter[1], regexFilter[2], regexFilter[3], fullName ) :
+			this.stringFilter( filter, fullName );
+	},
+
+	regexFilter: function( exclude, pattern, flags, fullName ) {
+		var regex = new RegExp( pattern, flags );
+		var match = regex.test( fullName );
+
+		return match !== exclude;
+	},
+
+	stringFilter: function( filter, fullName ) {
+		filter = filter.toLowerCase();
+		fullName = fullName.toLowerCase();
+
+		var include = filter.charAt( 0 ) !== "!";
 		if ( !include ) {
 			filter = filter.slice( 1 );
 		}
@@ -379,7 +421,6 @@ Test.prototype = {
 		// Otherwise, do the opposite
 		return !include;
 	}
-
 };
 
 // Resets the test setup. Useful for tests that modify the DOM.
@@ -392,7 +433,7 @@ QUnit.reset = function() {
 
 	// Return on non-browser environments
 	// This is necessary to not break on node tests
-	if ( typeof window === "undefined" ) {
+	if ( !defined.document ) {
 		return;
 	}
 
@@ -438,4 +479,127 @@ function generateHash( module, testName ) {
 	}
 
 	return hex.slice( -8 );
+}
+
+function synchronize( callback, priority ) {
+	var last = !priority;
+
+	if ( QUnit.objectType( callback ) === "array" ) {
+		while ( callback.length ) {
+			synchronize( callback.shift() );
+		}
+		return;
+	}
+
+	if ( priority ) {
+		config.queue.splice( priorityCount++, 0, callback );
+	} else {
+		config.queue.push( callback );
+	}
+
+	if ( config.autorun && !config.blocking ) {
+		process( last );
+	}
+}
+
+function saveGlobal() {
+	config.pollution = [];
+
+	if ( config.noglobals ) {
+		for ( var key in global ) {
+			if ( hasOwn.call( global, key ) ) {
+
+				// in Opera sometimes DOM element ids show up here, ignore them
+				if ( /^qunit-test-output/.test( key ) ) {
+					continue;
+				}
+				config.pollution.push( key );
+			}
+		}
+	}
+}
+
+function checkPollution() {
+	var newGlobals,
+		deletedGlobals,
+		old = config.pollution;
+
+	saveGlobal();
+
+	newGlobals = diff( config.pollution, old );
+	if ( newGlobals.length > 0 ) {
+		QUnit.pushFailure( "Introduced global variable(s): " + newGlobals.join( ", " ) );
+	}
+
+	deletedGlobals = diff( old, config.pollution );
+	if ( deletedGlobals.length > 0 ) {
+		QUnit.pushFailure( "Deleted global variable(s): " + deletedGlobals.join( ", " ) );
+	}
+}
+
+// Will be exposed as QUnit.asyncTest
+function asyncTest( testName, expected, callback ) {
+	if ( arguments.length === 2 ) {
+		callback = expected;
+		expected = null;
+	}
+
+	QUnit.test( testName, expected, callback, true );
+}
+
+// Will be exposed as QUnit.test
+function test( testName, expected, callback, async ) {
+	if ( focused )  { return; }
+
+	var newTest;
+
+	if ( arguments.length === 2 ) {
+		callback = expected;
+		expected = null;
+	}
+
+	newTest = new Test({
+		testName: testName,
+		expected: expected,
+		async: async,
+		callback: callback
+	});
+
+	newTest.queue();
+}
+
+// Will be exposed as QUnit.skip
+function skip( testName ) {
+	if ( focused )  { return; }
+
+	var test = new Test({
+		testName: testName,
+		skip: true
+	});
+
+	test.queue();
+}
+
+// Will be exposed as QUnit.only
+function only( testName, expected, callback, async ) {
+	var newTest;
+
+	if ( focused )  { return; }
+
+	QUnit.config.queue.length = 0;
+	focused = true;
+
+	if ( arguments.length === 2 ) {
+		callback = expected;
+		expected = null;
+	}
+
+	newTest = new Test({
+		testName: testName,
+		expected: expected,
+		async: async,
+		callback: callback
+	});
+
+	newTest.queue();
 }
