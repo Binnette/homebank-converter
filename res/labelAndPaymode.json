@@ -6,7 +6,7 @@
   }, {
     "Index": "4",
     "Name": "Transfer",
-    "memos": ["^VIREMENT DE", "^VIREMENT EMIS", "^VIREMENT POUR"]
+    "memos": ["^VIREMENT DE", "^VIREMENT EMIS", "^VIREMENT POUR", "^VERSEMENT VIREMENT DE"]
   }, {
     "Index": "6",
     "Name": "Debit card",
