@@ -14,7 +14,7 @@
   }, {
     "Index": "7",
     "Name": "Standing order",
-    "memos": ["^PRELEVEMENT"]
+    "memos": ["^PRELEVEMENT", "^VIREMENT PERMANENT"]
   }, {
     "Index": "9",
     "Name": "Deposit",
