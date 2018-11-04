@@ -72,6 +72,21 @@ QUnit.test("convertBanquePostale - pay modes", function (assert) {
   assert.deepEqual(line, "11-21-14;6;;;CREDIT CARTE BANCAIRE CARREFOUR;11,59;;", "Debit card - CREDIT CARTE BANCAIRE");
 
   line = convertBanquePostale([
+      "04/11/2018", "RETRAIT THISBANK 04.11.18 EUR 20,00 CARTE NO 666", "20,00", ""
+    ]);
+  assert.deepEqual(line, "11-04-18;6;;;RETRAIT THISBANK 04.11.18 EUR 20,00 CARTE NO 666;20,00;;", "Debit card - RETRAIT ");
+
+  line = convertBanquePostale([
+      "04/11/2018", "COMMISSION PAIEMENT PAR CARTE 04.11.18 EUR 0,99 CARTE NO 777", "0,99", ""
+    ]);
+  assert.deepEqual(line, "11-04-18;6;;;COMMISSION PAIEMENT PAR CARTE 04.11.18 EUR 0,99 CARTE NO 777;0,99;;", "Debit card - COMMISSION PAIEMENT PAR CARTE[space]");
+
+  line = convertBanquePostale([
+      "04/11/2018", "COMMISSION PAIEMENT PAR CARTE", "0,99", ""
+    ]);
+  assert.deepEqual(line, "11-04-18;6;;;COMMISSION PAIEMENT PAR CARTE;0,99;;", "Debit card - COMMISSION PAIEMENT PAR CARTE");
+
+  line = convertBanquePostale([
       "04/11/2014", "PRELEVEMENT DE OPERATEUR TELEPHONE MOBILE", "-10,00", "-22,44"
     ]);
   assert.deepEqual(line, "11-04-14;7;;;PRELEVEMENT DE OPERATEUR TELEPHONE MOBILE;-10,00;;", "Standing order - PRELEVEMENT");
