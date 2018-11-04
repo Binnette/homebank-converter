@@ -41,7 +41,7 @@ It will try to guess "paymode" by analysing the "memo" of your files.
 | 9          | Deposit            |
 | 10         | FI fee             |
 
-To see supported memo, open file: res/labelAndPaymode.json
+To see supported memo, open file: [labelAndPaymode.json](/res/labelAndPaymode.json)
 
 ### Convert export bank file ###
 Supported files:
