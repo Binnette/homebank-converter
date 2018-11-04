@@ -63,7 +63,7 @@ function getSeparator(filename, separators) {
   if (separator) {
     return separator;
   }
-  throw "Input file must have a supported file extension"; 
+  throw "Input file must have a supported file extension";
 }
 
 function convert(data, filename) {
