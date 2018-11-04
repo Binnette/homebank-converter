@@ -1,6 +1,16 @@
 // http://encoding.spec.whatwg.org/#names-and-labels
 var ENCODINGS = ["ascii", "utf-8"];
 
+function getBankIndexByName(name) {
+  var res;
+  banks.forEach(function(b, i) {
+    if (b.name === name) {
+      res = i;
+    }
+  });
+  return res;
+}
+
 function getSupportedFiles() {
   var supp = "";
   for (var id in this.separators) {
@@ -12,6 +22,7 @@ function getSupportedFiles() {
 }
 
 function getLineNumOfFirstDataRow(lines, header) {
+  debugger;
   for (var i = 0; i < lines.length; i++) {
     var line = lines[i];
     if (line.indexOf(header) === 0) {
@@ -138,6 +149,20 @@ function convertBoobank(fields) {
   return (date + ";;;;" + trimMemo(memo) + ";" + amount + ";;");
 }
 
+function convertBnpParibasFortis(fields) {
+  var date = moment(fields[1], 'DD/MM/YYYY');
+  if (!date.isValid()) {
+    throw "Invalid date: " + fields[1];
+  }
+  date = date.format('MM-DD-YY');
+  var memo = "";
+  memo += addSymbol(trimMemo(fields[5]), ", ");
+  memo += fields[6]
+  var paymode = getPayModeFromMemo(memo.toUpperCase());
+  var amount = fields[3];
+  return (date + ";" + paymode + ";;;" + trimMemo(memo) + ";" + amount + ";;");
+}
+
 function bank(name, encoding, firstField, minFieldCount, convertLine, separators, headSeparators) {
   // default
   this.convert = convert;
@@ -155,5 +180,6 @@ function bank(name, encoding, firstField, minFieldCount, convertLine, separators
 
 var banks = [];
 banks.push(new bank("Banque Postale", "ascii", "Date", 3, convertBanquePostale, { "csv": ";", "tsv": "\t" }, null));
+banks.push(new bank("BNP Paribas Fortis", "ascii", "Numéro de séquence", 8, convertBnpParibasFortis, { "csv": ";" }, null));
 banks.push(new bank("Boobank", "utf-8", "id", 9, convertBoobank, { "csv": ";" }, null));
 banks.push(new bank("PayPal", "ascii", "Date", 16, convertPaypal, { "csv": '","', "txt": '"\t"' }, { "csv": ',', "txt": '\t' }));

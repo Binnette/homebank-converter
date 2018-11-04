@@ -165,7 +165,8 @@ QUnit.test("Banque Postale - csv file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(0, data, inputFilename);
+      var index = getBankIndexByName("Banque Postale");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
@@ -190,7 +191,8 @@ QUnit.test("Banque Postale - tsv file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(0, data, inputFilename);
+      var index = getBankIndexByName("Banque Postale");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
@@ -207,6 +209,32 @@ QUnit.test("Banque Postale - tsv file", function (assert) {
   });
 });
 
+QUnit.test("BNP Paribas Fortis - csv file", function (assert) {
+  var done = assert.async();
+  var inputFilename = "bnpParibasFortis.csv";
+  var expectedFilename = "bnpParibasFortis_converted.csv";
+  var converted, expected;
+
+  $.when(
+    $.get("res/tests/" + inputFilename, function (data) {
+      var index = getBankIndexByName("BNP Paribas Fortis");
+      converted = convertData(index, data, inputFilename);
+    }),
+    $.get("res/tests/" + expectedFilename, function (data) {
+      expected = {
+        status: true,
+        data: data,
+        message: "",
+        errors: []
+      };
+    })
+  ).then(function () {
+    assert.deepEqual(converted.data.split("\n").length, 17, "converted.length = 17");
+    assert.deepEqual(converted, expected, "Convert a file of 17 lines.");
+    done();
+  });
+});
+
 QUnit.test("Boobank - csv file", function (assert) {
   var done = assert.async();
   var inputFilename = "boobank.csv";
@@ -215,7 +243,8 @@ QUnit.test("Boobank - csv file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(1, data, inputFilename);
+      var index = getBankIndexByName("Boobank");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
@@ -240,7 +269,8 @@ QUnit.test("Paypal - csv file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(2, data, inputFilename);
+      var index = getBankIndexByName("PayPal");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
@@ -265,7 +295,8 @@ QUnit.test("Paypal - txt file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(2, data, inputFilename);
+      var index = getBankIndexByName("PayPal");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
@@ -292,7 +323,8 @@ QUnit.test("Banque Postale - csv file", function (assert) {
 
   $.when(
     $.get("res/tests/" + inputFilename, function (data) {
-      converted = convertData(0, data, inputFilename);
+      var index = getBankIndexByName("Banque Postale");
+      converted = convertData(index, data, inputFilename);
     }),
     $.get("res/tests/" + expectedFilename, function (data) {
       expected = {
