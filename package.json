@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Binnette/homebank-converter#readme",
   "dependencies": {
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "file-saver": "^2.0.2",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
