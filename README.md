@@ -64,18 +64,18 @@ This application use Html/JavaScript/CSS and is under the terms of the licence G
 
 Javascript libraries:
 
-| Library                                                  | version    |
-| -------------------------------------------------------- | ---------- |
-| [jQuery](https://jquery.com/)                            | 2.2.1      |
-| [Bootstrap](http://getbootstrap.com/)                    | 3.3.6      |
-| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2015-12-10 |
-| [Moment.js](http://momentjs.com/)                        | 2.11.2     |
-| [QUnit](http://qunitjs.com/)                             | 1.22.0     |
+| Library                                                  | version |
+| -------------------------------------------------------- | ------- |
+| [jQuery](https://jquery.com/)                            | 3.4.1   |
+| [Bootstrap](http://getbootstrap.com/)                    | 3.4.1   |
+| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2.0.2   |
+| [Moment.js](http://momentjs.com/)                        | 2.24.0  |
+| [QUnit](http://qunitjs.com/)                             | 2.9.2   |
 
 ## Who ? ##
 Developper(s):
 
-* Binnette <binnette[at]gmail[dot]com>
+* Binnette <binnette [at] gmail /dot/ com>
   * https://github.com/Binnette
   * https://bitbucket.org/Binnette
 
