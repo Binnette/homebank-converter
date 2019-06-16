@@ -22,7 +22,6 @@ function getSupportedFiles() {
 }
 
 function getLineNumOfFirstDataRow(lines, header) {
-  debugger;
   for (var i = 0; i < lines.length; i++) {
     var line = lines[i];
     if (line.indexOf(header) === 0) {
@@ -111,7 +110,7 @@ function convert(data, filename) {
 function convertBanquePostale(fields) {
   var date = moment(fields[0], 'DD/MM/YYYY');
   if (!date.isValid()) {
-    throw "Invalid date: " + fields[0];
+    throw new Error("Invalid date: " + fields[0]);
   }
   date = date.format('MM-DD-YY');
   var memo = trimSymbol(fields[1], '"');
@@ -123,7 +122,7 @@ function convertBanquePostale(fields) {
 function convertPaypal(fields) {
   var date = moment(fields[0], 'DD/MM/YYYY');
   if (!date.isValid()) {
-    throw "Invalid date: " + fields[0];
+    throw new Error("Invalid date: " + fields[0]);
   }
   date = date.format('MM-DD-YY');
   var memo = "";
@@ -139,7 +138,7 @@ function convertPaypal(fields) {
 function convertBoobank(fields) {
   var date = moment(fields[1], 'YYYY-MM-DD');
   if (!date.isValid()) {
-    throw "Invalid date: " + fields[1];
+    throw new Error("Invalid date: " + fields[1]);
   }
   date = date.format('MM-DD-YY');
   var memo = "";
@@ -152,7 +151,7 @@ function convertBoobank(fields) {
 function convertBnpParibasFortis(fields) {
   var date = moment(fields[1], 'DD/MM/YYYY');
   if (!date.isValid()) {
-    throw "Invalid date: " + fields[1];
+    throw new Error("Invalid date: " + fields[1]);
   }
   date = date.format('MM-DD-YY');
   var memo = "";

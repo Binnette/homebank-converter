@@ -1,0 +1,32 @@
+{
+  "name": "homebank-converter",
+  "version": "0.15.0",
+  "description": "Convert an export bank file to compatible Homebank csv.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Binnette/homebank-converter.git"
+  },
+  "keywords": [
+    "homebank",
+    "bank",
+    "csv",
+    "converter"
+  ],
+  "author": "Binnette <binnette@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Binnette/homebank-converter/issues"
+  },
+  "homepage": "https://github.com/Binnette/homebank-converter#readme",
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "file-saver": "^2.0.2",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "qunit": "^2.9.2"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
+  }
+}

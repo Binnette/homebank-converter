@@ -8,7 +8,7 @@
   <title>homebank-converter</title>
   <link href="res/favicon.ico" type="image/x-icon" rel="icon" />
   <link href="res/hc128px.png" rel="apple-touch-icon">
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/lavish-bootstrap.css" rel="stylesheet" />
   <link href="css/hc.css" rel="stylesheet" />
 </head>
@@ -240,8 +240,8 @@
             <p>A web app to convert an export bank file to compatible <a href="http://homebank.free.fr/">Homebank</a> csv.</p>
             <p>Author: <a href="https://github.com/Binnette">Binnette</a>
             </p>
-            <p>Version: v0.14.0 (2018-11-04)</p>
-            <p>Licence: <a href="http://www.gnu.org/licenses/agpl-3.0.en.html">AGPL v3</a>
+            <p>Version: v0.15.0 (2019-06-16)</p>
+            <p>Licence: <a href="https://opensource.org/licenses/MIT">MIT</a>
             </p>
             <a class="btn btn-primary" href="https://github.com/Binnette/homebank-converter" role="button">View project on GitHub</a>
             <a class="btn btn-primary" href="tests.html" role="button">Run tests</a>
@@ -256,11 +256,13 @@
           </div>
           <div class="panel-body">
             <ul>
-              <li><a href="https://www.mozilla.org/en-US/firefox/">Firefox 44.0</a>
+              <li><a href="https://www.mozilla.org/en-US/firefox/">Firefox 67</a>
               </li>
-              <li><a href="http://www.chromium.org/">Chromium 48.0.2564.82</a>
+              <li><a href="http://www.chromium.org/">Chromium 73</a>
               </li>
-              <li><a href="https://www.google.com/chrome">Chrome 48.0.2564.116</a>
+              <li><a href="https://www.google.com/chrome">Chrome 73</a>
+              </li>
+              <li><a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge 44</a>
               </li>
               <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer 11</a>
               </li>
@@ -287,15 +289,15 @@
           </div>
           <div class="panel-body">
             <ul>
-              <li><a href="http://jquery.com/">jQuery 2.2.1</a>
+              <li><a href="http://jquery.com/">jQuery 3.4.1</a>
               </li>
-              <li><a href="http://getbootstrap.com/">Bootstrap 3.3.6</a>
+              <li><a href="http://getbootstrap.com/">Bootstrap 3.3.7</a>
               </li>
-              <li><a href="https://github.com/eligrey/FileSaver.js">FileSaver.js 2015-12-10</a>
+              <li><a href="https://github.com/eligrey/FileSaver.js">FileSaver.js 2.0.2</a>
               </li>
-              <li><a href="http://momentjs.com/">Moment.js 2.11.2</a>
+              <li><a href="http://momentjs.com/">Moment.js 2.24.0</a>
               </li>
-              <li><a href="http://qunitjs.com/">QUnit 1.22.0</a>
+              <li><a href="http://qunitjs.com/">QUnit 2.9.2</a>
               </li>
             </ul>
           </div>
@@ -323,13 +325,13 @@
 
   </div>
 
-  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
   <script src="js/banks.js" type="text/javascript"></script>
   <script src="js/converter.js" type="text/javascript"></script>
   <script src="js/converter-ui.js" type="text/javascript"></script>
-  <script src="bower_components/file-saver/FileSaver.min.js" type="text/javascript"></script>
-  <script src="bower_components/moment/min/moment.min.js" type="text/javascript"></script>
+  <script src="node_modules/file-saver/dist/FileSaver.min.js" type="text/javascript"></script>
+  <script src="node_modules/moment/min/moment.min.js" type="text/javascript"></script>
 </body>
 
 </html>

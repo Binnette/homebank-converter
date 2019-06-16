@@ -149,7 +149,9 @@ QUnit.test("convertBanquePostale", function (assert) {
     convertBanquePostale([
       "25/13/2015", "TRANSACTION", "-500,00", ""
     ]);
-  }, "Invalid date: 25/13/2015", "Wrong date 25/13/2015.");
+  },
+  new Error("Invalid date: 25/13/2015"),
+  "Wrong date 25/13/2015.");
 });
 
 QUnit.test("convertBoobank", function (assert) {
@@ -157,7 +159,9 @@ QUnit.test("convertBoobank", function (assert) {
     convertBoobank([
       "", "2015-13-20", "", "", "memo2", "", "", "memo1", "-10,20"
     ]);
-  }, "Invalid date: 2015-13-20", "Wrong date 2015-13-20.");
+  },
+  new Error("Invalid date: 2015-13-20"),
+  "Wrong date 2015-13-20.");
 });
 
 QUnit.test("convertPaypal", function (assert) {
@@ -167,7 +171,9 @@ QUnit.test("convertPaypal", function (assert) {
       "memo4", "", "", "memo1", "", "", "", "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "", "", "", ""
     ]);
-  }, "Invalid date: 30/13/2015", "Wrong date 30/13/2015.");
+  },
+  new Error("Invalid date: 30/13/2015"),
+  "Wrong date 30/13/2015.");
 });
 
 QUnit.module("Convert whole files");
@@ -347,11 +353,11 @@ QUnit.test("Banque Postale - csv file", function (assert) {
         data: data,
         message: "",
         errors: [
-          'Error on line: 38. Invalid date:            "SANS DATE NI COMA    "',
+          'Error on line: 38. Error: Invalid date:            "SANS DATE NI COMA    "',
           'Error on line: 58. Line does not have enough fields. Found: 2. Minimum: 3.',
           'Error on line: 65. Line does not have enough fields. Found: 1. Minimum: 3.',
-          'Error on line: 80. Invalid date:           ',
-          'Error on line: 98. Invalid date: 29/02/2003'
+          'Error on line: 80. Error: Invalid date:           ',
+          'Error on line: 98. Error: Invalid date: 29/02/2003'
         ]
       };
     })
