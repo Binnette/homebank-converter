@@ -1,6 +1,6 @@
 {
   "name": "homebank-converter",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "Convert an export bank file to compatible Homebank csv.",
   "main": "index.html",
   "repository": {
@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/Binnette/homebank-converter#readme",
   "dependencies": {
-    "bootstrap": "3.4.1",
+    "bootstrap": "^3.4.1",
     "file-saver": "^2.0.2",
-    "jquery": "^3.4.1",
-    "moment": "^2.24.0",
-    "qunit": "^2.9.2"
+    "jquery": "^3.5.1",
+    "moment": "^2.29.1",
+    "qunit": "^2.11.3"
   },
   "engines": {
-    "yarn": ">= 1.0.0"
+    "yarn": ">= 1.22.10"
   }
 }

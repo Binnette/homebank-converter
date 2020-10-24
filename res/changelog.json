@@ -1,5 +1,10 @@
 [
   {
+    "date": "2020-10-24",
+    "version": "v0.16.0",
+    "comment": "update libs."
+  },
+  {
     "date": "2019-06-16",
     "version": "v0.15.0",
     "comment": "use yarn, MIT license, update libs."
