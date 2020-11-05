@@ -1,10 +1,7 @@
 # homebank-converter #
 
 ## Usage ##
-
-Choose one:
 * [homebank-converter (github.io)](http://binnette.github.io/homebank-converter/)
-* [homebank-converter (azure.com)](http://binnette.westeurope.cloudapp.azure.com/hbc/)
 
 ### Example ###
 1. Go on PayPal web site
