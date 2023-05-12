@@ -4,52 +4,52 @@
 
 bootstrap@^3.4.1:
   version "3.4.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72"
+  resolved "https://registry.npmjs.org/bootstrap/-/bootstrap-3.4.1.tgz"
   integrity sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA==
 
 commander@6.0.0:
   version "6.0.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-6.0.0.tgz#2b270da94f8fb9014455312f829a1129dbf8887e"
+  resolved "https://registry.npmjs.org/commander/-/commander-6.0.0.tgz"
   integrity sha512-s7EA+hDtTYNhuXkTlhqew4txMZVdszBmKWSPEMxGr8ru8JXR7bLUFIAtPhcSuFdJQ0ILMxnJi8GkQL0yvDy/YA==
 
 file-saver@^2.0.2:
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.2.tgz#06d6e728a9ea2df2cce2f8d9e84dfcdc338ec17a"
+  resolved "https://registry.npmjs.org/file-saver/-/file-saver-2.0.2.tgz"
   integrity sha512-Wz3c3XQ5xroCxd1G8b7yL0Ehkf0TC9oYC6buPFkNnU9EnaPlifeAFCyCh+iewXTyFRcg0a6j3J7FmJsIhlhBdw==
 
 globalyzer@^0.1.0:
   version "0.1.4"
-  resolved "https://registry.yarnpkg.com/globalyzer/-/globalyzer-0.1.4.tgz#bc8e273afe1ac7c24eea8def5b802340c5cc534f"
+  resolved "https://registry.npmjs.org/globalyzer/-/globalyzer-0.1.4.tgz"
   integrity sha512-LeguVWaxgHN0MNbWC6YljNMzHkrCny9fzjmEUdnF1kQ7wATFD1RHFRqA1qxaX2tgxGENlcxjOflopBwj3YZiXA==
 
 globrex@^0.1.1:
   version "0.1.2"
-  resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
+  resolved "https://registry.npmjs.org/globrex/-/globrex-0.1.2.tgz"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
 
 jquery@^3.5.1:
   version "3.5.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
+  resolved "https://registry.npmjs.org/jquery/-/jquery-3.5.1.tgz"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
 
 js-reporters@1.2.3:
   version "1.2.3"
-  resolved "https://registry.yarnpkg.com/js-reporters/-/js-reporters-1.2.3.tgz#8febcab370539df62e09b95da133da04b11f6168"
+  resolved "https://registry.npmjs.org/js-reporters/-/js-reporters-1.2.3.tgz"
   integrity sha512-2YzWkHbbRu6LueEs5ZP3P1LqbECvAeUJYrjw3H4y1ofW06hqCS0AbzBtLwbr+Hke51bt9CUepJ/Fj1hlCRIF6A==
 
-moment@^2.29.1:
-  version "2.29.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
-  integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.npmjs.org/moment/-/moment-2.29.4.tgz"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 node-watch@0.6.4:
   version "0.6.4"
-  resolved "https://registry.yarnpkg.com/node-watch/-/node-watch-0.6.4.tgz#50e564046eb7be15151c25f9c5aac4b5f495c291"
+  resolved "https://registry.npmjs.org/node-watch/-/node-watch-0.6.4.tgz"
   integrity sha512-cI6CHzivIFESe8djiK3Wh90CtWQBxLwMem8x8S+2GSvCvFgoMuOKVlfJtQ/2v3Afg3wOnHl/+tXotEs8z5vOrg==
 
 qunit@^2.11.3:
   version "2.11.3"
-  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.11.3.tgz#2f3f6598c9fc360cf52d0bdbf3db92962ec370d9"
+  resolved "https://registry.npmjs.org/qunit/-/qunit-2.11.3.tgz"
   integrity sha512-38gyZblz6kjV4G+6cn18Vvsh3ESnCXH9YXtfMJQGpKXWzLzUj8W/8iUewP+TsLwv95GQUXtMf2nl8h1iKsybFA==
   dependencies:
     commander "6.0.0"
@@ -59,7 +59,7 @@ qunit@^2.11.3:
 
 tiny-glob@0.2.6:
   version "0.2.6"
-  resolved "https://registry.yarnpkg.com/tiny-glob/-/tiny-glob-0.2.6.tgz#9e056e169d9788fe8a734dfa1ff02e9b92ed7eda"
+  resolved "https://registry.npmjs.org/tiny-glob/-/tiny-glob-0.2.6.tgz"
   integrity sha512-A7ewMqPu1B5PWwC3m7KVgAu96Ch5LA0w4SnEN/LbDREj/gAD0nPWboRbn8YoP9ISZXqeNAlMvKSKoEuhcfK3Pw==
   dependencies:
     globalyzer "^0.1.0"
