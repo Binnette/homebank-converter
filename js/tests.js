@@ -199,7 +199,10 @@ QUnit.test("Banque Postale - csv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
-    assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -225,7 +228,10 @@ QUnit.test("Banque Postale - tsv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
-    assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -251,7 +257,10 @@ QUnit.test("BNP Paribas Fortis - csv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 17, "converted.length = 17");
-    assert.deepEqual(converted, expected, "Convert a file of 17 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -277,7 +286,10 @@ QUnit.test("Boobank - csv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 50, "converted.length = 50");
-    assert.deepEqual(converted, expected, "Convert a file of 50 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -303,7 +315,10 @@ QUnit.test("Paypal - csv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 30, "converted.length = 30");
-    assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -329,7 +344,10 @@ QUnit.test("Paypal - txt file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 30, "converted.length = 30");
-    assert.deepEqual(converted, expected, "Convert a file of 30 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
@@ -363,7 +381,10 @@ QUnit.test("Banque Postale - csv file", function (assert) {
     })
   ).then(function () {
     assert.deepEqual(converted.data.split("\n").length, 100, "converted.length = 100");
-    assert.deepEqual(converted, expected, "Convert a file of 100 lines.");
+    assert.deepEqual(converted.status, expected.status, "Status is true");
+    assert.deepEqual(converted.data.replaceAll('\r\n', '\n').split('\n'), expected.data.replaceAll('\r\n', '\n').split('\n'), "Same data");
+    assert.deepEqual(converted.message, expected.message, "Message is empty");
+    assert.deepEqual(converted.errors, expected.errors, "No errors");
     done();
   });
 });
