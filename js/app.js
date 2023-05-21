@@ -1,6 +1,6 @@
 import $ from './jquery';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import '../css/lavish-bootstrap.css';
 import '../css/hc.css';
