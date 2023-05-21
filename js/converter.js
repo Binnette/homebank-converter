@@ -1,97 +1,108 @@
-var PayMemo = [];
+import $ from 'jquery';
+import {ENCODINGS, banks} from './banks';
+import {saveAs} from 'file-saver';
 
-function convertFile(idBank, file, endConvertCallback) {
-  var reader = new FileReader();
-  reader.readAsText(file, banks[idBank].encoding);
+let PayMemo = [];
+
+export function convertFile(idBank, file, encoding, endConvertCallback) {
+  const reader = new FileReader();
+  reader.readAsText(file, encoding);
   reader.onload = function (e) {
-      var result = convertData(idBank, e.target.result, file.name);
-      if (result.status) {
-        saveFile(result.data, file.name, "converted", ".csv");
-      }
-      endConvertCallback(result);
+    const result = convertData(idBank, e.target.result, file.name);
+    if (result.status) {
+      saveFile(result.data, file.name, 'converted', '.csv');
+    }
+
+    endConvertCallback(result);
   };
 }
 
-function optimizeFile(file, errorCallback) {
-  var reader = new FileReader();
+export function optimizeFile(file, errorCallback) {
+  const reader = new FileReader();
   reader.readAsText(file, ENCODINGS[1]);
   reader.onload = function (e) {
     try {
-      var outData = optimizeData(e.target.result);
-      saveFile(outData, file.name, "optimized", ".xhb");
+      const outData = optimizeData(e.target.result);
+      saveFile(outData, file.name, 'optimized', '.xhb');
     } catch (ex) {
-      errorCallback(ex); 
+      errorCallback(ex);
     }
   };
 }
 
 function saveFile(outData, curfilename, suffix, extension) {
-    var blob = new Blob([outData], {
-      type: "text/plain;charset=utf-8"
-    });
-    var filename = getNewFileName(curfilename, suffix, extension);
-    saveAs(blob, filename);
+  const blob = new Blob([outData], {
+    type: 'text/plain;charset=utf-8',
+  });
+  const filename = getNewFileName(curfilename, suffix, extension);
+  saveAs(blob, filename);
 }
 
 function getNewFileName(filename, suffix, extension) {
-  var index = filename.lastIndexOf(".");
+  const index = filename.lastIndexOf('.');
   if (index > 0) {
-    var name = filename.substring(0, index);
-    filename = name + "_" + suffix + extension;
+    const name = filename.substring(0, index);
+    filename = name + '_' + suffix + extension;
   } else {
     filename = suffix + extension;
   }
+
   return filename;
 }
 
-function convertData(idBank, data, filename) {
-  var bank = banks[idBank];
+export function convertData(idBank, data, filename) {
+  const bank = banks[idBank];
   if (bank) {
     return bank.convert(data, filename);
   }
-  throw "Can not find bank for idBank=" + idBank;
+
+  throw new Error('Can not find bank for idBank=' + idBank);
 }
 
-function optimizeData(data) {
-  var output = [];
-  var lines = data.split("\n");
-  for (var i = 0; i < lines.length; i++) {
-    // remove duplicate spaces
-    var line = lines[i].replace(/ +(?= )/g, '');
-    // remove spaces after wording="
-    line = line.replace(/wording=\"\s/g, 'wording=\"');
-    if (line.match(/wording=\"[^\"]*\s\"/g)) {
-      // remove spaces before "
-      line = line.replace(/\s\"/g, '\"');
+export function optimizeData(data) {
+  const output = [];
+  const lines = data.split('\n');
+  for (let i = 0; i < lines.length; i++) {
+    // Remove duplicate spaces
+    let line = lines[i].replace(/ +(?= )/g, '');
+    // Remove spaces after wording="
+    line = line.replace(/wording="\s/g, 'wording="');
+    if (line.match(/wording="[^"]*\s"/g)) {
+      // Remove spaces before "
+      line = line.replace(/\s"/g, '"');
     }
+
     output.push(line);
   }
+
   return output.join('\n');
 }
 
-function getPayModeFromMemo(memo) {
-  var i, j;
+export function getPayModeFromMemo(memo) {
+  let i;
+  let j;
   for (i = 0; i < PayMemo.length; i++) {
-    var memos = PayMemo[i].memos;
+    const {memos} = PayMemo[i];
     for (j = 0; j < memos.length; j++) {
       if (new RegExp(memos[j]).exec(memo)) {
         return PayMemo[i].Index;
       }
     }
   }
-  return "";
+
+  return '';
 }
 
 function loadPaymodeJson(callback) {
-  var file = "./res/labelAndPaymode.json";
-  $.getJSON(file, function (data) {
+  const file = './data/labelAndPaymode.json';
+  $.getJSON(file, data => {
     PayMemo = data.PayMemo;
-    if (callback && typeof (callback) === "function") {
+    if (callback && typeof (callback) === 'function') {
       callback();
     }
   });
 }
 
-function initConverter(callback) {
+export function initConverter(callback) {
   loadPaymodeJson(callback);
 }

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Version 0.16.0
+# Version 0.17.0
 
 CACHE: 
 
@@ -12,4 +12,4 @@ css\lavish-bootstrap.css
 js\banks.js
 js\converter-ui.js
 js\converter.js
-res\labelAndPaymode.json
+data\labelAndPaymode.json
