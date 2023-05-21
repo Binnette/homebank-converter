@@ -1,0 +1,27 @@
+{
+  "PayMemo": [{
+    "Index": "2",
+    "Name": "Cheque",
+    "memos": ["^CHEQUE N"]
+  }, {
+    "Index": "4",
+    "Name": "Transfer",
+    "memos": ["^VIREMENT DE", "^VIREMENT EMIS", "^VIREMENT POUR", "^VERSEMENT VIREMENT DE"]
+  }, {
+    "Index": "6",
+    "Name": "Debit card",
+    "memos": ["^ACHAT CB", "^COMMISSION PAIEMENT PAR CARTE", "^COMMISSION RETRAIT PAR CARTE", "^RETRAIT", "RETRAIT DAB", "^TELEREGLEMENT DE REGLEMENT IMPOT", "^CREDIT CARTE BANCAIRE", "^PAIEMENT PAR CARTE DE BANQUE"]
+  }, {
+    "Index": "7",
+    "Name": "Standing order",
+    "memos": ["^PRELEVEMENT", "^VIREMENT PERMANENT"]
+  }, {
+    "Index": "9",
+    "Name": "Deposit",
+    "memos": ["^REMISE DE CHEQUE N", "^REMISE DE CHEQUES", "^VERSEMENT EFFECTUE"]
+  }, {
+    "Index": "10",
+    "Name": "FI fee",
+    "memos": ["^COTISATION TRIMESTRIELLE DE VOTRE FORMULE DE COMPTE"]
+  }]
+}

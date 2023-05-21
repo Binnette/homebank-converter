@@ -1,0 +1,50 @@
+id;date;rdate;vdate;type;raw;category;label;amount
+@carteticketrestaurant;2015-01-11;None;None;1;;;KFC SO GOOD;-10.20
+@carteticketrestaurant;2015-01-10;None;None;1;;;KFC SO GOOD;-10.30
+@carteticketrestaurant;2015-01-09;None;None;1;;;KFC SO GOOD;-11.00
+@carteticketrestaurant;2015-01-08;None;None;1;;;KFC SO GOOD;-11.00
+@carteticketrestaurant;2015-01-07;None;None;1;;;KFC SO GOOD;-11.78
+@carteticketrestaurant;2015-01-06;None;None;1;;;SUR LE POUCE;-11.80
+@carteticketrestaurant;2015-01-05;None;None;1;;;SUR LE POUCE;-11.85
+@carteticketrestaurant;2015-01-04;None;None;1;;;SUR LE POUCE;-12.50
+@carteticketrestaurant;2015-01-03;None;None;1;;;SUR LE POUCE;-12.50
+@carteticketrestaurant;2015-01-02;None;None;1;;;SUR LE POUCE;-12.80
+@carteticketrestaurant;2015-01-01;None;None;1;;;SUR LE POUCE;-12.90
+@carteticketrestaurant;2014-12-31;None;None;1;;;SUR LE POUCE;-12.96
+@carteticketrestaurant;2014-12-30;None;None;1;;;SUR LE POUCE;-14.50
+@carteticketrestaurant;2014-12-29;None;None;1;;;SUR LE POUCE;-14.68
+@carteticketrestaurant;2014-12-28;None;None;1;;;SUR LE POUCE;-14.90
+@carteticketrestaurant;2014-12-27;None;None;1;;;SUR LE POUCE;-15.74
+@carteticketrestaurant;2014-12-26;None;None;1;;;MACDONALDS;-16.20
+@carteticketrestaurant;2014-12-25;None;None;1;;;MACDONALDS;-16.30
+@carteticketrestaurant;2014-12-24;None;None;1;;;MACDONALDS;-16.35
+@carteticketrestaurant;2014-12-23;None;None;1;;;MACDONALDS;-16.70
+@carteticketrestaurant;2014-12-22;None;None;1;;;MACDONALDS;-17.60
+@carteticketrestaurant;2014-12-21;None;None;1;;;MACDONALDS;-17.96
+@carteticketrestaurant;2014-12-20;None;None;1;;;RESTAURANT;-18.00
+@carteticketrestaurant;2014-12-19;None;None;1;;;RESTAURANT;-18.29
+@carteticketrestaurant;2014-12-18;None;None;1;;;RESTAURANT;-18.45
+@carteticketrestaurant;2014-12-17;None;None;1;;;RESTAURANT;-18.91
+@carteticketrestaurant;2014-12-16;None;None;1;;;RESTAURANT;-18.98
+@carteticketrestaurant;2014-12-15;None;None;1;;;RESTAURANT;-18.98
+@carteticketrestaurant;2014-12-14;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-13;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-12;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-11;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-10;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-09;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-08;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-07;None;None;1;;;RESTAURANT;-19.00
+@carteticketrestaurant;2014-12-06;None;None;1;;;SANDWICH;-6.00
+@carteticketrestaurant;2014-12-05;None;None;1;;;SANDWICH;-6.45
+@carteticketrestaurant;2014-12-04;None;None;1;;;SANDWICH;-7.80
+@carteticketrestaurant;2014-12-03;None;None;1;;;SANDWICH;-7.80
+@carteticketrestaurant;2014-12-02;None;None;1;;;SANDWICH;-8.15
+@carteticketrestaurant;2014-12-01;None;None;1;;;SANDWICH;-8.36
+@carteticketrestaurant;2014-11-30;None;None;1;;;SANDWICH;-8.60
+@carteticketrestaurant;2014-11-29;None;None;1;;;SANDWICH;-8.95
+@carteticketrestaurant;2014-11-28;None;None;1;;;SANDWICH;-8.95
+@carteticketrestaurant;2014-11-27;None;None;1;;;SANDWICH;-9.70
+@carteticketrestaurant;2014-11-26;None;None;1;;;SANDWICH;-9.95
+@carteticketrestaurant;2014-11-25;None;None;3;;;CHARGEMENT CARTE;120.00
+@carteticketrestaurant;2014-11-24;None;None;3;;;CHARGEMENT CARTE;130.00

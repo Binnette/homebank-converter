@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<homebank v="1.3999999999999999" d="050603">
+<properties title="HomeBank Sample File" curr="1" car_category="2" auto_smode="0" auto_weekday="1" auto_nbmonths="1" auto_nbdays="10"/>
+<cur key="2" flags="0" iso="JPY" name="Yen" symb="¥" syprf="1" dchar="." gchar="," frac="0" rate="130.56" mdate="0"/>
+<cur key="1" flags="0" iso="EUR" name="Euro" symb="€" syprf="0" dchar="," gchar=" " frac="2" rate="0" mdate="0"/>
+<account key="1" pos="1" type="6" curr="1" name="Cheque account" initial="50" minimum="-200" maximum="0" rdate="738556"/>
+<account key="2" pos="2" type="7" curr="1" name="Saving account" initial="1000" minimum="0" maximum="500" rdate="738556"/>
+<account key="3" pos="3" type="6" curr="2" name="Japan account" initial="500" minimum="0" maximum="100" rdate="738556"/>
+<pay key="3" name="Peugeot 106"/>
+<pay key="5" name=" Allianz"/>
+<pay key="8" name="GRDF "/>
+<pay key="9" name="Free Telecom"/>
+<pay key="10" name="Netflix" category="10"/>
+<pay key="11" name=" Prixtel"/>
+<pay key="13" name="World Company " category="125" paymode="4"/>
+<pay key="14" name="Corner Pharma"/>
+<pay key="16" name="Laforêt"/>
+<pay key="17" name="Total Access"/>
+<pay key="19" name="Dr Joyeux" category="48"/>
+<pay key="20" name="EDF"/>
+<pay key="21" name="Me"/>
+<pay key="22" name="Leclerc drive" category="1" paymode="6"/>
+<cat key="1" flags="8" name="Alimony" b0="-100"/>
+<cat key="2" name="Automobile"/>
+<cat key="4" parent="2" flags="9" name="Gasoline" b0="-80"/>
+<cat key="3" parent="2" flags="9" name="Car Payment" b0="-186"/>
+<cat key="9" name="Bills"/>
+<cat key="11" parent="9" flags="1" name="Cell Phone"/>
+<cat key="19" parent="9" flags="9" name="Natural Gas/Oil" b0="-100"/>
+<cat key="13" parent="9" flags="1" name="Electricity"/>
+<cat key="10" parent="9" flags="9" name="Cable/Satellite Television" b0="-10"/>
+<cat key="21" parent="9" flags="9" name="On-line/Internet Service" b0="-38.990000000000002"/>
+<cat key="23" parent="9" flags="9" name="Rent" b0="-550"/>
+<cat key="45" name="Health-care"/>
+<cat key="50" parent="45" flags="1" name="Prescriptions"/>
+<cat key="48" parent="45" flags="1" name="Hospital"/>
+<cat key="65" name="Insurance"/>
+<cat key="66" parent="65" flags="1" name="Automobile"/>
+<cat key="120" flags="2" name="Wage &amp; Salary"/>
+<cat key="125" parent="120" flags="11" name="Net Pay" b0="1218.5999999999999"/>
+<cat key="128" parent="120" flags="3" name="Bonus"/>
+<cat key="127" name="Savings"/>
+<asg key="1" flags="6" pos="1" name="freebox" payee="9" category="21" amount="0"/>
+<asg key="2" flags="6" pos="2" name="home" payee="16" category="23" amount="0"/>
+<fav key="10" amount="-13.49" account="1" paymode="6" flags="1540" payee="10" category="10" wording="binge watching" nextdate="738593" every="1" unit="2" limit="1"/>
+<fav key="8" amount="-100" account="1" paymode="8" flags="1540" payee="8" category="19" wording="boiler and cooking" nextdate="738579" every="1" unit="2" limit="1"/>
+<fav key="14" amount="-90" account="1" paymode="6" flags="516" payee="22" category="1" wording="food" nextdate="738581" every="1" unit="2" limit="1"/>
+<fav key="13" amount="-20" account="1" dst_account="2" flags="1548" payee="21" category="127" wording="for hard time" nextdate="738578" every="1" unit="2" limit="1"/>
+<fav key="4" amount="-94" account="1" paymode="6" flags="1540" payee="17" category="4" wording="fuel" nextdate="738572" every="1" unit="2" limit="1"/>
+<fav key="2" amount="-532.00999999999999" account="1" paymode="8" flags="1540" payee="16" category="23" wording="home sweet home" nextdate="738566" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="5" amount="-84" account="1" paymode="4" flags="1540" payee="5" category="66" wording="legit car insurrance" nextdate="738589" every="1" unit="2" limit="1"/>
+<fav key="15" amount="5" account="3" paymode="4" flags="1542" payee="13" category="128" wording="my bonus" nextdate="738578" every="1" unit="2" limit="1"/>
+<fav key="3" amount="-136" account="1" paymode="8" flags="1540" payee="3" category="3" wording="my car buy" nextdate="738585" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="9" amount="-38.990000000000002" account="1" flags="1540" payee="9" category="21" wording="my freebox" nextdate="738589" every="1" unit="2" limit="1"/>
+<fav key="7" amount="-20" account="1" paymode="6" flags="1540" payee="14" category="50" wording="my pills" nextdate="738580" every="1" unit="2" limit="1"/>
+<fav key="1" amount="1218.5999999999999" account="1" paymode="4" flags="1542" payee="13" category="125" wording="my smic" nextdate="738589" every="1" unit="2" limit="1" weekend="2"/>
+<fav key="12" amount="-76" account="1" paymode="7" flags="1540" payee="20" category="13" wording="plugged stuff" nextdate="738581" every="1" unit="2" limit="1"/>
+<fav key="11" amount="-5.4900000000000002" account="1" paymode="6" flags="1540" payee="11" category="11" wording="the little 30Go" nextdate="738581" every="1" unit="2" limit="1"/>
+<fav key="6" amount="-25" account="1" paymode="6" flags="1540" payee="19" category="48" wording="up and running" nextdate="738626" every="3" unit="2" limit="1"/>
+<ope date="738182" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738213" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738241" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738272" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738302" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738333" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+<ope date="738363" amount="5" account="3" paymode="4" st="2" flags="2" payee="13" category="128" wording="my bonus"/>
+</homebank>

@@ -1,0 +1,87 @@
+[
+  {
+    "date": "2023-05-21",
+    "version": "v0.17.0",
+    "comment": "use Parceljs."
+  },
+  {
+    "date": "2020-10-24",
+    "version": "v0.16.0",
+    "comment": "update libs."
+  },
+  {
+    "date": "2019-06-16",
+    "version": "v0.15.0",
+    "comment": "use yarn, MIT license, update libs."
+  },
+  {
+    "date": "2018-11-04",
+    "version": "v0.14.0",
+    "comment": "support BNP Paribas Fortis files."
+  },
+  {
+    "date": "2016-02-29",
+    "version": "v0.13.0",
+    "comment": "update libs, error management, errors in modal."
+  },
+  {
+    "date": "2015-05-01",
+    "version": "v0.12.0",
+    "comment": "update libs, fix icons not working."
+  },
+  {
+    "date": "2015-01-11",
+    "version": "v0.11.0",
+    "comment": "using QUnit for unit testing."
+  },
+  {
+    "date": "2014-12-29",
+    "version": "v0.10.0",
+    "comment": "using bootstrap, adding Boobank support."
+  },
+  {
+    "date": "2014-08-19",
+    "version": "v0.9.0",
+    "comment": "change date format to mm-dd-yy."
+  },
+  {
+    "date": "2014-07-20",
+    "version": "v0.8.0",
+    "comment": "fix changelog not displaying bug."
+  },
+  {
+    "date": "2014-07-19",
+    "version": "v0.7.0",
+    "comment": "optimize .xhb files by removing useless spaces."
+  },
+  {
+    "date": "2014-07-13",
+    "version": "v0.6.0",
+    "comment": "support PayPal csv and tsv (.txt)."
+  },
+  {
+    "date": "2014-07-10",
+    "version": "v0.5.0",
+    "comment": "enable convert btn only if a file is selected."
+  },
+  {
+    "date": "2014-07-06",
+    "version": "v0.4.0",
+    "comment": "remove multiples spaces in memo, trim memo."
+  },
+  {
+    "date": "2014-07-04",
+    "version": "v0.3.0",
+    "comment": "try to determine paymode giving memo."
+  },
+  {
+    "date": "2014-07-02",
+    "version": "v0.2.0",
+    "comment": "support BanquePostale tsv."
+  },
+  {
+    "date": "2014-06-29",
+    "version": "v0.1.0",
+    "comment": "support BanquePostale csv only."
+  }
+]

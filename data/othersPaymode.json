@@ -1,0 +1,23 @@
+{
+  "PayMemo": [{
+    "Index": "0",
+    "Name": "Nothing",
+    "memos": []
+  }, {
+    "Index": "1",
+    "Name": "Credit card",
+    "memos": []
+  }, {
+    "Index": "3",
+    "Name": "Cash",
+    "memos": []
+  }, {
+    "Index": "5",
+    "Name": "Internal transfer",
+    "memos": []
+  }, {
+    "Index": "8",
+    "Name": "Electronic payment",
+    "memos": []
+  }]
+}
