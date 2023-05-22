@@ -1,6 +1,6 @@
 /* eslint-disable array-element-newline */
-import QUnit from 'qunit';
 import $ from 'jquery';
+import QUnit from 'qunit';
 import {getBankIndexByName, convertBanquePostale, convertBoobank, convertPaypal} from './banks.js';
 import {initConverter, convertData, optimizeData} from './converter.js';
 

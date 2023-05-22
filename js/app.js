@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import '../css/lavish-bootstrap.css';
-import '../css/hc.css';
+import '../css/hc.scss';
 
 import {initConverter} from './converter.js';
 import {initUi} from './converter-ui.js';
