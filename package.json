@@ -5,7 +5,7 @@
   "homepage": "https://github.com/Binnette/homebank-converter#readme",
   "scripts": {
     "start": "parcel ./*.html",
-    "predeploy": "rimraf -rf dist && parcel build ./*.html --public-url .",
+    "predeploy": "rimraf -rf dist && parcel build ./*.html --public-url https://binnette.github.io/homebank-converter/",
     "deploy": "gh-pages -d dist"
   },
   "author": "Binnette <binnette@gmail.com>",
@@ -15,9 +15,9 @@
     "staticOutPath": "data"
   },
   "dependencies": {
-    "bootstrap": "^3.4.1",
-    "file-saver": "^2.0.2",
     "jquery": "^3.7.0",
+    "bootstrap": "^3.4.1",
+    "file-saver": "^2.0.5",
     "moment": "^2.29.4",
     "qunit": "^2.19.4"
   },

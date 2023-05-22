@@ -167,7 +167,7 @@ function loadChangelog() {
     return;
   }
 
-  $.getJSON('../data/changelog.json', logs => {
+  $.getJSON('data/changelog.json', logs => {
     const changelog = $('#changelog');
     for (let i = 0; i < logs.length; i++) {
       const log = logs[i];

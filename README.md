@@ -63,11 +63,11 @@ Javascript libraries:
 
 | Library                                                  | version |
 | -------------------------------------------------------- | ------- |
-| [jQuery](https://jquery.com/)                            | 3.5.1   |
+| [jQuery](https://jquery.com/)                            | 3.7.1   |
 | [Bootstrap](http://getbootstrap.com/)                    | 3.4.1   |
-| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2.0.2   |
+| [FileSaver.js](https://github.com/eligrey/FileSaver.js/) | 2.0.5   |
 | [Moment.js](http://momentjs.com/)                        | 2.29.4  |
-| [QUnit](http://qunitjs.com/)                             | 2.11.3  |
+| [QUnit](http://qunitjs.com/)                             | 2.19.4  |
 
 ## Who ? ##
 Developper(s):
