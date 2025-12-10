@@ -1,11 +1,12 @@
 # Changelog
 
-## v0.18.0 — 2025-12-08
+## v0.18.0 — 2025-12-10
 
 ### 🚀 Migrations & Refactoring
 - Migrate **Bootstrap 3** → **5**
 - Use [Huemint](https://huemint.com/bootstrap-basic/#palette=fdfafa-ffffff-040101-2c8fa0-2ca05a-a05a2c) to theme Bootstrap
 - Use **Parcel** bundle instead of `node_module/dist` CSS
+- Add **GitHub Workflow** to build and deploy app to **gh-pages**
 
 ### 📗 Documentation
 - Move `changelog.json` → classic `CHANGELOG.md`
