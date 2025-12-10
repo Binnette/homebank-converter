@@ -1,8 +1,252 @@
-<!DOCTYPE html><html lang="en"><head><link rel="stylesheet" href="https://binnette.github.io/homebank-converter/index.b877cd71.css"><script type="module" src="https://binnette.github.io/homebank-converter/index.42d6ef46.js"></script><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>homebank-converter</title><link href="https://binnette.github.io/homebank-converter/favicon.20a26fa3.ico" type="image/x-icon" rel="icon"><link href="https://binnette.github.io/homebank-converter/hc128px.e8a3277b.png" rel="apple-touch-icon"></head><body> <div class="container"> <nav class="navbar navbar-inverse"> <div class="container-fluid"> <div class="navbar-header"> <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a id="btnHome" class="navbar-brand" href="#">homebank-converter</a> </div> <div class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Banks <span class="caret"></span></a> <ul id="dropdownMenu" class="dropdown-menu" role="menu"> <li class="divider"></li> <li><a id="menuOtherBanks" href="#">Other banks</a> </li> </ul> </li> <li id="menuOptimizer"><a id="btnOptimizer" href="#">XHB Optimizer</a> </li> </ul> <ul class="nav navbar-nav navbar-right"> <li id="menuAbout"><a id="btnAbout" href="#" ">About</a> </li> </ul> </div> </div> </nav> <div id="home"> <div class="jumbotron"> <div class="pull-left"> <h2>homebank-converter</h2> <p>A web app to convert an export bank file to compatible <a href="http://homebank.free.fr/">Homebank</a> csv.</p> <p>Use the menu to select a bank, then upload the file to convert.</p> <!--[if lt IE 9]>
-            <p>Your browser is not supported. Choose one of following option :</p>
-            <ul>
-              <li><a href="http://www.mozilla.org/en-US/firefox/new/">Use Mozilla Firefox</a></li>
-              <li><a href="https://www.google.com/intl/en_us/chrome/browser/">Use Google Chrome</a></li>
-              <li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Upgrade to Microsoft Internet Explorer 9 or newer</a></li>
-            </ul>
-          <![endif]--> </div> <div class="pull-left visible-sm visible-xs"> <p></p> <img class="img-rounded" src="https://binnette.github.io/homebank-converter/hc128px.e8a3277b.png" alt="hc logo"> </div> <div class="hidden-sm hidden-xs pull-right"> <p></p> <img class="img-rounded" src="https://binnette.github.io/homebank-converter/hc128px.e8a3277b.png" alt="hc logo"> </div> <div class="clearfix"></div> </div> <div class="row"> <div class="col-md-6"> <div class="panel panel-default"> <div class="panel-body"> <div class="media"> <div class="media-left media-middle"> <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </div> <div class="media-body"> <h4 class="media-heading">hc respects your privacy</h4> It does <u>not</u> record any data, track events or whatever. </div> </div> </div> </div> </div> <div class="col-md-6"> <div class="panel panel-default"> <div class="panel-body"> <div class="media"> <div class="media-left media-middle"> <span class="glyphicon glyphicon-random" aria-hidden="true"></span> </div> <div class="media-body"> <h4 class="media-heading">hc is free and open source</h4> Download the app or read the source on <a href="https://github.com/Binnette/homebank-converter">GitHub</a>. </div> </div> </div> </div> </div> </div> </div> <div id="converter" class="row" style="display:none"> <div class="col-xs-12"> <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title"> <strong id="bankName">BankName</strong> </h3> </div> <div class="panel-body"> <p>Supported file(s): <span id="supportedFiles">csv, tsv</span> </p> </div> </div> </div> <div class="col-sm-4 col-xs-12"> <div class="panel panel-default text-center"> <div class="panel-heading"> <h3 class="panel-title"> <label for="btnBrowseConvert">1. Select a file</label> </h3> </div> <div class="panel-body"> <button id="btnBrowseConvert" type="button" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Browse </button> <input id="inputConvert" type="file" name="File to convert" style="display:none"> </div> </div> </div> <div class="col-sm-4 col-xs-12"> <div class="panel panel-default text-center"> <div class="panel-heading"> <h3 class="panel-title"> <label for="fileEncoding">2. Select an encoding</label> </h3> </div> <div class="panel-body"> <select id="fileEncoding" class="form-control input-lg"></select> </div> </div> </div> <div class="col-sm-4 col-xs-12"> <div class="panel panel-default text-center"> <div class="panel-heading"> <h3 class="panel-title"> <label for="btnConvert">3. Press Convert</label> </h3> </div> <div class="panel-body"> <button id="btnConvert" class="btn btn-lg btn-primary"> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Convert </button> </div> </div> </div> </div> <div id="otherbanks" class="row" style="display:none"> <div class="col-xs-12"> <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title"> <strong>File not supported?</strong> </h3> </div> <div class="panel-body"> <p>Please submit an issue <a href="https://github.com/Binnette/homebank-converter/issues">here</a> by sending following:</p> <ol> <li>your file</li> <li>your bank name</li> <li>that’s all!</li> </ol> </div> </div> </div> </div> <div id="optimizer" class="row" style="display:none"> <div class="col-xs-12"> <div class="panel panel-primary"> <div class="panel-heading"> <h3 class="panel-title"> <strong>XHB Optimizer</strong> </h3> </div> <div class="panel-body"> <p>Supported file: xhb</p> </div> </div> </div> <div class="col-sm-4 col-sm-offset-1 col-xs-12"> <div class="panel panel-default text-center"> <div class="panel-heading"> <h3 class="panel-title"> <label for="btnBrowseOptimize">1. Select a file</label> </h3> </div> <div class="panel-body"> <button id="btnBrowseOptimize" type="submit" class="btn btn-default btn-lg"> <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp; Browse </button> <input id="inputOptimize" type="file" name="File to optimize" style="display:none"> </div> </div> </div> <div class="col-sm-4 col-sm-offset-2 col-xs-12"> <div class="hbc-criteria panel panel-default text-center"> <div class="panel-heading"> <h3 class="panel-title"> <label for="btnOptimize">2. Press Optimize</label> </h3> </div> <div class="panel-body"> <button id="btnOptimize" class="btn btn-lg btn-primary"> <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Optimize </button> </div> </div> </div> </div> <div id="about" class="row" style="display:none"> <div class="col-sm-8 col-xs-12"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title">homebank-converter</h3> </div> <div class="panel-body"> <p>A web app to convert an export bank file to compatible <a href="http://homebank.free.fr/">Homebank</a> csv.</p> <p>Author: <a href="https://github.com/Binnette">Binnette</a> </p> <p>Version: v0.17.0 (2023-05-21)</p> <p>Licence: <a href="https://opensource.org/licenses/MIT">MIT</a> </p> <a class="btn btn-primary" href="https://github.com/Binnette/homebank-converter" role="button">View project on GitHub</a> <a class="btn btn-primary" href="https://binnette.github.io/homebank-converter/tests.html" role="button">Run tests</a> </div> </div> </div> <div class="col-sm-4 col-xs-12"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title">Successfully tested on</h3> </div> <div class="panel-body"> <ul> <li><a href="https://www.mozilla.org/en-US/firefox/">Firefox 113</a> </li> <li><a href="http://www.chromium.org/">Chromium 113</a> </li> <li><a href="https://www.google.com/chrome">Chrome 113</a> </li> <li><a href="https://www.microsoft.com/en-us/windows/microsoft-edge">Edge 113</a> </li> </ul> </div> </div> </div> <div class="col-sm-8 col-xs-12"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title">Changelog</h3> </div> <div class="panel-body"> <ul id="changelog"></ul> </div> </div> </div> <div class="col-sm-4 col-xs-12"> <div class="panel panel-default"> <div class="panel-heading"> <h3 class="panel-title">Librairies credits</h3> </div> <div class="panel-body"> <ul> <li><a href="http://jquery.com/">jQuery 3.7.0</a> </li> <li><a href="https://getbootstrap.com/docs/3.4/">Bootstrap 3.4.1</a> </li> <li><a href="https://github.com/eligrey/FileSaver.js">FileSaver.js 2.0.5</a> </li> <li><a href="http://momentjs.com/">Moment.js 2.29.4</a> </li> <li><a href="http://qunitjs.com/">QUnit 2.19.4</a> </li> </ul> </div> </div> </div> </div> <div id="modal" class="fade modal" tabindex="-1" role="dialog"> <div class="modal-dialog"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> <h4 id="modal-title" class="modal-title">Error</h4> </div> <div id="modal-body" class="modal-body"> <p></p> </div> <div class="modal-footer"> <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> </div> </div> </div> </div> </div> <script src="https://binnette.github.io/homebank-converter/index.a333f72f.js" type="module"></script> </body></html>
+<!DOCTYPE html><html lang=en><script type=module src=https://binnette.github.io/homebank-converter/tests.2ba1a519.js></script><link rel=stylesheet href=https://binnette.github.io/homebank-converter/homebank-converter.ead0ac23.css><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1"><title>homebank-converter</title><link href=https://binnette.github.io/homebank-converter/favicon.20a26fa3.ico type=image/x-icon rel=icon><link href=https://binnette.github.io/homebank-converter/hc128px.f43b0b4e.png rel=apple-touch-icon><body>
+  <div class=container>
+
+    <nav class="bg-primary mb-5 navbar navbar-expand-sm" data-bs-theme=dark>
+      <div class=container-fluid>
+        <a id=btnHome class=navbar-brand href=#>homebank-converter</a>
+        <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarNav aria-controls=navbarNav aria-expanded=false aria-label="Toggle navigation">
+          <span class=navbar-toggler-icon></span>
+        </button>
+        <div class="collapse navbar-collapse" id=navbarNav>
+          <ul class="me-auto navbar-nav">
+            <li class="dropdown nav-item">
+              <a class="dropdown-toggle nav-link" href=# role=button data-bs-toggle=dropdown aria-expanded=false>
+                Banks
+              </a>
+              <ul id=dropdownMenu class=dropdown-menu>
+                <li class=divider></li>
+                <li><a id=menuOtherBanks class=dropdown-item href=#>Other banks</a></li>
+              </ul>
+            </li>
+            <li id=menuOptimizer class=nav-item>
+              <a id=btnOptimizer class=nav-link href=#>XHB Optimizer</a>
+            </li>
+          </ul>
+          <ul class=navbar-nav>
+            <li id=menuAbout class=nav-item>
+              <a id=btnAbout class=nav-link href=#>About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id=home>
+
+      <div class="card fs-5 mb-5 p-4">
+        <div class="align-items-center row">
+          <div class="col-12 col-md-9">
+            <div class=card-body>
+              <h2 class=card-title>homebank-converter</h2>
+              <p class=card-text>
+                Convert bank export files to <a href=https://www.gethomebank.org>Homebank</a> CSV.
+              </p>
+              <p class=card-text>
+                Select a bank, upload your file, and convert.
+              </p>
+            </div>
+          </div>
+          <div class=col-md-3>
+            <div class=card-body>
+              <p class=card-text>
+                <img class="d-md-block d-none float-end rounded" src=https://binnette.github.io/homebank-converter/hc128px.f43b0b4e.png alt="hc logo">
+                <img class="d-md-none rounded" src=https://binnette.github.io/homebank-converter/hc128px.f43b0b4e.png alt="hc logo">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class=row>
+        <div class="col-md-6 mb-3">
+          <div class=card>
+            <div class="align-items-center d-flex">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=50 height=50 fill=currentColor class="bi bi-eye m-3" viewBox="0 0 16 16"><path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8Z"/><path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/></svg>
+              <div>
+                <h5>hc respects your privacy</h5>
+                <p>No data is recorded or tracked.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class=card>
+            <div class="align-items-center d-flex">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=50 height=50 fill=currentColor class="bi bi-braces m-3" viewBox="0 0 16 16"><path d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6"/></svg>
+              <div>
+                <h5>hc is free &amp; open source</h5>
+                <p>Get the app or read the <a href=https://github.com/Binnette/homebank-converter>code</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id=converter class=row style=display:none>
+
+      <div class="col-12 mb-5">
+        <div class="border-info card">
+          <h3 class=card-header>
+            <strong id=bankName>BankName</strong>
+          </h3>
+          <div class=card-body>
+            <p class=card-text>Supported file(s): <span id=supportedFiles>csv, tsv</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 mb-3 text-center">
+        <div class=card>
+          <h3 class=card-header>
+            <label for=btnBrowseConvert>1. Select a file</label>
+          </h3>
+          <div class=card-body>
+            <button id=btnBrowseConvert type=button class="btn btn-lg btn-secondary">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 fill=currentColor class="bi bi-folder2-open" style=--darkreader-inline-fill:currentColor viewBox="0 0 16 16"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14ZM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5Zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7Z"/></svg>
+              &nbsp; Browse
+            </button>
+            <input id=inputConvert type=file name="File to convert" style=display:none>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 mb-3 text-center">
+        <div class=card>
+          <h3 class=card-header>
+            <label for=fileEncoding>2. Select an encoding</label>
+          </h3>
+          <div class=card-body>
+            <select id=fileEncoding class="form-select form-select-lg"></select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 mb-3 text-center">
+        <div class=card>
+          <h3 class=card-header>
+            <label for=btnConvert>3. Press Convert</label>
+          </h3>
+          <div class=card-body>
+            <button id=btnConvert type=button class="btn btn-lg btn-primary">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 fill=currentColor class="bi bi-gear" viewBox="0 0 16 16"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52Zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318C8.591 15.209 7.409 15.209 7.163 14.374l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115Z"/></svg>
+              &nbsp; Convert
+            </button>
+            <input id=inputConvert type=file name="File to convert" style=display:none>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div id=otherbanks class=row style=display:none>
+      <div class="col-12 mb-5">
+        <div class="border-info card">
+          <h3 class=card-header>
+            <strong>File not supported?</strong>
+          </h3>
+          <div class=card-body>
+            <p class=card-text>
+            Please submit an issue <a href=https://github.com/Binnette/homebank-converter/issues>here</a>
+            by sending following:
+            <ol>
+              <li>your file</li>
+              <li>your bank name</li>
+              <li>that’s all!</li>
+            </ol>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id=optimizer class=row style=display:none>
+
+      <div class="col-12 mb-5">
+        <div class="border-info card">
+          <h3 class=card-header>
+            <strong>XHB Optimizer</strong>
+          </h3>
+          <div class=card-body>
+            <p class=card-text>Supported file: xhb</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 mb-3 offset-sm-1 text-center">
+        <div class=card>
+          <h3 class=card-header>
+            <label for=btnBrowseOptimize>1. Select a file</label>
+          </h3>
+          <div class=card-body>
+            <button id=btnBrowseOptimize type=button class="btn btn-lg btn-secondary">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 fill=currentColor class="bi bi-folder2-open" style=--darkreader-inline-fill:currentColor viewBox="0 0 16 16"><path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14ZM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5Zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7Z"/></svg>
+              &nbsp; Browse
+            </button>
+            <input id=inputOptimize type=file name="File to optimize" style=display:none>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-4 mb-3 offset-sm-2 text-center">
+        <div class=card>
+          <h3 class=card-header>
+            <label for=btnOptimize>2. Press Optimize</label>
+          </h3>
+          <div class=card-body>
+            <button id=btnOptimize type=button class="btn btn-lg btn-primary">
+              <svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 fill=currentColor class="bi bi-gear" viewBox="0 0 16 16"><path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/><path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52Zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318C8.591 15.209 7.409 15.209 7.163 14.374l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115Z"/></svg>
+              &nbsp; Optimize
+            </button>
+            <input id=inputConvert type=file name="File to convert" style=display:none>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id=about class=row style=display:none>
+
+      <div class="col-12 col-sm-8 mb-5">
+        <div class="border-info card">
+          <h3 class=card-header>
+            <strong>homebank-converter</strong>
+          </h3>
+          <div class=card-body>
+            <p>Convert bank export files to <a href=https://www.gethomebank.org>Homebank</a> CSV.</p>
+            <p>Author: <a href=https://github.com/Binnette>Binnette</a>
+            </p>
+            <p>Version: v0.17.0 (2023-05-21)</p>
+            <p>Licence: <a href=https://opensource.org/licenses/MIT>MIT</a>
+            </p>
+            <a class="btn btn-secondary" href=https://github.com/Binnette/homebank-converter role=button>View project
+              on GitHub</a>
+            <a class="btn btn-secondary" href=https://binnette.github.io/homebank-converter/tests.html role=button>Run tests</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id=modal class="fade modal" tabindex=-1 role=dialog>
+      <div class=modal-dialog>
+        <div class=modal-content>
+          <div class=modal-header>
+            <button type=button class=close data-dismiss=modal aria-label=Close><span aria-hidden=true>×</span></button>
+            <h4 id=modal-title class=modal-title>Error</h4>
+          </div>
+          <div id=modal-body class=modal-body>
+            <p></p>
+          </div>
+          <div class=modal-footer>
+            <button type=button class="btn btn-default" data-dismiss=modal>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src=https://binnette.github.io/homebank-converter/homebank-converter.cd8ee3ca.js type=module></script>
+
+
