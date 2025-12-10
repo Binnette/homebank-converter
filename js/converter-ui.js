@@ -121,7 +121,6 @@ function onAboutClick() {
   hideAll();
   $('#about').show();
   $('#menuAbout').addClass('active');
-  loadChangelog();
 }
 
 /* Optimizer functions */
@@ -162,23 +161,10 @@ function convertClick(idBank) {
 }
 
 /* UI init functions */
-function loadChangelog() {
-  if ($('#changelog li').length > 0) {
-    return;
-  }
-
-  $.getJSON('data/changelog.json', logs => {
-    const changelog = $('#changelog');
-    for (let i = 0; i < logs.length; i++) {
-      const log = logs[i];
-      changelog.append($('<li>').append(log.date + ' ' + log.version + ': ' + log.comment));
-    }
-  });
-}
 
 function addBankMenuItem(val, label) {
   const m = $('#dropdownMenu');
-  const item = $('<a href="#">');
+  const item = $('<a class="dropdown-item" href="#">');
   item.on('click', () => onBankMenuItemClick(val));
   item.append(label);
   m.prepend($('<li>').append(item));

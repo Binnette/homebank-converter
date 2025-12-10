@@ -5,10 +5,7 @@ CACHE:
 
 
 NETWORK:
-changelog.txt
-roadmap.html
 index.html
-css\lavish-bootstrap.css
 js\banks.js
 js\converter-ui.js
 js\converter.js

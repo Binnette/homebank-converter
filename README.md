@@ -17,7 +17,7 @@
 11. Select your converted file
 12. Finally follow Homebank wizard
 
-Homebank: http://homebank.free.fr/
+Homebank: https://www.gethomebank.org
 
 ## What ? ##
 homebank-converter is a web app that aims to convert export bank files to compatible Homebank csv.
@@ -83,7 +83,8 @@ Run unit tests:
 2. Go on about tab
 3. Click on button run tests
 
-## Changelog ##
-1. Open the application
-2. Go on about tab
-3. Changelog is displayed right here
+## Roadmap
+
+1. Add a checkbox "try to determine paymode"
+2. Translate the application
+3. Manage different end of line

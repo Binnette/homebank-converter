@@ -1,3 +1,17 @@
-#home .glyphicon {
-  font-size: 42px;
-}
+$white: #ffffff;
+
+$theme-colors: (
+    "light":      #fdfafa,
+    "dark":       #040101,
+    "primary":    #2c8fa0,
+    "secondary":  #2ca05a,
+    "info":       #a05a2c,
+    "success":    #1cad57,
+    "warning":    #eccb1b,
+    "danger":     #f70c2a,
+);
+
+// Définition du fond du corps
+$body-bg: map-get($theme-colors, "light");
+
+@import "~bootstrap/scss/bootstrap";
