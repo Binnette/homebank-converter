@@ -1,0 +1,34 @@
+name: Deploy homebank-converter
+
+on:
+  push:
+    branches:
+      - master       # déploiement automatique à chaque commit sur master
+  workflow_dispatch: # déclencheur manuel depuis l'onglet Actions
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/krypton'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Predeploy
+        run: npm run predeploy
+
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: binnette@gmail.com
+          build_dir: dist

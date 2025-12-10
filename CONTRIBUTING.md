@@ -1,17 +1,18 @@
-# Contributing
+# 🤝 Contributing
 
-## Buil and run
+## 🛠️ Build and Run
 
-homebank-converted use yarn as dependency manager (not npm).
+homebank-converter uses **npm** with **Parcel** as the bundler.
 
-To restore packages, use command: `yarn`
+- 📦 To restore packages, run:  
+  ```bash
+  npm install
+  ```
 
-To run homebank-converter, you can use any webserver or this command: `python -m http.server`
+- ▶️ To run homebank-converter, use:  
+  ```bash
+  npm run start
+  ```
 
-Then open following url in your web browser: http://localhost:8000
-
-## Packages
-
-Install packages: `yarn`
-
-Upgrade packages: `yarn upgrade`
+- 🌐 Then open the following URL in your web browser:  
+  [http://localhost:1234](http://localhost:1234)  
